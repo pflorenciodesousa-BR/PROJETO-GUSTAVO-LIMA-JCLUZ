@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mesmo pagando caro, você pode ser surpreendido | Gustavo Lima</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>__HTML2CANVAS_JS__</script>
+  <script>__JSPDF_JS__</script>
+  <style>
+    :root {
+      --navy:#0b1d3a;
+      --navy-deep:#061326;
+      --ink:#071426;
+      --sand:#f0ebe3;
+      --paper:#fffdf8;
+      --gold:#eab308;
+      --gold-dark:#9a6b00;
+      --red:#ef4444;
+      --white:#ffffff;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#e6e9ed; color:var(--ink); font-family:Montserrat,Arial,sans-serif; }
+    .toolbar { position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:16px 24px; background:rgba(255,255,255,.97); border-bottom:1px solid #d5dbe4; backdrop-filter:blur(10px); }
+    .toolbar-title { color:var(--navy); font-size:14px; line-height:1.3; font-weight:900; }
+    .toolbar-title span { color:#ad7900; }
+    .actions { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; }
+    button { border:0; border-radius:14px; padding:11px 15px; color:white; background:var(--navy); font:800 12px Montserrat,Arial,sans-serif; cursor:pointer; }
+    button.alt { color:var(--navy); background:white; border:1px solid #bdc7d4; }
+    button:disabled { opacity:.55; cursor:wait; }
+    .status { max-width:1320px; min-height:18px; margin:14px auto 0; padding:0 24px; color:#53627a; font-size:12px; font-weight:700; }
+    .grid { max-width:1320px; margin:0 auto; padding:18px 24px 44px; display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:30px; }
+    .label { display:flex; justify-content:space-between; margin-bottom:9px; color:#58677d; font-size:11px; font-weight:800; text-transform:uppercase; }
+    .viewport { position:relative; width:100%; aspect-ratio:4/5; overflow:hidden; border-radius:24px; background:#d3d8de; box-shadow:0 13px 28px rgba(19,35,59,.15); }
+    .slide { position:absolute; inset:0 auto auto 0; width:1080px; height:1350px; overflow:hidden; transform-origin:top left; font-family:Montserrat,Arial,sans-serif; }
+    .navy { color:white; background:var(--navy); }
+    .sand { color:var(--navy); background:var(--sand); }
+    .gold { color:var(--navy); background:var(--gold); }
+    h1,h2,h3,p { margin:0; letter-spacing:0; }
+    .noise { position:absolute; inset:0; z-index:1; opacity:.045; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    .inner { position:relative; z-index:3; width:100%; height:100%; padding:86px 88px 100px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+    .kicker { margin-bottom:22px; color:var(--gold-dark); font-size:22px; line-height:1.2; font-weight:900; text-transform:uppercase; }
+    .navy .kicker { color:var(--gold); }
+    h2 { max-width:900px; font-size:58px; line-height:1.1; font-weight:900; }
+    .copy { max-width:850px; margin-top:30px; font-size:32px; line-height:1.4; font-weight:500; }
+    .copy strong { font-weight:900; }
+    .hl { display:inline; padding:0 8px; border-radius:10px; color:var(--navy); background:var(--gold); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+    .arrow { position:absolute; right:62px; bottom:58px; z-index:8; display:flex; align-items:center; gap:12px; color:rgba(255,255,255,.62); font-size:18px; font-weight:800; }
+    .sand .arrow,.gold .arrow { color:rgba(11,29,58,.58); }
+    .arrow b { font-size:32px; line-height:1; }
+
+    .cover-photo { position:absolute; inset:0; background:url('__COVER_DATA__') center/cover no-repeat; }
+    .cover-gradient { position:absolute; left:0; right:0; bottom:0; height:54%; background:linear-gradient(to top,rgba(4,13,27,.99) 0%,rgba(5,17,34,.93) 40%,rgba(5,17,34,.48) 72%,transparent 100%); }
+    .cover-content { position:absolute; z-index:3; left:74px; right:74px; bottom:74px; color:white; text-align:left; }
+    .cover-content h1 { max-width:930px; font-size:76px; line-height:1.01; font-weight:900; text-transform:uppercase; text-shadow:0 5px 22px rgba(0,0,0,.65); }
+    .cover-content .gold-word { color:var(--gold); }
+    .cover-content .red-word { color:#ff5656; }
+    .cover-sub { max-width:830px; margin-top:25px; color:rgba(255,255,255,.9); font-size:31px; line-height:1.28; font-weight:600; }
+    .cover-prompt { display:inline-flex; align-items:center; gap:13px; margin-top:25px; padding:14px 20px; border:2px solid rgba(255,255,255,.42); border-radius:18px; color:white; background:rgba(4,13,27,.38); font-size:20px; font-weight:800; }
+
+    .sketch-bg { position:absolute; inset:0; z-index:0; background-position:center; background-size:cover; }
+    .sketch-payment { background-image:url('__SKETCH_PAYMENT_DATA__'); opacity:.25; mix-blend-mode:multiply; }
+    .sketch-limits { background-image:url('__SKETCH_LIMITS_DATA__'); opacity:.28; mix-blend-mode:screen; }
+    .paper-card { width:870px; padding:58px 62px; border:2px solid rgba(11,29,58,.12); border-radius:38px; background:rgba(255,253,248,.93); box-shadow:0 26px 58px rgba(7,20,38,.2); }
+    .paper-card .copy { font-size:32px; }
+    .paper-card .copy + .copy { margin-top:24px; }
+    .second-hook .inner { padding:90px; }
+    .second-hook .paper-card { width:880px; padding:68px 58px; background:rgba(255,253,248,.91); }
+    .second-hook .hook-kicker { color:var(--gold-dark); font-size:27px; line-height:1.25; font-weight:900; text-transform:uppercase; }
+    .second-hook h2 { margin-top:28px; font-size:69px; line-height:1.04; text-transform:uppercase; }
+    .second-hook .hook-alert { color:var(--red); }
+    .second-hook .hook-support { max-width:750px; margin:34px auto 0; font-size:35px; line-height:1.32; font-weight:700; }
+    .second-hook .hook-close { display:inline-block; margin-top:32px; padding:17px 22px; border-radius:18px; color:white; background:var(--navy); box-shadow:0 14px 28px rgba(7,20,38,.2); font-size:29px; line-height:1.25; font-weight:800; }
+
+    .risk-head { max-width:850px; margin-bottom:40px; }
+    .risk-grid { width:890px; display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .risk-card { min-height:280px; padding:32px 28px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:30px; background:rgba(255,255,255,.1); border:2px solid rgba(255,255,255,.17); box-shadow:0 20px 42px rgba(0,0,0,.2); }
+    .risk-card strong { color:var(--gold); font-size:48px; line-height:1; font-weight:900; }
+    .risk-card span { margin-top:18px; font-size:29px; line-height:1.35; font-weight:600; }
+    .risk-note { max-width:880px; margin-top:30px; padding:25px 30px; border-radius:24px; color:var(--navy); background:var(--gold); box-shadow:0 16px 34px rgba(0,0,0,.22); font-size:30px; line-height:1.35; font-weight:800; }
+
+    .photo-layout .inner { padding:76px 84px 92px; justify-content:center; }
+    .photo-layout h2 { font-size:55px; }
+    .photo-layout .copy { margin-top:24px; font-size:30px; line-height:1.38; }
+    .photo-layout .copy strong { color:var(--gold-dark); }
+    .img-float { width:880px; height:430px; flex:0 0 auto; margin-top:33px; border:6px solid rgba(255,255,255,.82); border-radius:56px; background:url('__FAMILY_DATA__') center 46%/cover no-repeat; box-shadow:0 28px 58px rgba(7,20,38,.26); }
+
+    .limits-card { width:850px; padding:55px 58px; border:2px solid rgba(255,255,255,.17); border-radius:38px; background:rgba(5,17,34,.78); box-shadow:0 28px 58px rgba(0,0,0,.3); }
+    .limits-card h2 { font-size:55px; }
+    .limits-card .copy { margin-top:26px; font-size:31px; }
+    .limits-note { margin-top:28px; padding:20px 24px; border-radius:20px; color:var(--navy); background:var(--gold); font-size:29px; line-height:1.3; font-weight:800; }
+
+    .save-head { max-width:870px; margin-bottom:35px; }
+    .save-head h2 { font-size:57px; }
+    .checklist { width:885px; display:grid; gap:15px; }
+    .check { min-height:111px; display:grid; grid-template-columns:66px 1fr; align-items:center; gap:20px; padding:18px 27px; border:3px solid var(--navy); border-radius:24px; background:#fff9dc; box-shadow:8px 9px 0 rgba(11,29,58,.16); text-align:left; }
+    .check-mark { width:52px; height:52px; display:grid; place-items:center; border-radius:50%; color:white; background:var(--navy); font-size:27px; font-weight:900; }
+    .check span { font-size:30px; line-height:1.25; font-weight:750; }
+    .save-note { max-width:850px; margin-top:30px; font-size:30px; line-height:1.32; font-weight:800; }
+
+    .final .inner { padding:110px; }
+    .final-mark { width:118px; height:118px; margin-bottom:34px; display:grid; place-items:center; border:4px solid var(--gold); border-radius:50%; color:var(--gold); font-size:62px; font-weight:900; }
+    .final h2 { max-width:850px; font-size:66px; }
+    .final .copy { max-width:800px; color:rgba(255,255,255,.82); font-size:33px; }
+    .cta { margin-top:42px; padding:24px 38px; border-radius:20px; color:var(--navy); background:var(--gold); box-shadow:0 18px 35px rgba(0,0,0,.25); font-size:31px; font-weight:900; }
+    .catchphrase { margin-top:38px; color:white; font-size:38px; font-weight:900; }
+
+    .captions { max-width:1320px; margin:0 auto 44px; padding:0 24px; }
+    .caption-box { padding:24px; border:1px solid #d1d8e1; border-radius:24px; background:white; }
+    .caption-box h3 { margin:0 0 12px; color:var(--navy); font-size:14px; }
+    .caption-box p { white-space:pre-line; color:#33445c; font-size:14px; line-height:1.58; }
+    #render-stage { position:fixed; left:-12000px; top:0; width:1080px; height:1350px; pointer-events:none; }
+    @media(max-width:640px) {
+      .toolbar { padding:12px 14px; align-items:flex-start; }
+      .toolbar-title { max-width:145px; }
+      .grid { padding:18px 14px 34px; grid-template-columns:1fr; }
+      .status,.captions { padding-left:14px; padding-right:14px; }
+      button { padding:9px 10px; font-size:10px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar-title">CANCELAMENTO UNILATERAL <span>|</span> CARROSSEL</div>
+    <div class="actions">
+      <button class="alt" onclick="downloadPngs(event)">Baixar PNGs</button>
+      <button onclick="downloadPdf(event)">Baixar PDF</button>
+    </div>
+  </header>
+  <div class="status" id="status">7 slides prontos para revisão.</div>
+
+  <main class="grid" id="slides">
+    <section>
+      <div class="label"><span>Slide 1</span><span>Capa</span></div>
+      <div class="viewport"><article class="slide navy cover" data-name="01-capa">
+        <div class="cover-photo"></div><div class="cover-gradient"></div>
+        <div class="cover-content">
+          <h1>VOCÊ <span class="gold-word">PAGA CARO.</span><br>PAGA EM DIA.<br>E A <span class="red-word">SURPRESA</span> AINDA PODE CHEGAR.</h1>
+          <p class="cover-sub">A pior parte não vem no boleto.</p>
+          <div class="cover-prompt"><span>Entenda antes do aviso</span><b>›</b></div>
+        </div>
+      </article></div>
+    </section>
+
+    <section>
+      <div class="label"><span>Slide 2</span><span>Quebra da crença</span></div>
+      <div class="viewport"><article class="slide sand second-hook" data-name="02-segundo-gancho">
+        <div class="sketch-bg sketch-payment"></div><div class="noise"></div>
+        <div class="inner"><div class="paper-card">
+          <div class="hook-kicker">O boleto está certo. O risco continua.</div>
+          <h2>Seu plano pode estar com os <span class="hook-alert">dias contados.</span></h2>
+          <p class="hook-support">Mesmo sem uma única mensalidade atrasada.</p>
+          <div class="hook-close">E quem mais corre esse risco talvez seja você.</div>
+        </div></div>
+        <div class="arrow"><span>continue</span><b>›</b></div>
+      </article></div>
+    </section>
+
+    <section>
+      <div class="label"><span>Slide 3</span><span>Informativo</span></div>
+      <div class="viewport"><article class="slide navy" data-name="03-quem-corre-o-risco">
+        <div class="noise"></div>
+        <div class="inner">
+          <div class="risk-head"><div class="kicker">Quem precisa prestar atenção</div><h2>O risco mora nos contratos pequenos.</h2></div>
+          <div class="risk-grid">
+            <div class="risk-card"><strong>&lt; 30</strong><span>beneficiários no contrato coletivo empresarial</span></div>
+            <div class="risk-card"><strong>CNPJ</strong><span>pequenas empresas, profissionais PJ e famílias vinculadas</span></div>
+          </div>
+          <div class="risk-note">Em 2026, o STJ definiu que a rescisão unilateral pode ser válida quando existe uma motivação idônea. Não é passe livre para cancelar, mas pagar corretamente também não cria proteção automática.</div>
+        </div>
+        <div class="arrow"><span>continue</span><b>›</b></div>
+      </article></div>
+    </section>
+
+    <section>
+      <div class="label"><span>Slide 4</span><span>Foto + informação</span></div>
+      <div class="viewport"><article class="slide sand photo-layout" data-name="04-cnpj-faz-parte">
+        <div class="noise"></div>
+        <div class="inner">
+          <div class="kicker">O risco que não aparece no boleto</div>
+          <h2>O CNPJ também faz parte do plano.</h2>
+          <p class="copy">A operadora pode pedir, todos os anos, prova de que o CNPJ continua ativo e de que os beneficiários permanecem elegíveis. Se a documentação não for apresentada, a ANS prevê possibilidade de rescisão com aviso prévio de 60 dias. <strong>Um e-mail ignorado ou cadastro desatualizado pode virar um problema grande.</strong></p>
+          <div class="img-float"></div>
+        </div>
+        <div class="arrow"><span>continue</span><b>›</b></div>
+      </article></div>
+    </section>
+
+    <section>
+      <div class="label"><span>Slide 5</span><span>Contraponto</span></div>
+      <div class="viewport"><article class="slide navy" data-name="05-existem-limites">
+        <div class="sketch-bg sketch-limits"></div>
+        <div class="inner"><div class="limits-card">
+          <div class="kicker">A outra metade da história</div>
+          <h2>Unilateral não quer dizer sem limites.</h2>
+          <p class="copy">Nos planos empresariais com menos de 30 pessoas, a operadora precisa apresentar uma justificativa aceitável. O STJ também reconhece proteção contra a rescisão durante uma internação ou enquanto houver tratamento essencial à sobrevivência ou à integridade física.</p>
+          <div class="limits-note">Antes de aceitar o cancelamento como definitivo, confira motivo, prazo, contrato e situação de cada beneficiário.</div>
+        </div></div>
+        <div class="arrow"><span>continue</span><b>›</b></div>
+      </article></div>
+    </section>
+
+    <section>
+      <div class="label"><span>Slide 6</span><span>Salvável</span></div>
+      <div class="viewport"><article class="slide gold" data-name="06-checklist">
+        <div class="inner">
+          <div class="save-head"><div class="kicker">Salve para revisar</div><h2>Checklist antes do aviso chegar</h2></div>
+          <div class="checklist">
+            <div class="check"><div class="check-mark">✓</div><span>Confirme se o CNPJ permanece ativo.</span></div>
+            <div class="check"><div class="check-mark">✓</div><span>Atualize os dados do titular e dos dependentes.</span></div>
+            <div class="check"><div class="check-mark">✓</div><span>Identifique o aniversário do contrato.</span></div>
+            <div class="check"><div class="check-mark">✓</div><span>Confira os canais cadastrados na operadora.</span></div>
+            <div class="check"><div class="check-mark">✓</div><span>Leia as regras de rescisão e portabilidade.</span></div>
+          </div>
+          <p class="save-note">O plano protege na urgência. A organização protege o contrato antes dela.</p>
+        </div>
+        <div class="arrow"><span>salve este slide</span><b>↓</b></div>
+      </article></div>
+    </section>
+
+    <section>
+      <div class="label"><span>Slide 7</span><span>Final</span></div>
+      <div class="viewport"><article class="slide navy final" data-name="07-compartilhe">
+        <div class="noise"></div>
+        <div class="inner">
+          <div class="final-mark">↗</div>
+          <h2>Conhece alguém com plano pelo CNPJ?</h2>
+          <p class="copy">Essa pessoa pode estar pagando tudo corretamente e ainda desconhecer as regras do próprio contrato.</p>
+          <div class="cta">Compartilhe este post com ela</div>
+          <div class="catchphrase">Bora, pra cima! 🚀💪</div>
+        </div>
+      </article></div>
+    </section>
+  </main>
+
+  <section class="captions"><div class="caption-box">
+    <h3>Legenda sugerida</h3>
+    <p>Tem um detalhe no plano empresarial que quase ninguém considera enquanto os boletos estão sendo pagos. Você sabe qual é?
+
+Estar com a mensalidade em dia é fundamental, mas isso não transforma o contrato em uma garantia eterna. Nos planos empresariais, existem regras de elegibilidade, regularidade cadastral e rescisão que precisam ser entendidas antes de um aviso chegar.
+
+Isso não significa que a operadora pode fazer qualquer coisa. Motivo, prazo, contrato e situação dos beneficiários precisam ser conferidos com cuidado.
+
+Na JCLUZ, são mais de 23 anos ajudando famílias a entender o que existe por trás da mensalidade e a tomar decisões com mais clareza.
+
+Conhece alguém que mantém a família em um plano pelo CNPJ? Compartilhe este post com essa pessoa.
+
+Bora, pra cima! 🚀💪</p>
+  </div></section>
+  <div id="render-stage"></div>
+  <script>
+    const slides=[...document.querySelectorAll('.slide')];
+    const statusEl=document.getElementById('status');
+    function fitSlides(){document.querySelectorAll('.viewport').forEach(v=>{v.querySelector('.slide').style.transform='scale('+(v.clientWidth/1080)+')'})}
+    addEventListener('resize',fitSlides); fitSlides();
+    async function renderSlide(slide){
+      await document.fonts.ready;
+      const stage=document.getElementById('render-stage');
+      const clone=slide.cloneNode(true);
+      clone.style.transform='none'; clone.style.position='relative';
+      stage.replaceChildren(clone);
+      const canvas=await html2canvas(clone,{scale:1,useCORS:true,backgroundColor:null,width:1080,height:1350});
+      stage.replaceChildren(); return canvas;
+    }
+    async function downloadPngs(e){
+      const b=e.currentTarget; b.disabled=true;
+      for(let i=0;i<slides.length;i++){
+        statusEl.textContent='Gerando PNG '+(i+1)+' de '+slides.length+'...';
+        const canvas=await renderSlide(slides[i]); const a=document.createElement('a');
+        a.download='cancelamento_unilateral_'+slides[i].dataset.name+'.png';
+        a.href=canvas.toDataURL('image/png'); a.click(); await new Promise(r=>setTimeout(r,300));
+      }
+      statusEl.textContent='PNGs preparados.'; b.disabled=false;
+    }
+    async function downloadPdf(e){
+      const b=e.currentTarget; b.disabled=true;
+      const {jsPDF}=window.jspdf; const pdf=new jsPDF({orientation:'portrait',unit:'px',format:[1080,1350]});
+      for(let i=0;i<slides.length;i++){
+        statusEl.textContent='Montando PDF, slide '+(i+1)+' de '+slides.length+'...';
+        const canvas=await renderSlide(slides[i]);
+        if(i) pdf.addPage([1080,1350],'portrait');
+        pdf.addImage(canvas.toDataURL('image/jpeg',.95),'JPEG',0,0,1080,1350);
+      }
+      pdf.save('mesmo-pagando-caro-voce-pode-ser-surpreendido.pdf');
+      statusEl.textContent='PDF preparado.'; b.disabled=false;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cotação de plano de saúde | Gustavo Lima | V4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>__HTML2CANVAS_JS__</script>
+  <script>__JSPDF_JS__</script>
+  <style>
+    :root { --navy:#0b1d3a; --ink:#071426; --sand:#f0ebe3; --gold:#eab308; --white:#fff; --mist:#dfe8ee; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#e8ebef; color:var(--ink); font-family:Montserrat,Arial,sans-serif; }
+    .toolbar { position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:16px 24px; background:rgba(255,255,255,.96); border-bottom:1px solid #d5dbe4; backdrop-filter:blur(10px); }
+    .title { font-size:14px; font-weight:900; color:var(--navy); }
+    .title span { color:#a97800; }
+    .actions { display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end; }
+    button { border:0; border-radius:14px; padding:11px 14px; background:var(--navy); color:white; font:700 12px Montserrat,Arial,sans-serif; cursor:pointer; }
+    button.alt { color:var(--navy); background:white; border:1px solid #bfc9d5; }
+    button:disabled { opacity:.55; cursor:wait; }
+    .status { max-width:1320px; min-height:18px; margin:14px auto 0; padding:0 24px; color:#53627a; font-size:12px; font-weight:700; }
+    .grid { max-width:1320px; margin:0 auto; padding:18px 24px 44px; display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:30px; }
+    .label { display:flex; justify-content:space-between; margin-bottom:9px; color:#58677d; font-size:11px; font-weight:800; text-transform:uppercase; }
+    .viewport { width:100%; aspect-ratio:4/5; position:relative; overflow:hidden; border-radius:24px; background:#d3d8de; box-shadow:0 13px 28px rgba(19,35,59,.15); }
+    .slide { position:absolute; inset:0 auto auto 0; width:1080px; height:1350px; transform-origin:top left; overflow:hidden; font-family:Montserrat,Arial,sans-serif; }
+    .navy { color:white; background:var(--navy); }
+    .sand { color:var(--navy); background:var(--sand); }
+    .gold { color:var(--navy); background:var(--gold); }
+    .noise { position:absolute; inset:0; z-index:1; opacity:.055; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    .sketch { position:absolute; inset:0; z-index:0; background-image:url('__SKETCH_DATA__'); background-size:cover; background-position:center; opacity:.1; mix-blend-mode:multiply; }
+    .navy .sketch { opacity:.12; filter:grayscale(1) invert(1); mix-blend-mode:screen; }
+    .sketch.process { background-image:url('__PROCESS_SKETCH_DATA__'); opacity:.105; }
+    .inner { position:relative; z-index:3; width:100%; height:100%; padding:96px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+    h1,h2,p { margin:0; letter-spacing:0; }
+    h1 { font-size:76px; line-height:1.03; font-weight:900; }
+    h2 { font-size:60px; line-height:1.12; font-weight:900; }
+    .copy { max-width:820px; margin-top:35px; font-size:33px; line-height:1.38; font-weight:500; }
+    .kicker { margin-bottom:26px; font-size:23px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; }
+    .hl { display:inline; padding:0 10px; border-radius:12px; color:var(--navy); background:var(--gold); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+    .arrow { position:absolute; right:64px; bottom:64px; z-index:9; display:flex; align-items:center; gap:13px; color:rgba(255,255,255,.56); font-size:17px; font-weight:800; }
+    .sand .arrow,.gold .arrow { color:rgba(11,29,58,.55); }
+    .arrow-mark { font-size:31px; line-height:1; }
+    .cover-photo { position:absolute; inset:0; z-index:0; background:url('__COVER_DATA__') center/cover no-repeat; }
+    .cover-gradient { position:absolute; left:0; right:0; bottom:0; height:52%; z-index:1; background:linear-gradient(to top,rgba(7,20,38,.99) 0%,rgba(7,20,38,.9) 36%,rgba(7,20,38,.46) 68%,transparent 100%); }
+    .cover-content { position:absolute; z-index:3; left:76px; right:76px; bottom:76px; text-align:left; color:white; }
+    .cover-content h1 { max-width:910px; font-size:82px; line-height:.98; text-transform:uppercase; text-shadow:0 5px 22px rgba(0,0,0,.62); }
+    .cover-gold { color:var(--gold); }
+    .cover-red { color:#ef4444; }
+    .cover-sub { max-width:850px; margin-top:27px; color:rgba(255,255,255,.88); font-size:28px; line-height:1.3; font-weight:500; }
+    .center-card { max-width:850px; padding:58px 62px; border:2px solid rgba(255,255,255,.16); border-radius:38px; background:rgba(7,20,38,.58); box-shadow:0 25px 55px rgba(0,0,0,.22); backdrop-filter:blur(2px); }
+    .center-card .copy { font-size:31px; }
+    .detail-list { width:100%; margin-top:42px; display:grid; gap:15px; }
+    .detail-row { padding:17px 23px; border-radius:18px; color:var(--navy); background:rgba(240,235,227,.96); box-shadow:0 10px 24px rgba(0,0,0,.16); font-size:23px; line-height:1.28; font-weight:600; text-align:left; }
+    .detail-row b { color:#9a6e00; }
+    .image-layout .inner { padding:82px 86px 98px; }
+    .image-layout h2 { max-width:850px; font-size:53px; }
+    .image-layout .copy { margin-top:23px; font-size:28px; }
+    .context-line { max-width:830px; margin-top:25px; padding:16px 22px; border-radius:18px; color:white; background:var(--navy); box-shadow:0 12px 24px rgba(7,20,38,.18); font-size:22px; line-height:1.3; font-weight:700; }
+    .img-float { width:885px; height:490px; flex:0 0 auto; margin-top:34px; border:6px solid rgba(255,255,255,.74); border-radius:64px; background:url('__FAMILY_DATA__') center/cover no-repeat; box-shadow:0 28px 58px rgba(7,20,38,.25); }
+    .compare-title { max-width:840px; margin-bottom:48px; }
+    .compare-grid { width:100%; display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+    .compare-card { min-height:590px; padding:42px 36px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:32px; box-shadow:0 26px 55px rgba(0,0,0,.24); }
+    .compare-card.bad { background:#f4eee6; color:var(--navy); border-top:14px solid #c75b4f; }
+    .compare-card.good { background:var(--gold); color:var(--navy); border-top:14px solid white; }
+    .compare-card h3 { margin:0 0 34px; font-size:31px; line-height:1.2; font-weight:900; text-transform:uppercase; }
+    .compare-card ul { margin:0; padding:0; list-style:none; display:grid; gap:26px; width:100%; }
+    .compare-card li { padding:20px 18px; background:rgba(255,255,255,.54); border-radius:18px; font-size:28px; line-height:1.25; font-weight:700; }
+    .save-head { max-width:850px; margin-bottom:44px; }
+    .save-head .kicker { color:rgba(11,29,58,.62); }
+    .checklist { width:865px; display:grid; gap:17px; }
+    .check { min-height:125px; display:grid; grid-template-columns:78px 220px 1fr; align-items:center; text-align:left; padding:19px 27px; background:#fff9dc; border:3px solid var(--navy); border-radius:26px; box-shadow:8px 10px 0 rgba(11,29,58,.15); }
+    .check-num { width:55px; height:55px; display:grid; place-items:center; border-radius:50%; color:white; background:var(--navy); font-size:25px; font-weight:900; }
+    .check strong { font-size:26px; font-weight:900; }
+    .check span { font-size:25px; line-height:1.28; font-weight:600; }
+    .process-intro { max-width:810px; margin-top:26px; color:rgba(255,255,255,.78); font-size:27px; line-height:1.36; font-weight:500; }
+    .process { width:880px; margin-top:38px; display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .step { min-height:350px; padding:35px 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:30px; color:var(--navy); background:rgba(240,235,227,.95); box-shadow:0 22px 46px rgba(0,0,0,.24); }
+    .step b { width:62px; height:62px; display:grid; place-items:center; margin-bottom:24px; border-radius:50%; background:var(--gold); font-size:28px; }
+    .step strong { font-size:27px; line-height:1.2; }
+    .step span { margin-top:16px; font-size:21px; line-height:1.35; font-weight:500; }
+    .final .inner { padding:105px 110px; }
+    .final h2 { max-width:840px; font-size:68px; }
+    .final .copy { color:rgba(255,255,255,.78); }
+    .cta { margin-top:45px; padding:23px 38px; border-radius:20px; color:var(--navy); background:var(--gold); box-shadow:0 18px 35px rgba(0,0,0,.25); font-size:29px; font-weight:900; }
+    .catchphrase { margin-top:42px; color:white; font-size:38px; font-weight:900; }
+    .captions { max-width:1320px; margin:0 auto 44px; padding:0 24px; }
+    .caption-box { padding:24px; border:1px solid #d1d8e1; border-radius:24px; background:white; }
+    .caption-box h3 { margin:0 0 12px; color:var(--navy); font-size:14px; }
+    .caption-box p { white-space:pre-line; color:#33445c; font-size:14px; line-height:1.58; }
+    #render-stage { position:fixed; left:-12000px; top:0; width:1080px; height:1350px; pointer-events:none; }
+    @media(max-width:640px) { .toolbar{padding:12px 14px;align-items:flex-start}.title{max-width:135px;line-height:1.25}.grid{padding:18px 14px 34px;grid-template-columns:1fr}.status,.captions{padding-left:14px;padding-right:14px}button{padding:9px 10px;font-size:10px} }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="title">COTAÇÃO <span>|</span> CARROSSEL V4</div>
+    <div class="actions"><button class="alt" onclick="downloadPngs(event)">Baixar PNGs</button><button onclick="downloadPdf(event)">Baixar PDF</button></div>
+  </header>
+  <div class="status" id="status">7 slides prontos para revisão.</div>
+  <main class="grid" id="slides">
+    <section><div class="label"><span>Slide 1</span><span>Capa</span></div><div class="viewport"><article class="slide navy cover" data-name="01-capa"><div class="cover-photo"></div><div class="cover-gradient"></div><div class="cover-content"><h1>A COTAÇÃO MAIS <span class="cover-gold">BARATA</span> PODE SER A MAIS <span class="cover-red">CARA.</span></h1><p class="cover-sub">O preço que aparece primeiro pode esconder o custo que pesa depois.</p></div></article></div></section>
+    <section><div class="label"><span>Slide 2</span><span>Informativo</span></div><div class="viewport"><article class="slide navy" data-name="02-o-que-comparar"><div class="sketch"></div><div class="noise"></div><div class="inner"><div class="center-card"><div class="kicker">A cotação de verdade</div><h2>Não compara só mensalidade.</h2><p class="copy">Compara <span class="hl">rede, carência, coparticipação, reajuste</span> e o jeito como sua família realmente usa o plano.</p><div class="detail-list"><div class="detail-row"><b>Rede:</b> os hospitais que você usaria estão incluídos?</div><div class="detail-row"><b>Carência:</b> quando cada cobertura começa de verdade?</div><div class="detail-row"><b>Custo total:</b> mensalidade e coparticipação cabem juntas?</div></div></div></div><div class="arrow"><span>continue</span><span class="arrow-mark">›</span></div></article></div></section>
+    <section><div class="label"><span>Slide 3</span><span>Foto + informação</span></div><div class="viewport"><article class="slide sand image-layout" data-name="03-seu-perfil"><div class="noise"></div><div class="inner"><h2>Primeiro vem o seu perfil.</h2><p class="copy">Idades, cidade, hospitais importantes, rotina e uma faixa de investimento confortável para a casa.</p><div class="context-line">Sem esse contexto, você recebe uma lista de preços. Com ele, recebe uma comparação que faz sentido.</div><div class="img-float"></div></div><div class="arrow"><span>continue</span><span class="arrow-mark">›</span></div></article></div></section>
+    <section><div class="label"><span>Slide 4</span><span>Comparação</span></div><div class="viewport"><article class="slide navy" data-name="04-comparacao"><div class="noise"></div><div class="inner"><h2 class="compare-title">Duas cotações podem ter preços parecidos e entregas muito diferentes.</h2><div class="compare-grid"><div class="compare-card bad"><h3>Preço isolado</h3><ul><li>Rede genérica</li><li>Carência sem contexto</li><li>Coparticipação escondida</li></ul></div><div class="compare-card good"><h3>Escolha orientada</h3><ul><li>Hospitais conferidos</li><li>Regras explicadas</li><li>Custo total entendido</li></ul></div></div></div><div class="arrow"><span>continue</span><span class="arrow-mark">›</span></div></article></div></section>
+    <section><div class="label"><span>Slide 5</span><span>Salvável</span></div><div class="viewport"><article class="slide gold" data-name="05-checklist"><div class="inner"><div class="save-head"><div class="kicker">Checklist para salvar</div><h2>O que informar antes de pedir uma cotação</h2></div><div class="checklist"><div class="check"><div class="check-num">1</div><strong>Quem entra</strong><span>Idade de cada beneficiário</span></div><div class="check"><div class="check-num">2</div><strong>Onde usa</strong><span>Cidade, região e hospitais</span></div><div class="check"><div class="check-num">3</div><strong>Como prefere</strong><span>Com ou sem coparticipação</span></div><div class="check"><div class="check-num">4</div><strong>Quanto cabe</strong><span>Faixa mensal confortável</span></div></div></div><div class="arrow"><span>salve este slide</span><span class="arrow-mark">↓</span></div></article></div></section>
+    <section><div class="label"><span>Slide 6</span><span>Processo</span></div><div class="viewport"><article class="slide navy" data-name="06-consultoria"><div class="sketch process"></div><div class="inner"><div class="kicker">Uma decisão mais segura</div><h2>Cotação boa vem com explicação.</h2><p class="process-intro">O trabalho não termina quando os preços chegam. É aí que começa a parte que protege sua escolha.</p><div class="process"><div class="step"><b>1</b><strong>Entender</strong><span>Mapear família, rotina, região e hospitais importantes</span></div><div class="step"><b>2</b><strong>Comparar</strong><span>Colocar lado a lado cobertura, regras, riscos e custo total</span></div><div class="step"><b>3</b><strong>Decidir</strong><span>Escolher sabendo o que ganha e o que abre mão</span></div></div></div><div class="arrow"><span>último slide</span><span class="arrow-mark">›</span></div></article></div></section>
+    <section><div class="label"><span>Slide 7</span><span>Final</span></div><div class="viewport"><article class="slide navy final" data-name="07-cta"><div class="noise"></div><div class="inner"><h2>Conhece alguém escolhendo um plano só pelo preço?</h2><p class="copy">Uma comparação incompleta pode virar um problema justamente na hora em que essa pessoa mais precisar.</p><div class="cta">Compartilhe este carrossel com ela</div><div class="catchphrase">Bora, pra cima! 🚀💪</div></div></article></div></section>
+  </main>
+  <section class="captions"><div class="caption-box"><h3>Legenda sugerida</h3><p>Se eu te mostrasse duas cotações pelo mesmo preço, você saberia dizer qual protege melhor sua família?
+
+Quero saber: qual foi a primeira coisa que você olhou na última cotação que recebeu?
+
+O valor chama atenção primeiro. Mas ele não mostra sozinho onde você será atendido, quando cada cobertura começa, quanto pode pagar ao usar e como aquele contrato se comporta depois.
+
+Rede credenciada, carência, coparticipação e reajuste precisam entrar na conversa. É isso que separa uma lista de preços de uma comparação bem feita.
+
+Na JCLUZ, são mais de 23 anos ajudando famílias a entender essas diferenças antes de assinar.
+
+Se este conteúdo te lembrou alguém que está escolhendo um plano, compartilhe o carrossel com essa pessoa.
+
+Bora, pra cima! 🚀💪</p></div></section>
+  <div id="render-stage"></div>
+  <script>
+    const slides=[...document.querySelectorAll('.slide')],statusEl=document.getElementById('status');
+    function fitSlides(){document.querySelectorAll('.viewport').forEach(v=>{v.querySelector('.slide').style.transform='scale('+(v.clientWidth/1080)+')'})}
+    addEventListener('resize',fitSlides); fitSlides();
+    async function renderSlide(slide){await document.fonts.ready;const stage=document.getElementById('render-stage'),clone=slide.cloneNode(true);clone.style.transform='none';clone.style.position='relative';stage.replaceChildren(clone);const canvas=await html2canvas(clone,{scale:1,useCORS:true,backgroundColor:null,width:1080,height:1350});stage.replaceChildren();return canvas}
+    async function downloadPngs(e){const b=e.currentTarget;b.disabled=true;for(let i=0;i<slides.length;i++){statusEl.textContent='Gerando PNG '+(i+1)+' de '+slides.length+'...';const canvas=await renderSlide(slides[i]),a=document.createElement('a');a.download='cotacao_v2_'+slides[i].dataset.name+'.png';a.href=canvas.toDataURL('image/png');a.click();await new Promise(r=>setTimeout(r,300))}statusEl.textContent='PNGs preparados.';b.disabled=false}
+    async function downloadPdf(e){const b=e.currentTarget;b.disabled=true,{jsPDF}=window.jspdf,pdf=new jsPDF({orientation:'portrait',unit:'px',format:[1080,1350]});for(let i=0;i<slides.length;i++){statusEl.textContent='Montando PDF, slide '+(i+1)+' de '+slides.length+'...';const canvas=await renderSlide(slides[i]);if(i)pdf.addPage([1080,1350],'portrait');pdf.addImage(canvas.toDataURL('image/jpeg',.95),'JPEG',0,0,1080,1350)}pdf.save('cotacao-plano-de-saude-v2.pdf');statusEl.textContent='PDF preparado.';b.disabled=false}
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste de Texturas e Fundos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, sans-serif; background: #fafafa; padding: 40px; color: #111; }
+        h1 { text-align: center; margin-bottom: 8px; font-size: 28px; }
+        .page-subtitle { text-align: center; margin-bottom: 30px; color: #666; font-size: 16px; }
+        .slides-grid { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; max-width: 1400px; margin: 0 auto; }
+        .slide-wrapper { display: flex; flex-direction: column; align-items: center; }
+        .slide-label { margin-bottom: 12px; font-weight: bold; font-size: 16px; color: #333; }
+        .slide-container { width: 400px; height: 500px; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 4px; }
+        .slide-content { width: 1080px; height: 1350px; position: absolute; top: 0; left: 0; transform: scale(0.37037); transform-origin: top left; }
+        
+        /* TESTES DE FUNDO */
+        /* 1. Ruído/Granulado Suave (SVG) */
+        .test-grain { position: absolute; inset: 0; background-color: #0B1D3A; }
+        .test-grain::after {
+            content: ''; position: absolute; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.65; mix-blend-mode: overlay; pointer-events: none;
+        }
+
+        /* 2. Textura Amassada/Papel (SVG) */
+        .test-paper { position: absolute; inset: 0; background-color: #F0EBE3; }
+        .test-paper::after {
+            content: ''; position: absolute; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='5' result='noise'/%3E%3CfeDiffuseLighting in='noise' lighting-color='white' surfaceScale='2'%3E%3CfeDistantLight azimuth='45' elevation='60'/%3E%3C/feDiffuseLighting%3E%3CfeBlend mode='multiply' in='SourceGraphic' in2='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.4'/%3E%3C/svg%3E");
+            opacity: 0.65; pointer-events: none; mix-blend-mode: multiply;
+        }
+
+        /* 3. Grid Corporativo (Linhas Finas CSS) */
+        .test-grid { position: absolute; inset: 0; background-color: #0B1D3A;
+            background-size: 80px 80px;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.2) 2px, transparent 2px),
+                linear-gradient(to bottom, rgba(255,255,255,0.2) 2px, transparent 2px);
+        }
+
+        /* 4. Linhas Diagonais (Pattern) */
+        .test-diagonal { position: absolute; inset: 0; background-color: #F0EBE3;
+            background-image: repeating-linear-gradient(
+                45deg,
+                rgba(11,29,58,0.15),
+                rgba(11,29,58,0.15) 3px,
+                transparent 3px,
+                transparent 15px
+            );
+        }
+
+        /* 5. Degradê (Gradient Radial + Linear) */
+        .test-gradient { position: absolute; inset: 0; 
+            background: radial-gradient(circle at 50% 50%, #3B6BB0 0%, #0B1D3A 80%, #050D1A 100%);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>📋 Laboratório de Texturas Visuais</h1>
+    <p class="page-subtitle">Testes técnicos de background (Sem texto ou sketches)</p>
+    
+    <div class="slides-grid" id="slides-grid"></div>
+
+    <script>
+    const SLIDES = [
+        '<div class="test-grain"></div>',
+        '<div class="test-paper"></div>',
+        '<div class="test-grid"></div>',
+        '<div class="test-diagonal"></div>',
+        '<div class="test-gradient"></div>'
+    ];
+
+    const LABELS = [
+        '1. Noise/Granulado (Navy)',
+        '2. Papel Amassado (Bege)',
+        '3. Grid Corporativo (Navy)',
+        '4. Linhas Diagonais (Bege)',
+        '5. Degradê Radial (Navy Escuro)'
+    ];
+
+    function initSlides() {
+        const grid = document.getElementById('slides-grid');
+        for (let i = 0; i < SLIDES.length; i++) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'slide-wrapper';
+
+            const label = document.createElement('div');
+            label.className = 'slide-label';
+            label.innerText = LABELS[i];
+            
+            const container = document.createElement('div');
+            container.className = 'slide-container';
+            container.innerHTML = `<div class="slide-content">${SLIDES[i]}</div>`;
+
+            wrapper.appendChild(label);
+            wrapper.appendChild(container);
+            grid.appendChild(wrapper);
+        }
+    }
+    window.onload = initSlides;
+    </script>
+</body>
+</html>

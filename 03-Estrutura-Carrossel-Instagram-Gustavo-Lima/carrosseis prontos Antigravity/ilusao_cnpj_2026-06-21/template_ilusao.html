@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Ilusão do CNPJ - Gustavo Lima</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', 'Segoe UI', sans-serif; background: #111; color: #fff; padding: 30px 20px; }
+        h1 { text-align: center; font-size: 22px; color: #fff; margin-bottom: 6px; }
+        .page-subtitle { text-align: center; color: #777; font-size: 13px; margin-bottom: 30px; }
+        .btn-container { text-align: center; margin: 0 0 30px 0; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn { border: none; padding: 14px 36px; font-size: 15px; font-weight: 700; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-family: 'Montserrat', sans-serif; }
+        .btn-primary { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59,130,246,0.4); }
+        .btn-secondary { background: #2a2a2a; color: #ccc; border: 1px solid #444; }
+        .btn-secondary:hover { background: #3a3a3a; color: #fff; }
+        .status { text-align: center; color: #3b82f6; margin: 10px 0 20px; font-size: 13px; font-weight: bold; }
+        .slides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
+        .slide-wrapper { background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 2px solid #2a2a2a; transition: all 0.2s; display: flex; flex-direction: column; }
+        .slide-wrapper:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        .slide-scaler { width: 100%; aspect-ratio: 1080 / 1350; overflow: hidden; position: relative; }
+        .slide-label { padding: 8px 10px 4px; font-size: 12px; color: #777; text-align: center; background: #151515; font-weight: bold; }
+        .slide-footer { display: flex; justify-content: center; padding: 6px 10px 10px; background: #151515; }
+        .btn-download { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; border: none; padding: 8px 20px; font-size: 12px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-family: 'Montserrat', sans-serif; width: 100%; }
+        .btn-download:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(59,130,246,0.4); }
+        .btn-download:disabled { opacity: 0.5; cursor: wait; }
+        
+        /* NOVO SISTEMA DE LEGENDAS */
+        .legenda-box { background: #111; padding: 12px; border-top: 1px solid #2a2a2a; display: flex; flex-direction: column; gap: 8px; flex-grow: 1; }
+        .legenda-textarea { width: 100%; height: 110px; background: #000; color: #ddd; border: 1px solid #444; border-radius: 6px; padding: 10px; font-size: 12px; font-family: 'Segoe UI', sans-serif; resize: vertical; line-height: 1.4; }
+        .legenda-textarea:focus { outline: none; border-color: #3b82f6; }
+        .btn-copy-legenda { background: #222; color: #bbb; border: 1px solid #444; padding: 8px; font-size: 11px; cursor: pointer; border-radius: 4px; width: 100%; font-weight: 600; transition: all 0.2s; }
+        .btn-copy-legenda:hover { background: #333; color: #fff; border-color: #555; }
+
+        /* ESTILOS DO SLIDE */
+        .slide {
+            width: 1080px; height: 1350px;
+            background: linear-gradient(160deg, #0B1D3A 0%, #0F2444 30%, #0A1A35 55%, #0D2040 80%, #091830 100%);
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 110px 95px; position: relative;
+            font-family: 'Montserrat', sans-serif; transform-origin: top left;
+        }
+        /* Fundo claro intercalado */
+        .slide.bg-light { background: #F0EBE3; color: #0B1D3A; }
+        
+        .slide .arrow { position: absolute; bottom: 75px; right: 75px; display: flex; align-items: center; z-index: 10; }
+        .slide .arrow-line { width: 110px; height: 2px; background: rgba(255,255,255,0.35); }
+        .slide .arrow-head { width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 13px solid rgba(255,255,255,0.35); }
+        
+        .slide.bg-light .arrow-line { background: rgba(11,29,58,0.35); }
+        .slide.bg-light .arrow-head { border-left-color: rgba(11,29,58,0.35); }
+
+        .t-reg { font-size: 39px; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.5; letter-spacing: -0.2px; }
+        .t-bold { font-size: 39px; font-weight: 900; color: #ffffff; line-height: 1.38; letter-spacing: -0.5px; }
+        .t-large { font-size: 52px; font-weight: 900; color: #ffffff; line-height: 1.22; letter-spacing: -0.8px; text-transform: uppercase; }
+        .t-small { font-size: 32px; font-weight: 400; color: rgba(255,255,255,0.55); line-height: 1.5; margin-top: 28px; }
+        .t-accent { font-weight: 900; color: #60a5fa; }
+        
+        .slide.bg-light .t-reg { color: rgba(11,29,58,0.85); }
+        .slide.bg-light .t-bold { color: #0B1D3A; }
+        .slide.bg-light .t-large { color: #0B1D3A; }
+        .slide.bg-light .t-small { color: rgba(11,29,58,0.55); }
+
+        .hl-gold { background: #EAB308; padding: 4px 12px; border-radius: 8px; display: inline-block; }
+        .hl { background: rgba(96, 165, 250, 0.2); padding: 4px 12px; border-radius: 8px; display: inline-block; }
+        
+        .sp { height: 32px; }
+        .sp-sm { height: 14px; }
+        
+        #renderArea { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+    <h1>📋 Carrossel — A Ilusão do CNPJ (Q.B.O)</h1>
+    <p class="page-subtitle">Sistema de Legendas Individuais Ativado<br>A legenda de cada slide está pronta para copiar abaixo da imagem.</p>
+
+    <div class="btn-container">
+        <button class="btn btn-primary" onclick="downloadAllPNGs()">📦 Baixar TODOS os PNGs de uma vez</button>
+        <button class="btn btn-secondary" onclick="downloadPDF()">📄 Baixar PDF completo</button>
+    </div>
+    <div class="status" id="status"></div>
+
+    <div class="slides-grid" id="slidesGrid"></div>
+    <div id="renderArea"></div>
+
+    <script>
+    const SLIDES_HTML = [
+        // Slide 1 - Cover (High Impact, foto do superman estourada)
+        `<div class="content" style="z-index: 2; position: absolute; bottom: 0; left: 0; width: 100%; height: 55%; display: flex; flex-direction: column; justify-content: flex-end; padding: 100px 95px; background: linear-gradient(to top, rgba(11,29,58,1) 0%, rgba(11,29,58,0.85) 40%, rgba(11,29,58,0.4) 65%, transparent 100%);">
+            <div class="t-large" style="font-size: 64px; text-shadow: 2px 2px 6px rgba(0,0,0,0.6);">"EU NUNCA<br>FICO DOENTE."</div>
+            <div class="sp-sm"></div>
+            <div class="t-reg" style="font-size: 34px;">A mentira mais <span class="t-bold hl-gold" style="color: #000; font-size: 34px;">cara e perigosa</span> que o dono de CNPJ conta para a própria família.</div>
+        </div>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('COVER_B64_HERE'); background-size: cover; background-position: center top; z-index: 1;"></div>`,
+
+        // Slide 2 - Segunda Chance (Fundo Bege para Contraste)
+        `<div class="bg-light" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('STICKER_LIGHT_2_B64_HERE'); background-size: cover; mix-blend-mode: darken; filter: brightness(1.05); opacity: 0.25; z-index: 0;"></div>
+         <div style="position: relative; z-index: 2;">
+             <div class="t-reg">Achar que guardar dinheiro na conta é mais inteligente do que pagar um plano de saúde funciona muito bem...</div>
+             <div class="sp"></div>
+             <div class="t-bold" style="font-size: 46px;">até as 3 da manhã<br>de um domingo.</div>
+         </div>`,
+
+        // Slide 3 - Infografico (Salvável) (Fundo Escuro)
+        `<div class="t-bold" style="font-size: 48px;">O Risco Real:</div>
+         <div class="sp-sm"></div>
+         <div class="t-reg">Você não marca data para o imprevisto. Veja a proporção de internações no Brasil:</div>
+         <div class="sp"></div>
+         <div class="sp"></div>
+         <div style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 50px; border: 1px solid rgba(255,255,255,0.1);">
+            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                <div style="width: 88%; background: #EAB308; height: 36px; border-radius: 6px;"></div>
+                <div style="margin-left: 20px; font-weight: 900; font-size: 36px;">88%</div>
+            </div>
+            <div class="t-reg" style="margin-top:0; font-size:28px;">Pronto-Socorro (Emergências/Urgências)</div>
+            <div class="sp"></div>
+            <div style="display: flex; align-items: center; margin-top: 30px;">
+                <div style="width: 12%; background: #60a5fa; height: 36px; border-radius: 6px;"></div>
+                <div style="margin-left: 20px; font-weight: 900; font-size: 36px; color: #60a5fa;">12%</div>
+            </div>
+            <div class="t-reg" style="margin-top:0; font-size:28px; color: rgba(255,255,255,0.55);">Programadas (Eletivas)</div>
+         </div>`,
+
+        // Slide 4 - Constrói Objeção (Fundo Bege)
+        `<div class="bg-light" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('STICKER_LIGHT_4_B64_HERE'); background-size: cover; mix-blend-mode: darken; filter: brightness(1.05); opacity: 0.25; z-index: 0;"></div>
+         <div style="position: relative; z-index: 2;">
+             <div class="t-reg">Aí você pensa:</div>
+             <div class="sp-sm"></div>
+             <div class="t-bold" style="background: rgba(11,29,58,0.1); padding: 40px; border-left: 8px solid #0B1D3A; border-radius: 0 12px 12px 0;">
+                "Mas eu invisto todo mês. Se der problema, eu pago um Einstein ou Sírio no particular. Pra que assumir um boleto fixo?"
+             </div>
+         </div>`,
+
+        // Slide 5 - Quebra Objeção 1 (A Bomba)
+        `<div class="t-reg">Aí vem uma emergência respiratória severa do seu filho.</div>
+         <div class="sp"></div>
+         <div class="t-reg">Uma semana de UTI pediátrica, com exames de imagem e oxigênio, passa fácil dos <span class="t-bold t-accent" style="font-size: 52px; display:block; margin: 10px 0;">R$ 80.000</span></div>
+         <div class="sp"></div>
+         <div class="t-bold hl-gold" style="color: #0B1D3A; padding: 15px 25px; border-radius: 12px;">Seu patrimônio guardado evapora em exatos 7 dias.</div>`,
+
+        // Slide 6 - O Motivo (Node Journey)
+        `<!-- Fundo Sketch -->
+         <div style="position: absolute; top:0; left:0; width:100%; height:100%; background-image: url('STICKER_B64_HERE'); background-size: cover; opacity: 0.9; z-index: 1;"></div>
+         <div style="position: relative; z-index: 2;">
+            <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+                <path d="M 120 180 C 400 180, 500 480, 300 480 C 100 480, 150 780, 350 780" fill="transparent" stroke="rgba(255,255,255,0.15)" stroke-width="4" stroke-dasharray="10 10"/>
+            </svg>
+            <div class="node-item" style="display: flex; align-items: flex-start; margin-bottom: 120px;">
+                <div style="width: 40px; height: 40px; background: #60a5fa; border-radius: 50%; border: 6px solid #0B1D3A; margin-right: 20px; flex-shrink: 0;"></div>
+                <div class="t-reg">O Plano não é pra pagar <br>a sua consulta de rotina.</div>
+            </div>
+            <div class="node-item" style="display: flex; align-items: flex-start; justify-content: flex-end; margin-bottom: 120px; padding-right: 150px;">
+                <div class="t-bold" style="text-align: right;">É um escudo de aço para <br>proteger o seu patrimônio.</div>
+                <div style="width: 40px; height: 40px; background: #EAB308; border-radius: 50%; border: 6px solid #0B1D3A; margin-left: 20px; flex-shrink: 0;"></div>
+            </div>
+            <div class="node-item" style="display: flex; align-items: flex-start; padding-left: 80px;">
+                <div style="width: 40px; height: 40px; background: #fff; border-radius: 50%; border: 6px solid #0B1D3A; margin-right: 20px; flex-shrink: 0;"></div>
+                <div class="t-reg">E para garantir que seu filho<br>seja atendido na hora H.</div>
+            </div>
+         </div>`,
+
+        // Slide 7 - Quebra Objeção 2 (Fundo Bege)
+        `<div class="bg-light" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('STICKER_LIGHT_7_B64_HERE'); background-size: 65%; background-position: top left; background-repeat: no-repeat; mix-blend-mode: darken; filter: brightness(1.05); opacity: 0.25; z-index: 0;"></div>
+         <div style="position: relative; z-index: 2; margin-top: 80px;">
+             <div class="t-reg">"Mas plano de saúde bom pelo CNPJ tá muito caro."</div>
+             <div class="sp"></div>
+             <div class="t-bold" style="font-size: 44px;">Caro é ter que pagar a tabela cheia da recepção do hospital quando o desespero bate...</div>
+             <div class="sp-sm"></div>
+             <div class="t-reg hl" style="background: rgba(11,29,58,0.1); border-radius: 8px;">...e você não tem poder de negociação.</div>
+         </div>`,
+
+        // Slide 8 - CTA
+        `<div class="t-large">NÃO ESPERE A<br>CRISE CHEGAR.</div>
+         <div class="sp"></div>
+         <div class="t-reg">Quer entender as opções pro seu CNPJ sem enrolação ou pressão de vendedor?</div>
+         <div class="sp-sm"></div>
+         <div class="t-bold">Clica no link da Bio.</div>
+         <div class="sp"></div>
+         <div class="t-bold t-accent" style="font-size: 56px;">Bora, pra cima! 🚀💪</div>`
+    ];
+
+    const LABELS = [
+        'Slide 1 — Capa do Herói',
+        'Slide 2 — Segunda Chance',
+        'Slide 3 — Infográfico Salvável',
+        'Slide 4 — A Desculpa Clássica',
+        'Slide 5 — O Choque de Realidade',
+        'Slide 6 — O Escudo (Node Journey)',
+        'Slide 7 — A Quebra Final',
+        'Slide 8 — CTA de Conversão'
+    ];
+
+    // LEGENDAS INDIVIDUAIS GERADAS PELO SISTEMA (Camada Adicional / Anti-IA)
+    const LEGENDAS = [
+        // Slide 1
+        "O seu dinheiro não compra tempo na porta da emergência. A maior responsabilidade de um pai provedor é blindar o patrimônio da família contra o imprevisto.",
+        // Slide 2
+        "A conta bancária não ameniza o desespero de uma madrugada de domingo. Saúde se garante na paz, não na crise.",
+        // Slide 3
+        "Os números são frios: 88% dos atendimentos são surpresas absolutas. Você não marca na agenda o dia que vai precisar de um hospital.",
+        // Slide 4
+        "O erro do empresário é achar que a medicina privada respeita planilha de Excel. Uma emergência grave derrete a sua liquidez muito rápido.",
+        // Slide 5
+        "Na porta da UTI não existe negociação. Ter um plano empresarial estruturado é simplesmente terceirizar um risco que você não deveria bancar.",
+        // Slide 6
+        "Pare de calcular o ROI de uma consulta de rotina. O plano de saúde existe para que, no pior dia da sua vida, sua única preocupação seja a sua família.",
+        // Slide 7
+        "Mensalidade você planeja e insere no custo de vida. A fatura do pronto-socorro te pega de surpresa e quebra o caixa da empresa.",
+        // Slide 8
+        "O seu CNPJ te dá acesso a blindagens que a pessoa física não tem. Clica no link da Bio que eu te mostro a operadora certa para a sua família.\\n\\nBora, pra cima! 🚀💪\\n\\n#planodesaude #planodesaudecnpj #corretordeseguros #gustavolima"
+    ];
+
+    // ==========================================
+    // CÓDIGO DE RENDERIZAÇÃO
+    // ==========================================
+
+    function createSlideElement(index) {
+        const slide = document.createElement('div');
+        slide.className = 'slide';
+        // Configura se é fundo claro para mudar as setas e cores
+        if(index === 1 || index === 3 || index === 6) { slide.classList.add('bg-light'); }
+        
+        slide.innerHTML = `${SLIDES_HTML[index]}<div class="arrow"><div class="arrow-line"></div><div class="arrow-head"></div></div>`;
+        return slide;
+    }
+
+    function buildPreviews() {
+        const grid = document.getElementById('slidesGrid');
+        grid.innerHTML = '';
+        SLIDES_HTML.forEach((_, i) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'slide-wrapper';
+            
+            const label = document.createElement('div');
+            label.className = 'slide-label';
+            label.textContent = LABELS[i];
+            
+            const scaler = document.createElement('div');
+            scaler.className = 'slide-scaler';
+            const slide = createSlideElement(i);
+            scaler.appendChild(slide);
+            
+            const footer = document.createElement('div');
+            footer.className = 'slide-footer';
+            const btnDl = document.createElement('button');
+            btnDl.className = 'btn-download';
+            btnDl.textContent = `📥 Baixar Slide ${i + 1}`;
+            btnDl.onclick = () => downloadSinglePNG(i, btnDl);
+            footer.appendChild(btnDl);
+            
+            // NOVO: CAIXA DE LEGENDA
+            const legendaBox = document.createElement('div');
+            legendaBox.className = 'legenda-box';
+            legendaBox.innerHTML = `
+                <textarea class="legenda-textarea" id="leg_slide_${i}">${LEGENDAS[i]}</textarea>
+                <button class="btn-copy-legenda" id="btn_leg_${i}" onclick="copySlideLeg(${i})">📋 Copiar legenda (Slide ${i+1})</button>
+            `;
+
+            wrapper.appendChild(label);
+            wrapper.appendChild(scaler);
+            wrapper.appendChild(footer);
+            wrapper.appendChild(legendaBox);
+            
+            grid.appendChild(wrapper);
+            
+            requestAnimationFrame(() => { slide.style.transform = `scale(${scaler.offsetWidth / 1080})`; });
+        });
+    }
+
+    function copySlideLeg(index) {
+        let text = document.getElementById(`leg_slide_${index}`).value;
+        text = text.replace(/\\n/g, '\\n');
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById(`btn_leg_${index}`);
+            btn.textContent = '✅ Copiado!';
+            btn.style.background = '#059669';
+            btn.style.color = '#fff';
+            setTimeout(() => { 
+                btn.textContent = `📋 Copiar legenda (Slide ${index+1})`; 
+                btn.style.background = '#222';
+            }, 2000);
+        });
+    }
+
+    function setStatus(msg) { document.getElementById('status').textContent = msg; }
+
+    async function renderSlide(index) {
+        const area = document.getElementById('renderArea');
+        const slide = createSlideElement(index);
+        // O BUG DO ZOOM DE HTML2CANVAS SE RESOLVE AQUI: A DIV DE RENDERIZAÇÃO NÃO PODE TER SCALE
+        area.appendChild(slide);
+        area.style.zIndex = '9999';
+        area.style.opacity = '1';
+        slide.style.transform = 'none'; // Garante que tira a foto em 1080x1350
+        
+        await new Promise(r => setTimeout(r, 400)); // Aguarda carregar
+        
+        const bgColor = slide.classList.contains('bg-light') ? '#F0EBE3' : '#0B1D3A';
+        const canvas = await html2canvas(slide, {
+            width: 1080, height: 1350, scale: 1,
+            useCORS: true, backgroundColor: bgColor, logging: false
+        });
+        
+        area.removeChild(slide);
+        area.style.zIndex = '-1';
+        return canvas;
+    }
+
+    async function downloadSinglePNG(index, btn) {
+        const originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = '⏳...';
+        try {
+            const canvas = await renderSlide(index);
+            const link = document.createElement('a');
+            link.download = `Ilusao_CNPJ_Slide_${index + 1}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            btn.textContent = '✅';
+            setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2000);
+        } catch (e) {
+            btn.textContent = '❌ Erro';
+            setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2000);
+        }
+    }
+
+    async function downloadAllPNGs() {
+        setStatus('Gerando PNGs em Alta Qualidade — aguarde...');
+        try {
+            for (let i = 0; i < SLIDES_HTML.length; i++) {
+                setStatus(`Baixando slide ${i + 1} de ${SLIDES_HTML.length}...`);
+                const canvas = await renderSlide(i);
+                const link = document.createElement('a');
+                link.download = `Ilusao_CNPJ_Slide_${i + 1}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                await new Promise(r => setTimeout(r, 800));
+            }
+            setStatus('✅ Todas as imagens PNG baixadas!');
+        } catch (e) { setStatus('❌ Erro: ' + e.message); console.error(e); }
+    }
+
+    async function downloadPDF() {
+        setStatus('Gerando PDF — aguarde...');
+        try {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [108, 135] });
+            for (let i = 0; i < SLIDES_HTML.length; i++) {
+                setStatus(`Renderizando slide ${i + 1} de ${SLIDES_HTML.length}...`);
+                const canvas = await renderSlide(i);
+                const imgData = canvas.toDataURL('image/png');
+                if (i > 0) pdf.addPage([108, 135]);
+                pdf.addImage(imgData, 'PNG', 0, 0, 108, 135);
+            }
+            pdf.save('Ilusao_CNPJ_Carrossel.pdf');
+            setStatus('✅ PDF baixado com sucesso!');
+        } catch (e) { setStatus('❌ Erro: ' + e.message); console.error(e); }
+    }
+
+    document.fonts.ready.then(() => { setTimeout(buildPreviews, 300); });
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.slide-scaler').forEach(scaler => {
+            const slide = scaler.querySelector('.slide');
+            if (slide) { slide.style.transform = `scale(${scaler.offsetWidth / 1080})`; }
+        });
+    });
+    </script>
+</body>
+</html>

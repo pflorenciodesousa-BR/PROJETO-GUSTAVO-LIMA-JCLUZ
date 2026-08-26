@@ -1,0 +1,25 @@
+FONTES E PREMISSAS DA APRESENTACAO
+
+Dados internos
+- Google Sheets: Analise de Crescimento de Autoridade - Gustavo Lima, pagina Postagens 2026, agosto de 2026.
+- Leitura manual dos Insights do Instagram @gustavojcluz para as publicacoes de 3 a 18 de agosto de 2026.
+- Captura do perfil: C:/Users/Jcluz/Pictures/Screenshots/Captura de tela 2026-08-20 095021.png
+- Direcao estrategica fornecida pelo responsavel: 70% profissional, 30% pessoal; prioridade para venda, nao para metricas de vaidade.
+
+Persona e mercado
+- C:/Users/Jcluz/Antigravity/00-Arquitetura-de-Informacoes/02 Informacoes Mercado/Dossie do Mercado.pdf
+- C:/Users/Jcluz/Antigravity/00-Arquitetura-de-Informacoes/02 Informacoes Mercado/Persona 2025 - Lannister (CNPJ familiar) Estudo.pdf
+- C:/Users/Jcluz/Antigravity/00-Arquitetura-de-Informacoes/02 Informacoes Mercado/Persona 2025 - Lannister (CNPJ familiar) INFOGRAFICO.pdf
+
+Referencias oficiais Meta
+- https://www.facebook.com/business/ads/ad-objectives/awareness
+- https://www.facebook.com/business/ads/ad-objectives?locale=en_GB
+- https://www.facebook.com/business/ads/ad-objectives/lead-generation?locale=en_GB
+- https://www.facebook.com/business/ads/click-to-message-ads
+- https://www.facebook.com/business/ads/ad-objectives/engagement
+- https://www.facebook.com/business/goals/retargeting
+- https://www.facebook.com/business/ads/meta-advantage-plus/audience
+
+Premissa de verba
+- R$ 1.000 tratados como verba mensal inicial.
+- A divisao futura e uma recomendacao de partida, sujeita a volume de publico, frequencia, custo por conversa qualificada e vendas.

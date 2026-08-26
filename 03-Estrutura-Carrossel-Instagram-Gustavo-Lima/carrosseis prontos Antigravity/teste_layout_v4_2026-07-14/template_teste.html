@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste Layout V4</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fafafa; padding: 40px; color: #111; }
+        h1 { text-align: center; margin-bottom: 8px; font-size: 28px; }
+        .page-subtitle { text-align: center; margin-bottom: 30px; color: #666; font-size: 16px; }
+        .btn-container { text-align: center; margin-bottom: 40px; }
+        .btn { padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; margin: 0 10px; transition: 0.2s; }
+        .btn-primary { background: #000; color: #fff; }
+        .btn-secondary { background: #fff; color: #000; border: 1px solid #ccc; }
+        #status { text-align: center; font-weight: bold; margin-bottom: 20px; color: #0066cc; }
+        .slides-grid { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; max-width: 1400px; margin: 0 auto; }
+        .slide-wrapper { display: flex; flex-direction: column; align-items: center; }
+        .slide-label { margin-bottom: 12px; font-weight: bold; font-size: 16px; color: #333; }
+        .slide-container { width: 400px; height: 500px; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 4px; }
+        .slide-content { width: 1080px; height: 1350px; position: absolute; top: 0; left: 0; transform: scale(0.37037); transform-origin: top left; font-family: 'Montserrat', sans-serif; overflow: hidden; padding: 90px; }
+        
+        /* Helpers de Design V4 */
+        .hl { display: inline-block; background: rgba(255,255,255,0.1); border-radius: 6px; padding: 4px 12px; margin: 0 4px; }
+        .hl-gold { display: inline-block; background: #EAB308; color: #0B1D3A !important; border-radius: 12px; padding: 4px 16px; font-weight: 900; }
+        .hl-sand { display: inline-block; background: rgba(11,29,58,0.08); color: #0B1D3A; border-radius: 8px; padding: 4px 16px; }
+        
+        /* Textura SVG Global - Noise */
+        .texture-dark { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); opacity: 0.08; mix-blend-mode: overlay; pointer-events: none; z-index: 1; }
+        .texture-light { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); opacity: 0.05; pointer-events: none; z-index: 1; }
+
+        /* Img Box V4 */
+        .img-box { width: 100%; height: 500px; border-radius: 40px; background-image: url('IMG_REAL_HERE'); background-size: cover; background-position: center; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 4px solid rgba(255,255,255,0.4); margin-top: 40px; z-index: 2; position: relative; }
+
+        /* Legendas interativas */
+        .caption-box { width: 400px; margin-top: 15px; display: flex; flex-direction: column; gap: 8px; }
+        .caption-text { width: 100%; height: 80px; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-family: inherit; font-size: 13px; resize: none; background: #fff; }
+        .btn-copy { padding: 6px; background: #e0e0e0; border: none; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: bold; }
+        .btn-copy:hover { background: #d0d0d0; }
+    </style>
+</head>
+<body>
+    <h1>📋 Teste Layout V4: Texturas, Img-Box e Salvável Alto Contraste</h1>
+    <p class="page-subtitle">Padrão Gustavo Lima</p>
+    <div class="btn-container">
+        <button class="btn btn-primary" onclick="downloadAllPNGs()">📦 Baixar TODOS os PNGs</button>
+        <button class="btn btn-secondary" onclick="downloadPDF()">📄 Baixar PDF completo</button>
+    </div>
+    <div id="status"></div>
+    <div class="slides-grid" id="slides-grid"></div>
+
+    <script>
+    const SLIDES = [
+        // SLIDE 1: Capa (Navy + Textura)
+        `<div style="position:absolute;inset:0;background:#0B1D3A;z-index:-1;"></div>
+         <div class="texture-dark"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;height:100%;">
+             <div style="display:inline-block;border:2px solid rgba(255,255,255,0.3);border-radius:30px;padding:12px 36px;margin-bottom:32px;align-self:flex-start;">
+                 <span style="font-size:26px;font-weight:700;color:#fff;letter-spacing:2px;text-transform:uppercase;">Alerta Corporativo</span>
+             </div>
+             <div style="font-size:74px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1.5px;text-transform:uppercase;">O HOSPITAL QUE<br>SUA FAMÍLIA MAIS USA<br>PODE <span class="hl-gold">SUMIR</span> DO SEU<br>PLANO AMANHÃ.</div>
+             <div style="height:40px;"></div>
+             <div style="font-size:40px;color:rgba(255,255,255,0.7);font-weight:400;line-height:1.4;">E você só vai descobrir<br>quando precisar usar.</div>
+         </div>`,
+
+        // SLIDE 2: Beige + Textura
+        `<div style="position:absolute;inset:0;background:#F0EBE3;z-index:-1;"></div>
+         <div class="texture-light"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;height:100%;">
+             <div style="font-size:36px;font-weight:400;color:rgba(11,29,58,0.5);text-transform:uppercase;letter-spacing:4px;margin-bottom:32px;">O PIOR DE TUDO</div>
+             <div style="font-size:68px;font-weight:900;color:#0B1D3A;line-height:1.1;letter-spacing:-2px;margin-bottom:48px;">A operadora não precisa da sua <span class="hl-sand">autorização</span> para fazer isso.</div>
+             <div style="width:100px;height:6px;background:#0B1D3A;border-radius:3px;margin-bottom:48px;"></div>
+             <div style="font-size:42px;font-weight:400;color:rgba(11,29,58,0.7);line-height:1.5;">O contrato permite<br>alteração de rede credenciada.<br>É legal. É padrão. E é brutal.</div>
+         </div>`,
+
+        // SLIDE 3: Img-Box com imagem real (Beige + Textura)
+        `<div style="position:absolute;inset:0;background:#F0EBE3;z-index:-1;"></div>
+         <div class="texture-light"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-start;height:100%;padding-top:40px;">
+             <div style="font-size:56px;font-weight:900;color:#0B1D3A;line-height:1.15;letter-spacing:-1px;">Acontece toda semana.</div>
+             <div style="font-size:36px;font-weight:400;color:rgba(11,29,58,0.7);margin-top:24px;">Hospitais de ponta sendo substituídos por opções que você nunca ouviu falar.</div>
+             <div class="img-box"></div>
+         </div>`,
+
+        // SLIDE 4: Salvável de Alto Contraste (Dourado, SEM textura)
+        `<div style="position:absolute;inset:0;background:#EAB308;z-index:-1;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;height:100%;">
+             <div style="font-size:32px;font-weight:700;color:rgba(11,29,58,0.6);text-transform:uppercase;letter-spacing:3px;margin-bottom:32px;">SALVE PARA NÃO ESQUECER</div>
+             <div style="font-size:64px;font-weight:900;color:#0B1D3A;line-height:1.1;letter-spacing:-1.5px;margin-bottom:60px;">Como se proteger<br>da perda de rede:</div>
+             
+             <div style="display:flex;flex-direction:column;gap:36px;background:rgba(255,255,255,0.3);padding:40px;border-radius:24px;border:2px solid rgba(11,29,58,0.1);">
+                 <div style="display:flex;align-items:flex-start;gap:24px;">
+                     <div style="font-size:40px;font-weight:900;color:#0B1D3A;">1.</div>
+                     <div style="font-size:36px;font-weight:600;color:#0B1D3A;line-height:1.3;">Exija aviso prévio de 30 dias (é lei).</div>
+                 </div>
+                 <div style="display:flex;align-items:flex-start;gap:24px;">
+                     <div style="font-size:40px;font-weight:900;color:#0B1D3A;">2.</div>
+                     <div style="font-size:36px;font-weight:600;color:#0B1D3A;line-height:1.3;">A operadora DEVE substituir por um hospital do mesmo nível.</div>
+                 </div>
+                 <div style="display:flex;align-items:flex-start;gap:24px;">
+                     <div style="font-size:40px;font-weight:900;color:#0B1D3A;">3.</div>
+                     <div style="font-size:36px;font-weight:600;color:#0B1D3A;line-height:1.3;">Se estiver em tratamento contínuo, a portabilidade especial pode ser acionada.</div>
+                 </div>
+             </div>
+         </div>`,
+
+        // SLIDE 5: CTA (Navy + Textura)
+        `<div style="position:absolute;inset:0;background:#0B1D3A;z-index:-1;"></div>
+         <div class="texture-dark"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;height:100%;justify-content:center;">
+             <div style="font-size:28px;font-weight:400;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:4px;margin-bottom:36px;">Sua rede está segura?</div>
+             <div style="font-size:68px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-2px;text-transform:uppercase;">NÃO ESPERE A<br>BOMBA ESTOURAR.</div>
+             <div style="height:32px;"></div>
+             <div style="font-size:36px;font-weight:400;color:rgba(255,255,255,0.7);line-height:1.4;">Me mande <strong style="color:#fff;">REDE</strong> no Direct e eu<br>faço um raio-x do seu contrato atual.</div>
+         </div>`
+    ];
+
+    const LABELS = [
+        'Slide 1: Capa (Textura Dark)',
+        'Slide 2: Statement (Textura Light)',
+        'Slide 3: Real Image Box',
+        'Slide 4: Salvável (Dourado Sem Textura)',
+        'Slide 5: CTA'
+    ];
+
+    const LEGENDAS = [
+        "A dor de cabeça sempre vem no pior momento. É na emergência que você descobre que aquele hospital de referência não atende mais o seu plano.",
+        "Sim, está no contrato. O mercado muda, mas a transparência nem sempre acompanha.",
+        "Descredenciamento silencioso destrói o benefício corporativo que você construiu para a sua equipe.",
+        "Guarda isso: você não está desamparado. A ANS prevê regras rígidas de substituição de rede hospitalar.",
+        "Antes de ter dor de cabeça, me chama. Bora, pra cima! 🚀💪"
+    ];
+
+    function createSlideElement(index) {
+        const slide = document.createElement('div');
+        slide.className = 'slide-content';
+        slide.innerHTML = SLIDES[index];
+        return slide;
+    }
+
+    function initSlides() {
+        const grid = document.getElementById('slides-grid');
+        for (let i = 0; i < SLIDES.length; i++) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'slide-wrapper';
+
+            const label = document.createElement('div');
+            label.className = 'slide-label';
+            label.innerText = LABELS[i];
+            
+            const container = document.createElement('div');
+            container.className = 'slide-container';
+            container.id = `slide-${i}`;
+            container.appendChild(createSlideElement(i));
+
+            const captionBox = document.createElement('div');
+            captionBox.className = 'caption-box';
+            
+            const textArea = document.createElement('textarea');
+            textArea.className = 'caption-text';
+            textArea.value = LEGENDAS[i];
+            textArea.readOnly = true;
+
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'btn-copy';
+            copyBtn.innerText = '📋 Copiar Legenda';
+            copyBtn.onclick = () => {
+                navigator.clipboard.writeText(textArea.value);
+                copyBtn.innerText = '✅ Copiado!';
+                setTimeout(() => copyBtn.innerText = '📋 Copiar Legenda', 2000);
+            };
+
+            captionBox.appendChild(textArea);
+            captionBox.appendChild(copyBtn);
+
+            wrapper.appendChild(label);
+            wrapper.appendChild(container);
+            wrapper.appendChild(captionBox);
+            grid.appendChild(wrapper);
+        }
+    }
+
+    async function downloadAllPNGs() {
+        document.getElementById('status').innerText = "Gerando PNGs...";
+        const zip = new JSZip();
+        for (let i = 0; i < SLIDES.length; i++) {
+            const tempContainer = document.createElement('div');
+            tempContainer.style.width = '1080px';
+            tempContainer.style.height = '1350px';
+            tempContainer.style.position = 'absolute';
+            tempContainer.style.top = '-9999px';
+            tempContainer.appendChild(createSlideElement(i));
+            document.body.appendChild(tempContainer);
+
+            const canvas = await html2canvas(tempContainer, { scale: 1, useCORS: true, logging: false });
+            const dataUrl = canvas.toDataURL('image/png');
+            const base64Data = dataUrl.replace(/^data:image\/png;base64,/, "");
+            zip.file(`slide_${i+1}.png`, base64Data, {base64: true});
+            document.body.removeChild(tempContainer);
+        }
+        zip.generateAsync({type:"blob"}).then(function(content) {
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(content);
+            link.download = "carrossel_v4.zip";
+            link.click();
+            document.getElementById('status').innerText = "ZIP baixado!";
+        });
+    }
+
+    async function downloadPDF() {
+        document.getElementById('status').innerText = "Gerando PDF (Aguarde)...";
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'px', format: [1080, 1350] });
+
+        for (let i = 0; i < SLIDES.length; i++) {
+            const tempContainer = document.createElement('div');
+            tempContainer.style.width = '1080px';
+            tempContainer.style.height = '1350px';
+            tempContainer.style.position = 'absolute';
+            tempContainer.style.top = '-9999px';
+            tempContainer.appendChild(createSlideElement(i));
+            document.body.appendChild(tempContainer);
+
+            const canvas = await html2canvas(tempContainer, { scale: 1, useCORS: true, logging: false });
+            const imgData = canvas.toDataURL('image/jpeg', 0.95);
+            
+            if (i > 0) pdf.addPage();
+            pdf.addImage(imgData, 'JPEG', 0, 0, 1080, 1350);
+            document.body.removeChild(tempContainer);
+        }
+        pdf.save("carrossel_v4.pdf");
+        document.getElementById('status').innerText = "PDF baixado!";
+    }
+
+    // Carrega script de zip dinamicamente para o download em lote
+    const script = document.createElement('script');
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js";
+    script.onload = initSlides;
+    document.head.appendChild(script);
+    </script>
+</body>
+</html>
+

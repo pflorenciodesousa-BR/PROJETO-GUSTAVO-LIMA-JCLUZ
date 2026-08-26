@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Qual é a Melhor Operadora? | @gustavojcluz</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0a0a0a; font-family: 'Montserrat', sans-serif; padding: 40px 20px; }
+
+/* ---- HEADER ---- */
+.page-header { max-width: 900px; margin: 0 auto 32px; display: flex; align-items: center; justify-content: space-between; }
+.page-title { font-size: 22px; font-weight: 700; color: #fff; }
+.page-sub { font-size: 13px; color: #888; margin-top: 4px; }
+.btn { padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; border: none; font-family: 'Montserrat', sans-serif; }
+.btn-primary { background: #3b82f6; color: #fff; }
+.btn-outline { background: transparent; color: #aaa; border: 1px solid #333; margin-left: 8px; }
+.status-bar { max-width: 900px; margin: 0 auto 20px; font-size: 13px; color: #60a5fa; min-height: 18px; }
+
+/* ---- GRID ---- */
+.grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.slide-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.slide-label { font-size: 12px; color: #666; text-align: center; }
+.slide-scaler { width: 270px; height: 337px; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); position: relative; }
+.slide-scaler > .slide { transform: scale(0.25); transform-origin: top left; width: 1080px; height: 1350px; position: absolute; top: 0; left: 0; }
+.btn-dl { margin-top: 4px; width: 100%; padding: 8px; border-radius: 8px; background: #1e293b; color: #60a5fa; font-size: 12px; font-weight: 700; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; }
+.btn-dl:hover { background: #2563eb; color: #fff; }
+
+/* ===============================================
+   SLIDES — ESTILOS GLOBAIS
+   =============================================== */
+.slide { width: 1080px; height: 1350px; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+/* Cores de fundo */
+.dark  { background: #0B1D3A; }
+.light { background: #F0EBE3; }
+
+/* Cabeçalho de perfil */
+.brand { position: absolute; top: 50px; left: 0; right: 0; text-align: center; font-size: 20px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: rgba(255,255,255,0.45); z-index: 10; }
+.brand.dark-text { color: rgba(11,29,58,0.45); }
+
+/* Número do slide + seta */
+.slide-num { position: absolute; bottom: 44px; left: 60px; font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.25); }
+.slide-num.dark-text { color: rgba(11,29,58,0.25); }
+.arrow { position: absolute; bottom: 44px; right: 60px; font-size: 36px; color: rgba(255,255,255,0.3); }
+.arrow.dark-text { color: rgba(11,29,58,0.3); }
+
+/* Tipografia */
+.t-tag { font-size: 20px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
+.t-tag.dk { color: rgba(11,29,58,0.4); }
+.t-hero { font-size: 96px; font-weight: 900; color: #fff; line-height: 1.0; letter-spacing: -3px; text-transform: uppercase; text-align: center; }
+.t-hero.dk { color: #0B1D3A; }
+.t-xl { font-size: 68px; font-weight: 900; color: #fff; line-height: 1.1; letter-spacing: -2px; text-align: center; }
+.t-xl.dk { color: #0B1D3A; }
+.t-large { font-size: 52px; font-weight: 700; color: #fff; line-height: 1.25; text-align: center; }
+.t-large.dk { color: #0B1D3A; }
+.t-body { font-size: 42px; font-weight: 400; color: rgba(255,255,255,0.75); line-height: 1.45; text-align: center; }
+.t-body.dk { color: rgba(11,29,58,0.7); }
+.t-sub { font-size: 38px; font-weight: 300; color: rgba(255,255,255,0.5); text-align: center; }
+.t-sub.dk { color: rgba(11,29,58,0.45); }
+.accent-line { width: 80px; height: 5px; background: #60a5fa; border-radius: 3px; margin: 20px auto; }
+.accent-line.gold { background: #EAB308; }
+
+/* Grifos */
+.hl       { background: rgba(96,165,250,0.25); color: #fff; padding: 4px 16px; border-radius: 8px; display: inline-block; }
+.hl-gold  { background: #EAB308; color: #0B1D3A; padding: 4px 18px; border-radius: 8px; display: inline-block; font-weight: 900; }
+.hl-red   { background: rgba(239,68,68,0.25); color: #fca5a5; padding: 4px 16px; border-radius: 8px; display: inline-block; }
+.hl-green { background: rgba(34,197,94,0.2); color: #86efac; padding: 4px 16px; border-radius: 8px; display: inline-block; }
+.hl-dk    { background: rgba(11,29,58,0.12); color: #0B1D3A; padding: 4px 16px; border-radius: 8px; display: inline-block; }
+
+/* Divisor X (pergunta errada vs certa) */
+.vs-box { display: flex; width: 100%; padding: 0 60px; gap: 40px; align-items: stretch; margin: 40px 0; }
+.vs-card { flex: 1; border-radius: 24px; padding: 50px 40px; display: flex; flex-direction: column; gap: 20px; }
+.vs-card.wrong { background: rgba(239,68,68,0.12); border: 2px solid rgba(239,68,68,0.3); }
+.vs-card.right  { background: rgba(34,197,94,0.12); border: 2px solid rgba(34,197,94,0.3); }
+.vs-label { font-size: 18px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+.vs-label.wrong { color: #ef4444; }
+.vs-label.right { color: #22c55e; }
+.vs-text { font-size: 40px; font-weight: 700; color: #fff; line-height: 1.25; }
+
+/* Node Journey */
+.node-journey { position: relative; width: 968px; height: 600px; margin: 30px auto 0; }
+.node-journey svg { position: absolute; top: 0; left: 0; width: 968px; height: 600px; z-index: 1; }
+.node-item { position: absolute; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.node-dot { width: 48px; height: 48px; background: #F0EBE3; border-radius: 50%; box-shadow: 0 0 0 10px rgba(240,235,227,0.15); flex-shrink: 0; }
+.node-dot.gold { background: #EAB308; box-shadow: 0 0 0 10px rgba(234,179,8,0.15); }
+.node-text { font-size: 42px; font-weight: 700; color: #fff; line-height: 1.25; max-width: 380px; }
+.node-emoji { font-size: 56px; line-height: 1; }
+.node-n1 { top: 16px; left: 76px; }
+.node-n2 { top: 200px; left: 520px; }
+.node-n3 { top: 390px; left: 76px; }
+.node-n4 { top: 200px; right: 76px; }
+
+/* BG Image slide */
+.bg-img { position: absolute; inset: 0; background-size: cover; background-position: center top; z-index: 0; }
+.grad-bottom { position: absolute; bottom: 0; left: 0; width: 100%; height: 55%; background: linear-gradient(to top, rgba(11,29,58,1) 0%, rgba(11,29,58,0.9) 25%, rgba(11,29,58,0.5) 60%, transparent 100%); z-index: 1; }
+.cover-content { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding: 80px 70px; text-align: center; }
+
+/* CTA Final */
+.cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 0 80px; }
+.cta-icon { font-size: 120px; line-height: 1; }
+.cta-title { font-size: 80px; font-weight: 900; color: #fff; text-align: center; line-height: 1.1; letter-spacing: -2px; text-transform: uppercase; }
+.cta-sub { font-size: 46px; font-weight: 400; color: rgba(255,255,255,0.6); text-align: center; line-height: 1.3; }
+.cta-handle { font-size: 38px; font-weight: 700; letter-spacing: 4px; color: #60a5fa; text-transform: uppercase; }
+
+/* ---- LEGENDA ---- */
+.caption-box { max-width: 900px; margin: 40px auto; background: #111; border: 1px solid #222; border-radius: 12px; padding: 28px; }
+.caption-title { font-size: 14px; font-weight: 700; color: #60a5fa; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+.caption-copy { background: #1e3a5f; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: 'Montserrat', sans-serif; }
+.caption-text { font-size: 14px; color: #ccc; line-height: 1.7; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div>
+    <div class="page-title">Qual é a Melhor Operadora? 🏥</div>
+    <div class="page-sub">@gustavojcluz — 6 slides</div>
+  </div>
+  <div>
+    <button class="btn btn-primary" onclick="downloadAll()">⬇ Baixar Todos</button>
+    <button class="btn btn-outline" onclick="downloadPDF()">📄 PDF</button>
+  </div>
+</div>
+<div class="status-bar" id="status"></div>
+
+<div class="grid" id="grid">
+
+  <!-- SLIDE 1 — CAPA (Foto High Impact) -->
+  <div class="slide-wrap">
+    <div class="slide-label">Slide 1 — Capa (High Impact)</div>
+    <div class="slide-scaler" id="wrap-1">
+      <div class="slide dark" id="slide-1">
+        <div class="bg-img" style="background-image:url('data:image/png;base64,COVER_B64_HERE');"></div>
+        <div class="grad-bottom"></div>
+        <div class="cover-content">
+          <div class="brand" style="top:50px;">@gustavojcluz</div>
+          <div style="margin-bottom: 24px;">
+            <div class="t-tag" style="color:rgba(255,255,255,0.5);margin-bottom:16px;">a pergunta que todo mundo faz</div>
+            <div class="t-hero">"Qual é a<br>melhor<br>operadora?"</div>
+          </div>
+          <div class="accent-line"></div>
+          <div class="t-sub" style="margin-top:16px;">Essa pergunta não tem resposta.</div>
+        </div>
+        <div class="slide-num">01</div>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+    <button class="btn-dl" onclick="dlSlide(1)">⬇ Baixar Slide 1</button>
+  </div>
+
+  <!-- SLIDE 2 — SEGUNDA CHANCE (Escuro sólido) -->
+  <div class="slide-wrap">
+    <div class="slide-label">Slide 2 — Segunda Chance</div>
+    <div class="slide-scaler" id="wrap-2">
+      <div class="slide dark" id="slide-2">
+        <div class="brand">@gustavojcluz</div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:120px 80px;gap:36px;">
+          <div class="t-tag">todo mundo quer saber</div>
+          <div class="t-xl">Amil? Porto?<br>SulAmérica?<br>Bradesco? Unimed?</div>
+          <div class="accent-line"></div>
+          <div class="t-body" style="font-size:48px;font-weight:700;">Plano de saúde<br>não funciona<br>como um ranking.</div>
+        </div>
+        <div class="slide-num">02</div>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+    <button class="btn-dl" onclick="dlSlide(2)">⬇ Baixar Slide 2</button>
+  </div>
+
+  <!-- SLIDE 3 — QUEBRA A CRENÇA (Claro + Mapa Sketch) -->
+  <div class="slide-wrap">
+    <div class="slide-label">Slide 3 — Quebra a Crença (Mapa)</div>
+    <div class="slide-scaler" id="wrap-3">
+      <div class="slide light" id="slide-3">
+        <div class="bg-img" style="background-image:url('data:image/png;base64,SLIDE3_B64_HERE');background-position:center right;"></div>
+        <div class="brand dark-text">@gustavojcluz</div>
+        <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:100%;padding:120px 80px;gap:32px;max-width:640px;">
+          <div class="t-tag dk">o problema</div>
+          <div class="t-xl dk" style="text-align:left;">Uma operadora<br>pode ser<br><span class="hl-dk">líder em SP</span><br>e fraca<br>no interior.</div>
+          <div class="accent-line" style="margin:0;background:#0B1D3A;"></div>
+          <div class="t-body dk" style="text-align:left;font-size:40px;">A nota não muda.<br>O seu cenário, sim.</div>
+        </div>
+        <div class="slide-num dark-text">03</div>
+        <div class="arrow dark-text">→</div>
+      </div>
+    </div>
+    <button class="btn-dl" onclick="dlSlide(3)">⬇ Baixar Slide 3</button>
+  </div>
+
+  <!-- SLIDE 4 — NODE JOURNEY (Slide Salvável) -->
+  <div class="slide-wrap">
+    <div class="slide-label">Slide 4 — As 4 Perguntas Certas ⭐</div>
+    <div class="slide-scaler" id="wrap-4">
+      <div class="slide dark" id="slide-4">
+        <div class="brand">@gustavojcluz</div>
+        <div style="display:flex;flex-direction:column;align-items:center;width:100%;padding:100px 0 80px;gap:0;">
+          <div class="t-tag">a pergunta certa tem 4 partes</div>
+          <div class="accent-line gold"></div>
+          <div class="node-journey">
+            <svg viewBox="0 0 968 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 100 40 C 400 40, 544 100, 544 224" stroke="rgba(255,255,255,0.3)" stroke-width="4" stroke-linecap="round"/>
+              <path d="M 544 224 C 200 224, 150 360, 244 414" stroke="rgba(255,255,255,0.3)" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <div class="node-item node-n1">
+              <div class="node-emoji">📍</div>
+              <div class="node-text">Qual é a sua<br><span class="hl">cidade?</span></div>
+            </div>
+            <div class="node-item node-n2">
+              <div class="node-emoji">👨‍👩‍👧</div>
+              <div class="node-text">Qual é o perfil<br>da sua <span class="hl-green">família?</span></div>
+            </div>
+            <div class="node-item node-n3">
+              <div class="node-emoji">💰</div>
+              <div class="node-text">Qual é o seu<br><span class="hl-gold" style="font-size:36px;">orçamento?</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-num">04</div>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+    <button class="btn-dl" onclick="dlSlide(4)">⬇ Baixar Slide 4</button>
+  </div>
+
+  <!-- SLIDE 5 — SOLUÇÃO (Escuro) -->
+  <div class="slide-wrap">
+    <div class="slide-label">Slide 5 — A Solução</div>
+    <div class="slide-scaler" id="wrap-5">
+      <div class="slide dark" id="slide-5">
+        <div class="brand">@gustavojcluz</div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:120px 80px;gap:40px;">
+          <div class="t-tag">a resposta certa</div>
+          <div class="t-xl" style="font-size:58px;">Para escolher o plano certo, você precisa de alguém que conheça<br><span class="hl-gold">o seu mercado.</span></div>
+          <div class="accent-line"></div>
+          <div class="t-body" style="font-size:44px;font-weight:700;">Não de um ranking<br>da internet.</div>
+          <div class="t-sub" style="margin-top:20px;font-size:40px;font-weight:600;color:rgba(255,255,255,0.8);">Eu faço isso por você.</div>
+        </div>
+        <div class="slide-num">05</div>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+    <button class="btn-dl" onclick="dlSlide(5)">⬇ Baixar Slide 5</button>
+  </div>
+
+  <!-- SLIDE 6 — CTA FINAL -->
+  <div class="slide-wrap">
+    <div class="slide-label">Slide 6 — CTA Final</div>
+    <div class="slide-scaler" id="wrap-6">
+      <div class="slide dark" id="slide-6">
+        <div class="brand">@gustavojcluz</div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:120px 80px;gap:36px;text-align:center;">
+          <div class="cta-icon">🚀💪</div>
+          <div class="cta-title">Segue<br>o perfil.</div>
+          <div class="accent-line gold"></div>
+          <div class="cta-sub">Conteúdo toda semana<br>para você tomar<br>decisões melhores.</div>
+          <div class="cta-handle">Bora pra Cima!</div>
+        </div>
+        <div class="slide-num">06</div>
+      </div>
+    </div>
+    <button class="btn-dl" onclick="dlSlide(6)">⬇ Baixar Slide 6</button>
+  </div>
+
+</div>
+
+<!-- LEGENDA -->
+<div class="caption-box">
+  <div class="caption-title">
+    📝 Legenda Sugerida — Instagram
+    <button class="caption-copy" onclick="copyCaption()">Copiar Legenda</button>
+  </div>
+  <div class="caption-text" id="caption-text">Todo mundo pergunta: "Qual é a melhor operadora?"
+
+Amil? Porto Seguro? SulAmérica? Bradesco? Unimed?
+
+A verdade é que essa pergunta não tem uma resposta certa. 
+
+Uma operadora pode ser líder em São Paulo e fraca no interior. Pode servir para uma família e não servir para outra.
+
+A pergunta certa não é "qual é a melhor". A pergunta certa é:
+
+📍 Qual faz sentido para a minha cidade?
+👨‍👩‍👧 Para o perfil da minha família?
+💰 Para o meu orçamento?
+🏥 Para os hospitais que eu preciso?
+
+Eu analiso o seu cenário e apresento as melhores opções para a sua realidade. Sem julgamento, sem achismo.
+
+👉 Comenta "QUERO" que eu te mando o próximo passo.
+
+#planaodesaude #corretordesaude #saude #planoempresarial #gustavojcluz</div>
+</div>
+
+<script>
+async function captureSlide(id) {
+  const el = document.getElementById('slide-' + id);
+  const { default: html2canvas } = await import('https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.esm.js');
+  
+  // Remove CSS scale transform temporarily for correct capture size
+  el.style.transform = 'none';
+  const canvas = await html2canvas(el, { scale: 1, useCORS: true, logging: false, width: 1080, height: 1350 });
+  el.style.transform = ''; // Restore transform
+  
+  return canvas;
+}
+
+async function dlSlide(id) {
+  const st = document.getElementById('status');
+  st.textContent = 'Gerando slide ' + id + '...';
+  try {
+    const canvas = await captureSlide(id);
+    const a = document.createElement('a');
+    a.download = 'operadora-certa_slide' + id + '.png';
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+    st.textContent = 'Slide ' + id + ' baixado!';
+  } catch(e) { st.textContent = 'Erro: ' + e.message; }
+}
+
+async function downloadAll() {
+  const st = document.getElementById('status');
+  for (let i = 1; i <= 6; i++) {
+    st.textContent = 'Gerando slide ' + i + ' de 6...';
+    const canvas = await captureSlide(i);
+    const a = document.createElement('a');
+    a.download = 'operadora-certa_slide' + i + '.png';
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+    await new Promise(r => setTimeout(r, 600));
+  }
+  st.textContent = 'Todos os slides baixados!';
+}
+
+async function downloadPDF() {
+  const st = document.getElementById('status');
+  st.textContent = 'Gerando PDF...';
+  const { jsPDF } = await import('https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.es.min.js');
+  const pdf = new jsPDF({ orientation: 'portrait', unit: 'px', format: [1080, 1350] });
+  for (let i = 1; i <= 6; i++) {
+    const canvas = await captureSlide(i);
+    if (i > 1) pdf.addPage([1080, 1350]);
+    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 1080, 1350);
+  }
+  pdf.save('operadora-certa.pdf');
+  st.textContent = 'PDF gerado!';
+}
+
+function copyCaption() {
+  const txt = document.getElementById('caption-text').textContent;
+  navigator.clipboard.writeText(txt).then(() => {
+    const btn = document.querySelector('.caption-copy');
+    btn.textContent = '✓ Copiado!';
+    setTimeout(() => btn.textContent = 'Copiar Legenda', 2000);
+  });
+}
+</script>
+</body>
+</html>

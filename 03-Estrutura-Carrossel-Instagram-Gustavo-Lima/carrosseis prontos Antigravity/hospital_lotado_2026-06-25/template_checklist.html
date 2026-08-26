@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E Se o Seu Hospital Estiver Lotado? — Gustavo Lima</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', 'Segoe UI', sans-serif; background: #111; color: #fff; padding: 30px 20px; }
+        h1 { text-align: center; font-size: 22px; color: #fff; margin-bottom: 6px; }
+        .page-subtitle { text-align: center; color: #777; font-size: 13px; margin-bottom: 30px; }
+        .btn-container { text-align: center; margin: 0 0 30px 0; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn { border: none; padding: 14px 36px; font-size: 15px; font-weight: 700; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-family: 'Montserrat', sans-serif; }
+        .btn-primary { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59,130,246,0.4); }
+        .btn-secondary { background: #2a2a2a; color: #ccc; border: 1px solid #444; }
+        .btn-secondary:hover { background: #3a3a3a; color: #fff; }
+        .status { text-align: center; color: #3b82f6; margin: 10px 0 20px; font-size: 13px; font-weight: bold; min-height: 20px; }
+        .slides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
+        .slide-wrapper { background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 2px solid #2a2a2a; transition: all 0.2s; display: flex; flex-direction: column; }
+        .slide-wrapper:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        .slide-scaler { width: 100%; aspect-ratio: 1080 / 1350; overflow: hidden; position: relative; }
+        .slide-label { padding: 8px 10px 4px; font-size: 12px; color: #777; text-align: center; background: #151515; font-weight: bold; }
+        .slide-footer { display: flex; justify-content: center; padding: 6px 10px 10px; background: #151515; }
+        .btn-download { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; border: none; padding: 8px 20px; font-size: 12px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-family: 'Montserrat', sans-serif; width: 100%; }
+        .btn-download:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(59,130,246,0.4); }
+        .btn-download:disabled { opacity: 0.5; cursor: wait; }
+        .legenda-box { background: #111; padding: 12px; border-top: 1px solid #2a2a2a; display: flex; flex-direction: column; gap: 8px; }
+        .legenda-textarea { width: 100%; height: 110px; background: #000; color: #ddd; border: 1px solid #444; border-radius: 6px; padding: 10px; font-size: 12px; font-family: 'Segoe UI', sans-serif; resize: vertical; line-height: 1.5; }
+        .legenda-textarea:focus { outline: none; border-color: #3b82f6; }
+        .btn-copy-legenda { background: #222; color: #bbb; border: 1px solid #444; padding: 8px; font-size: 11px; cursor: pointer; border-radius: 4px; width: 100%; font-weight: 600; transition: all 0.2s; }
+        .btn-copy-legenda:hover { background: #333; color: #fff; border-color: #555; }
+
+        /* ===================== ESTILOS DOS SLIDES ===================== */
+        .slide {
+            width: 1080px; height: 1350px;
+            background: linear-gradient(160deg, #0B1D3A 0%, #0F2444 30%, #0A1A35 55%, #0D2040 80%, #091830 100%);
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 110px 95px; position: relative;
+            font-family: 'Montserrat', sans-serif; transform-origin: top left;
+            overflow: hidden;
+        }
+        .slide.bg-light { background: #F0EBE3; color: #0B1D3A; }
+
+        .slide .arrow { position: absolute; bottom: 75px; right: 75px; display: flex; align-items: center; z-index: 10; }
+        .slide .arrow-line { width: 110px; height: 2px; background: rgba(255,255,255,0.3); }
+        .slide .arrow-head { width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 13px solid rgba(255,255,255,0.3); }
+        .slide.bg-light .arrow-line { background: rgba(11,29,58,0.3); }
+        .slide.bg-light .arrow-head { border-left-color: rgba(11,29,58,0.3); }
+
+        .t-reg   { font-size: 46px; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.5; }
+        .t-bold  { font-size: 46px; font-weight: 900; color: #ffffff; line-height: 1.35; letter-spacing: -0.5px; }
+        .t-large { font-size: 64px; font-weight: 900; color: #ffffff; line-height: 1.18; letter-spacing: -1px; text-transform: uppercase; }
+        .t-small { font-size: 36px; font-weight: 400; color: rgba(255,255,255,0.5); line-height: 1.5; }
+        .t-accent { font-weight: 900; color: #60a5fa; }
+
+        .slide.bg-light .t-reg   { color: rgba(11,29,58,0.85); }
+        .slide.bg-light .t-bold  { color: #0B1D3A; }
+        .slide.bg-light .t-large { color: #0B1D3A; }
+        .slide.bg-light .t-small { color: rgba(11,29,58,0.5); }
+
+        /* Grifos translúcidos */
+        .hl-gold { background: rgba(234,179,8,0.28); color: #fff !important; padding: 5px 16px; border-radius: 8px; display: inline-block; }
+        .hl      { background: rgba(11,29,58,0.14); color: #0B1D3A !important; padding: 5px 16px; border-radius: 8px; display: inline-block; }
+
+        .sp    { height: 32px; }
+        .sp-sm { height: 16px; }
+        .sp-xs { height: 8px; }
+
+        /* Checklist do Slide 5 */
+        .checklist { list-style: none; width: 100%; }
+        .checklist li {
+            display: flex; align-items: flex-start; gap: 28px;
+            font-size: 36px; font-weight: 400; color: rgba(255,255,255,0.9);
+            line-height: 1.4; padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .checklist li:last-child { border-bottom: none; }
+        .check-box {
+            width: 44px; height: 44px; border: 3px solid rgba(255,255,255,0.4);
+            border-radius: 8px; flex-shrink: 0; margin-top: 4px;
+        }
+
+        #renderArea { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+    <h1>🏥 Carrossel — E Se o Seu Hospital Estiver Lotado?</h1>
+    <p class="page-subtitle">Framework P.A.S. — Gustavo Lima (JCLUZ) | Legendas Individuais Ativadas</p>
+
+    <div class="btn-container">
+        <button class="btn btn-primary" onclick="downloadAllPNGs()">📦 Baixar TODOS os PNGs</button>
+        <button class="btn btn-secondary" onclick="downloadPDF()">📄 Baixar PDF completo</button>
+    </div>
+    <div class="status" id="status"></div>
+
+    <div class="slides-grid" id="slidesGrid"></div>
+    <div id="renderArea"></div>
+
+    <script>
+    const SLIDES_HTML = [
+
+        // SLIDE 1 — Gancho / Capa Hero
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('COVER_CAOS_B64_HERE');background-size:cover;background-position:center top;z-index:1;"></div>
+         <div style="position:absolute;bottom:0;left:0;width:100%;height:68%;background:linear-gradient(to top,rgba(11,29,58,1) 0%,rgba(11,29,58,0.92) 30%,rgba(11,29,58,0.6) 62%,rgba(11,29,58,0) 100%);z-index:2;"></div>
+         <div style="position:absolute;bottom:0;left:0;width:100%;padding:0 95px 110px;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;">
+             <div class="t-large" style="font-size:72px;text-shadow:2px 2px 10px rgba(0,0,0,0.8);">E SE O SEU<br>HOSPITAL<br>ESTIVER LOTADO<br>ÀS 3 DA MANHÃ?</div>
+             <div class="sp-sm"></div>
+             <div class="t-reg" style="font-size:38px;color:rgba(255,255,255,0.72);">Você escolheu o plano por causa dele. E agora?</div>
+         </div>`,
+
+        // SLIDE 2 — Problema (BEGE + Sketch + Node Journey)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#F0EBE3;z-index:-1;"></div>
+         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('SKETCH2_B64_HERE');background-size:cover;mix-blend-mode:darken;filter:brightness(1.05);opacity:0.22;z-index:0;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;">
+             <div class="t-reg" style="color:rgba(11,29,58,0.8);font-size:44px;">Toda proposta que chega até você<br>te mostra <strong>3 coisas:</strong></div>
+             <div class="sp"></div>
+             <!-- Node Journey vertical -->
+             <div style="position:relative;width:100%;padding:0 40px;">
+                 <!-- Linha pontilhada vertical centralizada -->
+                 <svg style="position:absolute;left:50%;top:0;transform:translateX(-50%);width:6px;height:100%;" preserveAspectRatio="none" viewBox="0 0 6 100%">
+                     <line x1="3" y1="0" x2="3" y2="99%" stroke="rgba(11,29,58,0.22)" stroke-width="4" stroke-dasharray="10 12"/>
+                 </svg>
+                 <!-- Nó 1 -->
+                 <div style="display:flex;align-items:center;gap:28px;margin-bottom:52px;position:relative;z-index:1;">
+                     <div style="flex:1;text-align:right;">
+                         <span class="t-bold" style="color:#0B1D3A;font-size:46px;">Preço atrativo.</span>
+                     </div>
+                     <div style="width:52px;height:52px;background:#0B1D3A;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+                         <div style="width:20px;height:20px;background:#EAB308;border-radius:50%;"></div>
+                     </div>
+                     <div style="flex:1;"></div>
+                 </div>
+                 <!-- Nó 2 -->
+                 <div style="display:flex;align-items:center;gap:28px;margin-bottom:52px;position:relative;z-index:1;">
+                     <div style="flex:1;"></div>
+                     <div style="width:52px;height:52px;background:#0B1D3A;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+                         <div style="width:20px;height:20px;background:#60a5fa;border-radius:50%;"></div>
+                     </div>
+                     <div style="flex:1;">
+                         <span class="t-bold" style="color:#0B1D3A;font-size:46px;">Logo da operadora.</span>
+                     </div>
+                 </div>
+                 <!-- Nó 3 -->
+                 <div style="display:flex;align-items:center;gap:28px;position:relative;z-index:1;">
+                     <div style="flex:1;text-align:right;">
+                         <span class="t-bold" style="color:#0B1D3A;font-size:46px;">Hospital famoso.</span>
+                     </div>
+                     <div style="width:52px;height:52px;background:#0B1D3A;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+                         <div style="width:20px;height:20px;background:#fff;border-radius:50%;"></div>
+                     </div>
+                     <div style="flex:1;"></div>
+                 </div>
+             </div>
+             <div class="sp"></div>
+             <div class="t-bold hl" style="font-size:40px;">E para por aí.</div>
+             <div class="sp-sm"></div>
+             <div class="t-reg" style="color:rgba(11,29,58,0.7);font-size:38px;">O resto você vai descobrir<br>quando mais precisar.</div>
+         </div>`,
+
+        // SLIDE 3 — Agitação 1 / O Único Hospital (ESCURO)
+        `<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;">
+             <div class="t-bold" style="font-size:42px;margin-bottom:8px;">Sobre esse hospital:</div>
+             <div class="sp"></div>
+             <div class="t-reg" style="font-size:38px;line-height:1.6;">Ele fica perto da sua casa?<br><br>Tem UTI disponível<br>numa urgência real?<br><br>Funciona com emergência<br>24 horas por dia?<br><br>E se estiver lotado,<br>qual é o plano B?</div>
+             <div class="sp"></div>
+             <div class="t-bold hl-gold" style="font-size:34px;line-height:1.5;">Plano com um único hospital<br>não é plano. É aposta.</div>
+         </div>`,
+
+        // SLIDE 4 — Agitação 2 / O Que Não Vem na Proposta (BEGE + Sketch)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#F0EBE3;z-index:-1;"></div>
+         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('SKETCH4_B64_HERE');background-size:cover;mix-blend-mode:darken;filter:brightness(1.05);opacity:0.22;z-index:0;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;">
+             <div class="t-bold" style="color:#0B1D3A;font-size:44px;">Mas o que essa proposta<br>não te conta?</div>
+             <div class="sp"></div>
+             <div style="width:100%;text-align:left;">
+                 <div style="display:flex;align-items:flex-start;gap:20px;padding:18px 0;border-bottom:2px solid rgba(11,29,58,0.1);">
+                     <div style="font-size:36px;color:#EAB308;flex-shrink:0;">✗</div>
+                     <div class="t-reg" style="color:rgba(11,29,58,0.85);font-size:34px;">Se você pode aproveitar a carência<br>da operadora anterior</div>
+                 </div>
+                 <div style="display:flex;align-items:flex-start;gap:20px;padding:18px 0;border-bottom:2px solid rgba(11,29,58,0.1);">
+                     <div style="font-size:36px;color:#EAB308;flex-shrink:0;">✗</div>
+                     <div class="t-reg" style="color:rgba(11,29,58,0.85);font-size:34px;">Coparticipação numa internação de 5 dias</div>
+                 </div>
+                 <div style="display:flex;align-items:flex-start;gap:20px;padding:18px 0;border-bottom:2px solid rgba(11,29,58,0.1);">
+                     <div style="font-size:36px;color:#EAB308;flex-shrink:0;">✗</div>
+                     <div class="t-reg" style="color:rgba(11,29,58,0.85);font-size:34px;">A rede completa de hospitais<br>de suporte na sua região</div>
+                 </div>
+                 <div style="display:flex;align-items:flex-start;gap:20px;padding:18px 0;">
+                     <div style="font-size:36px;color:#EAB308;flex-shrink:0;">✗</div>
+                     <div class="t-reg" style="color:rgba(11,29,58,0.85);font-size:34px;">O índice de reajuste<br>que vem no 13º mês</div>
+                 </div>
+             </div>
+         </div>`,
+
+        // SLIDE 5 — Slide Salvável / Checklist (ESCURO + Sketch Prancheta)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('SKETCH5_B64_HERE');background-size:cover;background-position:bottom right;mix-blend-mode:screen;opacity:0.13;z-index:0;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;">
+             <div class="t-bold" style="font-size:50px;text-transform:uppercase;margin-bottom:10px;">Antes de assinar,<br>averigue:</div>
+             <div class="sp-sm"></div>
+             <ul class="checklist">
+                 <li><div class="check-box"></div><span>O hospital fica perto da minha casa?</span></li>
+                 <li><div class="check-box"></div><span>Ele tem UTI e emergência 24h?</span></li>
+                 <li><div class="check-box"></div><span>Quais os hospitais de suporte na rede?</span></li>
+                 <li><div class="check-box"></div><span>Posso aproveitar carência da operadora anterior?</span></li>
+                 <li><div class="check-box"></div><span>Qual é a coparticipação numa internação?</span></li>
+                 <li><div class="check-box"></div><span>Qual o reajuste previsto no próximo ciclo?</span></li>
+             </ul>
+         </div>`,
+
+        // SLIDE 6 — CTA (ESCURO)
+        `<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;height:100%;justify-content:center;">
+             <div class="t-large" style="font-size:72px;line-height:1.12;">NÃO ASSINE<br>PELO HOSPITAL<br>E PELO PREÇO.</div>
+             <div class="sp"></div>
+             <div class="t-reg" style="font-size:36px;color:rgba(255,255,255,0.75);">Manda esse carrossel para alguém<br>que você conhece e está escolhendo<br>plano de saúde agora.</div>
+             <div class="sp-sm"></div>
+             <div class="t-reg" style="font-size:34px;color:rgba(255,255,255,0.6);">Pode evitar uma escolha errada.</div>
+             <div class="sp"></div>
+             <div class="t-bold t-accent" style="font-size:52px;">Bora, pra cima! 🚀💪</div>
+         </div>`
+    ];
+
+    const LABELS = [
+        'Slide 1 — Gancho / Capa Hero',
+        'Slide 2 — O Problema',
+        'Slide 3 — Agitação: O Único Hospital',
+        'Slide 4 — Agitação: O Que Não Vem na Proposta',
+        'Slide 5 — Slide Salvável (Checklist)',
+        'Slide 6 — CTA de Compartilhamento'
+    ];
+
+    const LEGENDAS = [
+        'Dá para sentir o pavor. O problema é que em urgência real, ninguém tem tempo de pesquisar hospital alternativo.',
+        'É muito mais fácil vender o que brilha. O difícil é garantir que o que foi vendido vai funcionar no pior dia da sua vida.',
+        'O Marcelo não escolheu esse hospital por acaso. Ele confia nele. Mas confiança não garante leito disponível às 3 da manhã.',
+        'Aproveitamento de carência entre operadoras congêneres pode te salvar meses de espera. A sua proposta mencionou isso?',
+        'Salva esse slide. É o checklist que nenhum vendedor vai te dar espontaneamente.',
+        'Tem alguém próximo avaliando plano de saúde agora? Manda esse carrossel. Pode evitar uma escolha que vai custar caro.\n\nBora, pra cima! 🚀💪\n\n#planodesaude #cnpj #corretordeseguros #gustavojcluz #planodesaudecnpj #saudefamiliar'
+    ];
+
+    const LIGHT_SLIDES = [1, 3]; // 0-based: slides 2 e 4
+
+    function createSlideElement(index) {
+        const slide = document.createElement('div');
+        slide.className = 'slide';
+        if (LIGHT_SLIDES.includes(index)) slide.classList.add('bg-light');
+        const arrowHTML = (index < 5) ? '<div class="arrow"><div class="arrow-line"></div><div class="arrow-head"></div></div>' : '';
+        slide.innerHTML = SLIDES_HTML[index] + arrowHTML;
+        return slide;
+    }
+
+    function buildPreviews() {
+        const grid = document.getElementById('slidesGrid');
+        grid.innerHTML = '';
+        SLIDES_HTML.forEach((_, i) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'slide-wrapper';
+            const label = document.createElement('div');
+            label.className = 'slide-label';
+            label.textContent = LABELS[i];
+            const scaler = document.createElement('div');
+            scaler.className = 'slide-scaler';
+            const slide = createSlideElement(i);
+            scaler.appendChild(slide);
+            const footer = document.createElement('div');
+            footer.className = 'slide-footer';
+            const btnDl = document.createElement('button');
+            btnDl.className = 'btn-download';
+            btnDl.textContent = `📥 Baixar Slide ${i + 1}`;
+            btnDl.onclick = () => downloadSinglePNG(i, btnDl);
+            footer.appendChild(btnDl);
+            const legendaBox = document.createElement('div');
+            legendaBox.className = 'legenda-box';
+            legendaBox.innerHTML = `
+                <textarea class="legenda-textarea" id="leg_slide_${i}">${LEGENDAS[i]}</textarea>
+                <button class="btn-copy-legenda" id="btn_leg_${i}" onclick="copySlideLeg(${i})">📋 Copiar legenda (Slide ${i + 1})</button>
+            `;
+            wrapper.appendChild(label);
+            wrapper.appendChild(scaler);
+            wrapper.appendChild(footer);
+            wrapper.appendChild(legendaBox);
+            grid.appendChild(wrapper);
+            requestAnimationFrame(() => {
+                slide.style.transform = `scale(${scaler.offsetWidth / 1080})`;
+                slide.style.transformOrigin = 'top left';
+            });
+        });
+    }
+
+    function copySlideLeg(index) {
+        const text = document.getElementById(`leg_slide_${index}`).value;
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById(`btn_leg_${index}`);
+            btn.textContent = '✅ Copiado!';
+            btn.style.background = '#059669'; btn.style.color = '#fff';
+            setTimeout(() => { btn.textContent = `📋 Copiar legenda (Slide ${index + 1})`; btn.style.background = '#222'; btn.style.color = '#bbb'; }, 2000);
+        });
+    }
+
+    function setStatus(msg) { document.getElementById('status').textContent = msg; }
+
+    async function renderSlide(index) {
+        const area = document.getElementById('renderArea');
+        const slide = createSlideElement(index);
+        area.appendChild(slide);
+        area.style.zIndex = '9999'; area.style.opacity = '1';
+        slide.style.transform = 'none';
+        await new Promise(r => setTimeout(r, 500));
+        const bgColor = LIGHT_SLIDES.includes(index) ? '#F0EBE3' : '#0B1D3A';
+        const canvas = await html2canvas(slide, { width: 1080, height: 1350, scale: 1, useCORS: true, backgroundColor: bgColor, logging: false });
+        area.removeChild(slide); area.style.zIndex = '-1';
+        return canvas;
+    }
+
+    async function downloadSinglePNG(index, btn) {
+        const orig = btn.textContent;
+        btn.disabled = true; btn.textContent = '⏳ Gerando...';
+        try {
+            const canvas = await renderSlide(index);
+            const link = document.createElement('a');
+            link.download = `HospitalLotado_Slide_${index + 1}.png`;
+            link.href = canvas.toDataURL('image/png'); link.click();
+            btn.textContent = '✅ Baixado!';
+            setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
+        } catch (e) { btn.textContent = '❌ Erro'; setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000); }
+    }
+
+    async function downloadAllPNGs() {
+        setStatus('Gerando todos os PNGs — aguarde...');
+        try {
+            for (let i = 0; i < SLIDES_HTML.length; i++) {
+                setStatus(`Baixando slide ${i + 1} de ${SLIDES_HTML.length}...`);
+                const canvas = await renderSlide(i);
+                const link = document.createElement('a');
+                link.download = `HospitalLotado_Slide_${i + 1}.png`;
+                link.href = canvas.toDataURL('image/png'); link.click();
+                await new Promise(r => setTimeout(r, 900));
+            }
+            setStatus('✅ Todas as imagens baixadas com sucesso!');
+        } catch (e) { setStatus('❌ Erro: ' + e.message); console.error(e); }
+    }
+
+    async function downloadPDF() {
+        setStatus('Gerando PDF — aguarde...');
+        try {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [108, 135] });
+            for (let i = 0; i < SLIDES_HTML.length; i++) {
+                setStatus(`Renderizando slide ${i + 1} de ${SLIDES_HTML.length}...`);
+                const canvas = await renderSlide(i);
+                const imgData = canvas.toDataURL('image/png');
+                if (i > 0) pdf.addPage([108, 135]);
+                pdf.addImage(imgData, 'PNG', 0, 0, 108, 135);
+            }
+            pdf.save('HospitalLotado_Carrossel_GustavoLima.pdf');
+            setStatus('✅ PDF baixado com sucesso!');
+        } catch (e) { setStatus('❌ Erro: ' + e.message); console.error(e); }
+    }
+
+    document.fonts.ready.then(() => setTimeout(buildPreviews, 300));
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.slide-scaler').forEach(scaler => {
+            const slide = scaler.querySelector('.slide');
+            if (slide) slide.style.transform = `scale(${scaler.offsetWidth / 1080})`;
+        });
+    });
+    </script>
+</body>
+</html>

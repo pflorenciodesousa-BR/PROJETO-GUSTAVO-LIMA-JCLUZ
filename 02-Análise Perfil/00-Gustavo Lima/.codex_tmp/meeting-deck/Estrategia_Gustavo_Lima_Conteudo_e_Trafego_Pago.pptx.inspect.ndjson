@@ -1,0 +1,492 @@
+{"kind":"deck","id":"pr/205qg8","name":"Deck"}
+{"kind":"layout","layoutId":"46f2c2a0-f792-4f3d-b45e-fbe2b00b7e7b","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"e9fcefe7-272a-44b3-9962-220f332a0317","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/ovokfb","slide":1,"title":"ESTRATÉGIA DE CONTEÚDO + TRÁFEGO PAGO","textShapes":5}
+{"kind":"shape","id":"sh/j29ofadg","slide":1,"bbox":[0,0,12,720]}
+{"kind":"textbox","id":"sh/k3258fe1","slide":1,"text":"ESTRATÉGIA DE CONTEÚDO + TRÁFEGO PAGO","textPreview":"ESTRATÉGIA DE CONTEÚDO + TRÁFEGO PAGO","textChars":37,"textLines":1,"bbox":[58,62,620,28]}
+{"kind":"textbox","id":"sh/l4b6hkvm","slide":1,"text":"Gustavo Lima","textPreview":"Gustavo Lima","textChars":12,"textLines":1,"bbox":[58,128,620,82]}
+{"kind":"textbox","id":"sh/6pknapw7","slide":1,"text":"Conteúdo que constrói confiança.\nTráfego que gera conversa.","textPreview":"Conteúdo que constrói confiança. | Tráfego que gera conversa.","textChars":59,"textLines":2,"bbox":[58,236,620,150]}
+{"kind":"textbox","id":"sh/7qtojudc","slide":1,"text":"Leitura de agosto de 2026 + plano de mídia para a próxima fase","textPreview":"Leitura de agosto de 2026 + plano de mídia para a próxima fase","textChars":62,"textLines":1,"bbox":[58,420,560,76]}
+{"kind":"shape","id":"sh/8r25czex","slide":1,"bbox":[58,570,590,2]}
+{"kind":"textbox","id":"sh/tsb6l4vi","slide":1,"text":"NOSSA RÉGUA: CONVERSA QUALIFICADA, PROPOSTA E VENDA","textPreview":"NOSSA RÉGUA: CONVERSA QUALIFICADA, PROPOSTA E VENDA","textChars":51,"textLines":1,"bbox":[58,588,590,34]}
+{"kind":"shape","id":"sh/mtgny5wn","slide":1,"bbox":[748,36,480,648]}
+{"kind":"image","id":"im/y18by5k3","slide":1,"name":"","geometry":"rect","alt":"Captura do perfil @gustavojcluz no Instagram","bbox":[760,48,456,624]}
+{"kind":"notes","id":"nt/ovokfb","slide":1,"text":"Abrir a reuniao alinhando que o plano nasce dos dados de agosto, mas tem venda como destino.\n\n[Sources]\n- file:///C:/Users/Jcluz/Pictures/Screenshots/Captura%20de%20tela%202026-08-20%20095021.png\n- Google Sheets - Analise de Crescimento de Autoridade - Gustavo Lima / Postagens 2026 / agosto de 2026\n- Instagram Insights - @gustavojcluz - publicacoes de 03 a 18/08/2026\n[/Sources]"}
+{"kind":"slide","id":"sl/imw7oo","slide":2,"title":"NOSSA FILOSOFIA","textShapes":16}
+{"kind":"textbox","id":"sh/czud83qx","slide":2,"text":"NOSSA FILOSOFIA","textPreview":"NOSSA FILOSOFIA","textChars":15,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/bylwfypc","slide":2,"text":"A gente não quer plateia. Quer venda.","textPreview":"A gente não quer plateia. Quer venda.","textChars":37,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/qxcv6t8r","slide":2,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/lonels7e","slide":2,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/03edcnqt","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"textbox","id":"sh/z2lwjip8","slide":2,"text":"View e alcance mostram que a mensagem circulou. Mas o resultado começa quando a pessoa certa confia, chama e avança.","textPreview":"View e alcance mostram que a mensagem circulou. Mas o resultado começa quando a pessoa certa confia, chama e avança.","textChars":116,"textLines":1,"bbox":[52,160,590,160]}
+{"kind":"shape","id":"sh/y1cvad83","slide":2,"bbox":[52,378,590,170]}
+{"kind":"textbox","id":"sh/18ju9ora","slide":2,"text":"A pergunta central","textPreview":"A pergunta central","textChars":18,"textLines":1,"bbox":[80,402,530,28]}
+{"kind":"textbox","id":"sh/g7ad0jqp","slide":2,"text":"Este conteúdo aproxima o cliente certo de uma conversa comercial?","textPreview":"Este conteúdo aproxima o cliente certo de uma conversa comercial?","textChars":65,"textLines":1,"bbox":[80,442,530,72]}
+{"kind":"shape","id":"sh/uh87uhsn","slide":2,"bbox":[710,156,518,128]}
+{"kind":"textbox","id":"sh/fih83298","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[728,172,42,32]}
+{"kind":"textbox","id":"sh/gjqpw7at","slide":2,"text":"Atenção","textPreview":"Atenção","textChars":7,"textLines":1,"bbox":[780,170,428,34]}
+{"kind":"textbox","id":"sh/hkzq5cre","slide":2,"text":"Não seguidores, gancho, retenção e alcance útil.","textPreview":"Não seguidores, gancho, retenção e alcance útil.","textChars":48,"textLines":1,"bbox":[780,208,426,62]}
+{"kind":"shape","id":"sh/2l87yhsz","slide":2,"bbox":[710,306,518,128]}
+{"kind":"textbox","id":"sh/3mh87m94","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[728,322,42,32]}
+{"kind":"textbox","id":"sh/4nap0rap","slide":2,"text":"Intenção","textPreview":"Intenção","textChars":8,"textLines":1,"bbox":[780,320,428,34]}
+{"kind":"textbox","id":"sh/pojq9wra","slide":2,"text":"Visita ao perfil, salvamento, compartilhamento e mensagem.","textPreview":"Visita ao perfil, salvamento, compartilhamento e mensagem.","textChars":58,"textLines":1,"bbox":[780,358,426,62]}
+{"kind":"shape","id":"sh/q9sr21sv","slide":2,"bbox":[710,456,518,128]}
+{"kind":"textbox","id":"sh/ra18bm9g","slide":2,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[728,472,42,32]}
+{"kind":"textbox","id":"sh/neloz6po","slide":2,"text":"Negócio","textPreview":"Negócio","textChars":7,"textLines":1,"bbox":[780,470,428,34]}
+{"kind":"textbox","id":"sh/mds7q1o3","slide":2,"text":"Lead qualificado, proposta, venda, CAC e receita.","textPreview":"Lead qualificado, proposta, venda, CAC e receita.","textChars":49,"textLines":1,"bbox":[780,508,426,62]}
+{"kind":"notes","id":"nt/imw7oo","slide":2,"text":"A equipe pode olhar metricas de atencao, desde que elas estejam ligadas a intencao e negocio.\n\n[Sources]\n- file:///C:/Users/Jcluz/Antigravity/00-Arquitetura-de-Informacoes/02%20Informa%C3%A7%C3%B5es%20Mercado/Dossie%20do%20Mercado.pdf\n- https://www.facebook.com/business/ads/ad-objectives/lead-generation?locale=en_GB\n[/Sources]"}
+{"kind":"slide","id":"sl/3jczi0","slide":3,"title":"POSICIONAMENTO","textShapes":15}
+{"kind":"textbox","id":"sh/pkzal0n2","slide":3,"text":"POSICIONAMENTO","textPreview":"POSICIONAMENTO","textChars":14,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/2h8ba54b","slide":3,"text":"O papel do perfil do Gustavo","textPreview":"O papel do perfil do Gustavo","textChars":28,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/3ihsja5w","slide":3,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/c7atgfmd","slide":3,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/d8jupkny","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"textbox","id":"sh/ql8be54n","slide":3,"text":"Gustavo não precisa parecer influenciador. Precisa parecer a escolha segura.","textPreview":"Gustavo não precisa parecer influenciador. Precisa parecer a escolha segura.","textChars":76,"textLines":1,"bbox":[52,160,610,180]}
+{"kind":"textbox","id":"sh/b6hcna58","slide":3,"text":"O perfil deve unir domínio de plano de saúde, presença humana e resposta comercial rápida.","textPreview":"O perfil deve unir domínio de plano de saúde, presença humana e resposta comercial rápida.","textChars":90,"textLines":1,"bbox":[52,370,580,86]}
+{"kind":"shape","id":"sh/sb6t4bm9","slide":3,"bbox":[710,160,518,126]}
+{"kind":"textbox","id":"sh/tcfadgnu","slide":3,"text":"70%","textPreview":"70%","textChars":3,"textLines":1,"bbox":[728,176,72,32]}
+{"kind":"textbox","id":"sh/h8rytgvq","slide":3,"text":"Profissional","textPreview":"Profissional","textChars":12,"textLines":1,"bbox":[810,174,398,34]}
+{"kind":"textbox","id":"sh/g7ihkbu5","slide":3,"text":"Cotação, comparação, mercado, prova, estrutura e orientação.","textPreview":"Cotação, comparação, mercado, prova, estrutura e orientação.","textChars":60,"textLines":1,"bbox":[810,212,396,60]}
+{"kind":"shape","id":"sh/vm9grqdk","slide":3,"bbox":[710,308,518,126]}
+{"kind":"textbox","id":"sh/ul0zilcz","slide":3,"text":"30%","textPreview":"30%","textChars":3,"textLines":1,"bbox":[728,324,72,32]}
+{"kind":"textbox","id":"sh/5crix0bm","slide":3,"text":"Pessoal","textPreview":"Pessoal","textChars":7,"textLines":1,"bbox":[810,322,398,34]}
+{"kind":"textbox","id":"sh/4bihovu1","slide":3,"text":"Família, esporte, rotina, valores e crenças que humanizam.","textPreview":"Família, esporte, rotina, valores e crenças que humanizam.","textChars":58,"textLines":1,"bbox":[810,360,396,60]}
+{"kind":"shape","id":"sh/3a90vqtw","slide":3,"bbox":[710,456,518,126]}
+{"kind":"textbox","id":"sh/i90zmlcb","slide":3,"text":"100%","textPreview":"100%","textChars":4,"textLines":1,"bbox":[728,472,72,32]}
+{"kind":"textbox","id":"sh/dgbi10by","slide":3,"text":"Coerente","textPreview":"Coerente","textChars":8,"textLines":1,"bbox":[810,470,398,34]}
+{"kind":"textbox","id":"sh/sf2hsfud","slide":3,"text":"Todo conteúdo deve reforçar confiança, clareza e responsabilidade.","textPreview":"Todo conteúdo deve reforçar confiança, clareza e responsabilidade.","textChars":66,"textLines":1,"bbox":[810,508,396,60]}
+{"kind":"notes","id":"nt/3jczi0","slide":3,"text":"Defender o 70/30 como arquitetura de confianca: profissional prova competencia; pessoal reduz distancia.\n\n[Sources]\n- Direcao estrategica fornecida pelo responsavel do perfil\n- file:///C:/Users/Jcluz/Pictures/Screenshots/Captura%20de%20tela%202026-08-20%20095021.png\n[/Sources]"}
+{"kind":"slide","id":"sl/h05w86","slide":4,"title":"PERSONA ESSENCIAL","textShapes":9}
+{"kind":"textbox","id":"sh/sn2xwful","slide":4,"text":"PERSONA ESSENCIAL","textPreview":"PERSONA ESSENCIAL","textChars":17,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/7mtgnat0","slide":4,"text":"Quem precisa confiar na gente","textPreview":"Quem precisa confiar na gente","textChars":29,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/6lkfu5cf","slide":4,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/5kbylkbu","slide":4,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/kj2xsfu9","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"textbox","id":"sh/ji9gjat4","slide":4,"text":"CNPJ familiar","textPreview":"CNPJ familiar","textChars":13,"textLines":1,"bbox":[52,158,480,56]}
+{"kind":"textbox","id":"sh/ih0fq5cj","slide":4,"text":"Empresário ou profissional, geralmente entre 35 e 54 anos, com família de 3 a 5 pessoas e disposição para investir R$ 3 mil a R$ 5 mil por mês.","textPreview":"Empresário ou profissional, geralmente entre 35 e 54 anos, com família de 3 a 5 pessoas e disposição para investir R$ 3 mil a R$ 5 mil po...","textChars":143,"textLines":1,"bbox":[52,228,480,140]}
+{"kind":"shape","id":"sh/xgreh0by","slide":4,"bbox":[52,394,480,168]}
+{"kind":"textbox","id":"sh/wfixovud","slide":4,"text":"Ele não busca o plano mais barato.","textPreview":"Ele não busca o plano mais barato.","textChars":34,"textLines":1,"bbox":[76,416,432,34]}
+{"kind":"textbox","id":"sh/y5crexc3","slide":4,"text":"Busca rede, previsibilidade e segurança para não escolher errado.","textPreview":"Busca rede, previsibilidade e segurança para não escolher errado.","textChars":65,"textLines":1,"bbox":[76,460,432,72]}
+{"kind":"shape","id":"sh/z6lsn2to","slide":4,"bbox":[570,154,658,430]}
+{"kind":"textbox","id":"sh/l83apsbu","slide":4,"text":"Medos que movem a decisão: reajuste, carência, rede ruim e cláusula escondida.","textPreview":"Medos que movem a decisão: reajuste, carência, rede ruim e cláusula escondida.","textChars":78,"textLines":1,"bbox":[570,602,658,44]}
+{"kind":"image","id":"im/rqx8zy5c","slide":4,"name":"","geometry":"rect","alt":"Trecho visual da matriz final da persona CNPJ familiar","bbox":[584,168,630,402]}
+{"kind":"notes","id":"nt/h05w86","slide":4,"text":"Apresentar a persona sem transformar hipotese em certeza absoluta. O ponto forte e a necessidade de seguranca na decisao.\n\n[Sources]\n- file:///C:/Users/Jcluz/Antigravity/00-Arquitetura-de-Informacoes/02%20Informa%C3%A7%C3%B5es%20Mercado/Dossie%20do%20Mercado.pdf\n- file:///C:/Users/Jcluz/Antigravity/00-Arquitetura-de-Informacoes/02%20Informa%C3%A7%C3%B5es%20Mercado/Persona%202025%20%E2%80%94%20Lannister%20(CNPJ%20familiar)%20Estudo.pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/f931fq","slide":5,"title":"POSTADO X PLANEJADO","textShapes":15}
+{"kind":"textbox","id":"sh/6xc7udwj","slide":5,"text":"POSTADO X PLANEJADO","textPreview":"POSTADO X PLANEJADO","textChars":19,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/t0nqp8fu","slide":5,"text":"Agosto: volume quase cheio, estratégia incompleta","textPreview":"Agosto: volume quase cheio, estratégia incompleta","textChars":49,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/szepw3e9","slide":5,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/fm58rix0","slide":5,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/u1wrydwf","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"shape","id":"sh/honqtsf6","slide":5,"bbox":[52,166,360,202]}
+{"kind":"shape","id":"sh/gne90nel","slide":5,"bbox":[52,166,8,202]}
+{"kind":"textbox","id":"sh/3qp8vixw","slide":5,"text":"96,7%","textPreview":"96,7%","textChars":5,"textLines":1,"bbox":[80,190,308,68]}
+{"kind":"textbox","id":"sh/2pwr2xwb","slide":5,"text":"do volume planejado","textPreview":"do volume planejado","textChars":19,"textLines":1,"bbox":[80,267,308,50]}
+{"kind":"textbox","id":"sh/oridg3q5","slide":5,"text":"29 posts realizados de 30 previstos","textPreview":"29 posts realizados de 30 previstos","textChars":35,"textLines":1,"bbox":[80,323,308,28]}
+{"kind":"shape","id":"sh/psru9orq","slide":5,"bbox":[460,166,360,202]}
+{"kind":"shape","id":"sh/2p0vet8z","slide":5,"bbox":[460,166,8,202]}
+{"kind":"textbox","id":"sh/3q9c7y9k","slide":5,"text":"5 / 15","textPreview":"5 / 15","textChars":6,"textLines":1,"bbox":[488,190,308,68]}
+{"kind":"textbox","id":"sh/cv2dk3q1","slide":5,"text":"cotações realizadas","textPreview":"cotações realizadas","textChars":19,"textLines":1,"bbox":[488,267,308,50]}
+{"kind":"textbox","id":"sh/dwbud8rm","slide":5,"text":"apenas 33,3% da meta de cotação","textPreview":"apenas 33,3% da meta de cotação","textChars":31,"textLines":1,"bbox":[488,323,308,28]}
+{"kind":"shape","id":"sh/qtkvit8v","slide":5,"bbox":[868,166,360,202]}
+{"kind":"shape","id":"sh/butcby9g","slide":5,"bbox":[868,166,8,202]}
+{"kind":"textbox","id":"sh/0j2donqd","slide":5,"text":"90 / 10","textPreview":"90 / 10","textChars":7,"textLines":1,"bbox":[896,190,308,68]}
+{"kind":"textbox","id":"sh/lkbeh87y","slide":5,"text":"mix profissional / pessoal","textPreview":"mix profissional / pessoal","textChars":26,"textLines":1,"bbox":[896,267,308,50]}
+{"kind":"textbox","id":"sh/tgru18z2","slide":5,"text":"o desenho desejado era 70 / 30","textPreview":"o desenho desejado era 70 / 30","textChars":30,"textLines":1,"bbox":[896,323,308,28]}
+{"kind":"shape","id":"sh/8fyd83ih","slide":5,"bbox":[52,414,1176,168]}
+{"kind":"textbox","id":"sh/7epczyhw","slide":5,"text":"O problema não foi falta de trabalho.","textPreview":"O problema não foi falta de trabalho.","textChars":37,"textLines":1,"bbox":[82,442,520,40]}
+{"kind":"textbox","id":"sh/mdgv6d0b","slide":5,"text":"Foi aderência ao plano: mantivemos dois posts por dia, mas perdemos a repeticao da cotação e a camada humana do perfil.","textPreview":"Foi aderência ao plano: mantivemos dois posts por dia, mas perdemos a repeticao da cotação e a camada humana do perfil.","textChars":119,"textLines":1,"bbox":[82,492,1110,64]}
+{"kind":"notes","id":"nt/f931fq","slide":5,"text":"Usar este slide para separar disciplina de execucao e fidelidade estrategica.\n\n[Sources]\n- Google Sheets - Analise de Crescimento de Autoridade - Gustavo Lima / Postagens 2026 / agosto de 2026\n[/Sources]"}
+{"kind":"slide","id":"sl/wnoc3s","slide":6,"title":"DESEMPENHO DE AGOSTO","textShapes":14}
+{"kind":"textbox","id":"sh/dcna1432","slide":6,"text":"DESEMPENHO DE AGOSTO","textPreview":"DESEMPENHO DE AGOSTO","textChars":20,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/q9cb6p4b","slide":6,"text":"O formato abre a porta. A pauta decide quem entra.","textPreview":"O formato abre a porta. A pauta decide quem entra.","textChars":50,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/ba5szulw","slide":6,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/o7u94fm5","slide":6,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/p83axk3q","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"shape","id":"sh/36lsval0","slide":6,"bbox":[712,168,516,112]}
+{"kind":"textbox","id":"sh/gju90fm9","slide":6,"text":"15.357","textPreview":"15.357","textChars":6,"textLines":1,"bbox":[730,184,104,32]}
+{"kind":"textbox","id":"sh/1k3atk3u","slide":6,"text":"visualizações","textPreview":"visualizações","textChars":13,"textLines":1,"bbox":[844,182,364,34]}
+{"kind":"textbox","id":"sh/1cby9kzu","slide":6,"text":"Soma dos Insights das publicações lidas.","textPreview":"Soma dos Insights das publicações lidas.","textChars":40,"textLines":1,"bbox":[844,220,362,46]}
+{"kind":"shape","id":"sh/gb2xgzy9","slide":6,"bbox":[712,300,516,112]}
+{"kind":"textbox","id":"sh/fqtg7uho","slide":6,"text":"57,5%","textPreview":"57,5%","textChars":5,"textLines":1,"bbox":[730,316,104,32]}
+{"kind":"textbox","id":"sh/epkfep0j","slide":6,"text":"não seguidores","textPreview":"não seguidores","textChars":14,"textLines":1,"bbox":[844,314,364,34]}
+{"kind":"textbox","id":"sh/tobe5kzy","slide":6,"text":"Descoberta existe: mais da metade veio de fora da base.","textPreview":"Descoberta existe: mais da metade veio de fora da base.","textChars":55,"textLines":1,"bbox":[844,352,362,46]}
+{"kind":"shape","id":"sh/sn2xcfid","slide":6,"bbox":[712,432,516,112]}
+{"kind":"textbox","id":"sh/rmtw3ahs","slide":6,"text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[730,448,42,32]}
+{"kind":"textbox","id":"sh/6l0fa507","slide":6,"text":"novos seguidores","textPreview":"novos seguidores","textChars":16,"textLines":1,"bbox":[782,446,426,34]}
+{"kind":"textbox","id":"sh/5kre10zm","slide":6,"text":"Crescimento atribuído diretamente aos posts.","textPreview":"Crescimento atribuído diretamente aos posts.","textChars":44,"textLines":1,"bbox":[782,484,424,46]}
+{"kind":"textbox","id":"sh/4jix8fi1","slide":6,"text":"Sem o Reel fora da curva, a média de Reels cai para aproximadamente 412: apenas 14% acima dos posts.","textPreview":"Sem o Reel fora da curva, a média de Reels cai para aproximadamente 412: apenas 14% acima dos posts.","textChars":100,"textLines":1,"bbox":[712,566,516,60]}
+{"kind":"chart","id":"ch/qdwja9oz","slide":6,"name":"","chartType":"bar","bbox":[52,168,610,420]}
+{"kind":"notes","id":"nt/wnoc3s","slide":6,"text":"A conclusao nao e 'fazer so Reels'. A conclusao e usar video para distribuicao e pauta certa para atrair o ICP.\n\n[Sources]\n- Instagram Insights - @gustavojcluz - publicacoes de 03 a 18/08/2026\n[/Sources]"}
+{"kind":"slide","id":"sl/ygyfys","slide":7,"title":"O VÍDEO FORA DA CURVA","textShapes":17}
+{"kind":"textbox","id":"sh/n2p8zits","slide":7,"text":"O VÍDEO FORA DA CURVA","textPreview":"O VÍDEO FORA DA CURVA","textChars":21,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/83ypsnud","slide":7,"text":"Alcance alto não e sinal verde automático","textPreview":"Alcance alto não e sinal verde automático","textChars":41,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/947q1sby","slide":7,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/a5g7uxcj","slide":7,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/vqp832to","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"shape","id":"sh/wripw7u9","slide":7,"bbox":[52,160,440,420]}
+{"kind":"textbox","id":"sh/xsrq5cbu","slide":7,"text":"3.713","textPreview":"3.713","textChars":5,"textLines":1,"bbox":[84,194,370,88]}
+{"kind":"textbox","id":"sh/q9w7idcz","slide":7,"text":"visualizações","textPreview":"visualizações","textChars":13,"textLines":1,"bbox":[86,284,350,34]}
+{"kind":"textbox","id":"sh/bu5orydk","slide":7,"text":"'Pense menos, faça mais'","textPreview":"'Pense menos, faça mais'","textChars":24,"textLines":1,"bbox":[86,354,360,76]}
+{"kind":"textbox","id":"sh/36dcfutk","slide":7,"text":"Excelente porta de entrada.","textPreview":"Excelente porta de entrada.","textChars":27,"textLines":1,"bbox":[86,484,360,34]}
+{"kind":"shape","id":"sh/254bmpsz","slide":7,"bbox":[534,160,694,126]}
+{"kind":"textbox","id":"sh/psfuh4bq","slide":7,"text":"86,9%","textPreview":"86,9%","textChars":5,"textLines":1,"bbox":[560,180,180,46]}
+{"kind":"textbox","id":"sh/47mtoza5","slide":7,"text":"não seguidores","textPreview":"não seguidores","textChars":14,"textLines":1,"bbox":[560,230,190,30]}
+{"kind":"textbox","id":"sh/f2dsbut8","slide":7,"text":"353","textPreview":"353","textChars":3,"textLines":1,"bbox":[790,180,150,46]}
+{"kind":"textbox","id":"sh/u14bipc3","slide":7,"text":"interações","textPreview":"interações","textChars":10,"textLines":1,"bbox":[790,230,160,30]}
+{"kind":"textbox","id":"sh/h4vudkbe","slide":7,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1018,180,110,46]}
+{"kind":"textbox","id":"sh/g3mtkfut","slide":7,"text":"seguidor","textPreview":"seguidor","textChars":8,"textLines":1,"bbox":[1018,230,150,30]}
+{"kind":"shape","id":"sh/7yts7atc","slide":7,"bbox":[534,316,694,264]}
+{"kind":"textbox","id":"sh/6xkbe5cr","slide":7,"text":"A lição","textPreview":"A lição","textChars":7,"textLines":1,"bbox":[562,340,610,34]}
+{"kind":"textbox","id":"sh/a9kbq5wj","slide":7,"text":"O pessoal pode atrair. Mas, sem uma ponte para a promessa profissional, ele entretém e vai embora.","textPreview":"O pessoal pode atrair. Mas, sem uma ponte para a promessa profissional, ele entretém e vai embora.","textChars":98,"textLines":1,"bbox":[562,388,610,98]}
+{"kind":"textbox","id":"sh/batczad4","slide":7,"text":"A ponte pode ser legenda, sequência de Stories, destaque ou CTA para uma dúvida real do cliente.","textPreview":"A ponte pode ser legenda, sequência de Stories, destaque ou CTA para uma dúvida real do cliente.","textChars":96,"textLines":1,"bbox":[562,508,610,46]}
+{"kind":"notes","id":"nt/ygyfys","slide":7,"text":"Usar o outlier como exemplo de descoberta forte e conversao direta baixa, sem desvalorizar o conteudo pessoal.\n\n[Sources]\n- Instagram Insights - @gustavojcluz - publicacoes de 03 a 18/08/2026\n[/Sources]"}
+{"kind":"slide","id":"sl/eto164","slide":8,"title":"CURVA DE AGOSTO","textShapes":22}
+{"kind":"textbox","id":"sh/zatkf654","slide":8,"text":"CURVA DE AGOSTO","textPreview":"CURVA DE AGOSTO","textChars":15,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/kb2l8b6p","slide":8,"text":"Quanto tempo o conteúdo escala organicamente","textPreview":"Quanto tempo o conteúdo escala organicamente","textChars":44,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/lcb2hwna","slide":8,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/a50j2hon","slide":8,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/b69kbm5s","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"textbox","id":"sh/c7i14r6d","slide":8,"text":"0 a 7 dias","textPreview":"0 a 7 dias","textChars":10,"textLines":1,"bbox":[220,148,230,28]}
+{"kind":"textbox","id":"sh/x8r2dwny","slide":8,"text":"7 a 14 dias","textPreview":"7 a 14 dias","textChars":11,"textLines":1,"bbox":[780,148,230,28]}
+{"kind":"textbox","id":"sh/u143elor","slide":8,"text":"Carrossel","textPreview":"Carrossel","textChars":9,"textLines":1,"bbox":[52,200,150,32]}
+{"kind":"shape","id":"sh/v2dknq5c","slide":8,"bbox":[220,190,440,30]}
+{"kind":"shape","id":"sh/7i9sn6l8","slide":8,"bbox":[220,190,393.49,30]}
+{"kind":"textbox","id":"sh/6hgre1kn","slide":8,"text":"+62,6%","textPreview":"+62,6%","textChars":6,"textLines":1,"bbox":[674,192,78,28]}
+{"kind":"shape","id":"sh/t4rapg3e","slide":8,"bbox":[780,190,250,30]}
+{"kind":"shape","id":"sh/sji9gb2t","slide":8,"bbox":[780,190,222,30]}
+{"kind":"textbox","id":"sh/f69srqlk","slide":8,"text":"+22,2%","textPreview":"+22,2%","textChars":6,"textLines":1,"bbox":[1048,192,96,28]}
+{"kind":"textbox","id":"sh/u50rilkz","slide":8,"text":"Cotação","textPreview":"Cotação","textChars":7,"textLines":1,"bbox":[52,278,150,32]}
+{"kind":"shape","id":"sh/18ratg3a","slide":8,"bbox":[220,268,440,30]}
+{"kind":"shape","id":"sh/g7i9kv2p","slide":8,"bbox":[220,268,181.03,30]}
+{"kind":"textbox","id":"sh/3atsvqlg","slide":8,"text":"+28,8%","textPreview":"+28,8%","textChars":6,"textLines":1,"bbox":[674,270,78,28]}
+{"kind":"shape","id":"sh/290rmlkv","slide":8,"bbox":[780,268,250,30]}
+{"kind":"shape","id":"sh/y54vep43","slide":8,"bbox":[780,268,63,30]}
+{"kind":"textbox","id":"sh/z6dcnu5o","slide":8,"text":"+6,3%","textPreview":"+6,3%","textChars":5,"textLines":1,"bbox":[1048,270,96,28]}
+{"kind":"textbox","id":"sh/07mdgzm9","slide":8,"text":"Espontâneo","textPreview":"Espontâneo","textChars":10,"textLines":1,"bbox":[52,356,150,32]}
+{"kind":"shape","id":"sh/l8vup4nu","slide":8,"bbox":[220,346,440,30]}
+{"kind":"shape","id":"sh/q1kvap47","slide":8,"bbox":[220,346,216.86,30]}
+{"kind":"textbox","id":"sh/b2dcju5s","slide":8,"text":"+34,5%","textPreview":"+34,5%","textChars":6,"textLines":1,"bbox":[674,348,78,28]}
+{"kind":"shape","id":"sh/c3mdcfmx","slide":8,"bbox":[780,346,250,30]}
+{"kind":"shape","id":"sh/d4vulkni","slide":8,"bbox":[780,346,55,30]}
+{"kind":"textbox","id":"sh/axovm94b","slide":8,"text":"+5,5%","textPreview":"+5,5%","textChars":5,"textLines":1,"bbox":[1048,348,96,28]}
+{"kind":"textbox","id":"sh/vyxwve5w","slide":8,"text":"Frase","textPreview":"Frase","textChars":5,"textLines":1,"bbox":[52,434,150,32]}
+{"kind":"shape","id":"sh/5sjyl87y","slide":8,"bbox":[220,424,440,30]}
+{"kind":"shape","id":"sh/krqxc36d","slide":8,"bbox":[220,424,178.51,30]}
+{"kind":"textbox","id":"sh/jqhgjyps","slide":8,"text":"+28,4%","textPreview":"+28,4%","textChars":6,"textLines":1,"bbox":[674,426,78,28]}
+{"kind":"shape","id":"sh/ip8fadon","slide":8,"bbox":[780,424,250,30]}
+{"kind":"shape","id":"sh/xozyh872","slide":8,"bbox":[780,424,221,30]}
+{"kind":"textbox","id":"sh/wnqx836h","slide":8,"text":"+22,1%","textPreview":"+22,1%","textChars":6,"textLines":1,"bbox":[1048,426,96,28]}
+{"kind":"textbox","id":"sh/v2hgfypw","slide":8,"text":"Foto","textPreview":"Foto","textChars":4,"textLines":1,"bbox":[52,512,150,32]}
+{"kind":"shape","id":"sh/a18f6tob","slide":8,"bbox":[220,502,440,30]}
+{"kind":"shape","id":"sh/hk3yts76","slide":8,"bbox":[220,502,191.71,30]}
+{"kind":"textbox","id":"sh/gjaxkn6l","slide":8,"text":"+30,5%","textPreview":"+30,5%","textChars":6,"textLines":1,"bbox":[674,504,78,28]}
+{"kind":"textbox","id":"sh/o3y5kn6h","slide":8,"text":"sem amostra","textPreview":"sem amostra","textChars":11,"textLines":1,"bbox":[780,505,180,28]}
+{"kind":"shape","id":"sh/94r6ds72","slide":8,"bbox":[52,586,1176,66]}
+{"kind":"textbox","id":"sh/m1gnixob","slide":8,"text":"Leitura prática: 24h mede gancho, 7 dias mede a maior parte da distribuição e 14 dias revela a cauda. Ainda não há base de 3 semanas.","textPreview":"Leitura prática: 24h mede gancho, 7 dias mede a maior parte da distribuição e 14 dias revela a cauda. Ainda não há base de 3 semanas.","textChars":133,"textLines":1,"bbox":[74,598,1132,46]}
+{"kind":"notes","id":"nt/eto164","slide":8,"text":"As taxas sao variacoes internas observadas nas amostras disponiveis; carrossel e frase ainda possuem amostras pequenas.\n\n[Sources]\n- Google Sheets - Analise de Crescimento de Autoridade - Gustavo Lima / Postagens 2026 / agosto de 2026\n[/Sources]"}
+{"kind":"slide","id":"sl/rcn06h","slide":9,"title":"PRIMEIRAS 24 HORAS","textShapes":15}
+{"kind":"textbox","id":"sh/zed0rqls","slide":9,"text":"PRIMEIRAS 24 HORAS","textPreview":"PRIMEIRAS 24 HORAS","textChars":18,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/0fm1kvmd","slide":9,"text":"Vídeos de cotação: nosso ponto de partida","textPreview":"Vídeos de cotação: nosso ponto de partida","textChars":41,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/1gvit03i","slide":9,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/mhojml43","slide":9,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/nix0vqlo","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"shape","id":"sh/oj61ovm9","slide":9,"bbox":[52,172,360,202]}
+{"kind":"shape","id":"sh/9kfix03u","slide":9,"bbox":[52,172,8,202]}
+{"kind":"textbox","id":"sh/alojq54f","slide":9,"text":"14,2 s","textPreview":"14,2 s","textChars":6,"textLines":1,"bbox":[80,196,308,68]}
+{"kind":"textbox","id":"sh/bmx0zal0","slide":9,"text":"retenção média","textPreview":"retenção média","textChars":14,"textLines":1,"bbox":[80,273,308,50]}
+{"kind":"textbox","id":"sh/32xsbq98","slide":9,"text":"mediana: 13 segundos","textPreview":"mediana: 13 segundos","textChars":20,"textLines":1,"bbox":[80,329,308,28]}
+{"kind":"shape","id":"sh/i1obilsn","slide":9,"bbox":[460,172,360,202]}
+{"kind":"shape","id":"sh/54fadgre","slide":9,"bbox":[460,172,8,202]}
+{"kind":"textbox","id":"sh/436tkbat","slide":9,"text":"46,2%","textPreview":"46,2%","textChars":5,"textLines":1,"bbox":[488,196,308,68]}
+{"kind":"textbox","id":"sh/vyds769c","slide":9,"text":"gancho medio","textPreview":"gancho medio","textChars":12,"textLines":1,"bbox":[488,273,308,50]}
+{"kind":"textbox","id":"sh/ux4be1sr","slide":9,"text":"mediana: 49%","textPreview":"mediana: 49%","textChars":12,"textLines":1,"bbox":[488,329,308,28]}
+{"kind":"shape","id":"sh/h0va9gr2","slide":9,"bbox":[868,172,360,202]}
+{"kind":"shape","id":"sh/gzmtgbah","slide":9,"bbox":[868,172,8,202]}
+{"kind":"textbox","id":"sh/fuhcja9g","slide":9,"text":"268","textPreview":"268","textChars":3,"textLines":1,"bbox":[896,196,308,68]}
+{"kind":"textbox","id":"sh/et8bq5sv","slide":9,"text":"views médias","textPreview":"views médias","textChars":12,"textLines":1,"bbox":[896,273,308,50]}
+{"kind":"textbox","id":"sh/apsvi9c3","slide":9,"text":"alcance medio: 166","textPreview":"alcance medio: 166","textChars":18,"textLines":1,"bbox":[896,329,308,28]}
+{"kind":"shape","id":"sh/bq1wbeto","slide":9,"bbox":[52,424,1176,154]}
+{"kind":"textbox","id":"sh/crudkzu9","slide":9,"text":"Isso e uma linha de base interna, não um veredito.","textPreview":"Isso e uma linha de base interna, não um veredito.","textChars":50,"textLines":1,"bbox":[80,448,1110,34]}
+{"kind":"textbox","id":"sh/xs3ed4bu","slide":9,"text":"O próximo passo e testar abertura, duração, oferta e CTA, sempre ligando o vídeo a conversas qualificadas e vendas.","textPreview":"O próximo passo e testar abertura, duração, oferta e CTA, sempre ligando o vídeo a conversas qualificadas e vendas.","textChars":115,"textLines":1,"bbox":[80,494,1110,56]}
+{"kind":"notes","id":"nt/rcn06h","slide":9,"text":"Nao comparar estes numeros com benchmark generico. Usar agosto como linha de base para os testes do proprio perfil.\n\n[Sources]\n- Google Sheets - Analise de Crescimento de Autoridade - Gustavo Lima / Postagens 2026 / agosto de 2026\n[/Sources]"}
+{"kind":"slide","id":"sl/yezn6m","slide":10,"title":"O QUE IMPULSIONAR","textShapes":15}
+{"kind":"textbox","id":"sh/butkzapc","slide":10,"text":"O QUE IMPULSIONAR","textPreview":"O QUE IMPULSIONAR","textChars":17,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/cv2lsfqx","slide":10,"text":"Profissional e pessoal cumprem funções diferentes","textPreview":"Profissional e pessoal cumprem funções diferentes","textChars":49,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/dwbm1k7i","slide":10,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/2503m58v","slide":10,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/369kva9g","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"shape","id":"sh/o7ilofq1","slide":10,"bbox":[52,160,560,410]}
+{"kind":"shape","id":"sh/p8r2xkrm","slide":10,"bbox":[52,160,560,9]}
+{"kind":"textbox","id":"sh/m143y98z","slide":10,"text":"Conteúdo profissional","textPreview":"Conteúdo profissional","textChars":21,"textLines":1,"bbox":[80,190,500,44]}
+{"kind":"textbox","id":"sh/n2d47upk","slide":10,"text":"80% da verba de descoberta","textPreview":"80% da verba de descoberta","textChars":26,"textLines":1,"bbox":[80,248,500,36]}
+{"kind":"textbox","id":"sh/jilw3uhs","slide":10,"text":"100% da verba de captacao","textPreview":"100% da verba de captacao","textChars":25,"textLines":1,"bbox":[80,292,500,36]}
+{"kind":"shape","id":"sh/ixsfa907","slide":10,"bbox":[80,344,500,1]}
+{"kind":"textbox","id":"sh/5k3e54zy","slide":10,"text":"Cotação, comparação, rede, carência, reajuste, prova, bastidor de atendimento e visão de mercado.","textPreview":"Cotação, comparação, rede, carência, reajuste, prova, bastidor de atendimento e visão de mercado.","textChars":97,"textLines":1,"bbox":[80,366,500,120]}
+{"kind":"textbox","id":"sh/kjuxczid","slide":10,"text":"Objetivo: atrair e converter pela competência.","textPreview":"Objetivo: atrair e converter pela competência.","textChars":46,"textLines":1,"bbox":[80,516,500,32]}
+{"kind":"shape","id":"sh/7mlw7eh4","slide":10,"bbox":[668,160,560,410]}
+{"kind":"shape","id":"sh/6lcfe90j","slide":10,"bbox":[668,160,560,9]}
+{"kind":"textbox","id":"sh/to3e9ozu","slide":10,"text":"Conteúdo pessoal","textPreview":"Conteúdo pessoal","textChars":16,"textLines":1,"bbox":[696,190,500,44]}
+{"kind":"textbox","id":"sh/snuxgji9","slide":10,"text":"20% da verba de descoberta","textPreview":"20% da verba de descoberta","textChars":26,"textLines":1,"bbox":[696,248,500,36]}
+{"kind":"textbox","id":"sh/fq5gbeh0","slide":10,"text":"0% da verba de captacao","textPreview":"0% da verba de captacao","textChars":23,"textLines":1,"bbox":[696,292,500,36]}
+{"kind":"shape","id":"sh/epwfit0f","slide":10,"bbox":[696,344,500,1]}
+{"kind":"textbox","id":"sh/qlgzadkn","slide":10,"text":"Só entra no pago quando carrega valor, identidade e uma ponte para a promessa profissional. Foto genérica de família fica no orgânico.","textPreview":"Só entra no pago quando carrega valor, identidade e uma ponte para a promessa profissional. Foto genérica de família fica no orgânico.","textChars":134,"textLines":1,"bbox":[696,366,500,120]}
+{"kind":"textbox","id":"sh/bmp03i18","slide":10,"text":"Objetivo: reduzir distância e aumentar confiança.","textPreview":"Objetivo: reduzir distância e aumentar confiança.","textChars":49,"textLines":1,"bbox":[696,516,500,32]}
+{"kind":"textbox","id":"sh/c7yhcn2t","slide":10,"text":"No orgânico, mantemos o desenho 70% profissional / 30% pessoal.","textPreview":"No orgânico, mantemos o desenho 70% profissional / 30% pessoal.","textChars":63,"textLines":1,"bbox":[52,604,1176,32]}
+{"kind":"notes","id":"nt/yezn6m","slide":10,"text":"A divisao 80/20 em descoberta e uma recomendacao de teste. Nao escolher anuncios apenas por alcance ou curtidas.\n\n[Sources]\n- https://www.facebook.com/business/ads/ad-objectives/awareness\n- https://www.facebook.com/business/ads/ad-objectives?locale=en_GB\n- Analise estrategica a partir dos dados de agosto\n[/Sources]"}
+{"kind":"slide","id":"sl/wywr4d","slide":11,"title":"PLANO MENSAL INICIAL","textShapes":17}
+{"kind":"textbox","id":"sh/18za9kb2","slide":11,"text":"PLANO MENSAL INICIAL","textPreview":"PLANO MENSAL INICIAL","textChars":20,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/e58ry5cb","slide":11,"text":"Com R$ 1.000, a verba precisa ter foco","textPreview":"Com R$ 1.000, a verba precisa ter foco","textChars":38,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/z6hs7atw","slide":11,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/c3q9wvu5","slide":11,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/d4za50bq","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"textbox","id":"sh/qhorulcf","slide":11,"text":"R$ 1.000","textPreview":"R$ 1.000","textChars":8,"textLines":1,"bbox":[52,154,340,72]}
+{"kind":"textbox","id":"sh/rixs3qt0","slide":11,"text":"sem remarketing nesta fase","textPreview":"sem remarketing nesta fase","textChars":26,"textLines":1,"bbox":[52,230,380,32]}
+{"kind":"shape","id":"sh/wzat8zup","slide":11,"bbox":[52,308,210,74]}
+{"kind":"shape","id":"sh/x0jah4ba","slide":11,"bbox":[262,308,490,74]}
+{"kind":"textbox","id":"sh/18nex87y","slide":11,"text":"30%","textPreview":"30%","textChars":3,"textLines":1,"bbox":[72,327,130,36]}
+{"kind":"textbox","id":"sh/g7ed4nqd","slide":11,"text":"70%","textPreview":"70%","textChars":3,"textLines":1,"bbox":[282,327,130,36]}
+{"kind":"textbox","id":"sh/f65wvips","slide":11,"text":"Reconhecimento","textPreview":"Reconhecimento","textChars":14,"textLines":1,"bbox":[52,394,210,32]}
+{"kind":"textbox","id":"sh/e5wv2d87","slide":11,"text":"Captacao","textPreview":"Captacao","textChars":8,"textLines":1,"bbox":[262,394,190,32]}
+{"kind":"shape","id":"sh/tknut872","slide":11,"bbox":[52,470,700,110]}
+{"kind":"textbox","id":"sh/sjed03qh","slide":11,"text":"Estrutura enxuta","textPreview":"Estrutura enxuta","textChars":16,"textLines":1,"bbox":[74,490,240,28]}
+{"kind":"textbox","id":"sh/ri5cry9w","slide":11,"text":"2 campanhas, com 2 a 3 criativos em cada. Sem pulverizar R$ 33 por dia em dezenas de conjuntos.","textPreview":"2 campanhas, com 2 a 3 criativos em cada. Sem pulverizar R$ 33 por dia em dezenas de conjuntos.","textChars":95,"textLines":1,"bbox":[74,528,648,44]}
+{"kind":"shape","id":"sh/6hcvyt8b","slide":11,"bbox":[808,160,420,180]}
+{"kind":"textbox","id":"sh/dg7e5s76","slide":11,"text":"R$ 300","textPreview":"R$ 300","textChars":6,"textLines":1,"bbox":[836,188,360,52]}
+{"kind":"textbox","id":"sh/cfydc7ql","slide":11,"text":"Descoberta e visualização qualificada","textPreview":"Descoberta e visualização qualificada","textChars":37,"textLines":1,"bbox":[836,250,348,60]}
+{"kind":"shape","id":"sh/wvqpov2t","slide":11,"bbox":[808,364,420,216]}
+{"kind":"textbox","id":"sh/xwz6x0je","slide":11,"text":"R$ 700","textPreview":"R$ 700","textChars":6,"textLines":1,"bbox":[836,392,360,52]}
+{"kind":"textbox","id":"sh/at87m5k3","slide":11,"text":"Leads por mensagem","textPreview":"Leads por mensagem","textChars":18,"textLines":1,"bbox":[836,454,348,34]}
+{"kind":"textbox","id":"sh/vuhova1o","slide":11,"text":"WhatsApp ou Direct, com qualificação curta.","textPreview":"WhatsApp ou Direct, com qualificação curta.","textChars":43,"textLines":1,"bbox":[836,502,348,52]}
+{"kind":"notes","id":"nt/wywr4d","slide":11,"text":"Tratar R$ 1.000 como verba mensal. A Meta entrega conforme o objetivo escolhido; por isso descoberta e leads ficam separados.\n\n[Sources]\n- https://www.facebook.com/business/ads/ad-objectives/awareness\n- https://www.facebook.com/business/ads/ad-objectives/lead-generation?locale=en_GB\n- https://www.facebook.com/business/ads/click-to-message-ads\n[/Sources]"}
+{"kind":"slide","id":"sl/r1chgw","slide":12,"title":"REGRA DE SELEÇÃO","textShapes":18}
+{"kind":"textbox","id":"sh/qx4fu58n","slide":12,"text":"REGRA DE SELEÇÃO","textPreview":"REGRA DE SELEÇÃO","textChars":16,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/dkfep07y","slide":12,"text":"O que merece verba de reconhecimento","textPreview":"O que merece verba de reconhecimento","textChars":36,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/cz6xwvqd","slide":12,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/3udwjqpw","slide":12,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/2t4fql8b","slide":12,"text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"shape","id":"sh/pwvel072","slide":12,"bbox":[52,162,560,138]}
+{"kind":"textbox","id":"sh/4vmxsvqh","slide":12,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[70,178,42,32]}
+{"kind":"textbox","id":"sh/nqhgvap0","slide":12,"text":"Não seguidores","textPreview":"Não seguidores","textChars":14,"textLines":1,"bbox":[122,176,470,34]}
+{"kind":"textbox","id":"sh/mpof2p8f","slide":12,"text":"O conteúdo atravessou a bolha atual.","textPreview":"O conteúdo atravessou a bolha atual.","textChars":36,"textLines":1,"bbox":[122,214,468,72]}
+{"kind":"shape","id":"sh/gfix4rap","slide":12,"bbox":[644,162,560,138]}
+{"kind":"textbox","id":"sh/hgrexwba","slide":12,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[662,178,42,32]}
+{"kind":"textbox","id":"sh/ud0v2hsj","slide":12,"text":"Gancho + retenção","textPreview":"Gancho + retenção","textChars":17,"textLines":1,"bbox":[714,176,470,34]}
+{"kind":"textbox","id":"sh/ve9wvmt4","slide":12,"text":"A pessoa parou e permaneceu.","textPreview":"A pessoa parou e permaneceu.","textChars":28,"textLines":1,"bbox":[714,214,468,72]}
+{"kind":"shape","id":"sh/8bid07ad","slide":12,"bbox":[52,328,560,138]}
+{"kind":"textbox","id":"sh/tcretcby","slide":12,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[70,344,42,32]}
+{"kind":"textbox","id":"sh/69gvyxsn","slide":12,"text":"Salvos + compartilhados","textPreview":"Salvos + compartilhados","textChars":23,"textLines":1,"bbox":[122,342,470,34]}
+{"kind":"textbox","id":"sh/7a9w72ts","slide":12,"text":"Houve utilidade ou identificação.","textPreview":"Houve utilidade ou identificação.","textChars":33,"textLines":1,"bbox":[122,380,468,72]}
+{"kind":"shape","id":"sh/k7ydw7uh","slide":12,"bbox":[644,328,560,138]}
+{"kind":"textbox","id":"sh/l87e5sb2","slide":12,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[662,344,42,32]}
+{"kind":"textbox","id":"sh/1sf2d4ze","slide":12,"text":"Ações de perfil","textPreview":"Ações de perfil","textChars":15,"textLines":1,"bbox":[714,342,470,34]}
+{"kind":"textbox","id":"sh/0r6lkzit","slide":12,"text":"O interesse continuou depois do post.","textPreview":"O interesse continuou depois do post.","textChars":37,"textLines":1,"bbox":[714,380,468,72]}
+{"kind":"shape","id":"sh/fqxkbuho","slide":12,"bbox":[52,522,1176,90]}
+{"kind":"textbox","id":"sh/epo3ip03","slide":12,"text":"Não impulsionar porque 'foi o que mais deu view'.","textPreview":"Não impulsionar porque 'foi o que mais deu view'.","textChars":49,"textLines":1,"bbox":[78,540,580,32]}
+{"kind":"textbox","id":"sh/dof29kzi","slide":12,"text":"O vencedor precisa combinar distribuição, aderência ao ICP e uma ponte para o comercial.","textPreview":"O vencedor precisa combinar distribuição, aderência ao ICP e uma ponte para o comercial.","textChars":88,"textLines":1,"bbox":[678,540,520,48]}
+{"kind":"notes","id":"nt/r1chgw","slide":12,"text":"Os sinais de selecao sao uma regra interna de teste. A campanha deve otimizar para alcance ou visualizacao, conforme o criativo.\n\n[Sources]\n- https://www.facebook.com/business/ads/ad-objectives/awareness\n- https://www.facebook.com/business/ads/ad-objectives?locale=en_GB\n- Instagram Insights - @gustavojcluz - publicacoes de 03 a 18/08/2026\n[/Sources]"}
+{"kind":"slide","id":"sl/5z07hn","slide":13,"title":"WHATSAPP COMO PONTE","textShapes":33}
+{"kind":"textbox","id":"sh/25sfmpwj","slide":13,"text":"WHATSAPP COMO PONTE","textPreview":"WHATSAPP COMO PONTE","textChars":19,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/p83yh4fu","slide":13,"text":"Captacao: anúncio que começa uma conversa","textPreview":"Captacao: anúncio que começa uma conversa","textChars":41,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/47uxozep","slide":13,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/f21gbuxs","slide":13,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/u1sfipw7","slide":13,"text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"shape","id":"sh/h4jyd4fy","slide":13,"bbox":[52,166,196,178]}
+{"kind":"textbox","id":"sh/g3axkzed","slide":13,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[70,182,38,30]}
+{"kind":"textbox","id":"sh/7ehg7axw","slide":13,"text":"Dor","textPreview":"Dor","textChars":3,"textLines":1,"bbox":[70,224,160,36]}
+{"kind":"textbox","id":"sh/6d8fe5wb","slide":13,"text":"Rede, carência, reajuste ou escolha errada","textPreview":"Rede, carência, reajuste ou escolha errada","textChars":42,"textLines":1,"bbox":[70,272,160,56]}
+{"kind":"textbox","id":"sh/8nqhgzmh","slide":13,"text":">","textPreview":">","textChars":1,"textLines":1,"bbox":[254,228,24,40]}
+{"kind":"shape","id":"sh/9ozypk32","slide":13,"bbox":[288,166,196,178]}
+{"kind":"textbox","id":"sh/ml8zep4r","slide":13,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[306,182,38,30]}
+{"kind":"textbox","id":"sh/7mhgnulc","slide":13,"text":"Clareza","textPreview":"Clareza","textChars":7,"textLines":1,"bbox":[306,224,160,36]}
+{"kind":"textbox","id":"sh/kjqhcfml","slide":13,"text":"Explicação simples e comparação","textPreview":"Explicação simples e comparação","textChars":31,"textLines":1,"bbox":[306,272,160,56]}
+{"kind":"textbox","id":"sh/lkzylk36","slide":13,"text":">","textPreview":">","textChars":1,"textLines":1,"bbox":[490,228,24,40]}
+{"kind":"shape","id":"sh/yhoza54f","slide":13,"bbox":[524,166,196,178]}
+{"kind":"textbox","id":"sh/zixgja50","slide":13,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[542,182,38,30]}
+{"kind":"textbox","id":"sh/4fahojmp","slide":13,"text":"Prova","textPreview":"Prova","textChars":5,"textLines":1,"bbox":[542,224,160,36]}
+{"kind":"textbox","id":"sh/5gjix43a","slide":13,"text":"Caso, estrutura ou resultado real","textPreview":"Caso, estrutura ou resultado real","textChars":33,"textLines":1,"bbox":[542,272,160,56]}
+{"kind":"textbox","id":"sh/t0fqlkr2","slide":13,"text":">","textPreview":">","textChars":1,"textLines":1,"bbox":[726,228,24,40]}
+{"kind":"shape","id":"sh/sz6psfax","slide":13,"bbox":[760,166,196,178]}
+{"kind":"textbox","id":"sh/ryd8ja9c","slide":13,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[778,182,38,30]}
+{"kind":"textbox","id":"sh/6x47q5sr","slide":13,"text":"Convite","textPreview":"Convite","textChars":7,"textLines":1,"bbox":[778,224,160,36]}
+{"kind":"textbox","id":"sh/5wvqh0r6","slide":13,"text":"Simule ou compare sem compromisso","textPreview":"Simule ou compare sem compromisso","textChars":33,"textLines":1,"bbox":[778,272,160,56]}
+{"kind":"textbox","id":"sh/4vmpoval","slide":13,"text":">","textPreview":">","textChars":1,"textLines":1,"bbox":[962,228,24,40]}
+{"kind":"shape","id":"sh/jud8fq90","slide":13,"bbox":[996,166,196,178]}
+{"kind":"textbox","id":"sh/it47m5sf","slide":13,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1014,182,38,30]}
+{"kind":"textbox","id":"sh/hsvqd0ra","slide":13,"text":"Conversa","textPreview":"Conversa","textChars":8,"textLines":1,"bbox":[1014,224,160,36]}
+{"kind":"textbox","id":"sh/wr2pkvap","slide":13,"text":"WhatsApp ou Instagram Direct","textPreview":"WhatsApp ou Instagram Direct","textChars":28,"textLines":1,"bbox":[1014,272,160,56]}
+{"kind":"textbox","id":"sh/mx0nu187","slide":13,"text":"Qualificar em até 6 perguntas","textPreview":"Qualificar em até 6 perguntas","textChars":29,"textLines":1,"bbox":[52,384,540,36]}
+{"kind":"shape","id":"sh/7y94n6ps","slide":13,"bbox":[52,438,182,52]}
+{"kind":"textbox","id":"sh/8zi5wrqd","slide":13,"text":"Cidade","textPreview":"Cidade","textChars":6,"textLines":1,"bbox":[66,451,154,28]}
+{"kind":"shape","id":"sh/90bmpw7y","slide":13,"bbox":[254,438,182,52]}
+{"kind":"textbox","id":"sh/y90nqh8b","slide":13,"text":"Idades","textPreview":"Idades","textChars":6,"textLines":1,"bbox":[268,451,154,28]}
+{"kind":"shape","id":"sh/za94jmpw","slide":13,"bbox":[456,438,182,52]}
+{"kind":"textbox","id":"sh/kvi5srqh","slide":13,"text":"CNPJ/MEI","textPreview":"CNPJ/MEI","textChars":8,"textLines":1,"bbox":[470,451,154,28]}
+{"kind":"shape","id":"sh/lwrmlw72","slide":13,"bbox":[52,510,182,52]}
+{"kind":"textbox","id":"sh/q5gnmh8f","slide":13,"text":"Plano atual","textPreview":"Plano atual","textChars":11,"textLines":1,"bbox":[66,523,154,28]}
+{"kind":"shape","id":"sh/b6p4fmpk","slide":13,"bbox":[254,510,182,52]}
+{"kind":"textbox","id":"sh/3i90ritg","slide":13,"text":"Urgencia","textPreview":"Urgencia","textChars":8,"textLines":1,"bbox":[268,523,154,28]}
+{"kind":"shape","id":"sh/2x0jidcv","slide":13,"bbox":[456,510,182,52]}
+{"kind":"textbox","id":"sh/pkr2tsbm","slide":13,"text":"Faixa de investimento","textPreview":"Faixa de investimento","textChars":21,"textLines":1,"bbox":[470,523,154,28]}
+{"kind":"shape","id":"sh/4ji1knu1","slide":13,"bbox":[704,384,524,198]}
+{"kind":"textbox","id":"sh/fu90nytk","slide":13,"text":"A métrica principal","textPreview":"A métrica principal","textChars":19,"textLines":1,"bbox":[732,410,470,30]}
+{"kind":"textbox","id":"sh/utgjedcz","slide":13,"text":"Custo por conversa qualificada","textPreview":"Custo por conversa qualificada","textChars":30,"textLines":1,"bbox":[732,454,470,70]}
+{"kind":"textbox","id":"sh/hwrip8ba","slide":13,"text":"Não custo por clique isolado.","textPreview":"Não custo por clique isolado.","textChars":29,"textLines":1,"bbox":[732,536,470,28]}
+{"kind":"notes","id":"nt/5z07hn","slide":13,"text":"O objetivo de leads por mensagem permite iniciar e qualificar conversas. O roteiro deve ser curto para nao matar a intencao.\n\n[Sources]\n- https://www.facebook.com/business/ads/ad-objectives/lead-generation?locale=en_GB\n- https://www.facebook.com/business/ads/click-to-message-ads\n- file:///C:/Users/Jcluz/Antigravity/00-Arquitetura-de-Informacoes/02%20Informa%C3%A7%C3%B5es%20Mercado/Dossie%20do%20Mercado.pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/w7oi3a","slide":14,"title":"EVOLUÇÃO RECOMENDADA","textShapes":22}
+{"kind":"textbox","id":"sh/cj2947q9","slide":14,"text":"EVOLUÇÃO RECOMENDADA","textPreview":"EVOLUÇÃO RECOMENDADA","textChars":20,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/bit8v29o","slide":14,"text":"Com mais verba, entra o remarketing","textPreview":"Com mais verba, entra o remarketing","textChars":35,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/ahkr2x83","slide":14,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/pgrqtsri","slide":14,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/ofi907qx","slide":14,"text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"textbox","id":"sh/ne98r29c","slide":14,"text":"R$ 1 mil","textPreview":"R$ 1 mil","textChars":8,"textLines":1,"bbox":[52,204,120,34]}
+{"kind":"shape","id":"sh/2d07yx87","slide":14,"bbox":[190,184,201,72]}
+{"kind":"shape","id":"sh/1crqpsrm","slide":14,"bbox":[391,184,469,72]}
+{"kind":"textbox","id":"sh/0ripwnq1","slide":14,"text":"30%","textPreview":"30%","textChars":3,"textLines":1,"bbox":[200,206,181,30]}
+{"kind":"textbox","id":"sh/ulkbmx8f","slide":14,"text":"70%","textPreview":"70%","textChars":3,"textLines":1,"bbox":[399,206,453,30]}
+{"kind":"textbox","id":"sh/vmdcv2pk","slide":14,"text":"R$ 3 mil","textPreview":"R$ 3 mil","textChars":8,"textLines":1,"bbox":[52,330,120,34]}
+{"kind":"shape","id":"sh/wnmto7q5","slide":14,"bbox":[190,310,167.5,72]}
+{"kind":"shape","id":"sh/hovuxc7q","slide":14,"bbox":[357.5,310,368.5,72]}
+{"kind":"shape","id":"sh/mxkbix83","slide":14,"bbox":[726,310,134,72]}
+{"kind":"textbox","id":"sh/7ytcripo","slide":14,"text":"25%","textPreview":"25%","textChars":3,"textLines":1,"bbox":[200,332,147.5,30]}
+{"kind":"textbox","id":"sh/8z2tknq9","slide":14,"text":"55%","textPreview":"55%","textChars":3,"textLines":1,"bbox":[365.5,332,352.5,30]}
+{"kind":"textbox","id":"sh/9kbuts7u","slide":14,"text":"20%","textPreview":"20%","textChars":3,"textLines":1,"bbox":[732,332,122,30]}
+{"kind":"textbox","id":"sh/yt0bed87","slide":14,"text":"R$ 5 mil+","textPreview":"R$ 5 mil+","textChars":9,"textLines":1,"bbox":[52,456,120,34]}
+{"kind":"shape","id":"sh/zu9snipc","slide":14,"bbox":[190,436,134,72]}
+{"kind":"shape","id":"sh/nyp8ve54","slide":14,"bbox":[324,436,368.5,72]}
+{"kind":"shape","id":"sh/2xgrm9oz","slide":14,"bbox":[692.5,436,167.5,72]}
+{"kind":"textbox","id":"sh/p07qxona","slide":14,"text":"20%","textPreview":"20%","textChars":3,"textLines":1,"bbox":[200,458,114,30]}
+{"kind":"textbox","id":"sh/ozy9oj6p","slide":14,"text":"55%","textPreview":"55%","textChars":3,"textLines":1,"bbox":[332,458,352.5,30]}
+{"kind":"textbox","id":"sh/b2p8zy5g","slide":14,"text":"25%","textPreview":"25%","textChars":3,"textLines":1,"bbox":[698.5,458,155.5,30]}
+{"kind":"textbox","id":"sh/a1grqtov","slide":14,"text":"Reconhecimento","textPreview":"Reconhecimento","textChars":14,"textLines":1,"bbox":[190,574,170,28]}
+{"kind":"textbox","id":"sh/x4rq1onm","slide":14,"text":"Captacao","textPreview":"Captacao","textChars":8,"textLines":1,"bbox":[372,574,140,28]}
+{"kind":"textbox","id":"sh/c3i9sj61","slide":14,"text":"Remarketing","textPreview":"Remarketing","textChars":11,"textLines":1,"bbox":[526,574,170,28]}
+{"kind":"shape","id":"sh/r658nupc","slide":14,"bbox":[910,164,318,418]}
+{"kind":"textbox","id":"sh/q5w7epor","slide":14,"text":"Remarketing entra quando existe público quente suficiente.","textPreview":"Remarketing entra quando existe público quente suficiente.","textChars":58,"textLines":1,"bbox":[938,190,262,84]}
+{"kind":"shape","id":"sh/wzax8rid","slide":14,"bbox":[938,292,260,1]}
+{"kind":"textbox","id":"sh/x0je1wzy","slide":14,"text":"Públicos","textPreview":"Públicos","textChars":8,"textLines":1,"bbox":[938,316,260,28]}
+{"kind":"textbox","id":"sh/ax8f6107","slide":14,"text":"Engajados do Instagram\nQuem viu vídeos\nLeads sem fechamento\nVisitantes de site/CRM depois","textPreview":"Engajados do Instagram | Quem viu vídeos | Leads sem fechamento | Visitantes de site/CRM depois","textChars":89,"textLines":4,"bbox":[938,354,260,128]}
+{"kind":"textbox","id":"sh/vyhwz6hs","slide":14,"text":"Não forcar 25% se a audiência for pequena ou a frequência subir demais.","textPreview":"Não forcar 25% se a audiência for pequena ou a frequência subir demais.","textChars":71,"textLines":1,"bbox":[938,500,260,58]}
+{"kind":"notes","id":"nt/w7oi3a","slide":14,"text":"As faixas sao pontos de partida. O percentual de remarketing deve respeitar o tamanho do publico quente e a frequencia.\n\n[Sources]\n- https://www.facebook.com/business/goals/retargeting\n- https://www.facebook.com/business/ads/ad-objectives/lead-generation?locale=en_GB\n- https://www.facebook.com/business/ads/ad-objectives/awareness\n[/Sources]"}
+{"kind":"slide","id":"sl/s4vc0i","slide":15,"title":"ORGÂNICO 70/30","textShapes":30}
+{"kind":"textbox","id":"sh/juds3uxo","slide":15,"text":"ORGÂNICO 70/30","textPreview":"ORGÂNICO 70/30","textChars":14,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/4vmtczy9","slide":15,"text":"Calendario semanal: 14 posts com função clara","textPreview":"Calendario semanal: 14 posts com função clara","textChars":45,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/5wvu54fe","slide":15,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/upkb6pgr","slide":15,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/vqtszaxc","slide":15,"text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"textbox","id":"sh/wr2t8fyx","slide":15,"text":"10 profissionais + 4 pessoais","textPreview":"10 profissionais + 4 pessoais","textChars":29,"textLines":1,"bbox":[842,106,386,22]}
+{"kind":"shape","id":"sh/hsva1kfi","slide":15,"bbox":[52,150,118,46]}
+{"kind":"textbox","id":"sh/elobi9wb","slide":15,"text":"DIA","textPreview":"DIA","textChars":3,"textLines":1,"bbox":[66,163,90,24]}
+{"kind":"shape","id":"sh/fmxcbexw","slide":15,"bbox":[188,150,460,46]}
+{"kind":"textbox","id":"sh/7exsj6tk","slide":15,"text":"MANHÃ","textPreview":"MANHÃ","textChars":5,"textLines":1,"bbox":[202,163,432,24]}
+{"kind":"shape","id":"sh/mdoba1sz","slide":15,"bbox":[668,150,560,46]}
+{"kind":"textbox","id":"sh/9gzalgba","slide":15,"text":"SEGUNDA POSTAGEM","textPreview":"SEGUNDA POSTAGEM","textChars":16,"textLines":1,"bbox":[682,163,532,24]}
+{"kind":"shape","id":"sh/8fqtcba5","slide":15,"bbox":[52,204,118,52]}
+{"kind":"textbox","id":"sh/vihsnqtg","slide":15,"text":"SEG","textPreview":"SEG","textChars":3,"textLines":1,"bbox":[66,217,90,28]}
+{"kind":"shape","id":"sh/uh8belsv","slide":15,"bbox":[188,204,460,52]}
+{"kind":"textbox","id":"sh/h4zapgbm","slide":15,"text":"Cotação","textPreview":"Cotação","textChars":7,"textLines":1,"bbox":[202,217,432,28]}
+{"kind":"shape","id":"sh/wjqtgba1","slide":15,"bbox":[668,204,560,52]}
+{"kind":"textbox","id":"sh/j6hsrqts","slide":15,"text":"Pessoal: rotina / família","textPreview":"Pessoal: rotina / família","textChars":25,"textLines":1,"bbox":[682,217,532,28]}
+{"kind":"shape","id":"sh/i58bils7","slide":15,"bbox":[52,262,118,52]}
+{"kind":"textbox","id":"sh/e1cvapcf","slide":15,"text":"TER","textPreview":"TER","textChars":3,"textLines":1,"bbox":[66,275,90,28]}
+{"kind":"shape","id":"sh/f2lwjud0","slide":15,"bbox":[188,262,460,52]}
+{"kind":"textbox","id":"sh/g3udczul","slide":15,"text":"Cotação","textPreview":"Cotação","textChars":7,"textLines":1,"bbox":[202,275,432,28]}
+{"kind":"shape","id":"sh/143el4vq","slide":15,"bbox":[668,262,560,52]}
+{"kind":"textbox","id":"sh/6dsv6pc3","slide":15,"text":"Autoridade / prova","textPreview":"Autoridade / prova","textChars":18,"textLines":1,"bbox":[682,275,532,28]}
+{"kind":"shape","id":"sh/rylcfado","slide":15,"bbox":[52,320,118,52]}
+{"kind":"textbox","id":"sh/szud8fu9","slide":15,"text":"QUA","textPreview":"QUA","textChars":3,"textLines":1,"bbox":[66,333,90,28]}
+{"kind":"shape","id":"sh/t03ehkvu","slide":15,"bbox":[188,320,460,52]}
+{"kind":"textbox","id":"sh/q9wvi9cn","slide":15,"text":"Cotação","textPreview":"Cotação","textChars":7,"textLines":1,"bbox":[202,333,432,28]}
+{"kind":"shape","id":"sh/bu5wret8","slide":15,"bbox":[668,320,560,52]}
+{"kind":"textbox","id":"sh/lo7yh8fa","slide":15,"text":"Carrossel comparativo","textPreview":"Carrossel comparativo","textChars":21,"textLines":1,"bbox":[682,333,532,28]}
+{"kind":"shape","id":"sh/k3yho3ep","slide":15,"bbox":[52,378,118,52]}
+{"kind":"textbox","id":"sh/z2pgfyx4","slide":15,"text":"QUI","textPreview":"QUI","textChars":3,"textLines":1,"bbox":[66,391,90,28]}
+{"kind":"shape","id":"sh/y1gfmtwj","slide":15,"bbox":[188,378,460,52]}
+{"kind":"textbox","id":"sh/x07yd8fy","slide":15,"text":"Cotação","textPreview":"Cotação","textChars":7,"textLines":1,"bbox":[202,391,432,28]}
+{"kind":"shape","id":"sh/czyxk3et","slide":15,"bbox":[668,378,560,52]}
+{"kind":"textbox","id":"sh/bypgbyx8","slide":15,"text":"Pessoal: esporte / valores","textPreview":"Pessoal: esporte / valores","textChars":26,"textLines":1,"bbox":[682,391,532,28]}
+{"kind":"shape","id":"sh/axgfitwn","slide":15,"bbox":[52,436,118,52]}
+{"kind":"textbox","id":"sh/hwbypsvi","slide":15,"text":"SEX","textPreview":"SEX","textChars":3,"textLines":1,"bbox":[66,449,90,28]}
+{"kind":"shape","id":"sh/wvihwnex","slide":15,"bbox":[188,436,460,52]}
+{"kind":"textbox","id":"sh/oz6pgned","slide":15,"text":"Cotação","textPreview":"Cotação","textChars":7,"textLines":1,"bbox":[202,449,432,28]}
+{"kind":"shape","id":"sh/p0f6psfy","slide":15,"bbox":[668,436,560,52]}
+{"kind":"textbox","id":"sh/2xo7exwn","slide":15,"text":"Mercado / caso","textPreview":"Mercado / caso","textChars":14,"textLines":1,"bbox":[682,449,532,28]}
+{"kind":"shape","id":"sh/3yxonix8","slide":15,"bbox":[52,494,118,52]}
+{"kind":"textbox","id":"sh/c3qpk7ep","slide":15,"text":"SAB","textPreview":"SAB","textChars":3,"textLines":1,"bbox":[66,507,90,28]}
+{"kind":"shape","id":"sh/d4z6tcva","slide":15,"bbox":[188,494,460,52]}
+{"kind":"textbox","id":"sh/q187ixwj","slide":15,"text":"Checklist CNPJ","textPreview":"Checklist CNPJ","textChars":14,"textLines":1,"bbox":[202,507,432,28]}
+{"kind":"shape","id":"sh/b2hor2d4","slide":15,"bbox":[668,494,560,52]}
+{"kind":"textbox","id":"sh/0rqpo7el","slide":15,"text":"Pessoal: bastidores","textPreview":"Pessoal: bastidores","textChars":19,"textLines":1,"bbox":[682,507,532,28]}
+{"kind":"shape","id":"sh/lsjqxcv6","slide":15,"bbox":[52,552,118,52]}
+{"kind":"textbox","id":"sh/vmlsn6x8","slide":15,"text":"DOM","textPreview":"DOM","textChars":3,"textLines":1,"bbox":[66,565,90,28]}
+{"kind":"shape","id":"sh/alcre1g3","slide":15,"bbox":[188,552,460,52]}
+{"kind":"textbox","id":"sh/xo3apgfe","slide":15,"text":"FAQ de risco","textPreview":"FAQ de risco","textChars":12,"textLines":1,"bbox":[202,565,432,28]}
+{"kind":"shape","id":"sh/wnu9gbyt","slide":15,"bbox":[668,552,560,52]}
+{"kind":"textbox","id":"sh/ny1sj6hc","slide":15,"text":"Pessoal: reflexão","textPreview":"Pessoal: reflexão","textChars":17,"textLines":1,"bbox":[682,565,532,28]}
+{"kind":"textbox","id":"sh/mxsra1gr","slide":15,"text":"A lógica do dia deixa de ser chute: repetimos a cotação para criar habito e variamos a noite para cumprir autoridade, educação e humanidade.","textPreview":"A lógica do dia deixa de ser chute: repetimos a cotação para criar habito e variamos a noite para cumprir autoridade, educação e humanidade.","textChars":140,"textLines":1,"bbox":[52,630,1176,38]}
+{"kind":"notes","id":"nt/s4vc0i","slide":15,"text":"O calendario e uma estrutura inicial. A ordem deve ser recalibrada com custo por conversa, respostas de Stories e vendas por pauta.\n\n[Sources]\n- Direcao estrategica fornecida pelo responsavel\n- Google Sheets - Analise de Crescimento de Autoridade - Gustavo Lima / Postagens 2026 / agosto de 2026\n[/Sources]"}
+{"kind":"slide","id":"sl/t6ela4","slide":16,"title":"DESTAQUES, STORIES E RESPOSTA","textShapes":15}
+{"kind":"textbox","id":"sh/0nyh8f6d","slide":16,"text":"DESTAQUES, STORIES E RESPOSTA","textPreview":"DESTAQUES, STORIES E RESPOSTA","textChars":29,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/fmp0zap8","slide":16,"text":"O perfil precisa trabalhar mesmo quando ninguém posta","textPreview":"O perfil precisa trabalhar mesmo quando ninguém posta","textChars":53,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/elgz65on","slide":16,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/d07ix072","slide":16,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/szeh4v6h","slide":16,"text":"16","textPreview":"16","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"shape","id":"sh/ry50vapw","slide":16,"bbox":[52,158,360,430]}
+{"kind":"textbox","id":"sh/qxwz25ob","slide":16,"text":"Destaques com vídeo","textPreview":"Destaques com vídeo","textChars":19,"textLines":1,"bbox":[76,184,312,40]}
+{"kind":"textbox","id":"sh/xwri9476","slide":16,"text":"Comece aqui\nPlano CNPJ\nRede e hospitais\nCarência / CPT\nReajustes\nCotações\nClientes e provas\nBastidores\nFale comigo","textPreview":"Comece aqui | Plano CNPJ | Rede e hospitais | Carência / CPT | Reajustes | Cotações | Clientes e provas | Bastidores | Fale comigo","textChars":114,"textLines":9,"bbox":[76,244,312,304]}
+{"kind":"shape","id":"sh/cvi1gz6l","slide":16,"bbox":[460,158,360,430]}
+{"kind":"textbox","id":"sh/6dsf69wr","slide":16,"text":"Stories todos os dias","textPreview":"Stories todos os dias","textChars":21,"textLines":1,"bbox":[484,184,312,40]}
+{"kind":"textbox","id":"sh/7e1gfedc","slide":16,"text":"3 a 5 quadros","textPreview":"3 a 5 quadros","textChars":13,"textLines":1,"bbox":[484,244,312,44]}
+{"kind":"textbox","id":"sh/8fah8jex","slide":16,"text":"1. Um momento humano\n2. Cotação ou bastidor\n3. Dúvida ou insight\n4. Prova / contexto\n5. Convite para responder","textPreview":"1. Um momento humano | 2. Cotação ou bastidor | 3. Dúvida ou insight | 4. Prova / contexto | 5. Convite para responder","textChars":110,"textLines":5,"bbox":[484,310,312,210]}
+{"kind":"textbox","id":"sh/tgjyhovi","slide":16,"text":"Pouco, real e frequente.","textPreview":"Pouco, real e frequente.","textChars":24,"textLines":1,"bbox":[484,540,312,28]}
+{"kind":"shape","id":"sh/yp8f29wv","slide":16,"bbox":[868,158,360,430]}
+{"kind":"textbox","id":"sh/jqhgbedg","slide":16,"text":"Responder e conduzir","textPreview":"Responder e conduzir","textChars":20,"textLines":1,"bbox":[892,184,312,40]}
+{"kind":"textbox","id":"sh/kbax4je1","slide":16,"text":"Comentario não e fim de funil.","textPreview":"Comentario não e fim de funil.","textChars":30,"textLines":1,"bbox":[892,248,312,58]}
+{"kind":"textbox","id":"sh/lcjydov6","slide":16,"text":"Responder, fazer uma pergunta e, quando houver contexto, convidar para Direct ou WhatsApp.","textPreview":"Responder, fazer uma pergunta e, quando houver contexto, convidar para Direct ou WhatsApp.","textChars":90,"textLines":1,"bbox":[892,328,312,118]}
+{"kind":"textbox","id":"sh/2lczedcz","slide":16,"text":"Sem spam. Com presença.","textPreview":"Sem spam. Com presença.","textChars":23,"textLines":1,"bbox":[892,506,312,40]}
+{"kind":"textbox","id":"sh/36lgnydk","slide":16,"text":"Se existe destaque, ele precisa explicar. Se existe engajamento, alguém precisa responder.","textPreview":"Se existe destaque, ele precisa explicar. Se existe engajamento, alguém precisa responder.","textChars":90,"textLines":1,"bbox":[52,616,1176,38]}
+{"kind":"notes","id":"nt/t6ela4","slide":16,"text":"Os destaques funcionam como atendimento de plantao. Videos curtos do proprio Gustavo aumentam contexto e confianca.\n\n[Sources]\n- Solicitacao e observacao operacional fornecida pelo responsavel\n- file:///C:/Users/Jcluz/Antigravity/00-Arquitetura-de-Informacoes/02%20Informa%C3%A7%C3%B5es%20Mercado/Dossie%20do%20Mercado.pdf\n[/Sources]"}
+{"kind":"slide","id":"sl/lp5cd4","slide":17,"title":"PAINEL DE DECISÃO","textShapes":13}
+{"kind":"textbox","id":"sh/2pcfmt0j","slide":17,"text":"PAINEL DE DECISÃO","textPreview":"PAINEL DE DECISÃO","textChars":17,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/pcneh8zu","slide":17,"text":"Métrica bonita não paga boleto","textPreview":"Métrica bonita não paga boleto","textChars":30,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/orexo3i9","slide":17,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/be5wjih0","slide":17,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/adwfqdgf","slide":17,"text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"shape","id":"sh/xgnel8z6","slide":17,"bbox":[52,162,356,414]}
+{"kind":"shape","id":"sh/cfexs3yl","slide":17,"bbox":[52,162,356,62]}
+{"kind":"textbox","id":"sh/ri1w7ehw","slide":17,"text":"ATENÇÃO","textPreview":"ATENÇÃO","textChars":7,"textLines":1,"bbox":[74,180,312,28]}
+{"kind":"textbox","id":"sh/qhsve90b","slide":17,"text":"Alcance em não seguidores\nCPM\nGancho\nRetenção\nVisualização qualificada","textPreview":"Alcance em não seguidores | CPM | Gancho | Retenção | Visualização qualificada","textChars":70,"textLines":5,"bbox":[80,254,300,240]}
+{"kind":"textbox","id":"sh/wz6hkzix","slide":17,"text":">","textPreview":">","textChars":1,"textLines":1,"bbox":[420,342,28,50]}
+{"kind":"shape","id":"sh/x0fit4ji","slide":17,"bbox":[462,162,356,414]}
+{"kind":"shape","id":"sh/axozip0r","slide":17,"bbox":[462,162,356,62]}
+{"kind":"textbox","id":"sh/vyx0ru1c","slide":17,"text":"INTENÇÃO","textPreview":"INTENÇÃO","textChars":8,"textLines":1,"bbox":[484,180,312,28]}
+{"kind":"textbox","id":"sh/k3qhozi9","slide":17,"text":"Visitas ao perfil\nSalvos e compartilhados\nMensagens\nConversas qualificadas\nCusto por lead qualificado","textPreview":"Visitas ao perfil | Salvos e compartilhados | Mensagens | Conversas qualificadas | Custo por lead qualificado","textChars":101,"textLines":5,"bbox":[490,254,300,240]}
+{"kind":"textbox","id":"sh/54zix4ju","slide":17,"text":">","textPreview":">","textChars":1,"textLines":1,"bbox":[830,342,28,50]}
+{"kind":"shape","id":"sh/i1ozmp03","slide":17,"bbox":[872,162,356,414]}
+{"kind":"shape","id":"sh/j2x0vu1o","slide":17,"bbox":[872,162,356,62]}
+{"kind":"textbox","id":"sh/07mhcf2p","slide":17,"text":"NEGÓCIO","textPreview":"NEGÓCIO","textChars":7,"textLines":1,"bbox":[894,180,312,28]}
+{"kind":"textbox","id":"sh/l8vylkja","slide":17,"text":"Propostas\nVendas\nLead para proposta\nCAC / custo por venda\nReceita e ROAS","textPreview":"Propostas | Vendas | Lead para proposta | CAC / custo por venda | Receita e ROAS","textChars":72,"textLines":5,"bbox":[900,254,300,240]}
+{"kind":"shape","id":"sh/hs36tc72","slide":17,"bbox":[52,598,1176,56]}
+{"kind":"textbox","id":"sh/gru507qh","slide":17,"text":"Nossa decisão de escala acontece no negócio. As outras métricas explicam o caminho.","textPreview":"Nossa decisão de escala acontece no negócio. As outras métricas explicam o caminho.","textChars":83,"textLines":1,"bbox":[74,614,1132,28]}
+{"kind":"notes","id":"nt/lp5cd4","slide":17,"text":"O painel precisa ligar cada lead a pauta, criativo, campanha, proposta e venda. Sem essa trilha, nao existe aprendizado comercial.\n\n[Sources]\n- https://www.facebook.com/business/ads/ad-objectives/lead-generation?locale=en_GB\n- https://www.facebook.com/business/ads/click-to-message-ads\n- Framework interno de medicao: atencao > intencao > negocio\n[/Sources]"}
+{"kind":"slide","id":"sl/dg5yc5","slide":18,"title":"PRÓXIMOS 90 DIAS","textShapes":15}
+{"kind":"textbox","id":"sh/n2pw7a1o","slide":18,"text":"PRÓXIMOS 90 DIAS","textPreview":"PRÓXIMOS 90 DIAS","textChars":16,"textLines":1,"bbox":[52,30,850,24]}
+{"kind":"textbox","id":"sh/o3yd0fi9","slide":18,"text":"O que aprovamos hoje","textPreview":"O que aprovamos hoje","textChars":20,"textLines":1,"bbox":[52,58,1160,70]}
+{"kind":"shape","id":"sh/p47e9kju","slide":18,"bbox":[52,128,1176,2]}
+{"kind":"textbox","id":"sh/exwvu5k7","slide":18,"text":"GUSTAVO LIMA | ESTRATÉGIA 2026","textPreview":"GUSTAVO LIMA | ESTRATÉGIA 2026","textChars":30,"textLines":1,"bbox":[52,682,520,20]}
+{"kind":"textbox","id":"sh/fy5c3a1s","slide":18,"text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[1180,682,48,20]}
+{"kind":"shape","id":"sh/gzydwfid","slide":18,"bbox":[52,158,360,228]}
+{"kind":"textbox","id":"sh/107e50ji","slide":18,"text":"0-30","textPreview":"0-30","textChars":4,"textLines":1,"bbox":[70,174,72,32]}
+{"kind":"textbox","id":"sh/69wvqlkv","slide":18,"text":"Arrumar a casa","textPreview":"Arrumar a casa","textChars":14,"textLines":1,"bbox":[152,172,240,34]}
+{"kind":"textbox","id":"sh/ru5czq1g","slide":18,"text":"Gravar destaques, criar rotina de Stories, instalar rastreio simples e lançar a divisão 30/70.","textPreview":"Gravar destaques, criar rotina de Stories, instalar rastreio simples e lançar a divisão 30/70.","textChars":94,"textLines":1,"bbox":[152,210,238,162]}
+{"kind":"shape","id":"sh/n6d4ve5s","slide":18,"bbox":[460,158,360,228]}
+{"kind":"textbox","id":"sh/m5432ton","slide":18,"text":"31-60","textPreview":"31-60","textChars":5,"textLines":1,"bbox":[478,174,104,32]}
+{"kind":"textbox","id":"sh/98vmxony","slide":18,"text":"Aprender rápido","textPreview":"Aprender rápido","textChars":15,"textLines":1,"bbox":[592,172,208,34]}
+{"kind":"textbox","id":"sh/o7ml4j6d","slide":18,"text":"Testar 3 ângulos, cortar desperdício e levar as objeções das conversas de volta para o conteúdo.","textPreview":"Testar 3 ângulos, cortar desperdício e levar as objeções das conversas de volta para o conteúdo.","textChars":96,"textLines":1,"bbox":[592,210,206,162]}
+{"kind":"shape","id":"sh/bad4zy54","slide":18,"bbox":[868,158,360,228]}
+{"kind":"textbox","id":"sh/a9436toj","slide":18,"text":"61-90","textPreview":"61-90","textChars":5,"textLines":1,"bbox":[886,174,104,32]}
+{"kind":"textbox","id":"sh/xcfm18na","slide":18,"text":"Escalar o que vende","textPreview":"Escalar o que vende","textChars":19,"textLines":1,"bbox":[1000,172,208,34]}
+{"kind":"textbox","id":"sh/wb6l836p","slide":18,"text":"Aumentar vencedores e abrir remarketing quando houver público quente e verba suficiente.","textPreview":"Aumentar vencedores e abrir remarketing quando houver público quente e verba suficiente.","textChars":88,"textLines":1,"bbox":[1000,210,206,162]}
+{"kind":"shape","id":"sh/retknup0","slide":18,"bbox":[52,430,1176,184]}
+{"kind":"textbox","id":"sh/qdk3u9of","slide":18,"text":"A meta não é viralizar.","textPreview":"A meta não é viralizar.","textChars":23,"textLines":1,"bbox":[88,462,1104,44]}
+{"kind":"textbox","id":"sh/ut872h8n","slide":18,"text":"É fazer o cliente certo pensar: 'é com ele que eu vou falar.'","textPreview":"É fazer o cliente certo pensar: 'é com ele que eu vou falar.'","textChars":61,"textLines":1,"bbox":[88,520,1104,60]}
+{"kind":"notes","id":"nt/dg5yc5","slide":18,"text":"Fechar pedindo aprovacao das quatro decisoes: papel de cada conteudo, verba 30/70, rotina do perfil e painel comercial.\n\n[Sources]\n- Sintese estrategica desta analise\n- https://www.facebook.com/business/ads/ad-objectives/awareness\n- https://www.facebook.com/business/ads/ad-objectives/lead-generation?locale=en_GB\n- https://www.facebook.com/business/goals/retargeting\n[/Sources]"}
