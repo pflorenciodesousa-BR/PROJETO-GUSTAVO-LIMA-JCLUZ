@@ -7,31 +7,31 @@ Objetivo: alertar familias com plano empresarial sobre cancelamento unilateral e
 ## Slide 1 - Capa
 
 VOCE PAGA CARO.
-PAGA EM DIA.
+MAS PAGA EM DIA.
 E A SURPRESA AINDA PODE CHEGAR.
 
-A pior parte nao vem no boleto.
+A pior parte não vem no boleto.
 
 ## Slide 2 - Segundo gancho
 
-O BOLETO ESTA CERTO.
-O RISCO CONTINUA.
+O boleto NÃO está errado.
+e ainda assim RISCO CONTINUA.
 
 SEU PLANO PODE ESTAR COM OS DIAS CONTADOS.
 
-Mesmo sem uma unica mensalidade atrasada.
+Mesmo sem uma única mensalidade atrasada.
 
-E quem mais corre esse risco talvez seja voce.
+E quem mais corre esse risco talvez seja você.
 
 ## Slide 3 - Identificacao do risco (75 palavras)
 
 QUEM ESTA NO CENTRO DESSE RISCO?
 
-O ponto mais sensivel esta nos contratos coletivos empresariais com menos de 30 beneficiarios.
+O ponto mais sensivel esta nos contratos coletivos empresariais com menos de 30 beneficiários.
 
 E o cenario comum de pequenas empresas, profissionais PJ e familias vinculadas a um CNPJ.
 
-Em 2026, o STJ definiu que a rescisao unilateral pode ser valida, desde que exista uma motivacao idonea.
+Em 2026, o STJ definiu que a rescisão unilateral pode ser valida, desde que exista uma motivacao idonea.
 
 Nao e um passe livre para cancelar, mas tambem nao existe protecao automatica apenas porque a mensalidade esta em dia.
 
@@ -97,5 +97,5 @@ Bora, pra cima! 🚀💪
 
 ## Referencias editoriais
 
-- STJ, Tema Repetitivo 1.047, julgado em 2026.
-- ANS, orientacoes para planos coletivos empresariais contratados por empresario individual.
+* STJ, Tema Repetitivo 1.047, julgado em 2026.
+* ANS, orientacoes para planos coletivos empresariais contratados por empresario individual.
