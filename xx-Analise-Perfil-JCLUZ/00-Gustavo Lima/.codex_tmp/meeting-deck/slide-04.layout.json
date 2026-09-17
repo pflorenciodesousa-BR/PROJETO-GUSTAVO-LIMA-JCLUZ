@@ -1,0 +1,779 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/h05w86",
+    "id": "h05w86",
+    "slide": 4,
+    "layoutId": "e9fcefe7-272a-44b3-9962-220f332a0317",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "46f2c2a0-f792-4f3d-b45e-fbe2b00b7e7b",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Arial"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "e9fcefe7-272a-44b3-9962-220f332a0317",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "46f2c2a0-f792-4f3d-b45e-fbe2b00b7e7b",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "46f2c2a0-f792-4f3d-b45e-fbe2b00b7e7b",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sn2xwful",
+      "id": "1",
+      "bbox": [
+        52,
+        30,
+        850,
+        24
+      ],
+      "geometry": "rect",
+      "text": "PERSONA ESSENCIAL",
+      "textPreview": "PERSONA ESSENCIAL",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 13,
+        "typeface": "Arial",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PERSONA ESSENCIAL"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PERSONA ESSENCIAL",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "typeface": "Arial",
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PERSONA ESSENCIAL",
+              "fontSize": 13,
+              "typeface": "Arial",
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7mtgnat0",
+      "id": "2",
+      "bbox": [
+        52,
+        58,
+        1160,
+        70
+      ],
+      "geometry": "rect",
+      "text": "Quem precisa confiar na gente",
+      "textPreview": "Quem precisa confiar na gente",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 44,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Quem precisa confiar na gente"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Quem precisa confiar na gente",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Quem precisa confiar na gente",
+              "fontSize": 44,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6lkfu5cf",
+      "id": "3",
+      "bbox": [
+        52,
+        128,
+        1176,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#111111",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5kbylkbu",
+      "id": "4",
+      "bbox": [
+        52,
+        682,
+        520,
+        20
+      ],
+      "geometry": "rect",
+      "text": "GUSTAVO LIMA | ESTRATÉGIA 2026",
+      "textPreview": "GUSTAVO LIMA | ESTRATÉGIA 2026",
+      "resolvedFontSize": 11,
+      "resolvedTextStyle": {
+        "anchor": 3,
+        "fontSize": 11,
+        "typeface": "Arial",
+        "color": "#626870",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "bottom",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "GUSTAVO LIMA | ESTRATÉGIA 2026"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "GUSTAVO LIMA | ESTRATÉGIA 2026",
+          "resolvedTextStyle": {
+            "fontSize": 11,
+            "typeface": "Arial",
+            "color": "#626870",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "GUSTAVO LIMA | ESTRATÉGIA 2026",
+              "fontSize": 11,
+              "typeface": "Arial",
+              "color": "#626870",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kj2xsfu9",
+      "id": "5",
+      "bbox": [
+        1180,
+        682,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "04",
+      "textPreview": "04",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 3,
+        "fontSize": 12,
+        "typeface": "Arial",
+        "color": "#626870",
+        "alignment": "right",
+        "verticalAlignment": "bottom",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "04"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "04",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Arial",
+            "color": "#626870",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "04",
+              "fontSize": 12,
+              "typeface": "Arial",
+              "color": "#626870",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ji9gjat4",
+      "id": "6",
+      "bbox": [
+        52,
+        158,
+        480,
+        56
+      ],
+      "geometry": "rect",
+      "text": "CNPJ familiar",
+      "textPreview": "CNPJ familiar",
+      "resolvedFontSize": 38,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 38,
+        "typeface": "Arial",
+        "color": "#123454",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "CNPJ familiar"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "CNPJ familiar",
+          "resolvedTextStyle": {
+            "fontSize": 38,
+            "typeface": "Arial",
+            "color": "#123454",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "CNPJ familiar",
+              "fontSize": 38,
+              "typeface": "Arial",
+              "color": "#123454",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ih0fq5cj",
+      "id": "7",
+      "bbox": [
+        52,
+        228,
+        480,
+        140
+      ],
+      "geometry": "rect",
+      "text": "Empresário ou profissional, geralmente entre 35 e 54 anos, com família de 3 a 5 pessoas e disposição para investir R$ 3 mil a R$ 5 mil por mês.",
+      "textPreview": "Empresário ou profissional, geralmente entre 35 e 54 anos, com família de 3 a 5 pessoas e disposição para investir R$ 3 mil a R$ 5 mil po...",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "Arial",
+        "color": "#202124",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Empresário ou profissional, geralmente entre 35"
+          },
+          {
+            "index": 2,
+            "text": "e 54 anos, com família de 3 a 5 pessoas e"
+          },
+          {
+            "index": 3,
+            "text": "disposição para investir R$ 3 mil a R$ 5 mil por"
+          },
+          {
+            "index": 4,
+            "text": "mês."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Empresário ou profissional, geralmente entre 35 e 54 anos, com família de 3 a 5 pessoas e disposição para investir R$ 3 mil a R$ 5 mil por mês.",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Empresário ou profissional, geralmente entre 35 e 54 anos, com família de 3 a 5 pessoas e disposição para investir R$ 3 mil a R$ 5 mil por mês.",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xgreh0by",
+      "id": "8",
+      "bbox": [
+        52,
+        394,
+        480,
+        168
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFF3D2",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wfixovud",
+      "id": "9",
+      "bbox": [
+        76,
+        416,
+        432,
+        34
+      ],
+      "geometry": "rect",
+      "text": "Ele não busca o plano mais barato.",
+      "textPreview": "Ele não busca o plano mais barato.",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 23,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Ele não busca o plano mais barato."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Ele não busca o plano mais barato.",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Ele não busca o plano mais barato.",
+              "fontSize": 23,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y5crexc3",
+      "id": "10",
+      "bbox": [
+        76,
+        460,
+        432,
+        72
+      ],
+      "geometry": "rect",
+      "text": "Busca rede, previsibilidade e segurança para não escolher errado.",
+      "textPreview": "Busca rede, previsibilidade e segurança para não escolher errado.",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 21,
+        "typeface": "Arial",
+        "color": "#202124",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Busca rede, previsibilidade e segurança para"
+          },
+          {
+            "index": 2,
+            "text": "não escolher errado."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Busca rede, previsibilidade e segurança para não escolher errado.",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Busca rede, previsibilidade e segurança para não escolher errado.",
+              "fontSize": 21,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z6lsn2to",
+      "id": "11",
+      "bbox": [
+        570,
+        154,
+        658,
+        430
+      ],
+      "geometry": "rect",
+      "fillColor": "#F2F2F2",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/rqx8zy5c",
+      "id": "12",
+      "bbox": [
+        584,
+        168,
+        630,
+        402
+      ],
+      "geometry": "rect",
+      "alt": "Trecho visual da matriz final da persona CNPJ familiar",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "imageMask": {
+        "geometry": "rect"
+      },
+      "asset": {
+        "assetId": "8424f4d1-dc54-42d4-98af-9c2f63d5170d",
+        "contentType": "image/png",
+        "byteLength": 1361378
+      }
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l83apsbu",
+      "id": "13",
+      "bbox": [
+        570,
+        602,
+        658,
+        44
+      ],
+      "geometry": "rect",
+      "text": "Medos que movem a decisão: reajuste, carência, rede ruim e cláusula escondida.",
+      "textPreview": "Medos que movem a decisão: reajuste, carência, rede ruim e cláusula escondida.",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 18,
+        "typeface": "Arial",
+        "color": "#D94C4C",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Medos que movem a decisão: reajuste, carência, rede ruim e cláusula"
+          },
+          {
+            "index": 2,
+            "text": "escondida."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Medos que movem a decisão: reajuste, carência, rede ruim e cláusula escondida.",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Arial",
+            "color": "#D94C4C",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Medos que movem a decisão: reajuste, carência, rede ruim e cláusula escondida.",
+              "fontSize": 18,
+              "typeface": "Arial",
+              "color": "#D94C4C",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

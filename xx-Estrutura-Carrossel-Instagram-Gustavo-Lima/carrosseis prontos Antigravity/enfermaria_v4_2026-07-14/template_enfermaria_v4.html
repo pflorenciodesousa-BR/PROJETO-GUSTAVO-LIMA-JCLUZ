@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enfermaria ou Apartamento — Gustavo Lima (V4)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', 'Segoe UI', sans-serif; background: #111; color: #fff; padding: 30px 20px; }
+        h1 { text-align: center; font-size: 22px; color: #fff; margin-bottom: 6px; }
+        .page-subtitle { text-align: center; color: #777; font-size: 13px; margin-bottom: 30px; }
+        .btn-container { text-align: center; margin: 0 0 30px 0; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn { border: none; padding: 14px 36px; font-size: 15px; font-weight: 700; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-family: 'Montserrat', sans-serif; }
+        .btn-primary { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; }
+        .btn-secondary { background: #2a2a2a; color: #ccc; border: 1px solid #444; }
+        .status { text-align: center; color: #3b82f6; margin: 10px 0 20px; font-size: 13px; font-weight: bold; min-height: 20px; }
+        .slides-grid { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; max-width: 1400px; margin: 0 auto; }
+        .slide-wrapper { background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 2px solid #2a2a2a; transition: all 0.2s; display: flex; flex-direction: column; width: 400px; }
+        .slide-scaler { width: 400px; height: 500px; overflow: hidden; position: relative; }
+        .slide-scaler .slide { transform: scale(0.37037); }
+        .slide-label { padding: 8px 10px 4px; font-size: 12px; color: #777; text-align: center; background: #151515; font-weight: bold; }
+        
+        /* Legendas interativas V4 */
+        .caption-box { background: #111; padding: 12px; border-top: 1px solid #2a2a2a; display: flex; flex-direction: column; gap: 8px; }
+        .caption-text { width: 100%; height: 80px; background: #000; color: #ddd; border: 1px solid #444; border-radius: 6px; padding: 10px; font-size: 12px; font-family: 'Segoe UI', sans-serif; resize: none; line-height: 1.5; }
+        .btn-copy { background: #222; color: #bbb; border: 1px solid #444; padding: 8px; font-size: 11px; cursor: pointer; border-radius: 4px; width: 100%; font-weight: 600; }
+        .btn-copy:hover { background: #333; color: #fff; border-color: #555; }
+
+        /* ===================== ESTILOS DOS SLIDES ===================== */
+        .slide {
+            width: 1080px; height: 1350px; position: absolute; top: 0; left: 0;
+            background: #0B1D3A; /* Escuro Navy */
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 110px 95px;
+            font-family: 'Montserrat', sans-serif; transform-origin: top left;
+            overflow: hidden;
+        }
+        .slide.bg-light { background: #F0EBE3; color: #0B1D3A; } /* Claro Bege */
+        
+        /* NOVO V4: Textura Noise SVG */
+        .texture-dark { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); opacity: 0.25; mix-blend-mode: overlay; pointer-events: none; z-index: 1; }
+        .texture-light { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); opacity: 0.15; pointer-events: none; z-index: 1; }
+
+        /* NOVO V4: Img Box para foto real */
+        .img-box { width: 100%; height: 500px; border-radius: 40px; background-image: url('REAL_IMG_HERE'); background-size: cover; background-position: center; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 4px solid rgba(255,255,255,0.4); margin-top: 40px; z-index: 2; position: relative; }
+
+        .slide .arrow { position: absolute; bottom: 75px; right: 75px; display: flex; align-items: center; z-index: 10; }
+        .slide .arrow-line { width: 110px; height: 2px; background: rgba(255,255,255,0.3); }
+        .slide .arrow-head { width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 13px solid rgba(255,255,255,0.3); }
+        .slide.bg-light .arrow-line { background: rgba(11,29,58,0.3); }
+        .slide.bg-light .arrow-head { border-left-color: rgba(11,29,58,0.3); }
+
+        .t-reg   { font-size: 44px; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.5; }
+        .t-bold  { font-size: 44px; font-weight: 900; color: #ffffff; line-height: 1.35; letter-spacing: -0.5px; }
+        .t-large { font-size: 66px; font-weight: 900; color: #ffffff; line-height: 1.15; letter-spacing: -1px; text-transform: uppercase; }
+        
+        .slide.bg-light .t-reg   { color: rgba(11,29,58,0.85); }
+        .slide.bg-light .t-bold  { color: #0B1D3A; }
+        .slide.bg-light .t-large { color: #0B1D3A; }
+
+        /* Grifos V4 */
+        .hl-gold { display: inline-block; background: rgba(234,179,8,0.28); color: #fff !important; padding: 5px 18px; border-radius: 8px; }
+        .hl      { display: inline-block; background: rgba(11,29,58,0.14); color: #0B1D3A !important; padding: 5px 18px; border-radius: 8px; }
+
+        .sp    { height: 36px; }
+        .sp-sm { height: 18px; }
+
+        /* Componentes Específicos */
+        .nao-muda-item { display: flex; align-items: center; gap: 28px; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+        .nao-muda-item:last-child { border-bottom: none; }
+        .check-circle { width: 48px; height: 48px; border-radius: 50%; background: rgba(96,165,250,0.15); border: 2px solid rgba(96,165,250,0.35); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 26px; }
+
+        #renderArea { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <h1>🏥 Carrossel — Enfermaria ou Apartamento?</h1>
+    <p class="page-subtitle">Padrão V4 (Texturas Noise, Img-Box, Slide Salvável Ouro) — Gustavo Lima</p>
+
+    <div class="btn-container">
+        <button class="btn btn-primary" onclick="downloadAllPNGs()">📦 Baixar TODOS os PNGs</button>
+        <button class="btn btn-secondary" onclick="downloadPDF()">📄 Baixar PDF completo</button>
+    </div>
+    <div class="status" id="status"></div>
+
+    <div class="slides-grid" id="slidesGrid"></div>
+    <div id="renderArea"></div>
+
+    <script>
+    const SLIDES_HTML = [
+        // SLIDE 1: Capa (Mantendo a Criativa Original de Chapeuzinho)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('COVER_B64_HERE');background-size:cover;background-position:center top;z-index:1;"></div>
+         <div style="position:absolute;bottom:0;left:0;width:100%;height:62%;background:linear-gradient(to top,rgba(11,29,58,1) 0%,rgba(11,29,58,0.92) 28%,rgba(11,29,58,0.55) 60%,rgba(11,29,58,0) 100%);z-index:2;"></div>
+         <div style="position:absolute;bottom:0;left:0;width:100%;padding:0 95px 110px;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;">
+             <div class="t-large" style="font-size:76px;text-shadow:2px 2px 12px rgba(0,0,0,0.9);">ENFERMARIA<br>OU<br>APARTAMENTO?</div>
+             <div class="sp-sm"></div>
+             <div class="t-reg" style="font-size:38px;color:rgba(255,255,255,0.78);">Essa escolha parece detalhe.<br>Mas ela aparece na hora que mais importa.</div>
+         </div>`,
+
+        // SLIDE 2: O que NÃO muda (ESCURO + TEXTURA)
+        `<div class="texture-dark"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%;">
+             <div class="t-bold" style="font-size:50px;margin-bottom:6px;text-align:center;width:100%;">O que NÃO muda<br>com a acomodação:</div>
+             <div class="sp"></div>
+             <div class="nao-muda-item"><div class="check-circle">✓</div><div class="t-reg" style="font-size:42px;">Sua consulta</div></div>
+             <div class="nao-muda-item"><div class="check-circle">✓</div><div class="t-reg" style="font-size:42px;">Seus exames</div></div>
+             <div class="nao-muda-item"><div class="check-circle">✓</div><div class="t-reg" style="font-size:42px;">O atendimento ambulatorial</div></div>
+             <div class="nao-muda-item"><div class="check-circle">✓</div><div class="t-reg" style="font-size:42px;">A cobertura cirúrgica</div></div>
+         </div>`,
+
+        // SLIDE 3 [NOVO V4]: A realidade de uma internação (BEGE + TEXTURA + IMG BOX)
+        `<div class="texture-light"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%;justify-content:center;">
+             <div class="t-bold" style="font-size:54px;margin-bottom:16px;">A diferença só aparece<br>em um único cenário:</div>
+             <div class="t-reg" style="font-size:38px;">O momento em que você precisa ficar<br>internado e dependente da estrutura.</div>
+             <div class="img-box"></div>
+         </div>`,
+
+        // SLIDE 4: O que define (BEGE + TEXTURA + SKETCH LEITO)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('SKETCH2_B64_HERE');background-size:cover;mix-blend-mode:darken;filter:brightness(1.05);opacity:0.2;z-index:0;"></div>
+         <div class="texture-light"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;">
+             <div class="t-reg" style="font-size:42px;">A sua escolha de acomodação<br>define apenas uma coisa:</div>
+             <div class="sp"></div>
+             <div class="t-bold" style="font-size:52px;line-height:1.3;">O tipo de quarto<br>em caso de internação.</div>
+             <div class="sp"></div>
+             <div style="width:100%;display:flex;flex-direction:column;gap:16px;text-align:left;">
+                 <div style="background:rgba(11,29,58,0.06);border-left:6px solid #0B1D3A;border-radius:0 14px 14px 0;padding:28px 36px;display:flex;align-items:center;gap:22px;">
+                     <div style="font-size:42px;">🏨</div>
+                     <div><div style="font-size:32px;font-weight:900;color:#0B1D3A;">Apartamento</div><div style="font-size:30px;color:rgba(11,29,58,0.65);margin-top:4px;">Quarto individual (acompanhante liberado)</div></div>
+                 </div>
+                 <div style="background:rgba(11,29,58,0.06);border-left:6px solid rgba(11,29,58,0.3);border-radius:0 14px 14px 0;padding:28px 36px;display:flex;align-items:center;gap:22px;">
+                     <div style="font-size:42px;">🛏️</div>
+                     <div><div style="font-size:32px;font-weight:900;color:#0B1D3A;">Enfermaria</div><div style="font-size:30px;color:rgba(11,29,58,0.65);margin-top:4px;">Quarto compartilhado (restrição de horários)</div></div>
+                 </div>
+             </div>
+         </div>`,
+
+        // SLIDE 5 [NOVO V4]: SLIDE SALVÁVEL DE ALTO CONTRASTE (DOURADO, SEM TEXTURA, SEM SKETCH)
+        `<div style="position:absolute;inset:0;background:#EAB308;z-index:4;"></div>
+         <div style="position:relative;z-index:5;width:100%;display:flex;flex-direction:column;justify-content:center;height:100%;">
+             <div style="font-size:32px;font-weight:700;color:rgba(11,29,58,0.6);text-transform:uppercase;letter-spacing:3px;margin-bottom:32px;text-align:center;">SALVE PARA NÃO ESQUECER</div>
+             <div class="t-bold" style="font-size:60px;margin-bottom:50px;text-align:center;">Quando cada um<br>faz sentido:</div>
+             
+             <div style="display:flex;flex-direction:column;gap:24px;width:100%;">
+                 <!-- Coluna Apartamento -->
+                 <div style="background:rgba(255,255,255,0.4);border-radius:20px;padding:32px;border:2px solid rgba(11,29,58,0.1);">
+                     <div style="font-size:32px;font-weight:900;color:#0B1D3A;margin-bottom:16px;">🏨 Apartamento</div>
+                     <div style="font-size:30px;color:rgba(11,29,58,0.9);line-height:1.4;">Ideal se você tem **filhos pequenos** (precisa estar junto 24h), valoriza **privacidade absoluta** ou tem histórico familiar de internações longas.</div>
+                 </div>
+                 <!-- Coluna Enfermaria -->
+                 <div style="background:rgba(255,255,255,0.2);border-radius:20px;padding:32px;border:2px solid rgba(11,29,58,0.05);">
+                     <div style="font-size:32px;font-weight:900;color:#0B1D3A;margin-bottom:16px;">🛏️ Enfermaria</div>
+                     <div style="font-size:30px;color:rgba(11,29,58,0.9);line-height:1.4;">Ideal se o orçamento da empresa está apertado, a equipe é jovem, não tem filhos no plano e o risco de internações longas é historicamente baixo.</div>
+                 </div>
+             </div>
+         </div>`,
+
+        // SLIDE 6: Escolha consciente (ESCURO + TEXTURA)
+        `<div class="texture-dark"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;">
+             <div class="t-reg" style="font-size:46px;">Tem gente que paga apartamento<br>sem saber por quê.</div>
+             <div class="sp"></div>
+             <div class="t-reg" style="font-size:46px;">E tem gente que escolhe enfermaria<br>só pelo preço, sem entender<br>o impacto numa emergência.</div>
+             <div class="sp"></div>
+             <div class="t-bold hl-gold" style="font-size:42px;line-height:1.4;background:rgba(234,179,8,0.28) !important;">Não existe resposta certa.<br>Existe escolha consciente.</div>
+         </div>`,
+
+        // SLIDE 7: CTA (ESCURO + TEXTURA)
+        `<div class="texture-dark"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;height:100%;justify-content:center;">
+             <div class="t-large" style="font-size:70px;line-height:1.12;">ACOMODAÇÃO<br>NÃO MUDA<br>SUA CONSULTA.</div>
+             <div class="sp-sm"></div>
+             <div class="t-bold hl-gold" style="font-size:46px;background:rgba(234,179,8,0.28) !important;">Muda sua internação.</div>
+             <div class="sp"></div>
+             <div class="t-reg" style="font-size:38px;color:rgba(255,255,255,0.72);">Segue o perfil para mais conteúdo<br>sobre plano de saúde empresarial<br>sem enrolação.</div>
+             <div class="sp"></div>
+             <div style="font-weight:900;color:#60a5fa;font-size:52px;">Bora, pra cima! 🚀💪</div>
+         </div>`
+    ];
+
+    const LABELS = [
+        'Slide 1 — Capa (Original)',
+        'Slide 2 — O que NÃO Muda (Textura)',
+        'Slide 3 — Realidade (Textura + Img-Box)',
+        'Slide 4 — O que Define (Textura + Sketch)',
+        'Slide 5 — Salvável (Fundo Dourado)',
+        'Slide 6 — Escolha Consciente (Textura)',
+        'Slide 7 — CTA (Textura)'
+    ];
+
+    const LEGENDAS = [
+        'Essa decisão aparece na hora de contratar. A maioria escolhe no automático. Mas existe uma diferença brutal que vale entender antes de assinar.',
+        'A confusão começa porque as pessoas acham que acomodação muda tudo. Na verdade, ela só afeta um momento específico.',
+        'E é justamente no momento mais vulnerável que você descobre se escolheu certo.',
+        'Acomodação é simples: quarto para um ou quarto para muitos. O que muda é quem está lá com você.',
+        'Salva esse slide antes de renovar ou contratar um plano. Pode evitar muito estresse emocional e financeiro.',
+        'A escolha automática sempre vai custar caro de alguma forma. Entenda o que você está comprando.',
+        'Segue o perfil para mais conteúdo sobre plano de saúde empresarial sem enrolação.\n\nBora, pra cima! 🚀💪\n\n#planodesaude #cnpj #corretordeseguros #gustavojcluz'
+    ];
+
+    const LIGHT_SLIDES = [2, 3]; // slides bege (0-based: slide 3 e 4)
+    // O slide 5 (index 4) é dourado e não precisa de bg-light pois tem cor injetada direto nele.
+
+    function createSlideElement(index) {
+        const slide = document.createElement('div');
+        slide.className = 'slide';
+        if (LIGHT_SLIDES.includes(index)) slide.classList.add('bg-light');
+        const arrowHTML = (index < 6) ? '<div class="arrow"><div class="arrow-line"></div><div class="arrow-head"></div></div>' : '';
+        slide.innerHTML = SLIDES_HTML[index] + arrowHTML;
+        return slide;
+    }
+
+    function buildPreviews() {
+        const grid = document.getElementById('slidesGrid');
+        grid.innerHTML = '';
+        SLIDES_HTML.forEach((_, i) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'slide-wrapper';
+            
+            const label = document.createElement('div');
+            label.className = 'slide-label';
+            label.textContent = LABELS[i];
+            
+            const scaler = document.createElement('div');
+            scaler.className = 'slide-scaler';
+            scaler.appendChild(createSlideElement(i));
+            
+            const captionBox = document.createElement('div');
+            captionBox.className = 'caption-box';
+            const textArea = document.createElement('textarea');
+            textArea.className = 'caption-text';
+            textArea.value = LEGENDAS[i];
+            textArea.readOnly = true;
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'btn-copy';
+            copyBtn.innerText = '📋 Copiar Legenda';
+            copyBtn.onclick = () => {
+                navigator.clipboard.writeText(textArea.value);
+                copyBtn.innerText = '✅ Copiado!';
+                setTimeout(() => copyBtn.innerText = '📋 Copiar Legenda', 2000);
+            };
+            captionBox.appendChild(textArea);
+            captionBox.appendChild(copyBtn);
+
+            wrapper.appendChild(label);
+            wrapper.appendChild(scaler);
+            wrapper.appendChild(captionBox);
+            grid.appendChild(wrapper);
+        });
+    }
+
+    async function downloadAllPNGs() {
+        document.getElementById('status').innerText = "Gerando PNGs...";
+        const zip = new JSZip();
+        for (let i = 0; i < SLIDES_HTML.length; i++) {
+            const tempContainer = document.createElement('div');
+            tempContainer.style.width = '1080px';
+            tempContainer.style.height = '1350px';
+            tempContainer.style.position = 'absolute';
+            tempContainer.style.top = '-9999px';
+            tempContainer.appendChild(createSlideElement(i));
+            document.body.appendChild(tempContainer);
+
+            const canvas = await html2canvas(tempContainer, { scale: 1, useCORS: true, logging: false });
+            const base64Data = canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, "");
+            zip.file(`slide_${i+1}.png`, base64Data, {base64: true});
+            document.body.removeChild(tempContainer);
+        }
+        zip.generateAsync({type:"blob"}).then(function(content) {
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(content);
+            link.download = "carrossel_enfermaria_v4.zip";
+            link.click();
+            document.getElementById('status').innerText = "ZIP baixado!";
+        });
+    }
+
+    async function downloadPDF() {
+        document.getElementById('status').innerText = "Gerando PDF...";
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'px', format: [1080, 1350] });
+
+        for (let i = 0; i < SLIDES_HTML.length; i++) {
+            const tempContainer = document.createElement('div');
+            tempContainer.style.width = '1080px';
+            tempContainer.style.height = '1350px';
+            tempContainer.style.position = 'absolute';
+            tempContainer.style.top = '-9999px';
+            tempContainer.appendChild(createSlideElement(i));
+            document.body.appendChild(tempContainer);
+
+            const canvas = await html2canvas(tempContainer, { scale: 1, useCORS: true, logging: false });
+            const imgData = canvas.toDataURL('image/jpeg', 0.95);
+            
+            if (i > 0) pdf.addPage();
+            pdf.addImage(imgData, 'JPEG', 0, 0, 1080, 1350);
+            document.body.removeChild(tempContainer);
+        }
+        pdf.save("carrossel_enfermaria_v4.pdf");
+        document.getElementById('status').innerText = "PDF baixado!";
+    }
+
+    const script = document.createElement('script');
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js";
+    script.onload = buildPreviews;
+    document.head.appendChild(script);
+    </script>
+</body>
+</html>
+

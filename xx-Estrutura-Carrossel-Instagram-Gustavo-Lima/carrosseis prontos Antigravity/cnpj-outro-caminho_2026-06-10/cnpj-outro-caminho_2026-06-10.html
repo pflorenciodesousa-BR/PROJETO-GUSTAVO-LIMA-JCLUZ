@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNPJ pode mudar o caminho — Gustavo Lima | JCLUZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', 'Segoe UI', sans-serif; background: #111; color: #fff; padding: 30px 20px; }
+        h1 { text-align: center; font-size: 22px; color: #fff; margin-bottom: 6px; }
+        .page-subtitle { text-align: center; color: #777; font-size: 13px; margin-bottom: 30px; }
+        .btn-container { text-align: center; margin: 0 0 30px 0; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn { border: none; padding: 14px 36px; font-size: 15px; font-weight: 700; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-family: 'Montserrat', sans-serif; }
+        .btn-primary { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59,130,246,0.4); }
+        .btn-secondary { background: #2a2a2a; color: #ccc; border: 1px solid #444; }
+        .btn-secondary:hover { background: #3a3a3a; color: #fff; }
+        .status { text-align: center; color: #3b82f6; margin: 10px 0 20px; font-size: 13px; min-height: 20px; }
+        .slides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; max-width: 1400px; margin: 0 auto; }
+        .slide-wrapper { background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 2px solid #2a2a2a; transition: all 0.2s; }
+        .slide-wrapper:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        .slide-scaler { width: 100%; aspect-ratio: 1080 / 1350; overflow: hidden; position: relative; }
+        .slide-label { padding: 8px 10px 4px; font-size: 12px; color: #777; text-align: center; background: #151515; }
+        .slide-footer { display: flex; justify-content: center; padding: 6px 10px 10px; background: #151515; }
+        .btn-download { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; border: none; padding: 8px 20px; font-size: 12px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-family: 'Montserrat', sans-serif; width: 100%; }
+        .btn-download:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(59,130,246,0.4); }
+        .btn-download:disabled { opacity: 0.5; cursor: wait; }
+
+        .slide {
+            width: 1080px;
+            height: 1350px;
+            background: linear-gradient(160deg, #0B1D3A 0%, #0F2444 30%, #0A1A35 55%, #0D2040 80%, #091830 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 110px 95px;
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            transform-origin: top left;
+        }
+        .slide .arrow { position: absolute; bottom: 75px; right: 75px; display: flex; align-items: center; }
+        .slide .arrow-line { width: 110px; height: 2px; background: rgba(255,255,255,0.35); }
+        .slide .arrow-head { width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 13px solid rgba(255,255,255,0.35); }
+
+        .t-reg   { font-size: 39px; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.5;  letter-spacing: -0.2px; }
+        .t-bold  { font-size: 39px; font-weight: 900; color: #ffffff;               line-height: 1.38; letter-spacing: -0.5px; }
+        .t-large { font-size: 52px; font-weight: 900; color: #ffffff;               line-height: 1.22; letter-spacing: -0.8px; text-transform: uppercase; }
+        .t-small { font-size: 32px; font-weight: 400; color: rgba(255,255,255,0.55); line-height: 1.5; margin-top: 28px; }
+        .t-accent { font-weight: 900; color: #60a5fa; }
+        .sp    { height: 32px; }
+        .sp-sm { height: 14px; }
+
+        /* Slide salvável — separador visual */
+        .divider-slide {
+            width: 100%;
+            height: 2px;
+            background: rgba(255,255,255,0.12);
+            margin: 28px 0;
+        }
+        .label-bloco {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 12px;
+        }
+
+        .legenda-section { max-width: 800px; margin: 50px auto 40px; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 12px; padding: 30px; }
+        .legenda-title    { font-size: 18px; font-weight: 900; color: #fff; margin-bottom: 6px; }
+        .legenda-subtitle { font-size: 12px; color: #777; margin-bottom: 16px; }
+        .legenda-text     { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.8; white-space: pre-wrap; background: #111; border-radius: 8px; padding: 20px; border: 1px solid #333; }
+        .btn-copy { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; border: none; padding: 10px 28px; font-size: 13px; font-weight: 700; border-radius: 8px; cursor: pointer; transition: all 0.2s; font-family: 'Montserrat', sans-serif; margin-top: 14px; }
+        .btn-copy:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(59,130,246,0.4); }
+
+        #renderArea { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+    <h1>📋 Carrossel — Gustavo Lima</h1>
+    <p class="page-subtitle">CNPJ pode mudar o caminho da contratação &mdash; 8 slides<br>Clique no botão abaixo de cada slide para baixar o PNG individual.</p>
+
+    <div class="btn-container">
+        <button class="btn btn-primary" onclick="downloadAllPNGs()">📦 Baixar TODOS os PNGs de uma vez</button>
+        <button class="btn btn-secondary" onclick="downloadPDF()">📄 Baixar PDF completo</button>
+    </div>
+    <div class="status" id="status"></div>
+
+    <div class="slides-grid" id="slidesGrid"></div>
+    <div id="renderArea"></div>
+
+    <div class="legenda-section">
+        <div class="legenda-title">✍️ Legenda sugerida</div>
+        <div class="legenda-subtitle">Copie o texto abaixo e cole na legenda do Instagram</div>
+        <div class="legenda-text" id="legendaText">Você tem CNPJ. Mas ainda está buscando plano de saúde como pessoa física?
+
+Isso não é necessariamente errado. Mas pode existir outro caminho que você ainda não conhece.
+
+O plano empresarial tem critérios de elegibilidade que variam por operadora: tipo de empresa, quantidade de vidas, atividade do CNPJ. Não é automático. Mas para quem se encaixa, representa uma modalidade com regras e condições diferentes.
+
+Dependentes, documentação e prazos funcionam de forma diferente nessa modalidade. Vale entender antes de assinar qualquer coisa.
+
+Na JCLUZ, com 23 anos de mercado, a gente analisa o seu perfil antes de indicar qualquer caminho. Porque a decisão certa começa pela pergunta certa.
+
+Salva esse post. Manda pra quem tem CNPJ e nunca perguntou sobre o plano empresarial.
+
+Clica no link da Bio.
+
+Bora, pra cima! 🚀
+
+#planodesuade #cnpj #planoempresarial #saudefamiliar #empreendedor #saude #planodesaudecnpj #corretordeseguros #familiaprotegida #empresario #planodesaude</div>
+        <button class="btn-copy" onclick="copyLegenda()">📋 Copiar legenda</button>
+    </div>
+
+    <script>
+    const SLIDES_HTML = [
+
+        // SLIDE 1 — CAPA
+        // Hook: pattern interrupt. Fala o oposto do esperado.
+        `<div class="t-large" style="font-size:54px; line-height:1.15;">
+            VOCÊ TEM CNPJ.<br>
+            MAS AINDA OLHA<br>
+            PLANO DE SAÚDE<br>
+            COMO PESSOA FÍSICA.
+        </div>
+        <div class="sp"></div>
+        <div class="t-reg">
+            Talvez esteja tudo certo.<br>
+            Mas talvez exista<br>
+            outro caminho.
+        </div>`,
+
+        // SLIDE 2 — O ANTES (situação atual)
+        // Nomeia o comportamento sem julgar
+        `<div class="t-reg">
+            A maioria dos empresários<br>
+            busca plano de saúde<br>
+            como qualquer outra pessoa.
+        </div>
+        <div class="sp"></div>
+        <div class="t-bold">
+            Pessoa física.<br>
+            Família no mesmo plano.<br>
+            Mensalidade saindo do bolso.
+        </div>
+        <div class="sp"></div>
+        <div class="t-reg">
+            Funciona.<br>
+            Mas pode não ser<br>
+            o único jeito.
+        </div>`,
+
+        // SLIDE 3 — A VIRADA
+        // O "MAS" que muda tudo. Apresenta o outro caminho.
+        `<div class="t-reg">
+            Quando você tem CNPJ,
+        </div>
+        <div class="sp-sm"></div>
+        <div class="t-bold" style="font-size:46px;">
+            existe uma segunda porta.
+        </div>
+        <div class="sp"></div>
+        <div class="t-reg">
+            O plano empresarial.
+        </div>
+        <div class="sp-sm"></div>
+        <div class="t-bold">
+            Uma modalidade com<br>
+            regras e condições<br>
+            diferentes do plano comum.
+        </div>`,
+
+        // SLIDE 4 — AS REGRAS PRÓPRIAS
+        // Detalha sem prometer. Honesto.
+        `<div class="t-reg">
+            Plano empresarial<br>
+            não é para todo CNPJ.
+        </div>
+        <div class="sp"></div>
+        <div class="t-bold">
+            Cada operadora<br>
+            tem critérios próprios.
+        </div>
+        <div class="sp"></div>
+        <div class="t-reg">
+            Tipo de empresa.<br>
+            Quantidade de vidas.<br>
+            Atividade do CNPJ.
+        </div>
+        <div class="sp-sm"></div>
+        <div class="t-bold">
+            Vale entender<br>
+            se o seu perfil se encaixa.
+        </div>`,
+
+        // SLIDE 5 — ANTES E DEPOIS (SLIDE SALVÁVEL)
+        // Comparação clara. Design com separador visual.
+        `<div class="label-bloco">Pessoa física</div>
+        <div class="t-bold">
+            Reajuste por<br>
+            faixa etária.
+        </div>
+        <div class="sp-sm"></div>
+        <div class="t-reg">
+            Portabilidade individual.<br>
+            Contratação direta.
+        </div>
+        <div class="divider-slide"></div>
+        <div class="label-bloco">Plano empresarial</div>
+        <div class="t-bold">
+            Elegibilidade por CNPJ.
+        </div>
+        <div class="sp-sm"></div>
+        <div class="t-reg">
+            Dinâmica de inclusão própria.<br>
+            Condições que variam<br>
+            por operadora.
+        </div>`,
+
+        // SLIDE 6 — DEPENDENTES E DOCUMENTAÇÃO
+        // Aprofunda um ponto específico e prático
+        `<div class="t-reg">
+            Incluir dependentes<br>
+            no plano empresarial
+        </div>
+        <div class="sp-sm"></div>
+        <div class="t-bold">
+            pode funcionar diferente<br>
+            do plano pessoa física.
+        </div>
+        <div class="sp"></div>
+        <div class="t-reg">
+            Documentação.<br>
+            Prazos de carência.<br>
+            Vínculos familiares.
+        </div>
+        <div class="sp-sm"></div>
+        <div class="t-bold">
+            Detalhes que mudam<br>
+            o resultado final.
+        </div>`,
+
+        // SLIDE 7 — CONCLUSÃO HONESTA
+        // Antecipa a objeção ("mas é automático?") e responde com honestidade
+        `<div class="t-reg">
+            Não é automático.
+        </div>
+        <div class="sp-sm"></div>
+        <div class="t-bold">
+            Não é sempre melhor.
+        </div>
+        <div class="sp"></div>
+        <div class="t-reg">
+            Mas pode ser o caminho certo<br>
+            para o seu perfil<br>
+            de empresa e de família.
+        </div>
+        <div class="sp"></div>
+        <div class="t-bold">
+            A pergunta certa<br>
+            antes de contratar<br>
+            vale mais que qualquer proposta.
+        </div>`,
+
+        // SLIDE 8 — CTA
+        `<div class="t-large">
+            ANTES DE CONTRATAR,<br>
+            ENTENDA TODAS<br>
+            AS SUAS OPÇÕES.
+        </div>
+        <div class="sp"></div>
+        <div class="t-reg">
+            Quer saber se o seu CNPJ<br>
+            abre acesso ao<br>
+            plano empresarial?
+        </div>
+        <div class="sp-sm"></div>
+        <div class="t-bold">Clica no link da Bio.</div>
+        <div class="sp"></div>
+        <div class="t-bold t-accent" style="font-size:48px;">
+            Bora, pra cima! 🚀
+        </div>`
+    ];
+
+    const LABELS = [
+        'Slide 1 — Capa',
+        'Slide 2 — O antes',
+        'Slide 3 — A segunda porta',
+        'Slide 4 — As regras próprias',
+        'Slide 5 — Antes e Depois ★',
+        'Slide 6 — Dependentes e docs',
+        'Slide 7 — Conclusão honesta',
+        'Slide 8 — CTA'
+    ];
+
+    // ==========================================
+    // CÓDIGO DE RENDERIZAÇÃO (NÃO MODIFICAR)
+    // ==========================================
+
+    function createSlideElement(index) {
+        const slide = document.createElement('div');
+        slide.className = 'slide';
+        slide.innerHTML = `${SLIDES_HTML[index]}<div class="arrow"><div class="arrow-line"></div><div class="arrow-head"></div></div>`;
+        return slide;
+    }
+
+    function buildPreviews() {
+        const grid = document.getElementById('slidesGrid');
+        grid.innerHTML = '';
+        SLIDES_HTML.forEach((_, i) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'slide-wrapper';
+            const scaler = document.createElement('div');
+            scaler.className = 'slide-scaler';
+            const slide = createSlideElement(i);
+            scaler.appendChild(slide);
+            const label = document.createElement('div');
+            label.className = 'slide-label';
+            label.textContent = LABELS[i];
+            const footer = document.createElement('div');
+            footer.className = 'slide-footer';
+            const btnDl = document.createElement('button');
+            btnDl.className = 'btn-download';
+            btnDl.textContent = `📥 Baixar PNG — Slide ${i + 1}`;
+            btnDl.onclick = () => downloadSinglePNG(i, btnDl);
+            footer.appendChild(btnDl);
+            wrapper.appendChild(scaler);
+            wrapper.appendChild(label);
+            wrapper.appendChild(footer);
+            grid.appendChild(wrapper);
+            requestAnimationFrame(() => {
+                slide.style.transform = `scale(${scaler.offsetWidth / 1080})`;
+            });
+        });
+    }
+
+    function setStatus(msg) { document.getElementById('status').textContent = msg; }
+
+    function copyLegenda() {
+        const text = document.getElementById('legendaText').textContent;
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.querySelector('.btn-copy');
+            btn.textContent = '✅ Copiado!';
+            setTimeout(() => { btn.textContent = '📋 Copiar legenda'; }, 2000);
+        });
+    }
+
+    async function renderSlide(index) {
+        const area = document.getElementById('renderArea');
+        const slide = createSlideElement(index);
+        area.appendChild(slide);
+        area.style.zIndex = '9999';
+        area.style.opacity = '1';
+        await new Promise(r => setTimeout(r, 400));
+        const canvas = await html2canvas(slide, {
+            width: 1080,
+            height: 1350,
+            scale: 1,
+            useCORS: true,
+            backgroundColor: '#0B1D3A',
+            logging: false
+        });
+        area.removeChild(slide);
+        area.style.zIndex = '-1';
+        return canvas;
+    }
+
+    async function downloadSinglePNG(index, btn) {
+        const originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = '⏳ Gerando...';
+        try {
+            const canvas = await renderSlide(index);
+            const link = document.createElement('a');
+            link.download = `cnpj-outro-caminho_2026-06-10_slide_${index + 1}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            btn.textContent = '✅ Baixado!';
+            setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2000);
+        } catch (e) {
+            btn.textContent = '❌ Erro';
+            setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2000);
+        }
+    }
+
+    async function downloadAllPNGs() {
+        setStatus('Gerando PNGs — aguarde...');
+        try {
+            for (let i = 0; i < SLIDES_HTML.length; i++) {
+                setStatus(`Baixando slide ${i + 1} de ${SLIDES_HTML.length}...`);
+                const canvas = await renderSlide(i);
+                const link = document.createElement('a');
+                link.download = `cnpj-outro-caminho_2026-06-10_slide_${i + 1}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                await new Promise(r => setTimeout(r, 800));
+            }
+            setStatus('✅ Todas as imagens PNG baixadas!');
+        } catch (e) {
+            setStatus('❌ Erro: ' + e.message);
+            console.error(e);
+        }
+    }
+
+    async function downloadPDF() {
+        setStatus('Gerando PDF — aguarde...');
+        try {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [108, 135] });
+            for (let i = 0; i < SLIDES_HTML.length; i++) {
+                setStatus(`Renderizando slide ${i + 1} de ${SLIDES_HTML.length}...`);
+                const canvas = await renderSlide(i);
+                const imgData = canvas.toDataURL('image/png');
+                if (i > 0) pdf.addPage([108, 135]);
+                pdf.addImage(imgData, 'PNG', 0, 0, 108, 135);
+            }
+            pdf.save('cnpj-outro-caminho_2026-06-10.pdf');
+            setStatus('✅ PDF baixado com sucesso!');
+        } catch (e) {
+            setStatus('❌ Erro: ' + e.message);
+            console.error(e);
+        }
+    }
+
+    document.fonts.ready.then(() => { setTimeout(buildPreviews, 300); });
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.slide-scaler').forEach(scaler => {
+            const slide = scaler.querySelector('.slide');
+            if (slide) { slide.style.transform = `scale(${scaler.offsetWidth / 1080})`; }
+        });
+    });
+    </script>
+</body>
+</html>

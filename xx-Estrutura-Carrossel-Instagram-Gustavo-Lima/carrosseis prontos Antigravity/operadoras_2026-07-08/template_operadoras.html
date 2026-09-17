@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadoras — Qual a melhor para o seu CNPJ? — Gustavo Lima</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', 'Segoe UI', sans-serif; background: #111; color: #fff; padding: 30px 20px; }
+        h1 { text-align: center; font-size: 22px; color: #fff; margin-bottom: 6px; }
+        .page-subtitle { text-align: center; color: #777; font-size: 13px; margin-bottom: 30px; }
+        .btn-container { text-align: center; margin: 0 0 30px 0; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn { border: none; padding: 14px 36px; font-size: 15px; font-weight: 700; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-family: 'Montserrat', sans-serif; }
+        .btn-primary { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59,130,246,0.4); }
+        .btn-secondary { background: #2a2a2a; color: #ccc; border: 1px solid #444; }
+        .btn-secondary:hover { background: #3a3a3a; color: #fff; }
+        .status { text-align: center; color: #3b82f6; margin: 10px 0 20px; font-size: 13px; font-weight: bold; min-height: 20px; }
+        .slides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
+        .slide-wrapper { background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 2px solid #2a2a2a; transition: all 0.2s; display: flex; flex-direction: column; }
+        .slide-wrapper:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        .slide-scaler { width: 100%; aspect-ratio: 1080 / 1350; overflow: hidden; position: relative; }
+        .slide-label { padding: 8px 10px 4px; font-size: 12px; color: #777; text-align: center; background: #151515; font-weight: bold; }
+        .slide-footer { display: flex; justify-content: center; padding: 6px 10px 10px; background: #151515; }
+        .btn-download { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; border: none; padding: 8px 20px; font-size: 12px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-family: 'Montserrat', sans-serif; width: 100%; }
+        .btn-download:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(59,130,246,0.4); }
+        .btn-download:disabled { opacity: 0.5; cursor: wait; }
+        .legenda-box { background: #111; padding: 12px; border-top: 1px solid #2a2a2a; display: flex; flex-direction: column; gap: 8px; }
+        .legenda-textarea { width: 100%; height: 110px; background: #000; color: #ddd; border: 1px solid #444; border-radius: 6px; padding: 10px; font-size: 12px; font-family: 'Segoe UI', sans-serif; resize: vertical; line-height: 1.5; }
+        .legenda-textarea:focus { outline: none; border-color: #3b82f6; }
+        .btn-copy-legenda { background: #222; color: #bbb; border: 1px solid #444; padding: 8px; font-size: 11px; cursor: pointer; border-radius: 4px; width: 100%; font-weight: 600; transition: all 0.2s; }
+        .btn-copy-legenda:hover { background: #333; color: #fff; border-color: #555; }
+
+        /* ===================== ESTILOS DOS SLIDES ===================== */
+        .slide {
+            width: 1080px; height: 1350px;
+            background: linear-gradient(160deg, #0B1D3A 0%, #0F2444 30%, #0A1A35 55%, #0D2040 80%, #091830 100%);
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 100px 90px; position: relative;
+            font-family: 'Montserrat', sans-serif; transform-origin: top left;
+            overflow: hidden;
+        }
+        .slide.bg-light { background: #F0EBE3; color: #0B1D3A; }
+
+        .slide .arrow { position: absolute; bottom: 75px; right: 75px; display: flex; align-items: center; z-index: 10; }
+        .slide .arrow-line { width: 110px; height: 2px; background: rgba(255,255,255,0.3); }
+        .slide .arrow-head { width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 13px solid rgba(255,255,255,0.3); }
+        .slide.bg-light .arrow-line { background: rgba(11,29,58,0.3); }
+        .slide.bg-light .arrow-head { border-left-color: rgba(11,29,58,0.3); }
+
+        .hl-gold { background: rgba(234,179,8,0.28); color: #fff !important; padding: 5px 18px; border-radius: 8px; display: inline-block; }
+        .hl      { background: rgba(11,29,58,0.14); color: #0B1D3A !important; padding: 5px 18px; border-radius: 8px; display: inline-block; }
+
+        .sp    { height: 32px; }
+        .sp-sm { height: 16px; }
+        .sp-xs { height: 8px; }
+
+        /* Gráfico vertical (barras em pé) */
+        .vchart-wrap { display: flex; align-items: flex-end; justify-content: space-around; gap: 20px; width: 100%; height: 360px; padding-bottom: 50px; position: relative; }
+        .vchart-wrap::after { content:''; position:absolute; bottom:50px; left:0; right:0; height:2px; background:rgba(11,29,58,0.15); }
+        .vchart-col { display: flex; flex-direction: column; align-items: center; flex: 1; }
+        .vchart-bar { width: 100%; border-radius: 10px 10px 0 0; display: flex; align-items: flex-start; justify-content: center; padding-top: 14px; }
+        .vchart-val { font-size: 26px; font-weight: 900; color: #fff; }
+        .vchart-name { font-size: 26px; font-weight: 700; color: rgba(11,29,58,0.8); margin-top: 12px; text-align: center; line-height: 1.3; }
+
+        #renderArea { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <h1>🥊 Carrossel — Qual a melhor operadora para o seu CNPJ?</h1>
+    <p class="page-subtitle">Framework Comparativo — Gustavo Lima (JCLUZ)</p>
+
+    <div class="btn-container">
+        <button class="btn btn-primary" onclick="downloadAllPNGs()">📦 Baixar TODOS os PNGs</button>
+        <button class="btn btn-secondary" onclick="downloadPDF()">📄 Baixar PDF completo</button>
+    </div>
+    <div class="status" id="status"></div>
+    <div class="slides-grid" id="slidesGrid"></div>
+    <div id="renderArea"></div>
+
+    <script>
+    const SLIDES_HTML = [
+
+        // SLIDE 1 — Capa (ESCURO + Foto)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('COVER_B64_HERE');background-size:cover;background-position:center top;z-index:1;"></div>
+         <div style="position:absolute;bottom:0;left:0;width:100%;height:55%;background:linear-gradient(to top,rgba(9,24,48,1) 0%,rgba(9,24,48,0.92) 35%,rgba(9,24,48,0.5) 65%,rgba(9,24,48,0) 100%);z-index:2;"></div>
+         <div style="position:absolute;bottom:0;left:0;width:100%;padding:0 90px 100px;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;">
+             <div style="font-size:78px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1px;text-transform:uppercase;text-shadow:2px 2px 16px rgba(0,0,0,0.9);">QUAL A MELHOR<br>OPERADORA<br>PARA O SEU CNPJ?</div>
+             <div style="height:20px;"></div>
+             <div style="font-size:38px;color:rgba(255,255,255,0.65);font-weight:500;">A resposta vai te surpreender.</div>
+         </div>`,
+
+        // SLIDE 2 — A pergunta errada (ESCURO)
+        `<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;">
+             <div style="font-size:42px;font-weight:400;color:rgba(255,255,255,0.6);line-height:1.5;">Todo empresário faz essa pergunta:</div>
+             <div style="height:16px;"></div>
+             <div style="font-size:62px;font-weight:900;color:#ffffff;line-height:1.15;letter-spacing:-1px;text-transform:uppercase;">"QUAL A MELHOR<br>OPERADORA?"</div>
+             <div style="height:36px;"></div>
+             <div style="width:100%;height:2px;background:rgba(255,255,255,0.1);"></div>
+             <div style="height:36px;"></div>
+             <div style="font-size:46px;font-weight:700;color:rgba(255,255,255,0.9);line-height:1.4;">Mas essa pergunta<br>não tem resposta universal.</div>
+             <div style="height:20px;"></div>
+             <div style="font-size:40px;font-weight:400;color:rgba(255,255,255,0.65);line-height:1.5;">Cada operadora tem um <strong style="color:#fff;">perfil.</strong><br>Cada empresa tem uma <strong style="color:#fff;">realidade.</strong></div>
+             <div style="height:36px;"></div>
+             <div class="hl-gold" style="font-size:42px;font-weight:900;">A melhor é a que encaixa nas duas.</div>
+         </div>`,
+
+        // SLIDE 3 — Perfil 1: A Regional/Vertical (BEGE + sketch mapa) — COR: ROXO
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#F0EBE3;z-index:-1;"></div>
+         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('SKETCH3_B64_HERE');background-size:cover;mix-blend-mode:darken;opacity:0.15;z-index:0;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%;">
+             <div style="display:inline-flex;align-items:center;gap:16px;background:rgba(147,51,234,0.1);border:2px solid rgba(147,51,234,0.4);border-radius:14px;padding:14px 28px;margin-bottom:34px;">
+                 <div style="width:36px;height:36px;border-radius:6px;background:#9333EA;flex-shrink:0;"></div>
+                 <div style="font-size:30px;font-weight:900;color:#9333EA;letter-spacing:1px;">PERFIL 1 — A REGIONAL</div>
+             </div>
+             <div style="font-size:44px;font-weight:900;color:#0B1D3A;line-height:1.25;margin-bottom:32px;">Rede própria.<br>Preço acessível.</div>
+             <div style="font-size:38px;font-weight:400;color:rgba(11,29,58,0.82);line-height:1.65;">Existem operadoras que constroem e operam seus próprios hospitais, clínicas e laboratórios. Isso reduz o custo operacional e permite oferecer preços muito mais competitivos — o que atrai bastante quem está montando o benefício pela primeira vez ou precisa de um orçamento enxuto.</div>
+             <div style="height:28px;"></div>
+             <div style="font-size:38px;font-weight:400;color:rgba(11,29,58,0.82);line-height:1.65;">O ponto de atenção é que o atendimento acontece dentro da rede própria. Se sua equipe viaja com frequência ou está distribuída em vários estados, essa limitação pode pesar na hora que mais importa.</div>
+         </div>`,
+
+        // SLIDE 4 — Perfil 2: A Cooperativa (ESCURO) — COR: TEAL
+        `<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%;">
+             <div style="display:inline-flex;align-items:center;gap:16px;background:rgba(20,184,166,0.12);border:2px solid rgba(20,184,166,0.4);border-radius:14px;padding:14px 28px;margin-bottom:34px;">
+                 <div style="width:36px;height:36px;border-radius:6px;background:#14B8A6;flex-shrink:0;"></div>
+                 <div style="font-size:30px;font-weight:900;color:#14B8A6;letter-spacing:1px;">PERFIL 2 — A COOPERATIVA</div>
+             </div>
+             <div style="font-size:44px;font-weight:900;color:#ffffff;line-height:1.25;margin-bottom:32px;">Os próprios médicos<br>são donos.</div>
+             <div style="font-size:38px;font-weight:400;color:rgba(255,255,255,0.82);line-height:1.65;">Existem operadoras em que os médicos que atendem são os mesmos que controlam o negócio. Esse modelo cooperativista muda completamente a lógica: o profissional tem interesse direto na qualidade do serviço que presta. Em muitas cidades brasileiras, esse tipo de operadora é referência absoluta de satisfação.</div>
+             <div style="height:28px;"></div>
+             <div style="font-size:38px;font-weight:400;color:rgba(255,255,255,0.82);line-height:1.65;">A ressalva é que cada cooperativa é independente. A experiência pode variar bastante de uma cidade para outra — o que significa que pesquisar a regional é obrigatório antes de fechar qualquer contrato.</div>
+         </div>`,
+
+        // SLIDE 5 — Perfil 3: A Nacional (BEGE + sketch rede) — COR: AMARELO
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#F0EBE3;z-index:-1;"></div>
+         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('SKETCH5_B64_HERE');background-size:cover;mix-blend-mode:darken;opacity:0.15;z-index:0;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%;">
+             <div style="display:inline-flex;align-items:center;gap:16px;background:rgba(234,179,8,0.1);border:2px solid rgba(234,179,8,0.45);border-radius:14px;padding:14px 28px;margin-bottom:34px;">
+                 <div style="width:36px;height:36px;border-radius:6px;background:#EAB308;flex-shrink:0;"></div>
+                 <div style="font-size:30px;font-weight:900;color:#B45309;letter-spacing:1px;">PERFIL 3 — A NACIONAL</div>
+             </div>
+             <div style="font-size:44px;font-weight:900;color:#0B1D3A;line-height:1.25;margin-bottom:32px;">Rede ampla.<br>Custo intermediário.</div>
+             <div style="font-size:38px;font-weight:400;color:rgba(11,29,58,0.82);line-height:1.65;">Existem operadoras que apostaram na escala como principal diferencial. Com credenciados em praticamente todos os estados, atendem bem empresas que têm colaboradores distribuídos pelo país ou times que viajam com frequência — sem depender de rede própria.</div>
+             <div style="height:28px;"></div>
+             <div style="font-size:38px;font-weight:400;color:rgba(11,29,58,0.82);line-height:1.65;">Oferecem planos em diferentes faixas de preço e conseguem equilibrar custo e abrangência de uma forma que as regionais não alcançam. Para empresas em crescimento ou com operação multipla, esse costuma ser o perfil mais estratégico.</div>
+         </div>`,
+
+        // SLIDE 6 — Perfil 4: A Premium (ESCURO) — COR: ROSA
+        `<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%;">
+             <div style="display:inline-flex;align-items:center;gap:16px;background:rgba(236,72,153,0.12);border:2px solid rgba(236,72,153,0.4);border-radius:14px;padding:14px 28px;margin-bottom:34px;">
+                 <div style="width:36px;height:36px;border-radius:6px;background:#EC4899;flex-shrink:0;"></div>
+                 <div style="font-size:30px;font-weight:900;color:#EC4899;letter-spacing:1px;">PERFIL 4 — A PREMIUM</div>
+             </div>
+             <div style="font-size:44px;font-weight:900;color:#ffffff;line-height:1.25;margin-bottom:32px;">Ticket mais alto.<br>Experiência completa.</div>
+             <div style="font-size:38px;font-weight:400;color:rgba(255,255,255,0.82);line-height:1.65;">Existem operadoras que não competem por preço — competem por experiência. São escolhidas por empresas que enxergam o plano de saúde como um diferencial de atração e retenção de talentos, e não como um simples custo operacional.</div>
+             <div style="height:28px;"></div>
+             <div style="font-size:38px;font-weight:400;color:rgba(255,255,255,0.82);line-height:1.65;">A rede inclui os melhores hospitais do país, o atendimento é notavelmente mais ágil e a satisfação do colaborador é real. O preço por vida é mais alto — mas o retorno em posicionamento como boa empregadora acompanha.</div>
+         </div>`,
+
+        // SLIDE 7 — Gráfico Vertical Salvável (BEGE) — nomes e cores reais
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#F0EBE3;z-index:-1;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%;height:100%;justify-content:space-between;">
+             <div>
+                 <div style="font-size:48px;font-weight:900;color:#0B1D3A;text-transform:uppercase;margin-bottom:6px;">Maiores operadoras</div>
+                 <div style="font-size:30px;font-weight:400;color:rgba(11,29,58,0.5);">por nº de beneficiários — Fonte: ANS 2024</div>
+             </div>
+             <div style="display:flex;align-items:flex-end;justify-content:space-around;gap:18px;width:100%;flex:1;margin:44px 0 0 0;padding-bottom:70px;position:relative;">
+                 <div style="position:absolute;bottom:70px;left:0;right:0;height:2px;background:rgba(11,29,58,0.12);"></div>
+                 <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+                     <div style="font-size:26px;font-weight:900;color:#fff;width:100%;border-radius:10px 10px 0 0;background:linear-gradient(to top,#00743E,#00A650);height:420px;display:flex;align-items:flex-start;justify-content:center;padding-top:14px;">18,5 mi</div>
+                     <div style="font-size:26px;font-weight:700;color:#00743E;margin-top:12px;text-align:center;line-height:1.3;">Unimed<br>(cooperativas)</div>
+                 </div>
+                 <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+                     <div style="font-size:26px;font-weight:900;color:#fff;width:100%;border-radius:10px 10px 0 0;background:linear-gradient(to top,#B84500,#E05A00);height:340px;display:flex;align-items:flex-start;justify-content:center;padding-top:14px;">14,8 mi</div>
+                     <div style="font-size:26px;font-weight:700;color:#B84500;margin-top:12px;text-align:center;line-height:1.3;">Hapvida<br>Intermédica</div>
+                 </div>
+                 <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+                     <div style="font-size:24px;font-weight:900;color:#fff;width:100%;border-radius:10px 10px 0 0;background:linear-gradient(to top,#9B0000,#CC0000);height:128px;display:flex;align-items:flex-start;justify-content:center;padding-top:10px;">5,6 mi</div>
+                     <div style="font-size:26px;font-weight:700;color:#9B0000;margin-top:12px;text-align:center;line-height:1.3;">Bradesco<br>Saúde</div>
+                 </div>
+                 <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+                     <div style="font-size:24px;font-weight:900;color:#fff;width:100%;border-radius:10px 10px 0 0;background:linear-gradient(to top,#002F8A,#1565C0);height:116px;display:flex;align-items:flex-start;justify-content:center;padding-top:10px;">5,1 mi</div>
+                     <div style="font-size:26px;font-weight:700;color:#002F8A;margin-top:12px;text-align:center;line-height:1.3;">Amil</div>
+                 </div>
+                 <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+                     <div style="font-size:24px;font-weight:900;color:#fff;width:100%;border-radius:10px 10px 0 0;background:linear-gradient(to top,#B35B00,#E07700);height:88px;display:flex;align-items:flex-start;justify-content:center;padding-top:10px;">3,8 mi</div>
+                     <div style="font-size:26px;font-weight:700;color:#B35B00;margin-top:12px;text-align:center;line-height:1.3;">SulAmérica</div>
+                 </div>
+             </div>
+             <div style="width:100%;">
+                 <div style="background:rgba(11,29,58,0.06);border-left:5px solid #0B1D3A;border-radius:0 10px 10px 0;padding:22px 28px;width:100%;margin-bottom:24px;">
+                     <div style="font-size:32px;font-weight:400;color:rgba(11,29,58,0.7);line-height:1.6;">Tamanho não é tudo. A maior nem sempre é a certa para o perfil da sua empresa.</div>
+                 </div>
+                 <div class="hl" style="font-size:36px;font-weight:700;color:#0B1D3A;">Salva isso.</div>
+             </div>
+         </div>`,
+
+        // SLIDE 8 — CTA (ESCURO)
+        `<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;height:100%;justify-content:center;">
+             <div style="font-size:70px;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1px;text-transform:uppercase;">A MELHOR<br>OPERADORA</div>
+             <div style="height:16px;"></div>
+             <div class="hl-gold" style="font-size:46px;font-weight:900;">não é a mais famosa.</div>
+             <div style="height:36px;"></div>
+             <div style="font-size:40px;font-weight:400;color:rgba(255,255,255,0.75);line-height:1.65;max-width:860px;text-align:center;">É a que encaixa com a cidade dos seus colaboradores, o tamanho da sua equipe, o orçamento disponível e o uso real que vocês vão fazer do plano.</div>
+             <div style="height:40px;"></div>
+             <div style="font-size:38px;font-weight:400;color:rgba(255,255,255,0.55);line-height:1.5;">Manda isso pra um empresário que ainda está<br>escolhendo operadora pelo nome ou pelo preço.</div>
+             <div style="height:36px;"></div>
+             <div style="font-size:54px;font-weight:900;color:#60a5fa;">Bora, pra cima! 🚀💪</div>
+         </div>`
+    ];
+
+    const LABELS = [
+        'Slide 1 — Capa / Gancho (Boxe)',
+        'Slide 2 — A Pergunta Errada',
+        'Slide 3 — Perfil 1: A Regional 🟣',
+        'Slide 4 — Perfil 2: A Cooperativa 🩵',
+        'Slide 5 — Perfil 3: A Nacional 🟡',
+        'Slide 6 — Perfil 4: A Premium 🩷',
+        'Slide 7 — Gráfico Salvável (ANS Real)',
+        'Slide 8 — CTA Compartilhamento'
+    ];
+
+    const LEGENDAS = [
+        'Roxo. Teal. Amarelo. Rosa. Quatro perfis, quatro realidades. Qual delas é a melhor operadora para o seu CNPJ?\n\nDesliza que a resposta vai te surpreender.',
+        'Todo empresário pergunta "qual operadora é melhor?". Mas essa é a pergunta errada. Cada operadora tem um perfil. Cada empresa tem uma realidade. A melhor é a que encaixa nas duas.',
+        'Perfil 1 — a regional. Rede própria, custo mais baixo, forte em regiões específicas. Ideal pra quem está montando o benefício pela primeira vez ou tem orçamento mais enxuto. O ponto de atenção: cobertura fora do estado.',
+        'Perfil 2 — a cooperativa. Os médicos são donos do negócio. Em muitas cidades é referência de qualidade. Em outras pode ser mais limitada. Regra de ouro: pesquise a regional antes de fechar.',
+        'Perfil 3 — a nacional de custo-benefício. Rede em todo o Brasil, planos em várias faixas de preço. A escolha mais estratégica pra empresas em crescimento ou com times distribuídos em mais de um estado.',
+        'Perfil 4 — a premium. Não compete por preço, compete por experiência. Atrai e retém talentos. Acesso aos melhores hospitais do país. O ticket é mais alto, mas o retorno como empregador também.',
+        'Agora sim: os nomes reais. Dados ANS 2024.\n\nTamanho não é tudo — a maior nem sempre é a certa para o seu perfil.\n\nSalva isso antes de escolher uma operadora.\n\n#planodesaude #cnpj #corretordeseguros #gustavojcluz #planodesaudecnpj #planoempresarial',
+        'Manda isso pra um empresário que ainda está escolhendo operadora pelo nome ou pelo preço mais baixo.\n\nA escolha certa começa entendendo o seu próprio perfil.\n\nBora, pra cima! 🚀💪\n\n#planodesaude #cnpj #corretordeseguros #gustavojcluz #planodesaudecnpj #operadoradesaude'
+    ];
+
+    const LIGHT_SLIDES = [2, 4, 6]; // 0-based: slides 3, 5 e 7 (bege)
+
+    function createSlideElement(index) {
+        const slide = document.createElement('div');
+        slide.className = 'slide';
+        if (LIGHT_SLIDES.includes(index)) slide.classList.add('bg-light');
+        const arrowHTML = (index < 7) ? '<div class="arrow"><div class="arrow-line"></div><div class="arrow-head"></div></div>' : '';
+        slide.innerHTML = SLIDES_HTML[index] + arrowHTML;
+        return slide;
+    }
+
+    function buildPreviews() {
+        const grid = document.getElementById('slidesGrid');
+        grid.innerHTML = '';
+        SLIDES_HTML.forEach((_, i) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'slide-wrapper';
+            const label = document.createElement('div');
+            label.className = 'slide-label';
+            label.textContent = LABELS[i];
+            const scaler = document.createElement('div');
+            scaler.className = 'slide-scaler';
+            const slide = createSlideElement(i);
+            scaler.appendChild(slide);
+            const footer = document.createElement('div');
+            footer.className = 'slide-footer';
+            const btnDl = document.createElement('button');
+            btnDl.className = 'btn-download';
+            btnDl.textContent = `📥 Baixar Slide ${i + 1}`;
+            btnDl.onclick = () => downloadSinglePNG(i, btnDl);
+            footer.appendChild(btnDl);
+            const legendaBox = document.createElement('div');
+            legendaBox.className = 'legenda-box';
+            legendaBox.innerHTML = `
+                <textarea class="legenda-textarea" id="leg_slide_${i}">${LEGENDAS[i]}</textarea>
+                <button class="btn-copy-legenda" id="btn_leg_${i}" onclick="copySlideLeg(${i})">📋 Copiar legenda (Slide ${i + 1})</button>
+            `;
+            wrapper.appendChild(label);
+            wrapper.appendChild(scaler);
+            wrapper.appendChild(footer);
+            wrapper.appendChild(legendaBox);
+            grid.appendChild(wrapper);
+            requestAnimationFrame(() => {
+                slide.style.transform = `scale(${scaler.offsetWidth / 1080})`;
+                slide.style.transformOrigin = 'top left';
+            });
+        });
+    }
+
+    function copySlideLeg(index) {
+        const text = document.getElementById(`leg_slide_${index}`).value;
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById(`btn_leg_${index}`);
+            btn.textContent = '✅ Copiado!';
+            btn.style.background = '#059669'; btn.style.color = '#fff';
+            setTimeout(() => { btn.textContent = `📋 Copiar legenda (Slide ${index + 1})`; btn.style.background = '#222'; btn.style.color = '#bbb'; }, 2000);
+        });
+    }
+
+    function setStatus(msg) { document.getElementById('status').textContent = msg; }
+
+    async function renderSlide(index) {
+        const area = document.getElementById('renderArea');
+        const slide = createSlideElement(index);
+        area.appendChild(slide);
+        area.style.zIndex = '9999'; area.style.opacity = '1';
+        slide.style.transform = 'none';
+        await new Promise(r => setTimeout(r, 500));
+        const bgColor = LIGHT_SLIDES.includes(index) ? '#F0EBE3' : '#0B1D3A';
+        const canvas = await html2canvas(slide, { width: 1080, height: 1350, scale: 1, useCORS: true, backgroundColor: bgColor, logging: false });
+        area.removeChild(slide); area.style.zIndex = '-1';
+        return canvas;
+    }
+
+    async function downloadSinglePNG(index, btn) {
+        const orig = btn.textContent;
+        btn.disabled = true; btn.textContent = '⏳ Gerando...';
+        try {
+            const canvas = await renderSlide(index);
+            const link = document.createElement('a');
+            link.download = `Operadoras_Slide_${index + 1}.png`;
+            link.href = canvas.toDataURL('image/png'); link.click();
+            btn.textContent = '✅ Baixado!';
+            setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
+        } catch (e) { btn.textContent = '❌ Erro'; setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000); }
+    }
+
+    async function downloadAllPNGs() {
+        setStatus('Gerando todos os PNGs — aguarde...');
+        try {
+            for (let i = 0; i < SLIDES_HTML.length; i++) {
+                setStatus(`Baixando slide ${i + 1} de ${SLIDES_HTML.length}...`);
+                const canvas = await renderSlide(i);
+                const link = document.createElement('a');
+                link.download = `Operadoras_Slide_${i + 1}.png`;
+                link.href = canvas.toDataURL('image/png'); link.click();
+                await new Promise(r => setTimeout(r, 900));
+            }
+            setStatus('✅ Todas as imagens baixadas com sucesso!');
+        } catch (e) { setStatus('❌ Erro: ' + e.message); console.error(e); }
+    }
+
+    async function downloadPDF() {
+        setStatus('Gerando PDF — aguarde...');
+        try {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [108, 135] });
+            for (let i = 0; i < SLIDES_HTML.length; i++) {
+                setStatus(`Renderizando slide ${i + 1} de ${SLIDES_HTML.length}...`);
+                const canvas = await renderSlide(i);
+                const imgData = canvas.toDataURL('image/png');
+                if (i > 0) pdf.addPage([108, 135]);
+                pdf.addImage(imgData, 'PNG', 0, 0, 108, 135);
+            }
+            pdf.save('Operadoras_Carrossel_GustavoLima.pdf');
+            setStatus('✅ PDF baixado com sucesso!');
+        } catch (e) { setStatus('❌ Erro: ' + e.message); console.error(e); }
+    }
+
+    document.fonts.ready.then(() => setTimeout(buildPreviews, 300));
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.slide-scaler').forEach(scaler => {
+            const slide = scaler.querySelector('.slide');
+            if (slide) slide.style.transform = `scale(${scaler.offsetWidth / 1080})`;
+        });
+    });
+    </script>
+</body>
+</html>
