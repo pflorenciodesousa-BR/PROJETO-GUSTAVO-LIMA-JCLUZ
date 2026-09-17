@@ -1,0 +1,1391 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/lp5cd4",
+    "id": "lp5cd4",
+    "slide": 17,
+    "layoutId": "e9fcefe7-272a-44b3-9962-220f332a0317",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "46f2c2a0-f792-4f3d-b45e-fbe2b00b7e7b",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Arial"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "e9fcefe7-272a-44b3-9962-220f332a0317",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "46f2c2a0-f792-4f3d-b45e-fbe2b00b7e7b",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "46f2c2a0-f792-4f3d-b45e-fbe2b00b7e7b",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2pcfmt0j",
+      "id": "1",
+      "bbox": [
+        52,
+        30,
+        850,
+        24
+      ],
+      "geometry": "rect",
+      "text": "PAINEL DE DECISÃO",
+      "textPreview": "PAINEL DE DECISÃO",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 13,
+        "typeface": "Arial",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PAINEL DE DECISÃO"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PAINEL DE DECISÃO",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "typeface": "Arial",
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PAINEL DE DECISÃO",
+              "fontSize": 13,
+              "typeface": "Arial",
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pcneh8zu",
+      "id": "2",
+      "bbox": [
+        52,
+        58,
+        1160,
+        70
+      ],
+      "geometry": "rect",
+      "text": "Métrica bonita não paga boleto",
+      "textPreview": "Métrica bonita não paga boleto",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 44,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Métrica bonita não paga boleto"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Métrica bonita não paga boleto",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Métrica bonita não paga boleto",
+              "fontSize": 44,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/orexo3i9",
+      "id": "3",
+      "bbox": [
+        52,
+        128,
+        1176,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#111111",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/be5wjih0",
+      "id": "4",
+      "bbox": [
+        52,
+        682,
+        520,
+        20
+      ],
+      "geometry": "rect",
+      "text": "GUSTAVO LIMA | ESTRATÉGIA 2026",
+      "textPreview": "GUSTAVO LIMA | ESTRATÉGIA 2026",
+      "resolvedFontSize": 11,
+      "resolvedTextStyle": {
+        "anchor": 3,
+        "fontSize": 11,
+        "typeface": "Arial",
+        "color": "#626870",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "bottom",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "GUSTAVO LIMA | ESTRATÉGIA 2026"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "GUSTAVO LIMA | ESTRATÉGIA 2026",
+          "resolvedTextStyle": {
+            "fontSize": 11,
+            "typeface": "Arial",
+            "color": "#626870",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "GUSTAVO LIMA | ESTRATÉGIA 2026",
+              "fontSize": 11,
+              "typeface": "Arial",
+              "color": "#626870",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/adwfqdgf",
+      "id": "5",
+      "bbox": [
+        1180,
+        682,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "17",
+      "textPreview": "17",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 3,
+        "fontSize": 12,
+        "typeface": "Arial",
+        "color": "#626870",
+        "alignment": "right",
+        "verticalAlignment": "bottom",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "17"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "17",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Arial",
+            "color": "#626870",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "17",
+              "fontSize": 12,
+              "typeface": "Arial",
+              "color": "#626870",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xgnel8z6",
+      "id": "6",
+      "bbox": [
+        52,
+        162,
+        356,
+        414
+      ],
+      "geometry": "rect",
+      "fillColor": "#F2F2F2",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cfexs3yl",
+      "id": "7",
+      "bbox": [
+        52,
+        162,
+        356,
+        62
+      ],
+      "geometry": "rect",
+      "fillColor": "#6DCBF4",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ri1w7ehw",
+      "id": "8",
+      "bbox": [
+        74,
+        180,
+        312,
+        28
+      ],
+      "geometry": "rect",
+      "text": "ATENÇÃO",
+      "textPreview": "ATENÇÃO",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 19,
+        "typeface": "Arial",
+        "color": "#123454",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ATENÇÃO"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ATENÇÃO",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "typeface": "Arial",
+            "color": "#123454",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ATENÇÃO",
+              "fontSize": 19,
+              "typeface": "Arial",
+              "color": "#123454",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qhsve90b",
+      "id": "9",
+      "bbox": [
+        80,
+        254,
+        300,
+        240
+      ],
+      "geometry": "rect",
+      "text": "Alcance em não seguidores\nCPM\nGancho\nRetenção\nVisualização qualificada",
+      "textPreview": "Alcance em não seguidores | CPM | Gancho | Retenção | Visualização qualificada",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": "Arial",
+        "color": "#202124",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Alcance em não seguidores"
+          },
+          {
+            "index": 2,
+            "text": "CPM"
+          },
+          {
+            "index": 3,
+            "text": "Gancho"
+          },
+          {
+            "index": 4,
+            "text": "Retenção"
+          },
+          {
+            "index": 5,
+            "text": "Visualização qualificada"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Alcance em não seguidores",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Alcance em não seguidores",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "CPM",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "CPM",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "Gancho",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Gancho",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "Retenção",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Retenção",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "Visualização qualificada",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Visualização qualificada",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wz6hkzix",
+      "id": "10",
+      "bbox": [
+        420,
+        342,
+        28,
+        50
+      ],
+      "geometry": "rect",
+      "text": ">",
+      "textPreview": ">",
+      "resolvedFontSize": 36,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 36,
+        "typeface": "Arial",
+        "color": "#B8BCC4",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ">"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": ">",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": "Arial",
+            "color": "#B8BCC4",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": ">",
+              "fontSize": 36,
+              "typeface": "Arial",
+              "color": "#B8BCC4",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x0fit4ji",
+      "id": "11",
+      "bbox": [
+        462,
+        162,
+        356,
+        414
+      ],
+      "geometry": "rect",
+      "fillColor": "#F2F2F2",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/axozip0r",
+      "id": "12",
+      "bbox": [
+        462,
+        162,
+        356,
+        62
+      ],
+      "geometry": "rect",
+      "fillColor": "#3D8DFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vyx0ru1c",
+      "id": "13",
+      "bbox": [
+        484,
+        180,
+        312,
+        28
+      ],
+      "geometry": "rect",
+      "text": "INTENÇÃO",
+      "textPreview": "INTENÇÃO",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 19,
+        "typeface": "Arial",
+        "color": "#123454",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "INTENÇÃO"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "INTENÇÃO",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "typeface": "Arial",
+            "color": "#123454",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "INTENÇÃO",
+              "fontSize": 19,
+              "typeface": "Arial",
+              "color": "#123454",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k3qhozi9",
+      "id": "14",
+      "bbox": [
+        490,
+        254,
+        300,
+        240
+      ],
+      "geometry": "rect",
+      "text": "Visitas ao perfil\nSalvos e compartilhados\nMensagens\nConversas qualificadas\nCusto por lead qualificado",
+      "textPreview": "Visitas ao perfil | Salvos e compartilhados | Mensagens | Conversas qualificadas | Custo por lead qualificado",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": "Arial",
+        "color": "#202124",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Visitas ao perfil"
+          },
+          {
+            "index": 2,
+            "text": "Salvos e compartilhados"
+          },
+          {
+            "index": 3,
+            "text": "Mensagens"
+          },
+          {
+            "index": 4,
+            "text": "Conversas qualificadas"
+          },
+          {
+            "index": 5,
+            "text": "Custo por lead qualificado"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Visitas ao perfil",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Visitas ao perfil",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Salvos e compartilhados",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Salvos e compartilhados",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "Mensagens",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Mensagens",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "Conversas qualificadas",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Conversas qualificadas",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "Custo por lead qualificado",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Custo por lead qualificado",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/54zix4ju",
+      "id": "15",
+      "bbox": [
+        830,
+        342,
+        28,
+        50
+      ],
+      "geometry": "rect",
+      "text": ">",
+      "textPreview": ">",
+      "resolvedFontSize": 36,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 36,
+        "typeface": "Arial",
+        "color": "#B8BCC4",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ">"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": ">",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": "Arial",
+            "color": "#B8BCC4",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": ">",
+              "fontSize": 36,
+              "typeface": "Arial",
+              "color": "#B8BCC4",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i1ozmp03",
+      "id": "16",
+      "bbox": [
+        872,
+        162,
+        356,
+        414
+      ],
+      "geometry": "rect",
+      "fillColor": "#F2F2F2",
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j2x0vu1o",
+      "id": "17",
+      "bbox": [
+        872,
+        162,
+        356,
+        62
+      ],
+      "geometry": "rect",
+      "fillColor": "#2F9E67",
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/07mhcf2p",
+      "id": "18",
+      "bbox": [
+        894,
+        180,
+        312,
+        28
+      ],
+      "geometry": "rect",
+      "text": "NEGÓCIO",
+      "textPreview": "NEGÓCIO",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 19,
+        "typeface": "Arial",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "NEGÓCIO"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "NEGÓCIO",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "typeface": "Arial",
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "NEGÓCIO",
+              "fontSize": 19,
+              "typeface": "Arial",
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l8vylkja",
+      "id": "19",
+      "bbox": [
+        900,
+        254,
+        300,
+        240
+      ],
+      "geometry": "rect",
+      "text": "Propostas\nVendas\nLead para proposta\nCAC / custo por venda\nReceita e ROAS",
+      "textPreview": "Propostas | Vendas | Lead para proposta | CAC / custo por venda | Receita e ROAS",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": "Arial",
+        "color": "#202124",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Propostas"
+          },
+          {
+            "index": 2,
+            "text": "Vendas"
+          },
+          {
+            "index": 3,
+            "text": "Lead para proposta"
+          },
+          {
+            "index": 4,
+            "text": "CAC / custo por venda"
+          },
+          {
+            "index": 5,
+            "text": "Receita e ROAS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Propostas",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Propostas",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Vendas",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Vendas",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "Lead para proposta",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Lead para proposta",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "CAC / custo por venda",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "CAC / custo por venda",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "Receita e ROAS",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Receita e ROAS",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hs36tc72",
+      "id": "20",
+      "bbox": [
+        52,
+        598,
+        1176,
+        56
+      ],
+      "geometry": "rect",
+      "fillColor": "#123454",
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gru507qh",
+      "id": "21",
+      "bbox": [
+        74,
+        614,
+        1132,
+        28
+      ],
+      "geometry": "rect",
+      "text": "Nossa decisão de escala acontece no negócio. As outras métricas explicam o caminho.",
+      "textPreview": "Nossa decisão de escala acontece no negócio. As outras métricas explicam o caminho.",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 19,
+        "typeface": "Arial",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Nossa decisão de escala acontece no negócio. As outras métricas explicam o caminho."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Nossa decisão de escala acontece no negócio. As outras métricas explicam o caminho.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "typeface": "Arial",
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Nossa decisão de escala acontece no negócio. As outras métricas explicam o caminho.",
+              "fontSize": 19,
+              "typeface": "Arial",
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

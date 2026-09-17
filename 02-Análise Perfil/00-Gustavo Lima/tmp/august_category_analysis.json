@@ -1,0 +1,1363 @@
+{
+  "method": "First 24-hour reading for each post; CPT has no comparable 24-hour metrics.",
+  "period_posts": 29,
+  "comparable_24h_posts": 29,
+  "mix": {
+    "Técnico": {
+      "posts": 17,
+      "share": 0.5862
+    },
+    "Autoridade": {
+      "posts": 10,
+      "share": 0.3448
+    },
+    "Pessoal": {
+      "posts": 2,
+      "share": 0.069
+    }
+  },
+  "categories": {
+    "Técnico": {
+      "planned_period_posts": 17,
+      "comparable_24h_posts": 17,
+      "metrics": {
+        "views": {
+          "n": 17,
+          "sum": 3949.0,
+          "mean": 232.2941,
+          "median": 222.0
+        },
+        "reach": {
+          "n": 17,
+          "sum": 2279.0,
+          "mean": 134.0588,
+          "median": 123.0
+        },
+        "retention_seconds": {
+          "n": 13,
+          "sum": 144.0,
+          "mean": 11.0769,
+          "median": 12.0
+        },
+        "hook_rate": {
+          "n": 13,
+          "sum": 6.36,
+          "mean": 0.4892,
+          "median": 0.49
+        },
+        "interactions": {
+          "n": 17,
+          "sum": 166.0,
+          "mean": 9.7647,
+          "median": 6.0
+        },
+        "interaction_rate": {
+          "n": 17,
+          "sum": 0.5188,
+          "mean": 0.0305,
+          "median": 0.0187
+        },
+        "comments": {
+          "n": 17,
+          "sum": 8.0,
+          "mean": 0.4706,
+          "median": 0.0
+        },
+        "saves": {
+          "n": 17,
+          "sum": 10.0,
+          "mean": 0.5882,
+          "median": 0.0
+        },
+        "shares": {
+          "n": 17,
+          "sum": 3.0,
+          "mean": 0.1765,
+          "median": 0.0
+        },
+        "followers": {
+          "n": 17,
+          "sum": 4.0,
+          "mean": 0.2353,
+          "median": 0.0
+        }
+      }
+    },
+    "Autoridade": {
+      "planned_period_posts": 10,
+      "comparable_24h_posts": 10,
+      "metrics": {
+        "views": {
+          "n": 10,
+          "sum": 4126.0,
+          "mean": 412.6,
+          "median": 400.5
+        },
+        "reach": {
+          "n": 10,
+          "sum": 2638.0,
+          "mean": 263.8,
+          "median": 278.0
+        },
+        "retention_seconds": {
+          "n": 10,
+          "sum": 119.0,
+          "mean": 11.9,
+          "median": 12.0
+        },
+        "hook_rate": {
+          "n": 10,
+          "sum": 5.14,
+          "mean": 0.514,
+          "median": 0.525
+        },
+        "interactions": {
+          "n": 10,
+          "sum": 207.0,
+          "mean": 20.7,
+          "median": 20.0
+        },
+        "interaction_rate": {
+          "n": 10,
+          "sum": 0.6469,
+          "mean": 0.0647,
+          "median": 0.0625
+        },
+        "comments": {
+          "n": 10,
+          "sum": 11.0,
+          "mean": 1.1,
+          "median": 0.5
+        },
+        "saves": {
+          "n": 10,
+          "sum": 20.0,
+          "mean": 2.0,
+          "median": 1.0
+        },
+        "shares": {
+          "n": 10,
+          "sum": 2.0,
+          "mean": 0.2,
+          "median": 0.0
+        },
+        "followers": {
+          "n": 10,
+          "sum": 6.0,
+          "mean": 0.6,
+          "median": 0.0
+        }
+      }
+    },
+    "Pessoal": {
+      "planned_period_posts": 2,
+      "comparable_24h_posts": 2,
+      "metrics": {
+        "views": {
+          "n": 2,
+          "sum": 912.0,
+          "mean": 456.0,
+          "median": 456.0
+        },
+        "reach": {
+          "n": 2,
+          "sum": 371.0,
+          "mean": 185.5,
+          "median": 185.5
+        },
+        "retention_seconds": {
+          "n": 0,
+          "sum": 0,
+          "mean": null,
+          "median": null
+        },
+        "hook_rate": {
+          "n": 0,
+          "sum": 0,
+          "mean": null,
+          "median": null
+        },
+        "interactions": {
+          "n": 2,
+          "sum": 57.0,
+          "mean": 28.5,
+          "median": 28.5
+        },
+        "interaction_rate": {
+          "n": 2,
+          "sum": 0.1781,
+          "mean": 0.0891,
+          "median": 0.0891
+        },
+        "comments": {
+          "n": 2,
+          "sum": 0.0,
+          "mean": 0.0,
+          "median": 0.0
+        },
+        "saves": {
+          "n": 2,
+          "sum": 1.0,
+          "mean": 0.5,
+          "median": 0.5
+        },
+        "shares": {
+          "n": 2,
+          "sum": 0.0,
+          "mean": 0.0,
+          "median": 0.0
+        },
+        "followers": {
+          "n": 2,
+          "sum": 0.0,
+          "mean": 0.0,
+          "median": 0.0
+        }
+      }
+    }
+  },
+  "timing": {
+    "slot": {
+      "Dia": {
+        "posts": 15,
+        "metrics": {
+          "views": {
+            "n": 15,
+            "sum": 5078.0,
+            "mean": 338.5333,
+            "median": 321.0
+          },
+          "reach": {
+            "n": 15,
+            "sum": 3077.0,
+            "mean": 205.1333,
+            "median": 201.0
+          },
+          "retention_seconds": {
+            "n": 12,
+            "sum": 152.0,
+            "mean": 12.6667,
+            "median": 13.0
+          },
+          "hook_rate": {
+            "n": 12,
+            "sum": 6.01,
+            "mean": 0.5008,
+            "median": 0.51
+          },
+          "interactions": {
+            "n": 15,
+            "sum": 236.0,
+            "mean": 15.7333,
+            "median": 16.0
+          },
+          "interaction_rate": {
+            "n": 15,
+            "sum": 0.7375,
+            "mean": 0.0492,
+            "median": 0.05
+          },
+          "comments": {
+            "n": 15,
+            "sum": 16.0,
+            "mean": 1.0667,
+            "median": 0.0
+          },
+          "saves": {
+            "n": 15,
+            "sum": 22.0,
+            "mean": 1.4667,
+            "median": 1.0
+          },
+          "shares": {
+            "n": 15,
+            "sum": 2.0,
+            "mean": 0.1333,
+            "median": 0.0
+          },
+          "followers": {
+            "n": 15,
+            "sum": 7.0,
+            "mean": 0.4667,
+            "median": 0.0
+          }
+        }
+      },
+      "Noite": {
+        "posts": 14,
+        "metrics": {
+          "views": {
+            "n": 14,
+            "sum": 3909.0,
+            "mean": 279.2143,
+            "median": 243.0
+          },
+          "reach": {
+            "n": 14,
+            "sum": 2211.0,
+            "mean": 157.9286,
+            "median": 152.5
+          },
+          "retention_seconds": {
+            "n": 11,
+            "sum": 111.0,
+            "mean": 10.0909,
+            "median": 9.0
+          },
+          "hook_rate": {
+            "n": 11,
+            "sum": 5.49,
+            "mean": 0.4991,
+            "median": 0.5
+          },
+          "interactions": {
+            "n": 14,
+            "sum": 194.0,
+            "mean": 13.8571,
+            "median": 11.0
+          },
+          "interaction_rate": {
+            "n": 14,
+            "sum": 0.6062,
+            "mean": 0.0433,
+            "median": 0.0344
+          },
+          "comments": {
+            "n": 14,
+            "sum": 3.0,
+            "mean": 0.2143,
+            "median": 0.0
+          },
+          "saves": {
+            "n": 14,
+            "sum": 9.0,
+            "mean": 0.6429,
+            "median": 0.0
+          },
+          "shares": {
+            "n": 14,
+            "sum": 3.0,
+            "mean": 0.2143,
+            "median": 0.0
+          },
+          "followers": {
+            "n": 14,
+            "sum": 3.0,
+            "mean": 0.2143,
+            "median": 0.0
+          }
+        }
+      }
+    },
+    "weekday": {
+      "Segunda": {
+        "posts": 5,
+        "metrics": {
+          "views": {
+            "n": 5,
+            "sum": 930.0,
+            "mean": 186.0,
+            "median": 129.0
+          },
+          "reach": {
+            "n": 5,
+            "sum": 563.0,
+            "mean": 112.6,
+            "median": 62.0
+          },
+          "retention_seconds": {
+            "n": 3,
+            "sum": 34.0,
+            "mean": 11.3333,
+            "median": 12.0
+          },
+          "hook_rate": {
+            "n": 3,
+            "sum": 1.17,
+            "mean": 0.39,
+            "median": 0.38
+          },
+          "interactions": {
+            "n": 5,
+            "sum": 34.0,
+            "mean": 6.8,
+            "median": 3.0
+          },
+          "interaction_rate": {
+            "n": 5,
+            "sum": 0.1063,
+            "mean": 0.0213,
+            "median": 0.0094
+          },
+          "comments": {
+            "n": 5,
+            "sum": 2.0,
+            "mean": 0.4,
+            "median": 0.0
+          },
+          "saves": {
+            "n": 5,
+            "sum": 1.0,
+            "mean": 0.2,
+            "median": 0.0
+          },
+          "shares": {
+            "n": 5,
+            "sum": 1.0,
+            "mean": 0.2,
+            "median": 0.0
+          },
+          "followers": {
+            "n": 5,
+            "sum": 0.0,
+            "mean": 0.0,
+            "median": 0.0
+          }
+        }
+      },
+      "Terça": {
+        "posts": 4,
+        "metrics": {
+          "views": {
+            "n": 4,
+            "sum": 1765.0,
+            "mean": 441.25,
+            "median": 444.5
+          },
+          "reach": {
+            "n": 4,
+            "sum": 1089.0,
+            "mean": 272.25,
+            "median": 268.5
+          },
+          "retention_seconds": {
+            "n": 4,
+            "sum": 59.0,
+            "mean": 14.75,
+            "median": 14.0
+          },
+          "hook_rate": {
+            "n": 4,
+            "sum": 2.17,
+            "mean": 0.5425,
+            "median": 0.545
+          },
+          "interactions": {
+            "n": 4,
+            "sum": 110.0,
+            "mean": 27.5,
+            "median": 25.5
+          },
+          "interaction_rate": {
+            "n": 4,
+            "sum": 0.3438,
+            "mean": 0.0859,
+            "median": 0.0797
+          },
+          "comments": {
+            "n": 4,
+            "sum": 5.0,
+            "mean": 1.25,
+            "median": 0.5
+          },
+          "saves": {
+            "n": 4,
+            "sum": 14.0,
+            "mean": 3.5,
+            "median": 4.0
+          },
+          "shares": {
+            "n": 4,
+            "sum": 0.0,
+            "mean": 0.0,
+            "median": 0.0
+          },
+          "followers": {
+            "n": 4,
+            "sum": 5.0,
+            "mean": 1.25,
+            "median": 1.5
+          }
+        }
+      },
+      "Quarta": {
+        "posts": 4,
+        "metrics": {
+          "views": {
+            "n": 4,
+            "sum": 1147.0,
+            "mean": 286.75,
+            "median": 228.5
+          },
+          "reach": {
+            "n": 4,
+            "sum": 609.0,
+            "mean": 152.25,
+            "median": 114.5
+          },
+          "retention_seconds": {
+            "n": 3,
+            "sum": 37.0,
+            "mean": 12.3333,
+            "median": 11.0
+          },
+          "hook_rate": {
+            "n": 3,
+            "sum": 1.9,
+            "mean": 0.6333,
+            "median": 0.65
+          },
+          "interactions": {
+            "n": 4,
+            "sum": 57.0,
+            "mean": 14.25,
+            "median": 14.5
+          },
+          "interaction_rate": {
+            "n": 4,
+            "sum": 0.1781,
+            "mean": 0.0445,
+            "median": 0.0453
+          },
+          "comments": {
+            "n": 4,
+            "sum": 2.0,
+            "mean": 0.5,
+            "median": 0.0
+          },
+          "saves": {
+            "n": 4,
+            "sum": 1.0,
+            "mean": 0.25,
+            "median": 0.0
+          },
+          "shares": {
+            "n": 4,
+            "sum": 0.0,
+            "mean": 0.0,
+            "median": 0.0
+          },
+          "followers": {
+            "n": 4,
+            "sum": 1.0,
+            "mean": 0.25,
+            "median": 0.0
+          }
+        }
+      },
+      "Quinta": {
+        "posts": 4,
+        "metrics": {
+          "views": {
+            "n": 4,
+            "sum": 921.0,
+            "mean": 230.25,
+            "median": 192.5
+          },
+          "reach": {
+            "n": 4,
+            "sum": 584.0,
+            "mean": 146.0,
+            "median": 120.0
+          },
+          "retention_seconds": {
+            "n": 3,
+            "sum": 35.0,
+            "mean": 11.6667,
+            "median": 12.0
+          },
+          "hook_rate": {
+            "n": 3,
+            "sum": 1.38,
+            "mean": 0.46,
+            "median": 0.45
+          },
+          "interactions": {
+            "n": 4,
+            "sum": 49.0,
+            "mean": 12.25,
+            "median": 8.5
+          },
+          "interaction_rate": {
+            "n": 4,
+            "sum": 0.1531,
+            "mean": 0.0383,
+            "median": 0.0266
+          },
+          "comments": {
+            "n": 4,
+            "sum": 1.0,
+            "mean": 0.25,
+            "median": 0.0
+          },
+          "saves": {
+            "n": 4,
+            "sum": 8.0,
+            "mean": 2.0,
+            "median": 1.0
+          },
+          "shares": {
+            "n": 4,
+            "sum": 0.0,
+            "mean": 0.0,
+            "median": 0.0
+          },
+          "followers": {
+            "n": 4,
+            "sum": 0.0,
+            "mean": 0.0,
+            "median": 0.0
+          }
+        }
+      },
+      "Sexta": {
+        "posts": 4,
+        "metrics": {
+          "views": {
+            "n": 4,
+            "sum": 1257.0,
+            "mean": 314.25,
+            "median": 267.5
+          },
+          "reach": {
+            "n": 4,
+            "sum": 760.0,
+            "mean": 190.0,
+            "median": 148.5
+          },
+          "retention_seconds": {
+            "n": 4,
+            "sum": 44.0,
+            "mean": 11.0,
+            "median": 10.5
+          },
+          "hook_rate": {
+            "n": 4,
+            "sum": 2.04,
+            "mean": 0.51,
+            "median": 0.505
+          },
+          "interactions": {
+            "n": 4,
+            "sum": 39.0,
+            "mean": 9.75,
+            "median": 9.0
+          },
+          "interaction_rate": {
+            "n": 4,
+            "sum": 0.1219,
+            "mean": 0.0305,
+            "median": 0.0281
+          },
+          "comments": {
+            "n": 4,
+            "sum": 5.0,
+            "mean": 1.25,
+            "median": 1.0
+          },
+          "saves": {
+            "n": 4,
+            "sum": 4.0,
+            "mean": 1.0,
+            "median": 0.5
+          },
+          "shares": {
+            "n": 4,
+            "sum": 2.0,
+            "mean": 0.5,
+            "median": 0.5
+          },
+          "followers": {
+            "n": 4,
+            "sum": 1.0,
+            "mean": 0.25,
+            "median": 0.0
+          }
+        }
+      },
+      "Sábado": {
+        "posts": 4,
+        "metrics": {
+          "views": {
+            "n": 4,
+            "sum": 1516.0,
+            "mean": 379.0,
+            "median": 296.0
+          },
+          "reach": {
+            "n": 4,
+            "sum": 759.0,
+            "mean": 189.75,
+            "median": 194.5
+          },
+          "retention_seconds": {
+            "n": 2,
+            "sum": 22.0,
+            "mean": 11.0,
+            "median": 11.0
+          },
+          "hook_rate": {
+            "n": 2,
+            "sum": 0.84,
+            "mean": 0.42,
+            "median": 0.42
+          },
+          "interactions": {
+            "n": 4,
+            "sum": 72.0,
+            "mean": 18.0,
+            "median": 15.5
+          },
+          "interaction_rate": {
+            "n": 4,
+            "sum": 0.225,
+            "mean": 0.0563,
+            "median": 0.0484
+          },
+          "comments": {
+            "n": 4,
+            "sum": 1.0,
+            "mean": 0.25,
+            "median": 0.0
+          },
+          "saves": {
+            "n": 4,
+            "sum": 1.0,
+            "mean": 0.25,
+            "median": 0.0
+          },
+          "shares": {
+            "n": 4,
+            "sum": 0.0,
+            "mean": 0.0,
+            "median": 0.0
+          },
+          "followers": {
+            "n": 4,
+            "sum": 0.0,
+            "mean": 0.0,
+            "median": 0.0
+          }
+        }
+      },
+      "Domingo": {
+        "posts": 4,
+        "metrics": {
+          "views": {
+            "n": 4,
+            "sum": 1451.0,
+            "mean": 362.75,
+            "median": 330.5
+          },
+          "reach": {
+            "n": 4,
+            "sum": 924.0,
+            "mean": 231.0,
+            "median": 225.5
+          },
+          "retention_seconds": {
+            "n": 4,
+            "sum": 32.0,
+            "mean": 8.0,
+            "median": 7.5
+          },
+          "hook_rate": {
+            "n": 4,
+            "sum": 2.0,
+            "mean": 0.5,
+            "median": 0.495
+          },
+          "interactions": {
+            "n": 4,
+            "sum": 69.0,
+            "mean": 17.25,
+            "median": 18.0
+          },
+          "interaction_rate": {
+            "n": 4,
+            "sum": 0.2156,
+            "mean": 0.0539,
+            "median": 0.0563
+          },
+          "comments": {
+            "n": 4,
+            "sum": 3.0,
+            "mean": 0.75,
+            "median": 0.0
+          },
+          "saves": {
+            "n": 4,
+            "sum": 2.0,
+            "mean": 0.5,
+            "median": 0.5
+          },
+          "shares": {
+            "n": 4,
+            "sum": 2.0,
+            "mean": 0.5,
+            "median": 0.5
+          },
+          "followers": {
+            "n": 4,
+            "sum": 3.0,
+            "mean": 0.75,
+            "median": 0.0
+          }
+        }
+      }
+    }
+  },
+  "posts": [
+    {
+      "row": 1856,
+      "category": "Técnico",
+      "title": "A fatura chega 1k mais cara",
+      "format": "carrossel",
+      "date": "2026-08-03T00:00:00",
+      "weekday": "Segunda",
+      "slot": "Dia",
+      "views": 129.0,
+      "reach": 42.0,
+      "retention_seconds": null,
+      "hook_rate": null,
+      "interactions": 1.0,
+      "interaction_rate": 0.003125,
+      "comments": 0.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 1872,
+      "category": "Técnico",
+      "title": "Cotação - agencia de marketing",
+      "format": "reeel quadro",
+      "date": "2026-08-04T00:00:00",
+      "weekday": "Terça",
+      "slot": "Dia",
+      "views": 521.0,
+      "reach": 320.0,
+      "retention_seconds": 19.0,
+      "hook_rate": 0.54,
+      "interactions": 26.0,
+      "interaction_rate": 0.08125,
+      "comments": 4.0,
+      "saves": 6.0,
+      "shares": 0.0,
+      "followers": 2.0
+    },
+    {
+      "row": 1880,
+      "category": "Técnico",
+      "title": "Tem um padrão que se repete",
+      "format": "espontâneo",
+      "date": "2026-08-04T00:00:00",
+      "weekday": "Terça",
+      "slot": "Noite",
+      "views": 322.0,
+      "reach": 197.0,
+      "retention_seconds": 12.0,
+      "hook_rate": 0.55,
+      "interactions": 22.0,
+      "interaction_rate": 0.06875,
+      "comments": 1.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 2.0
+    },
+    {
+      "row": 1888,
+      "category": "Autoridade",
+      "title": "Entrevista Sonimar",
+      "format": "espontâneo",
+      "date": "2026-08-05T00:00:00",
+      "weekday": "Quarta",
+      "slot": "Dia",
+      "views": 483.0,
+      "reach": 307.0,
+      "retention_seconds": 11.0,
+      "hook_rate": 0.55,
+      "interactions": 20.0,
+      "interaction_rate": 0.0625,
+      "comments": 2.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 1.0
+    },
+    {
+      "row": 1896,
+      "category": "Técnico",
+      "title": "Voce sabe o que seu plano NAO cobre",
+      "format": "frase",
+      "date": "2026-08-05T00:00:00",
+      "weekday": "Quarta",
+      "slot": "Noite",
+      "views": 247.0,
+      "reach": 123.0,
+      "retention_seconds": 9.0,
+      "hook_rate": 0.7,
+      "interactions": 8.0,
+      "interaction_rate": 0.025,
+      "comments": 0.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 1904,
+      "category": "Técnico",
+      "title": "cotação - oficina mecanica",
+      "format": "reeel quadro",
+      "date": "2026-08-06T00:00:00",
+      "weekday": "Quinta",
+      "slot": "Dia",
+      "views": 202.0,
+      "reach": 132.0,
+      "retention_seconds": 13.0,
+      "hook_rate": 0.45,
+      "interactions": 11.0,
+      "interaction_rate": 0.034375,
+      "comments": 0.0,
+      "saves": 2.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 1912,
+      "category": "Técnico",
+      "title": "o plano pode ser mais caro",
+      "format": "carrossel",
+      "date": "2026-08-06T00:00:00",
+      "weekday": "Quinta",
+      "slot": "Noite",
+      "views": 103.0,
+      "reach": 38.0,
+      "retention_seconds": null,
+      "hook_rate": null,
+      "interactions": 1.0,
+      "interaction_rate": 0.003125,
+      "comments": 0.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 1920,
+      "category": "Autoridade",
+      "title": "entrevista Sueli",
+      "format": "espontâneo",
+      "date": "2026-08-07T00:00:00",
+      "weekday": "Sexta",
+      "slot": "Dia",
+      "views": 321.0,
+      "reach": 186.0,
+      "retention_seconds": 11.0,
+      "hook_rate": 0.47,
+      "interactions": 12.0,
+      "interaction_rate": 0.0375,
+      "comments": 3.0,
+      "saves": 1.0,
+      "shares": 1.0,
+      "followers": 0.0
+    },
+    {
+      "row": 1928,
+      "category": "Técnico",
+      "title": "você não precisa ser fiel",
+      "format": "reels frase",
+      "date": "2026-08-07T00:00:00",
+      "weekday": "Sexta",
+      "slot": "Noite",
+      "views": 214.0,
+      "reach": 111.0,
+      "retention_seconds": 9.0,
+      "hook_rate": 0.56,
+      "interactions": 6.0,
+      "interaction_rate": 0.01875,
+      "comments": 0.0,
+      "saves": 0.0,
+      "shares": 1.0,
+      "followers": 0.0
+    },
+    {
+      "row": 1936,
+      "category": "Técnico",
+      "title": "Cotação - corretor de imovel",
+      "format": "reels quadro",
+      "date": "2026-08-08T00:00:00",
+      "weekday": "Sábado",
+      "slot": "Dia",
+      "views": 331.0,
+      "reach": 208.0,
+      "retention_seconds": 15.0,
+      "hook_rate": 0.49,
+      "interactions": 22.0,
+      "interaction_rate": 0.06875,
+      "comments": 1.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 1944,
+      "category": "Pessoal",
+      "title": "Foto com Riam",
+      "format": "foto",
+      "date": "2026-08-08T00:00:00",
+      "weekday": "Sábado",
+      "slot": "Noite",
+      "views": 702.0,
+      "reach": 298.0,
+      "retention_seconds": null,
+      "hook_rate": null,
+      "interactions": 38.0,
+      "interaction_rate": 0.11875,
+      "comments": 0.0,
+      "saves": 1.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 1952,
+      "category": "Autoridade",
+      "title": "entrevista JULIA CASTRO",
+      "format": "espontâneo",
+      "date": "2026-08-09T00:00:00",
+      "weekday": "Domingo",
+      "slot": "Dia",
+      "views": 551.0,
+      "reach": 338.0,
+      "retention_seconds": 13.0,
+      "hook_rate": 0.61,
+      "interactions": 27.0,
+      "interaction_rate": 0.084375,
+      "comments": 3.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 3.0
+    },
+    {
+      "row": 1960,
+      "category": "Técnico",
+      "title": "hospital lotado",
+      "format": "reels frase",
+      "date": "2026-08-09T00:00:00",
+      "weekday": "Domingo",
+      "slot": "Noite",
+      "views": 239.0,
+      "reach": 135.0,
+      "retention_seconds": 7.0,
+      "hook_rate": 0.52,
+      "interactions": 6.0,
+      "interaction_rate": 0.01875,
+      "comments": 0.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 1969,
+      "category": "Técnico",
+      "title": "cotação - dentistas",
+      "format": "reels quadro",
+      "date": "2026-08-10T00:00:00",
+      "weekday": "Segunda",
+      "slot": "Dia",
+      "views": 104.0,
+      "reach": 62.0,
+      "retention_seconds": 12.0,
+      "hook_rate": 0.33,
+      "interactions": 3.0,
+      "interaction_rate": 0.009375,
+      "comments": 0.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 1977,
+      "category": "Técnico",
+      "title": "eu sei que voce gostaria",
+      "format": "espontâneo",
+      "date": "2026-08-10T00:00:00",
+      "weekday": "Segunda",
+      "slot": "Noite",
+      "views": 236.0,
+      "reach": 170.0,
+      "retention_seconds": 9.0,
+      "hook_rate": 0.46,
+      "interactions": 13.0,
+      "interaction_rate": 0.040625,
+      "comments": 0.0,
+      "saves": 1.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 1985,
+      "category": "Autoridade",
+      "title": "Recorte Ibiorg",
+      "format": "espontâneo",
+      "date": "2026-08-11T00:00:00",
+      "weekday": "Terça",
+      "slot": "Dia",
+      "views": 554.0,
+      "reach": 355.0,
+      "retention_seconds": 13.0,
+      "hook_rate": 0.56,
+      "interactions": 37.0,
+      "interaction_rate": 0.115625,
+      "comments": 0.0,
+      "saves": 2.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 1993,
+      "category": "Autoridade",
+      "title": "Entrevista ingles",
+      "format": "espontâneo",
+      "date": "2026-08-11T00:00:00",
+      "weekday": "Terça",
+      "slot": "Noite",
+      "views": 368.0,
+      "reach": 217.0,
+      "retention_seconds": 15.0,
+      "hook_rate": 0.52,
+      "interactions": 25.0,
+      "interaction_rate": 0.078125,
+      "comments": 0.0,
+      "saves": 6.0,
+      "shares": 0.0,
+      "followers": 1.0
+    },
+    {
+      "row": 2001,
+      "category": "Autoridade",
+      "title": "entrevista Larissa",
+      "format": "espontâneo",
+      "date": "2026-08-12T00:00:00",
+      "weekday": "Quarta",
+      "slot": "Dia",
+      "views": 207.0,
+      "reach": 106.0,
+      "retention_seconds": 17.0,
+      "hook_rate": 0.65,
+      "interactions": 10.0,
+      "interaction_rate": 0.03125,
+      "comments": 0.0,
+      "saves": 1.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 2009,
+      "category": "Pessoal",
+      "title": "Dump Roma",
+      "format": "carrossel",
+      "date": "2026-08-12T00:00:00",
+      "weekday": "Quarta",
+      "slot": "Noite",
+      "views": 210.0,
+      "reach": 73.0,
+      "retention_seconds": null,
+      "hook_rate": null,
+      "interactions": 19.0,
+      "interaction_rate": 0.059375,
+      "comments": 0.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 2017,
+      "category": "Autoridade",
+      "title": "entrevista Ian",
+      "format": "espontâneo",
+      "date": "2026-08-13T00:00:00",
+      "weekday": "Quinta",
+      "slot": "Dia",
+      "views": 433.0,
+      "reach": 306.0,
+      "retention_seconds": 10.0,
+      "hook_rate": 0.43,
+      "interactions": 31.0,
+      "interaction_rate": 0.096875,
+      "comments": 1.0,
+      "saves": 6.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 2025,
+      "category": "Técnico",
+      "title": "cotação - Devs",
+      "format": "reels quadro",
+      "date": "2026-08-13T00:00:00",
+      "weekday": "Quinta",
+      "slot": "Noite",
+      "views": 183.0,
+      "reach": 108.0,
+      "retention_seconds": 12.0,
+      "hook_rate": 0.5,
+      "interactions": 6.0,
+      "interaction_rate": 0.01875,
+      "comments": 0.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 2033,
+      "category": "Autoridade",
+      "title": "entrevista Suzy",
+      "format": "espontâneo",
+      "date": "2026-08-14T00:00:00",
+      "weekday": "Sexta",
+      "slot": "Dia",
+      "views": 589.0,
+      "reach": 392.0,
+      "retention_seconds": 14.0,
+      "hook_rate": 0.53,
+      "interactions": 16.0,
+      "interaction_rate": 0.05,
+      "comments": 2.0,
+      "saves": 3.0,
+      "shares": 0.0,
+      "followers": 1.0
+    },
+    {
+      "row": 2041,
+      "category": "Técnico",
+      "title": "pergunte isso na hora de contratar",
+      "format": "espontâneo",
+      "date": "2026-08-14T00:00:00",
+      "weekday": "Sexta",
+      "slot": "Noite",
+      "views": 133.0,
+      "reach": 71.0,
+      "retention_seconds": 10.0,
+      "hook_rate": 0.48,
+      "interactions": 5.0,
+      "interaction_rate": 0.015625,
+      "comments": 0.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 2049,
+      "category": "Técnico",
+      "title": "eu sei que você queria parar",
+      "format": "carrossel",
+      "date": "2026-08-15T00:00:00",
+      "weekday": "Sábado",
+      "slot": "Dia",
+      "views": 222.0,
+      "reach": 72.0,
+      "retention_seconds": null,
+      "hook_rate": null,
+      "interactions": 3.0,
+      "interaction_rate": 0.009375,
+      "comments": 0.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 2057,
+      "category": "Autoridade",
+      "title": "entrevista Tony",
+      "format": "espontâneo",
+      "date": "2026-08-15T00:00:00",
+      "weekday": "Sábado",
+      "slot": "Noite",
+      "views": 261.0,
+      "reach": 181.0,
+      "retention_seconds": 7.0,
+      "hook_rate": 0.35,
+      "interactions": 9.0,
+      "interaction_rate": 0.028125,
+      "comments": 0.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 2065,
+      "category": "Técnico",
+      "title": "todo ano o seu plano fica mais caro",
+      "format": "reels frase",
+      "date": "2026-08-16T00:00:00",
+      "weekday": "Domingo",
+      "slot": "Dia",
+      "views": 302.0,
+      "reach": 201.0,
+      "retention_seconds": 4.0,
+      "hook_rate": 0.4,
+      "interactions": 16.0,
+      "interaction_rate": 0.05,
+      "comments": 0.0,
+      "saves": 1.0,
+      "shares": 1.0,
+      "followers": 0.0
+    },
+    {
+      "row": 2073,
+      "category": "Autoridade",
+      "title": "entrevista Bruno ",
+      "format": "espontâneo",
+      "date": "2026-08-16T00:00:00",
+      "weekday": "Domingo",
+      "slot": "Noite",
+      "views": 359.0,
+      "reach": 250.0,
+      "retention_seconds": 8.0,
+      "hook_rate": 0.47,
+      "interactions": 20.0,
+      "interaction_rate": 0.0625,
+      "comments": 0.0,
+      "saves": 1.0,
+      "shares": 1.0,
+      "followers": 0.0
+    },
+    {
+      "row": 2082,
+      "category": "Técnico",
+      "title": "transformar 3mil em 500 mil",
+      "format": "carrossel",
+      "date": "2026-08-17T00:00:00",
+      "weekday": "Segunda",
+      "slot": "Dia",
+      "views": 129.0,
+      "reach": 50.0,
+      "retention_seconds": null,
+      "hook_rate": null,
+      "interactions": 1.0,
+      "interaction_rate": 0.003125,
+      "comments": 0.0,
+      "saves": 0.0,
+      "shares": 0.0,
+      "followers": 0.0
+    },
+    {
+      "row": 2090,
+      "category": "Técnico",
+      "title": "CPT",
+      "format": "espontâneo",
+      "date": "2026-08-17T00:00:00",
+      "weekday": "Segunda",
+      "slot": "Noite",
+      "views": 332.0,
+      "reach": 239.0,
+      "retention_seconds": 13.0,
+      "hook_rate": 0.38,
+      "interactions": 16.0,
+      "interaction_rate": 0.05,
+      "comments": 2.0,
+      "saves": 0.0,
+      "shares": 1.0,
+      "followers": 0.0
+    }
+  ]
+}

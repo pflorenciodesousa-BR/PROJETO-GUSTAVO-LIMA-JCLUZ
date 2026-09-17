@@ -1,0 +1,1230 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/yezn6m",
+    "id": "yezn6m",
+    "slide": 10,
+    "layoutId": "e9fcefe7-272a-44b3-9962-220f332a0317",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "46f2c2a0-f792-4f3d-b45e-fbe2b00b7e7b",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Arial"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "e9fcefe7-272a-44b3-9962-220f332a0317",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "46f2c2a0-f792-4f3d-b45e-fbe2b00b7e7b",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "46f2c2a0-f792-4f3d-b45e-fbe2b00b7e7b",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/butkzapc",
+      "id": "1",
+      "bbox": [
+        52,
+        30,
+        850,
+        24
+      ],
+      "geometry": "rect",
+      "text": "O QUE IMPULSIONAR",
+      "textPreview": "O QUE IMPULSIONAR",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 13,
+        "typeface": "Arial",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "O QUE IMPULSIONAR"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "O QUE IMPULSIONAR",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "typeface": "Arial",
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "O QUE IMPULSIONAR",
+              "fontSize": 13,
+              "typeface": "Arial",
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cv2lsfqx",
+      "id": "2",
+      "bbox": [
+        52,
+        58,
+        1160,
+        70
+      ],
+      "geometry": "rect",
+      "text": "Profissional e pessoal cumprem funções diferentes",
+      "textPreview": "Profissional e pessoal cumprem funções diferentes",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 44,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Profissional e pessoal cumprem funções diferentes"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Profissional e pessoal cumprem funções diferentes",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Profissional e pessoal cumprem funções diferentes",
+              "fontSize": 44,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dwbm1k7i",
+      "id": "3",
+      "bbox": [
+        52,
+        128,
+        1176,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#111111",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2503m58v",
+      "id": "4",
+      "bbox": [
+        52,
+        682,
+        520,
+        20
+      ],
+      "geometry": "rect",
+      "text": "GUSTAVO LIMA | ESTRATÉGIA 2026",
+      "textPreview": "GUSTAVO LIMA | ESTRATÉGIA 2026",
+      "resolvedFontSize": 11,
+      "resolvedTextStyle": {
+        "anchor": 3,
+        "fontSize": 11,
+        "typeface": "Arial",
+        "color": "#626870",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "bottom",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "GUSTAVO LIMA | ESTRATÉGIA 2026"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "GUSTAVO LIMA | ESTRATÉGIA 2026",
+          "resolvedTextStyle": {
+            "fontSize": 11,
+            "typeface": "Arial",
+            "color": "#626870",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "GUSTAVO LIMA | ESTRATÉGIA 2026",
+              "fontSize": 11,
+              "typeface": "Arial",
+              "color": "#626870",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/369kva9g",
+      "id": "5",
+      "bbox": [
+        1180,
+        682,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "10",
+      "textPreview": "10",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 3,
+        "fontSize": 12,
+        "typeface": "Arial",
+        "color": "#626870",
+        "alignment": "right",
+        "verticalAlignment": "bottom",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "10"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "10",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Arial",
+            "color": "#626870",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "10",
+              "fontSize": 12,
+              "typeface": "Arial",
+              "color": "#626870",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o7ilofq1",
+      "id": "6",
+      "bbox": [
+        52,
+        160,
+        560,
+        410
+      ],
+      "geometry": "rect",
+      "fillColor": "#F2F2F2",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p8r2xkrm",
+      "id": "7",
+      "bbox": [
+        52,
+        160,
+        560,
+        9
+      ],
+      "geometry": "rect",
+      "fillColor": "#3D8DFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m143y98z",
+      "id": "8",
+      "bbox": [
+        80,
+        190,
+        500,
+        44
+      ],
+      "geometry": "rect",
+      "text": "Conteúdo profissional",
+      "textPreview": "Conteúdo profissional",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 30,
+        "typeface": "Arial",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Conteúdo profissional"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Conteúdo profissional",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "typeface": "Arial",
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Conteúdo profissional",
+              "fontSize": 30,
+              "typeface": "Arial",
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n2d47upk",
+      "id": "9",
+      "bbox": [
+        80,
+        248,
+        500,
+        36
+      ],
+      "geometry": "rect",
+      "text": "80% da verba de descoberta",
+      "textPreview": "80% da verba de descoberta",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "80% da verba de descoberta"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "80% da verba de descoberta",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "80% da verba de descoberta",
+              "fontSize": 24,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jilw3uhs",
+      "id": "10",
+      "bbox": [
+        80,
+        292,
+        500,
+        36
+      ],
+      "geometry": "rect",
+      "text": "100% da verba de captacao",
+      "textPreview": "100% da verba de captacao",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "#2F9E67",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "100% da verba de captacao"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "100% da verba de captacao",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Arial",
+            "color": "#2F9E67",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "100% da verba de captacao",
+              "fontSize": 24,
+              "typeface": "Arial",
+              "color": "#2F9E67",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ixsfa907",
+      "id": "11",
+      "bbox": [
+        80,
+        344,
+        500,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#B8BCC4",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5k3e54zy",
+      "id": "12",
+      "bbox": [
+        80,
+        366,
+        500,
+        120
+      ],
+      "geometry": "rect",
+      "text": "Cotação, comparação, rede, carência, reajuste, prova, bastidor de atendimento e visão de mercado.",
+      "textPreview": "Cotação, comparação, rede, carência, reajuste, prova, bastidor de atendimento e visão de mercado.",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 21,
+        "typeface": "Arial",
+        "color": "#202124",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Cotação, comparação, rede, carência, reajuste,"
+          },
+          {
+            "index": 2,
+            "text": "prova, bastidor de atendimento e visão de mercado."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Cotação, comparação, rede, carência, reajuste, prova, bastidor de atendimento e visão de mercado.",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Cotação, comparação, rede, carência, reajuste, prova, bastidor de atendimento e visão de mercado.",
+              "fontSize": 21,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kjuxczid",
+      "id": "13",
+      "bbox": [
+        80,
+        516,
+        500,
+        32
+      ],
+      "geometry": "rect",
+      "text": "Objetivo: atrair e converter pela competência.",
+      "textPreview": "Objetivo: atrair e converter pela competência.",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 17,
+        "typeface": "Arial",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Objetivo: atrair e converter pela competência."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Objetivo: atrair e converter pela competência.",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Arial",
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Objetivo: atrair e converter pela competência.",
+              "fontSize": 17,
+              "typeface": "Arial",
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7mlw7eh4",
+      "id": "14",
+      "bbox": [
+        668,
+        160,
+        560,
+        410
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFF3D2",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6lcfe90j",
+      "id": "15",
+      "bbox": [
+        668,
+        160,
+        560,
+        9
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4B740",
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/to3e9ozu",
+      "id": "16",
+      "bbox": [
+        696,
+        190,
+        500,
+        44
+      ],
+      "geometry": "rect",
+      "text": "Conteúdo pessoal",
+      "textPreview": "Conteúdo pessoal",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 30,
+        "typeface": "Arial",
+        "color": "#F4B740",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Conteúdo pessoal"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Conteúdo pessoal",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "typeface": "Arial",
+            "color": "#F4B740",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Conteúdo pessoal",
+              "fontSize": 30,
+              "typeface": "Arial",
+              "color": "#F4B740",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/snuxgji9",
+      "id": "17",
+      "bbox": [
+        696,
+        248,
+        500,
+        36
+      ],
+      "geometry": "rect",
+      "text": "20% da verba de descoberta",
+      "textPreview": "20% da verba de descoberta",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "20% da verba de descoberta"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "20% da verba de descoberta",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "20% da verba de descoberta",
+              "fontSize": 24,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fq5gbeh0",
+      "id": "18",
+      "bbox": [
+        696,
+        292,
+        500,
+        36
+      ],
+      "geometry": "rect",
+      "text": "0% da verba de captacao",
+      "textPreview": "0% da verba de captacao",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "#D94C4C",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "0% da verba de captacao"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "0% da verba de captacao",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Arial",
+            "color": "#D94C4C",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "0% da verba de captacao",
+              "fontSize": 24,
+              "typeface": "Arial",
+              "color": "#D94C4C",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/epwfit0f",
+      "id": "19",
+      "bbox": [
+        696,
+        344,
+        500,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#B8BCC4",
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qlgzadkn",
+      "id": "20",
+      "bbox": [
+        696,
+        366,
+        500,
+        120
+      ],
+      "geometry": "rect",
+      "text": "Só entra no pago quando carrega valor, identidade e uma ponte para a promessa profissional. Foto genérica de família fica no orgânico.",
+      "textPreview": "Só entra no pago quando carrega valor, identidade e uma ponte para a promessa profissional. Foto genérica de família fica no orgânico.",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 21,
+        "typeface": "Arial",
+        "color": "#202124",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Só entra no pago quando carrega valor, identidade e"
+          },
+          {
+            "index": 2,
+            "text": "uma ponte para a promessa profissional. Foto"
+          },
+          {
+            "index": 3,
+            "text": "genérica de família fica no orgânico."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Só entra no pago quando carrega valor, identidade e uma ponte para a promessa profissional. Foto genérica de família fica no orgânico.",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Arial",
+            "color": "#202124",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Só entra no pago quando carrega valor, identidade e uma ponte para a promessa profissional. Foto genérica de família fica no orgânico.",
+              "fontSize": 21,
+              "typeface": "Arial",
+              "color": "#202124",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bmp03i18",
+      "id": "21",
+      "bbox": [
+        696,
+        516,
+        500,
+        32
+      ],
+      "geometry": "rect",
+      "text": "Objetivo: reduzir distância e aumentar confiança.",
+      "textPreview": "Objetivo: reduzir distância e aumentar confiança.",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 17,
+        "typeface": "Arial",
+        "color": "#F4B740",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Objetivo: reduzir distância e aumentar confiança."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Objetivo: reduzir distância e aumentar confiança.",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Arial",
+            "color": "#F4B740",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Objetivo: reduzir distância e aumentar confiança.",
+              "fontSize": 17,
+              "typeface": "Arial",
+              "color": "#F4B740",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/c7yhcn2t",
+      "id": "22",
+      "bbox": [
+        52,
+        604,
+        1176,
+        32
+      ],
+      "geometry": "rect",
+      "text": "No orgânico, mantemos o desenho 70% profissional / 30% pessoal.",
+      "textPreview": "No orgânico, mantemos o desenho 70% profissional / 30% pessoal.",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 20,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "No orgânico, mantemos o desenho 70% profissional / 30% pessoal."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "No orgânico, mantemos o desenho 70% profissional / 30% pessoal.",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "No orgânico, mantemos o desenho 70% profissional / 30% pessoal.",
+              "fontSize": 20,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}
