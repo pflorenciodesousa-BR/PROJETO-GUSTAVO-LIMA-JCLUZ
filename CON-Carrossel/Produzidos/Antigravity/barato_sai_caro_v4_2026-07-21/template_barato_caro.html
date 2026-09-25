@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Barato Sai Caro — Gustavo Lima (V4)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: #111; color: #fff; padding: 30px 20px; }
+        h1 { text-align: center; font-size: 22px; color: #fff; margin-bottom: 6px; }
+        .page-subtitle { text-align: center; color: #777; font-size: 13px; margin-bottom: 30px; }
+        .btn-container { text-align: center; margin: 0 0 30px 0; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn { border: none; padding: 14px 36px; font-size: 15px; font-weight: 700; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-family: 'Montserrat', sans-serif; }
+        .btn-primary { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; }
+        .btn-secondary { background: #2a2a2a; color: #ccc; border: 1px solid #444; }
+        .status { text-align: center; color: #3b82f6; margin: 10px 0 20px; font-size: 13px; font-weight: bold; min-height: 20px; }
+        .slides-grid { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; max-width: 1400px; margin: 0 auto; }
+        .slide-wrapper { display: flex; flex-direction: column; align-items: center; width: 400px; }
+        .slide-label { margin-bottom: 10px; font-weight: bold; font-size: 13px; color: #999; text-align: center; }
+        .slide-scaler { width: 400px; height: 500px; overflow: hidden; position: relative; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .slide-scaler .slide { transform: scale(0.37037); }
+        .caption-box { width: 400px; margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+        .caption-text { width: 100%; height: 80px; background: #000; color: #ddd; border: 1px solid #333; border-radius: 6px; padding: 10px; font-size: 12px; font-family: 'Segoe UI', sans-serif; resize: none; line-height: 1.5; }
+        .btn-copy { background: #222; color: #bbb; border: 1px solid #444; padding: 8px; font-size: 11px; cursor: pointer; border-radius: 4px; width: 100%; font-weight: 600; }
+        .btn-copy:hover { background: #333; color: #fff; }
+
+        /* ══════════════════════════════════════════
+           SLIDES BASE
+        ══════════════════════════════════════════ */
+        .slide {
+            width: 1080px; height: 1350px;
+            position: absolute; top: 0; left: 0;
+            background: #0B1D3A;
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 110px 95px;
+            font-family: 'Montserrat', sans-serif;
+            transform-origin: top left;
+            overflow: hidden;
+        }
+        .slide.bg-light { background: #F0EBE3; }
+
+        .tx-dark {
+            position: absolute; inset: 0; pointer-events: none; z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            opacity: 0.08; mix-blend-mode: overlay;
+        }
+        .tx-light {
+            position: absolute; inset: 0; pointer-events: none; z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            opacity: 0.04; mix-blend-mode: multiply;
+        }
+
+        .arrow { position: absolute; bottom: 75px; right: 75px; display: flex; align-items: center; z-index: 10; }
+        .arrow-line { width: 110px; height: 2px; background: rgba(255,255,255,0.3); }
+        .arrow-head { width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 13px solid rgba(255,255,255,0.3); }
+        .slide.bg-light .arrow-line { background: rgba(11,29,58,0.3); }
+        .slide.bg-light .arrow-head { border-left-color: rgba(11,29,58,0.3); }
+
+        .t-label { font-size: 28px; font-weight: 700; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 4px; }
+        .t-large { font-size: 72px; font-weight: 900; color: #fff; line-height: 1.1; letter-spacing: -1.5px; text-transform: uppercase; }
+        .t-bold  { font-size: 48px; font-weight: 900; color: #fff; line-height: 1.25; letter-spacing: -0.5px; }
+        .t-reg   { font-size: 42px; font-weight: 400; color: rgba(255,255,255,0.82); line-height: 1.55; }
+        .t-it    { font-size: 46px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.75); line-height: 1.4; }
+
+        .slide.bg-light .t-label { color: rgba(11,29,58,0.45); }
+        .slide.bg-light .t-large { color: #0B1D3A; }
+        .slide.bg-light .t-bold  { color: #0B1D3A; }
+        .slide.bg-light .t-reg   { color: rgba(11,29,58,0.8); }
+
+        .hl-gold  { display: inline; background: rgba(234,179,8,0.3); border-radius: 10px; padding: 2px 16px; }
+        .hl-light { display: inline; background: rgba(11,29,58,0.1); border-radius: 10px; padding: 2px 16px; }
+
+        .sp    { height: 40px; }
+        .sp-sm { height: 20px; }
+        .sp-xs { height: 10px; }
+
+        .divider-dashed { width: 100%; border: none; border-top: 2px dashed rgba(255,255,255,0.18); margin: 0; }
+        .slide.bg-light .divider-dashed { border-top-color: rgba(11,29,58,0.15); }
+
+        .img-box {
+            width: 100%; height: 480px;
+            border-radius: 36px;
+            background-image: url('REAL_IMG_HERE');
+            background-size: cover; background-position: center;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+            border: 4px solid rgba(255,255,255,0.35);
+            margin-top: 44px; position: relative; z-index: 2;
+        }
+
+        /* Checklists Dourados */
+        .gold-chk-list { display: flex; flex-direction: column; gap: 24px; margin-top: 20px; }
+        .gold-chk-item { display: flex; align-items: center; gap: 24px; }
+        .gold-chk-icon { font-size: 42px; line-height: 1; flex-shrink: 0; color: #0B1D3A; background: rgba(255,255,255,0.4); border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; }
+        .gold-chk-text { font-size: 38px; font-weight: 700; color: #0B1D3A; }
+
+        #renderArea { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <h1>🐭 Carrossel — O Barato Sai Caro</h1>
+    <p class="page-subtitle">Contradição / Alerta — Gustavo Lima | Padrão V4</p>
+
+    <div class="btn-container">
+        <button class="btn btn-primary" onclick="downloadAllPNGs()">📦 Baixar TODOS os PNGs</button>
+        <button class="btn btn-secondary" onclick="downloadPDF()">📄 Baixar PDF completo</button>
+    </div>
+    <div class="status" id="status"></div>
+    <div class="slides-grid" id="slidesGrid"></div>
+    <div id="renderArea"></div>
+
+    <script>
+    const SLIDES_HTML = [
+
+        // ── SLIDE 1: CAPA (Ratoeira) ───────────────────────────
+        `<div style="position:absolute;inset:0;background-image:url('COVER_B64_HERE');background-size:cover;background-position:center;z-index:1;"></div>
+         <div style="position:absolute;bottom:0;left:0;width:100%;height:70%;background:linear-gradient(to top,rgba(11,29,58,1) 0%,rgba(11,29,58,0.95) 30%,rgba(11,29,58,0.6) 65%,transparent 100%);z-index:2;"></div>
+         <div style="position:absolute;bottom:0;left:0;width:100%;padding:0 95px 105px;z-index:3;">
+             <div class="t-large" style="font-size:70px;line-height:1.05;text-shadow:2px 4px 20px rgba(0,0,0,0.8);">O PLANO MAIS<br><span style="color:#EAB308;">BARATO</span> PODE<br>SER O MAIS <span style="color:#ef4444;">CARO</span><br>DA SUA VIDA.</div>
+         </div>`,
+
+        // ── SLIDE 2: A ARMADILHA (Navy + Textura) ─────────────────────
+        `<div class="tx-dark"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;height:100%;">
+             <div class="t-bold" style="font-size:56px;line-height:1.4;">Não tem mágica<br>na saúde suplementar.</div>
+             <div class="sp-sm"></div>
+             <div class="t-reg" style="font-size:44px;line-height:1.5;">Se a mensalidade está muito abaixo do mercado, a operadora cortou na carne.<br><br>A questão é: <span class="hl-gold">onde?</span></div>
+         </div>`,
+
+        // ── SLIDE 3: O PONTO CEGO / INTERNAÇÃO (Bege + Textura + Img-Box) ──────
+        `<div class="tx-light"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;height:100%;">
+             <div class="t-bold" style="font-size:46px;line-height:1.2;">Cortou na internação.</div>
+             <div class="sp-sm"></div>
+             <div class="t-reg" style="font-size:36px;">Uma internação particular pode custar R$ 100 mil. Se o seu "plano barato" não cobre o hospital da sua região...<br><span class="hl-light" style="font-weight:900;">de que adiantou economizar?</span></div>
+             <div class="img-box" style="margin-top:40px;"></div>
+         </div>`,
+
+        // ── SLIDE 4: EFEITO ICEBERG (Bege + Textura + Sketch) ──────────
+        `<div style="position:absolute;inset:0;background-image:url('SKETCH_B64_HERE');background-size:cover;background-position:center top;mix-blend-mode:darken;filter:brightness(1.05);opacity:0.10;z-index:0;"></div>
+         <div class="tx-light"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;height:100%;">
+             <div class="t-label" style="color:rgba(11,29,58,0.45);margin-bottom:28px;">O Efeito Iceberg</div>
+             <div class="t-bold" style="font-size:54px;line-height:1.2;">Você só olha para<br>a mensalidade.</div>
+             <div class="sp"></div>
+             <hr class="divider-dashed" style="border-top-color:rgba(11,29,58,0.15);"/>
+             <div class="sp"></div>
+             <div class="t-reg" style="font-size:42px;">Mas o que afunda o caixa<br>são as letras miúdas:<br><br><span style="font-weight:900;color:#c0392b;">Coparticipação Abusiva</span><br><span style="font-weight:900;color:#c0392b;">Carências Longas</span><br><span style="font-weight:900;color:#c0392b;">Reajuste de 40% no 1º ano</span></div>
+         </div>`,
+
+        // ── SLIDE 5: SALVÁVEL DOURADO ⭐ (100% Amarelo) ────────────────────
+        `<div style="position:absolute;inset:0;background:#EAB308;z-index:0;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;height:100%;">
+             <div style="font-size:26px;font-weight:700;color:rgba(11,29,58,0.55);text-transform:uppercase;letter-spacing:3px;margin-bottom:32px;text-align:center;">SALVA ESSE CHECKLIST</div>
+             <div class="t-bold" style="font-size:54px;text-align:center;color:#0B1D3A;margin-bottom:48px;">Quando o "Barato"<br>vale a pena:</div>
+
+             <div class="gold-chk-list">
+                 <div class="gold-chk-item"><div class="gold-chk-icon">✔</div><div class="gold-chk-text">A rede reduzida ainda atende 100% da sua rotina.</div></div>
+                 <div class="gold-chk-item"><div class="gold-chk-icon">✔</div><div class="gold-chk-text">O contrato tem trava (teto) na coparticipação.</div></div>
+                 <div class="gold-chk-item"><div class="gold-chk-icon">✔</div><div class="gold-chk-text">O modelo do quarto (enfermaria) não é um problema.</div></div>
+             </div>
+         </div>`,
+
+        // ── SLIDE 6: POSICIONAMENTO (Navy + Textura) ────────────────────────────
+        `<div class="tx-dark"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;height:100%;">
+             <div class="t-label" style="margin-bottom:28px;">Aviso aos navegantes</div>
+             <div class="t-bold" style="font-size:52px;line-height:1.3;">Nós não demonizamos<br>planos baratos.</div>
+             <div class="sp"></div>
+             <hr class="divider-dashed"/>
+             <div class="sp"></div>
+             <div class="t-reg" style="font-size:42px;">Nós somos inimigos de<br><span class="hl-gold">planos inúteis.</span><br><br>O barato só faz sentido quando ele ainda entrega a proteção que sua família exige.</div>
+         </div>`,
+
+        // ── SLIDE 7: CTA (Navy + Textura) ──────────────────────────────────
+        `<div class="tx-dark"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;height:100%;align-items:center;text-align:center;">
+             <div class="t-large" style="font-size:62px;line-height:1.2;">ECONOMIA OU<br>BOMBA RELÓGIO?</div>
+             <div class="sp"></div>
+             <div class="t-reg" style="font-size:40px;color:rgba(255,255,255,0.68);">Quer saber se o seu plano barato é uma armadilha escondida?</div>
+             <div class="sp"></div>
+             <div style="font-size:48px;font-weight:900;color:#60a5fa;">Manda mensagem que a gente audita sua apólice. 🚀</div>
+         </div>`
+
+    ];
+
+    const LABELS = [
+        'Slide 1 — Capa (Ratoeira/Isca)',
+        'Slide 2 — Sem Mágica',
+        'Slide 3 — Custo da Internação (Img-Box)',
+        'Slide 4 — Efeito Iceberg (Sketch)',
+        'Slide 5 — Quando vale a pena ⭐',
+        'Slide 6 — Inimigos do inútil',
+        'Slide 7 — CTA Auditoria'
+    ];
+
+    const LEGENDAS = [
+        'Sabe aquele plano de saúde incrivelmente barato que o corretor jurou que era a melhor oportunidade do ano? Cuidado.',
+        'A matemática da saúde não fecha com descontos absurdos sem contrapartida. O dinheiro foi economizado em algum lugar. Quase sempre, na sua segurança.',
+        'De que adianta economizar R$ 2.000 por ano na mensalidade, se quando a sua esposa precisar de uma cirurgia de emergência o hospital da sua rua negar atendimento?',
+        'A mensalidade é só a ponta do Iceberg. O que quebra a empresa no longo prazo é a coparticipação abusiva e os reajustes estratosféricos.',
+        'Nem todo plano barato é ruim. Ele só precisa ser intencional. Salva esse post e só assine um contrato "promocional" se ele passar nesses 3 filtros.',
+        'A gente na JCLUZ tem um lema: não temos preconceito com plano barato, temos guerra contra plano inútil. Proteção tem que proteger.',
+        'Quer tirar a prova real do seu contrato? Manda um direct que eu bato o olho nas entrelinhas pra você. 🚀\n\n#planodesaude #mei #empresario #protecaoempresarial #jcluz'
+    ];
+
+    const LIGHT_SLIDES = [2, 3]; // 0-based → slides bege: Slide 3 e Slide 4
+
+    function createSlideElement(index) {
+        const slide = document.createElement('div');
+        slide.className = 'slide';
+        if (LIGHT_SLIDES.includes(index)) slide.classList.add('bg-light');
+        const arrow = (index < 6) ? `<div class="arrow"><div class="arrow-line"></div><div class="arrow-head"></div></div>` : '';
+        slide.innerHTML = SLIDES_HTML[index] + arrow;
+        return slide;
+    }
+
+    function buildPreviews() {
+        const grid = document.getElementById('slidesGrid');
+        grid.innerHTML = '';
+        SLIDES_HTML.forEach((_, i) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'slide-wrapper';
+
+            const label = document.createElement('div');
+            label.className = 'slide-label';
+            label.textContent = LABELS[i];
+
+            const scaler = document.createElement('div');
+            scaler.className = 'slide-scaler';
+            scaler.appendChild(createSlideElement(i));
+
+            const captionBox = document.createElement('div');
+            captionBox.className = 'caption-box';
+            const ta = document.createElement('textarea');
+            ta.className = 'caption-text';
+            ta.value = LEGENDAS[i];
+            ta.readOnly = true;
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'btn-copy';
+            copyBtn.innerText = '📋 Copiar Legenda';
+            copyBtn.onclick = () => {
+                navigator.clipboard.writeText(ta.value);
+                copyBtn.innerText = '✅ Copiado!';
+                setTimeout(() => copyBtn.innerText = '📋 Copiar Legenda', 2000);
+            };
+            captionBox.appendChild(ta);
+            captionBox.appendChild(copyBtn);
+
+            wrapper.appendChild(label);
+            wrapper.appendChild(scaler);
+            wrapper.appendChild(captionBox);
+            grid.appendChild(wrapper);
+        });
+    }
+
+    async function downloadAllPNGs() {
+        document.getElementById('status').innerText = 'Gerando PNGs...';
+        const zip = new JSZip();
+        for (let i = 0; i < SLIDES_HTML.length; i++) {
+            const tmp = document.createElement('div');
+            tmp.style.cssText = 'width:1080px;height:1350px;position:absolute;top:-9999px;';
+            tmp.appendChild(createSlideElement(i));
+            document.body.appendChild(tmp);
+            const canvas = await html2canvas(tmp, { scale: 1, useCORS: true, logging: false });
+            zip.file(`slide_${i + 1}.png`, canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, ''), { base64: true });
+            document.body.removeChild(tmp);
+        }
+        zip.generateAsync({ type: 'blob' }).then(content => {
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(content);
+            a.download = 'carrossel_barato_caro_v4.zip';
+            a.click();
+            document.getElementById('status').innerText = 'ZIP baixado! ✅';
+        });
+    }
+
+    async function downloadPDF() {
+        document.getElementById('status').innerText = 'Gerando PDF...';
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'px', format: [1080, 1350] });
+        for (let i = 0; i < SLIDES_HTML.length; i++) {
+            const tmp = document.createElement('div');
+            tmp.style.cssText = 'width:1080px;height:1350px;position:absolute;top:-9999px;';
+            tmp.appendChild(createSlideElement(i));
+            document.body.appendChild(tmp);
+            const canvas = await html2canvas(tmp, { scale: 1, useCORS: true, logging: false });
+            if (i > 0) pdf.addPage();
+            pdf.addImage(canvas.toDataURL('image/jpeg', 0.95), 'JPEG', 0, 0, 1080, 1350);
+            document.body.removeChild(tmp);
+        }
+        pdf.save('carrossel_barato_caro_v4.pdf');
+        document.getElementById('status').innerText = 'PDF baixado! ✅';
+    }
+
+    const zipScript = document.createElement('script');
+    zipScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+    zipScript.onload = buildPreviews;
+    document.head.appendChild(zipScript);
+    </script>
+</body>
+</html>
+
+

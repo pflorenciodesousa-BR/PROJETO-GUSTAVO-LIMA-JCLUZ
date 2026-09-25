@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+  body { margin: 0; background: #111; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 40px; font-family: 'Montserrat', sans-serif; }
+  
+  /* Container scaler para testar no PC */
+  .scaler { width: 1080px; height: 1350px; transform: scale(0.65); transform-origin: center; box-shadow: 0 20px 60px rgba(0,0,0,0.8); border-radius: 12px; overflow: hidden; }
+  
+  .slide {
+    width: 1080px; height: 1350px;
+    position: relative;
+    background: #000;
+  }
+  
+  /* Imagem livre de filtros no topo */
+  .bg-img {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Utilizando a mesma imagem base, mas ela ficará pura, sem redução de brilho/saturação no CSS */
+    background-image: url('file:///C:/Users/Jcluz/.gemini/antigravity-ide/brain/490278bb-c877-40c8-8a1f-0a7b6926274a/carencia_cover_v3_1781538393027.png');
+    background-size: 160%;
+    background-position: center 25%;
+  }
+  
+  /* Overlay concentrado apenas no rodapé para leitura de texto */
+  .gradient-overlay {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
+    height: 55%; /* Cobre apenas a metade inferior */
+    background: linear-gradient(to top, rgba(11, 29, 58, 1) 0%, rgba(11, 29, 58, 0.85) 30%, rgba(11, 29, 58, 0.4) 60%, transparent 100%);
+  }
+  
+  .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Joga tudo para a base */
+    padding: 100px 60px;
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .brand { font-size: 20px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: auto; margin-top: 20px;}
+  
+  .t-hero { font-size: 100px; font-weight: 900; color: #fff; line-height: 1.05; letter-spacing: -3px; text-transform: uppercase; margin-bottom: 30px; }
+  .t-large { font-size: 62px; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.25; margin-bottom: 40px; }
+  
+  /* Destaque estilo Yellow Marker como na referência */
+  .hl-yellow { background: #EAB308; color: #000; padding: 4px 16px; border-radius: 8px; display: inline-block; font-weight: 900;}
+</style>
+</head>
+<body>
+  <div class="scaler">
+    <div class="slide">
+      <div class="bg-img"></div>
+      <div class="gradient-overlay"></div>
+      <div class="content">
+        <div class="brand">@gustavojcluz</div>
+        <div class="t-hero">CARÊNCIA<br><span class="hl-yellow">ASSUSTA.</span></div>
+        <div class="t-large">Porque muita gente só<br>descobre na hora de usar.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

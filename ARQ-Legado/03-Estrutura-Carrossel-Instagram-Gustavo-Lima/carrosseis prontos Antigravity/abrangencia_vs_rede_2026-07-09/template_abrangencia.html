@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrangência vs Rede — Gustavo Lima</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', 'Segoe UI', sans-serif; background: #111; color: #fff; padding: 30px 20px; }
+        h1 { text-align: center; font-size: 22px; color: #fff; margin-bottom: 6px; }
+        .page-subtitle { text-align: center; color: #777; font-size: 13px; margin-bottom: 30px; }
+        .btn-container { text-align: center; margin: 0 0 30px 0; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn { border: none; padding: 14px 36px; font-size: 15px; font-weight: 700; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-family: 'Montserrat', sans-serif; }
+        .btn-primary { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59,130,246,0.4); }
+        .btn-secondary { background: #2a2a2a; color: #ccc; border: 1px solid #444; }
+        .btn-secondary:hover { background: #3a3a3a; color: #fff; }
+        .status { text-align: center; color: #3b82f6; margin: 10px 0 20px; font-size: 13px; font-weight: bold; min-height: 20px; }
+        .slides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
+        .slide-wrapper { background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 2px solid #2a2a2a; transition: all 0.2s; display: flex; flex-direction: column; }
+        .slide-wrapper:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        .slide-scaler { width: 100%; aspect-ratio: 1080 / 1350; overflow: hidden; position: relative; }
+        .slide-label { padding: 8px 10px 4px; font-size: 12px; color: #777; text-align: center; background: #151515; font-weight: bold; }
+        .slide-footer { display: flex; justify-content: center; padding: 6px 10px 10px; background: #151515; }
+        .btn-download { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; border: none; padding: 8px 20px; font-size: 12px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-family: 'Montserrat', sans-serif; width: 100%; }
+        .btn-download:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(59,130,246,0.4); }
+        .btn-download:disabled { opacity: 0.5; cursor: wait; }
+        .legenda-box { background: #111; padding: 12px; border-top: 1px solid #2a2a2a; display: flex; flex-direction: column; gap: 8px; }
+        .legenda-textarea { width: 100%; height: 110px; background: #000; color: #ddd; border: 1px solid #444; border-radius: 6px; padding: 10px; font-size: 12px; font-family: 'Segoe UI', sans-serif; resize: vertical; line-height: 1.5; }
+        .legenda-textarea:focus { outline: none; border-color: #3b82f6; }
+        .btn-copy-legenda { background: #222; color: #bbb; border: 1px solid #444; padding: 8px; font-size: 11px; cursor: pointer; border-radius: 4px; width: 100%; font-weight: 600; transition: all 0.2s; }
+        .btn-copy-legenda:hover { background: #333; color: #fff; border-color: #555; }
+
+        /* ===================== ESTILOS DOS SLIDES ===================== */
+        .slide {
+            width: 1080px; height: 1350px;
+            background: linear-gradient(160deg, #0B1D3A 0%, #0F2444 30%, #0A1A35 55%, #0D2040 80%, #091830 100%);
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 100px 90px; position: relative;
+            font-family: 'Montserrat', sans-serif; transform-origin: top left;
+            overflow: hidden;
+        }
+        .slide.bg-light { background: #F0EBE3; color: #0B1D3A; }
+
+        .slide .arrow { position: absolute; bottom: 75px; right: 75px; display: flex; align-items: center; z-index: 10; }
+        .slide .arrow-line { width: 110px; height: 2px; background: rgba(255,255,255,0.3); }
+        .slide .arrow-head { width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 13px solid rgba(255,255,255,0.3); }
+        .slide.bg-light .arrow-line { background: rgba(11,29,58,0.3); }
+        .slide.bg-light .arrow-head { border-left-color: rgba(11,29,58,0.3); }
+
+        .hl-gold { background: rgba(234,179,8,0.28); color: #fff !important; padding: 5px 18px; border-radius: 8px; display: inline-block; }
+        .hl      { background: rgba(11,29,58,0.14); color: #0B1D3A !important; padding: 5px 18px; border-radius: 8px; display: inline-block; }
+
+        /* Listas de Checklist */
+        .check-item { display: flex; align-items: flex-start; gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(11,29,58,0.08); }
+        .check-item:last-child { border-bottom: none; }
+        .check-icon { font-size: 38px; flex-shrink: 0; }
+        .check-text { font-size: 36px; color: rgba(11,29,58,0.85); line-height: 1.4; }
+
+        #renderArea { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <h1>📋 Carrossel — Abrangência vs Rede Credenciada</h1>
+    <p class="page-subtitle">Framework Educativo — Gustavo Lima (JCLUZ)</p>
+
+    <div class="btn-container">
+        <button class="btn btn-primary" onclick="downloadAllPNGs()">📦 Baixar TODOS os PNGs</button>
+        <button class="btn btn-secondary" onclick="downloadPDF()">📄 Baixar PDF completo</button>
+    </div>
+    <div class="status" id="status"></div>
+    <div class="slides-grid" id="slidesGrid"></div>
+    <div id="renderArea"></div>
+
+    <script>
+    const SLIDES_HTML = [
+
+        // SLIDE 1 — Capa (ESCURO + Foto)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('COVER_B64_HERE');background-size:cover;background-position:center top;z-index:1;"></div>
+         <div style="position:absolute;bottom:0;left:0;width:100%;height:55%;background:linear-gradient(to top,rgba(9,24,48,1) 0%,rgba(9,24,48,0.92) 35%,rgba(9,24,48,0.5) 65%,rgba(9,24,48,0) 100%);z-index:2;"></div>
+         <div style="position:absolute;bottom:0;left:0;width:100%;padding:0 90px 100px;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;">
+             <div style="font-size:52px;font-weight:900;color:#fff;line-height:1.15;letter-spacing:-1px;text-transform:uppercase;text-shadow:2px 2px 16px rgba(0,0,0,0.9);">ABRANGÊNCIA NACIONAL<br>NÃO SIGNIFICA QUE<br>SEU PLANO É BOM!</div>
+             <div style="height:20px;"></div>
+             <div style="font-size:36px;color:rgba(255,255,255,0.7);font-weight:500;">Essa é a armadilha que você pode cair.</div>
+         </div>`,
+
+        // SLIDE 2 — A confusão (ESCURO)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('SKETCH2_B64_HERE');background-size:cover;opacity:0.1;z-index:0;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;">
+             <div style="font-size:42px;font-weight:400;color:rgba(255,255,255,0.6);line-height:1.5;">Todo mundo quer um plano:</div>
+             <div style="height:16px;"></div>
+             <div style="font-size:62px;font-weight:900;color:#ffffff;line-height:1.15;letter-spacing:-1px;text-transform:uppercase;">"Com abrangência<br>Nacional"</div>
+             <div style="height:36px;"></div>
+             <div style="width:100%;height:2px;background:rgba(255,255,255,0.1);"></div>
+             <div style="height:36px;"></div>
+             <div style="font-size:44px;font-weight:400;color:rgba(255,255,255,0.9);line-height:1.5;">Parece sinônimo de "completo".<br>Parece sinônimo de "tem tudo".</div>
+             <div style="height:36px;"></div>
+             <div class="hl-gold" style="font-size:44px;font-weight:900;">Mas não é bem assim.</div>
+         </div>`,
+
+        // SLIDE 3 — Abrangência (BEGE + sketch)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#F0EBE3;z-index:-1;"></div>
+         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('SKETCH3_B64_HERE');background-size:cover;mix-blend-mode:darken;opacity:0.15;z-index:0;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%;">
+             <div style="font-size:48px;font-weight:900;color:#0B1D3A;line-height:1.25;margin-bottom:40px;letter-spacing:-1px;">O QUE SIGNIFICA<br>ABRANGÊNCIA?</div>
+             <div style="font-size:40px;font-weight:400;color:rgba(11,29,58,0.82);line-height:1.6;">Abrangência é apenas a <strong style="color:#0B1D3A;">área de cobertura contratual</strong>.</div>
+             <div style="height:28px;"></div>
+             <div style="font-size:40px;font-weight:400;color:rgba(11,29,58,0.82);line-height:1.6;">Quando um plano é "Nacional", isso significa apenas que a operadora tem permissão legal para te atender em todo o país.</div>
+             <div style="height:28px;"></div>
+             <div class="hl" style="font-size:40px;font-weight:700;">Não significa que ela tem<br>hospitais em todo o país.</div>
+         </div>`,
+
+        // SLIDE 4 — Rede Credenciada (ESCURO + sketch)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#0B1D3A;z-index:-1;"></div>
+         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('SKETCH4_B64_HERE');background-size:cover;opacity:0.1;z-index:0;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%;">
+             <div style="font-size:48px;font-weight:900;color:#fff;line-height:1.25;margin-bottom:40px;letter-spacing:-1px;">O QUE É REDE<br>CREDENCIADA?</div>
+             <div style="font-size:40px;font-weight:400;color:rgba(255,255,255,0.85);line-height:1.6;">Rede credenciada é a realidade.</div>
+             <div style="height:28px;"></div>
+             <div style="font-size:40px;font-weight:400;color:rgba(255,255,255,0.85);line-height:1.6;">É o hospital de tijolo e cimento onde você vai bater na porta se acontecer uma emergência de madrugada.</div>
+             <div style="height:44px;"></div>
+             <div style="background:rgba(255,255,255,0.05);border-left:5px solid #EAB308;padding:24px 30px;border-radius:0 12px 12px 0;">
+                 <div style="font-size:36px;font-weight:400;color:rgba(255,255,255,0.9);line-height:1.6;">Um plano pode ter abrangência nacional e <strong style="color:#EAB308;">NÃO TER</strong> o hospital que você quer na sua cidade.</div>
+             </div>
+         </div>`,
+
+        // SLIDE 5 — A ilusão (BEGE)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#F0EBE3;z-index:-1;"></div>
+         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('SKETCH5_B64_HERE');background-size:cover;mix-blend-mode:darken;opacity:0.25;z-index:0;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%;">
+             <div style="font-size:48px;font-weight:900;color:#0B1D3A;line-height:1.25;margin-bottom:40px;letter-spacing:-1px;">A ILUSÃO DO NOME</div>
+             <div style="font-size:40px;font-weight:400;color:rgba(11,29,58,0.82);line-height:1.6;">Muitos empresários caem nessa armadilha:</div>
+             <div style="height:36px;"></div>
+             <div style="background:#fff;border-radius:12px;padding:34px;width:100%;box-shadow:0 10px 30px rgba(0,0,0,0.05);">
+                 <div style="font-size:36px;color:rgba(11,29,58,0.6);margin-bottom:12px;">Compram o plano</div>
+                 <div style="font-size:42px;font-weight:900;color:#0B1D3A;margin-bottom:24px;">"Nacional Plus Premium"</div>
+                 <div style="width:100%;height:1px;background:rgba(11,29,58,0.1);margin-bottom:24px;"></div>
+                 <div style="font-size:36px;color:rgba(11,29,58,0.6);margin-bottom:12px;">Mas quando precisam...</div>
+                 <div style="font-size:38px;font-weight:700;color:#EF4444;">Descobrem que na cidade deles, ele só atende na clínica de bairro.</div>
+             </div>
+             <div style="height:40px;"></div>
+             <div style="font-size:38px;font-weight:400;color:rgba(11,29,58,0.82);line-height:1.6;">O nome do plano nunca substitui a análise cirúrgica da rede credenciada.</div>
+         </div>`,
+
+        // SLIDE 6 — Checklist (BEGE)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#F0EBE3;z-index:-1;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%;">
+             <div style="font-size:48px;font-weight:900;color:#0B1D3A;line-height:1.2;margin-bottom:10px;letter-spacing:-1px;">COMO VALIDAR A REDE?</div>
+             <div style="font-size:32px;font-weight:400;color:rgba(11,29,58,0.5);margin-bottom:30px;">O que olhar antes de assinar:</div>
+             
+             <div style="width:100%;background:#fff;border-radius:16px;padding:20px 40px;box-shadow:0 10px 30px rgba(0,0,0,0.05);margin-bottom:40px;">
+                 <div class="check-item">
+                     <div class="check-icon">📍</div>
+                     <div class="check-text"><strong>Cidade:</strong> Onde minha equipe realmente está? Onde moram?</div>
+                 </div>
+                 <div class="check-item">
+                     <div class="check-icon">📄</div>
+                     <div class="check-text"><strong>Produto:</strong> Essa rede vale para o produto específico que estou comprando?</div>
+                 </div>
+                 <div class="check-item">
+                     <div class="check-icon">🏥</div>
+                     <div class="check-text"><strong>Hospitais-Chave:</strong> Onde eu vou se der uma emergência grave de madrugada?</div>
+                 </div>
+             </div>
+             
+             <div class="hl" style="font-size:34px;font-weight:700;color:#0B1D3A;">Salva isso para não esquecer.</div>
+         </div>`,
+
+        // SLIDE 7 — CTA (ESCURO)
+        `<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;height:100%;justify-content:center;">
+             <div style="font-size:62px;font-weight:900;color:#fff;line-height:1.15;letter-spacing:-1px;text-transform:uppercase;">NOME BONITO NÃO TE<br>ATENDE NA EMERGÊNCIA.</div>
+             <div style="height:36px;"></div>
+             <div style="width:100%;max-width:800px;height:2px;background:rgba(255,255,255,0.1);"></div>
+             <div style="height:36px;"></div>
+             <div style="font-size:42px;font-weight:400;color:rgba(255,255,255,0.75);line-height:1.65;max-width:860px;text-align:center;">O que te atende é a <strong style="color:#fff;">rede credenciada correta</strong> para o seu CNPJ.</div>
+             <div style="height:44px;"></div>
+             <div style="font-size:36px;font-weight:400;color:rgba(255,255,255,0.55);line-height:1.5;">Manda isso pra um empresário que acha que<br>"Nacional" significa que tem hospital em todo canto.</div>
+             <div style="height:44px;"></div>
+             <div style="font-size:50px;font-weight:900;color:#60a5fa;">Bora, pra cima! 🚀💪</div>
+         </div>`
+    ];
+
+    const LABELS = [
+        'Slide 1 — Capa (Cartão Dourado)',
+        'Slide 2 — A Confusão',
+        'Slide 3 — Abrangência (Mapa)',
+        'Slide 4 — Rede Credenciada (Hospital)',
+        'Slide 5 — A Ilusão do Nome',
+        'Slide 6 — Checklist (Salvável)',
+        'Slide 7 — CTA Compartilhamento'
+    ];
+
+    const LEGENDAS = [
+        'Você sabe a diferença entre Abrangência Nacional e Rede Credenciada?\n\nMuitos empresários acham que é a mesma coisa. Não é. Desliza pro lado.',
+        'Todo mundo quer um plano Nacional, achando que isso significa ter hospital em cada esquina. Mas não é bem assim.',
+        'Abrangência Nacional significa apenas que o plano tem permissão contratual para te atender no país todo. Não significa que ele tem hospitais em todo lugar.',
+        'Rede Credenciada é a realidade de tijolo e cimento. É para lá que você corre de madrugada. Um plano pode ser "Nacional" e mesmo assim NÃO TER o hospital que você quer na sua cidade.',
+        'Não caia na ilusão do nome bonito. Você compra o "Premium Gold Nacional" e, na hora da precisão, ele só atende na clínica do bairro porque a rede dele ali é fraca.',
+        'Nunca assine sem fazer essa checagem. Olhe para onde sua equipe está, veja se o produto dá direito àquela rede e valide os hospitais-chave da sua região.\n\nSalva esse post pra usar na sua próxima renovação.\n\n#planodesaude #cnpj #corretordeseguros #gustavojcluz #planoempresarial #redecredenciada',
+        'Na hora da emergência, nome bonito não abre porta de hospital. O que abre é a rede credenciada correta no contrato.\n\nManda isso pra aquele amigo empresário que tá escolhendo plano só pelo nome.\n\nBora, pra cima! 🚀💪\n\n#planodesaude #cnpj #corretordeseguros #gustavojcluz #planoempresarial'
+    ];
+
+    const LIGHT_SLIDES = [2, 4, 5]; // 0-based: slides 3, 5 e 6 (bege)
+    const SKETCH_DARK_SLIDES = [3]; // slide 4 usa imagem com opacity 0.1 invertida
+
+    function createSlideElement(index) {
+        const slide = document.createElement('div');
+        slide.className = 'slide';
+        if (LIGHT_SLIDES.includes(index)) slide.classList.add('bg-light');
+        const arrowHTML = (index < 6) ? '<div class="arrow"><div class="arrow-line"></div><div class="arrow-head"></div></div>' : '';
+        slide.innerHTML = SLIDES_HTML[index] + arrowHTML;
+        return slide;
+    }
+
+    function buildPreviews() {
+        const grid = document.getElementById('slidesGrid');
+        grid.innerHTML = '';
+        SLIDES_HTML.forEach((_, i) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'slide-wrapper';
+            const label = document.createElement('div');
+            label.className = 'slide-label';
+            label.textContent = LABELS[i];
+            const scaler = document.createElement('div');
+            scaler.className = 'slide-scaler';
+            const slide = createSlideElement(i);
+            scaler.appendChild(slide);
+            const footer = document.createElement('div');
+            footer.className = 'slide-footer';
+            const btnDl = document.createElement('button');
+            btnDl.className = 'btn-download';
+            btnDl.textContent = `📥 Baixar Slide ${i + 1}`;
+            btnDl.onclick = () => downloadSinglePNG(i, btnDl);
+            footer.appendChild(btnDl);
+            const legendaBox = document.createElement('div');
+            legendaBox.className = 'legenda-box';
+            legendaBox.innerHTML = `
+                <textarea class="legenda-textarea" id="leg_slide_${i}">${LEGENDAS[i]}</textarea>
+                <button class="btn-copy-legenda" id="btn_leg_${i}" onclick="copySlideLeg(${i})">📋 Copiar legenda (Slide ${i + 1})</button>
+            `;
+            wrapper.appendChild(label);
+            wrapper.appendChild(scaler);
+            wrapper.appendChild(footer);
+            wrapper.appendChild(legendaBox);
+            grid.appendChild(wrapper);
+            requestAnimationFrame(() => {
+                slide.style.transform = `scale(${scaler.offsetWidth / 1080})`;
+                slide.style.transformOrigin = 'top left';
+            });
+        });
+    }
+
+    function copySlideLeg(index) {
+        const text = document.getElementById(`leg_slide_${index}`).value;
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById(`btn_leg_${index}`);
+            btn.textContent = '✅ Copiado!';
+            btn.style.background = '#059669'; btn.style.color = '#fff';
+            setTimeout(() => { btn.textContent = `📋 Copiar legenda (Slide ${index + 1})`; btn.style.background = '#222'; btn.style.color = '#bbb'; }, 2000);
+        });
+    }
+
+    function setStatus(msg) { document.getElementById('status').textContent = msg; }
+
+    async function renderSlide(index) {
+        const area = document.getElementById('renderArea');
+        const slide = createSlideElement(index);
+        area.appendChild(slide);
+        area.style.zIndex = '9999'; area.style.opacity = '1';
+        slide.style.transform = 'none';
+        await new Promise(r => setTimeout(r, 500));
+        
+        let bgColor = '#0B1D3A';
+        if (LIGHT_SLIDES.includes(index)) bgColor = '#F0EBE3';
+        
+        const canvas = await html2canvas(slide, { width: 1080, height: 1350, scale: 1, useCORS: true, backgroundColor: bgColor, logging: false });
+        area.removeChild(slide); area.style.zIndex = '-1';
+        return canvas;
+    }
+
+    async function downloadSinglePNG(index, btn) {
+        const orig = btn.textContent;
+        btn.disabled = true; btn.textContent = '⏳ Gerando...';
+        try {
+            const canvas = await renderSlide(index);
+            const link = document.createElement('a');
+            link.download = `Abrangencia_Slide_${index + 1}.png`;
+            link.href = canvas.toDataURL('image/png'); link.click();
+            btn.textContent = '✅ Baixado!';
+            setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
+        } catch (e) { btn.textContent = '❌ Erro'; setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000); }
+    }
+
+    async function downloadAllPNGs() {
+        setStatus('Gerando todos os PNGs — aguarde...');
+        try {
+            for (let i = 0; i < SLIDES_HTML.length; i++) {
+                setStatus(`Baixando slide ${i + 1} de ${SLIDES_HTML.length}...`);
+                const canvas = await renderSlide(i);
+                const link = document.createElement('a');
+                link.download = `Abrangencia_Slide_${i + 1}.png`;
+                link.href = canvas.toDataURL('image/png'); link.click();
+                await new Promise(r => setTimeout(r, 900));
+            }
+            setStatus('✅ Todas as imagens baixadas com sucesso!');
+        } catch (e) { setStatus('❌ Erro: ' + e.message); console.error(e); }
+    }
+
+    async function downloadPDF() {
+        setStatus('Gerando PDF — aguarde...');
+        try {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [108, 135] });
+            for (let i = 0; i < SLIDES_HTML.length; i++) {
+                setStatus(`Renderizando slide ${i + 1} de ${SLIDES_HTML.length}...`);
+                const canvas = await renderSlide(i);
+                const imgData = canvas.toDataURL('image/png');
+                if (i > 0) pdf.addPage([108, 135]);
+                pdf.addImage(imgData, 'PNG', 0, 0, 108, 135);
+            }
+            pdf.save('Abrangencia_Carrossel_GustavoLima.pdf');
+            setStatus('✅ PDF baixado com sucesso!');
+        } catch (e) { setStatus('❌ Erro: ' + e.message); console.error(e); }
+    }
+
+    document.fonts.ready.then(() => setTimeout(buildPreviews, 300));
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.slide-scaler').forEach(scaler => {
+            const slide = scaler.querySelector('.slide');
+            if (slide) slide.style.transform = `scale(${scaler.offsetWidth / 1080})`;
+        });
+    });
+    </script>
+</body>
+</html>
+

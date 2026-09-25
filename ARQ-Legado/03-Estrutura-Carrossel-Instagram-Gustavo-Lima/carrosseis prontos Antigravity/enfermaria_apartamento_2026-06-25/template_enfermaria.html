@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enfermaria ou Apartamento — Gustavo Lima</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', 'Segoe UI', sans-serif; background: #111; color: #fff; padding: 30px 20px; }
+        h1 { text-align: center; font-size: 22px; color: #fff; margin-bottom: 6px; }
+        .page-subtitle { text-align: center; color: #777; font-size: 13px; margin-bottom: 30px; }
+        .btn-container { text-align: center; margin: 0 0 30px 0; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn { border: none; padding: 14px 36px; font-size: 15px; font-weight: 700; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-family: 'Montserrat', sans-serif; }
+        .btn-primary { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59,130,246,0.4); }
+        .btn-secondary { background: #2a2a2a; color: #ccc; border: 1px solid #444; }
+        .btn-secondary:hover { background: #3a3a3a; color: #fff; }
+        .status { text-align: center; color: #3b82f6; margin: 10px 0 20px; font-size: 13px; font-weight: bold; min-height: 20px; }
+        .slides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
+        .slide-wrapper { background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 2px solid #2a2a2a; transition: all 0.2s; display: flex; flex-direction: column; }
+        .slide-wrapper:hover { border-color: #3b82f6; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        .slide-scaler { width: 100%; aspect-ratio: 1080 / 1350; overflow: hidden; position: relative; }
+        .slide-label { padding: 8px 10px 4px; font-size: 12px; color: #777; text-align: center; background: #151515; font-weight: bold; }
+        .slide-footer { display: flex; justify-content: center; padding: 6px 10px 10px; background: #151515; }
+        .btn-download { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; border: none; padding: 8px 20px; font-size: 12px; font-weight: 700; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-family: 'Montserrat', sans-serif; width: 100%; }
+        .btn-download:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(59,130,246,0.4); }
+        .btn-download:disabled { opacity: 0.5; cursor: wait; }
+        .legenda-box { background: #111; padding: 12px; border-top: 1px solid #2a2a2a; display: flex; flex-direction: column; gap: 8px; }
+        .legenda-textarea { width: 100%; height: 110px; background: #000; color: #ddd; border: 1px solid #444; border-radius: 6px; padding: 10px; font-size: 12px; font-family: 'Segoe UI', sans-serif; resize: vertical; line-height: 1.5; }
+        .legenda-textarea:focus { outline: none; border-color: #3b82f6; }
+        .btn-copy-legenda { background: #222; color: #bbb; border: 1px solid #444; padding: 8px; font-size: 11px; cursor: pointer; border-radius: 4px; width: 100%; font-weight: 600; transition: all 0.2s; }
+        .btn-copy-legenda:hover { background: #333; color: #fff; border-color: #555; }
+
+        /* ===================== ESTILOS DOS SLIDES ===================== */
+        .slide {
+            width: 1080px; height: 1350px;
+            background: linear-gradient(160deg, #0B1D3A 0%, #0F2444 30%, #0A1A35 55%, #0D2040 80%, #091830 100%);
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 110px 95px; position: relative;
+            font-family: 'Montserrat', sans-serif; transform-origin: top left;
+            overflow: hidden;
+        }
+        .slide.bg-light { background: #F0EBE3; color: #0B1D3A; }
+
+        .slide .arrow { position: absolute; bottom: 75px; right: 75px; display: flex; align-items: center; z-index: 10; }
+        .slide .arrow-line { width: 110px; height: 2px; background: rgba(255,255,255,0.3); }
+        .slide .arrow-head { width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 13px solid rgba(255,255,255,0.3); }
+        .slide.bg-light .arrow-line { background: rgba(11,29,58,0.3); }
+        .slide.bg-light .arrow-head { border-left-color: rgba(11,29,58,0.3); }
+
+        .t-reg   { font-size: 44px; font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.5; }
+        .t-bold  { font-size: 44px; font-weight: 900; color: #ffffff; line-height: 1.35; letter-spacing: -0.5px; }
+        .t-large { font-size: 66px; font-weight: 900; color: #ffffff; line-height: 1.15; letter-spacing: -1px; text-transform: uppercase; }
+        .t-small { font-size: 36px; font-weight: 400; color: rgba(255,255,255,0.5); line-height: 1.5; }
+        .t-accent { font-weight: 900; color: #60a5fa; }
+
+        .slide.bg-light .t-reg   { color: rgba(11,29,58,0.85); }
+        .slide.bg-light .t-bold  { color: #0B1D3A; }
+        .slide.bg-light .t-large { color: #0B1D3A; }
+        .slide.bg-light .t-small { color: rgba(11,29,58,0.5); }
+
+        /* Grifos translúcidos */
+        .hl-gold { background: rgba(234,179,8,0.28); color: #fff !important; padding: 5px 18px; border-radius: 8px; display: inline-block; }
+        .hl      { background: rgba(11,29,58,0.14); color: #0B1D3A !important; padding: 5px 18px; border-radius: 8px; display: inline-block; }
+
+        .sp    { height: 36px; }
+        .sp-sm { height: 18px; }
+        .sp-xs { height: 8px; }
+
+        /* Tabela comparativa Slide 4 */
+        .comp-col { background: rgba(255,255,255,0.96); border-radius: 20px; padding: 40px 36px; flex: 1; }
+        .comp-col.dark { background: rgba(11,29,58,0.07); border: 2px solid rgba(11,29,58,0.12); }
+        .comp-title { font-size: 34px; font-weight: 900; color: #0B1D3A; margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+        .comp-item { font-size: 30px; font-weight: 400; color: rgba(11,29,58,0.8); line-height: 1.4; padding: 12px 0; border-bottom: 1px solid rgba(11,29,58,0.08); display: flex; align-items: flex-start; gap: 14px; }
+        .comp-item:last-child { border-bottom: none; }
+        .comp-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 10px; }
+
+        /* Slide 3 - checklist do que não muda */
+        .nao-muda-item { display: flex; align-items: center; gap: 28px; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+        .nao-muda-item:last-child { border-bottom: none; }
+        .check-circle { width: 48px; height: 48px; border-radius: 50%; background: rgba(96,165,250,0.15); border: 2px solid rgba(96,165,250,0.35); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 26px; }
+
+        #renderArea { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <h1>🏥 Carrossel — Enfermaria ou Apartamento?</h1>
+    <p class="page-subtitle">Framework A.I.D.A. — Gustavo Lima (JCLUZ) | Legendas Individuais Ativadas</p>
+
+    <div class="btn-container">
+        <button class="btn btn-primary" onclick="downloadAllPNGs()">📦 Baixar TODOS os PNGs</button>
+        <button class="btn btn-secondary" onclick="downloadPDF()">📄 Baixar PDF completo</button>
+    </div>
+    <div class="status" id="status"></div>
+
+    <div class="slides-grid" id="slidesGrid"></div>
+    <div id="renderArea"></div>
+
+    <script>
+    const SLIDES_HTML = [
+
+        // SLIDE 1 — Gancho / Capa Hero (ESCURO + Foto Chapeuzinho)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('COVER_B64_HERE');background-size:cover;background-position:center top;z-index:1;"></div>
+         <div style="position:absolute;bottom:0;left:0;width:100%;height:62%;background:linear-gradient(to top,rgba(11,29,58,1) 0%,rgba(11,29,58,0.92) 28%,rgba(11,29,58,0.55) 60%,rgba(11,29,58,0) 100%);z-index:2;"></div>
+         <div style="position:absolute;bottom:0;left:0;width:100%;padding:0 95px 110px;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;">
+             <div class="t-large" style="font-size:76px;text-shadow:2px 2px 12px rgba(0,0,0,0.9);">ENFERMARIA<br>OU<br>APARTAMENTO?</div>
+             <div class="sp-sm"></div>
+             <div class="t-reg" style="font-size:38px;color:rgba(255,255,255,0.78);">Essa escolha parece detalhe.<br>Mas ela aparece na hora que mais importa.</div>
+         </div>`,
+
+        // SLIDE 2 — O que NÃO muda (ESCURO)
+        `<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;width:100%;">
+             <div class="t-bold" style="font-size:50px;margin-bottom:6px;text-align:center;width:100%;">O que NÃO muda<br>com a acomodação:</div>
+             <div class="sp"></div>
+             <div class="nao-muda-item"><div class="check-circle">✓</div><div class="t-reg" style="font-size:42px;">Sua consulta</div></div>
+             <div class="nao-muda-item"><div class="check-circle">✓</div><div class="t-reg" style="font-size:42px;">Seus exames</div></div>
+             <div class="nao-muda-item"><div class="check-circle">✓</div><div class="t-reg" style="font-size:42px;">O atendimento ambulatorial</div></div>
+             <div class="nao-muda-item"><div class="check-circle">✓</div><div class="t-reg" style="font-size:42px;">A cobertura cirúrgica</div></div>
+             <div class="sp"></div>
+             <div style="text-align:center;width:100%;">
+                 <div class="t-bold hl-gold" style="font-size:38px;line-height:1.45;">A diferença aparece em<br>um único cenário: internação.</div>
+             </div>
+         </div>`,
+
+        // SLIDE 3 — O que a acomodação define (BEGE + Sketch leito)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#F0EBE3;z-index:-1;"></div>
+         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('SKETCH2_B64_HERE');background-size:cover;mix-blend-mode:darken;filter:brightness(1.05);opacity:0.2;z-index:0;"></div>
+         <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;">
+             <div class="t-reg" style="color:rgba(11,29,58,0.75);font-size:42px;">Quando você contrata um plano,<br>a acomodação define uma coisa:</div>
+             <div class="sp"></div>
+             <div class="t-bold" style="color:#0B1D3A;font-size:52px;line-height:1.3;">O tipo de quarto<br>em caso de internação.</div>
+             <div class="sp"></div>
+             <div style="width:100%;display:flex;flex-direction:column;gap:16px;text-align:left;">
+                 <div style="background:rgba(11,29,58,0.06);border-left:6px solid #0B1D3A;border-radius:0 14px 14px 0;padding:28px 36px;display:flex;align-items:center;gap:22px;">
+                     <div style="font-size:42px;">🏨</div>
+                     <div><div style="font-size:32px;font-weight:900;color:#0B1D3A;">Apartamento</div><div style="font-size:30px;color:rgba(11,29,58,0.65);margin-top:4px;">Quarto individual</div></div>
+                 </div>
+                 <div style="background:rgba(11,29,58,0.06);border-left:6px solid rgba(11,29,58,0.3);border-radius:0 14px 14px 0;padding:28px 36px;display:flex;align-items:center;gap:22px;">
+                     <div style="font-size:42px;">🛏️</div>
+                     <div><div style="font-size:32px;font-weight:900;color:#0B1D3A;">Enfermaria</div><div style="font-size:30px;color:rgba(11,29,58,0.65);margin-top:4px;">Quarto compartilhado</div></div>
+                 </div>
+             </div>
+             <div class="sp"></div>
+             <div class="t-bold hl" style="font-size:36px;">Só isso. Nada mais muda.</div>
+         </div>`,
+
+        // SLIDE 4 — Salvável: Quando cada um faz sentido (BEGE + Sketch bifurcação)
+        `<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#F0EBE3;z-index:-1;"></div>
+         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('SKETCH4_B64_HERE');background-size:cover;mix-blend-mode:darken;filter:brightness(1.05);opacity:0.18;z-index:0;"></div>
+         <div style="position:relative;z-index:2;width:100%;">
+             <div class="t-bold" style="color:#0B1D3A;font-size:46px;text-align:center;margin-bottom:40px;">Quando cada um faz sentido:</div>
+             <div style="display:flex;gap:24px;width:100%;">
+                 <!-- Coluna Apartamento -->
+                 <div style="flex:1;background:rgba(11,29,58,0.06);border-radius:20px;padding:32px 28px;border-top:5px solid #0B1D3A;">
+                     <div style="font-size:32px;font-weight:900;color:#0B1D3A;margin-bottom:24px;">🏨 Apartamento</div>
+                     <div style="font-size:28px;color:rgba(11,29,58,0.78);line-height:1.5;display:flex;flex-direction:column;gap:16px;">
+                         <div style="display:flex;gap:10px;"><span style="color:#0B1D3A;font-weight:700;">→</span> Tem filho pequeno ou acompanhante frequente</div>
+                         <div style="display:flex;gap:10px;"><span style="color:#0B1D3A;font-weight:700;">→</span> Histórico de internações na família</div>
+                         <div style="display:flex;gap:10px;"><span style="color:#0B1D3A;font-weight:700;">→</span> Privacidade e conforto são prioridade</div>
+                         <div style="display:flex;gap:10px;"><span style="color:#0B1D3A;font-weight:700;">→</span> Risco de internações mais longas</div>
+                     </div>
+                 </div>
+                 <!-- Coluna Enfermaria -->
+                 <div style="flex:1;background:rgba(11,29,58,0.04);border-radius:20px;padding:32px 28px;border-top:5px solid rgba(11,29,58,0.3);">
+                     <div style="font-size:32px;font-weight:900;color:#0B1D3A;margin-bottom:24px;">🛏️ Enfermaria</div>
+                     <div style="font-size:28px;color:rgba(11,29,58,0.78);line-height:1.5;display:flex;flex-direction:column;gap:16px;">
+                         <div style="display:flex;gap:10px;"><span style="color:rgba(11,29,58,0.5);font-weight:700;">→</span> Orçamento precisa de ajuste</div>
+                         <div style="display:flex;gap:10px;"><span style="color:rgba(11,29,58,0.5);font-weight:700;">→</span> Internações curtas e pontuais</div>
+                         <div style="display:flex;gap:10px;"><span style="color:rgba(11,29,58,0.5);font-weight:700;">→</span> Sem dependentes diretos no plano</div>
+                         <div style="display:flex;gap:10px;"><span style="color:rgba(11,29,58,0.5);font-weight:700;">→</span> Baixo risco para casos prolongados</div>
+                     </div>
+                 </div>
+             </div>
+             <div style="text-align:center;margin-top:36px;">
+                 <div class="t-bold hl" style="font-size:34px;color:#0B1D3A !important;">Salva esse slide.</div>
+             </div>
+         </div>`,
+
+        // SLIDE 5 — Escolha consciente (ESCURO)
+        `<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;">
+             <div class="t-reg" style="font-size:46px;">Tem gente que paga apartamento<br>sem saber por quê.</div>
+             <div class="sp"></div>
+             <div class="t-reg" style="font-size:46px;">E tem gente que escolhe enfermaria<br>só pelo preço, sem entender<br>o impacto numa internação.</div>
+             <div class="sp"></div>
+             <div class="t-bold hl-gold" style="font-size:42px;line-height:1.4;">Não existe resposta certa.<br>Existe escolha consciente.</div>
+         </div>`,
+
+        // SLIDE 6 — CTA (ESCURO)
+        `<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;height:100%;justify-content:center;">
+             <div class="t-large" style="font-size:70px;line-height:1.12;">ACOMODAÇÃO<br>NÃO MUDA<br>SUA CONSULTA.</div>
+             <div class="sp-sm"></div>
+             <div class="t-bold hl-gold" style="font-size:46px;">Muda sua internação.</div>
+             <div class="sp"></div>
+             <div class="t-reg" style="font-size:38px;color:rgba(255,255,255,0.72);">Segue o perfil para mais conteúdo<br>sobre plano de saúde empresarial<br>sem enrolação.</div>
+             <div class="sp"></div>
+             <div class="t-bold t-accent" style="font-size:52px;">Bora, pra cima! 🚀💪</div>
+         </div>`
+    ];
+
+    const LABELS = [
+        'Slide 1 — Gancho / Capa Chapeuzinho',
+        'Slide 2 — O que NÃO Muda',
+        'Slide 3 — O que a Acomodação Define',
+        'Slide 4 — Slide Salvável (Quando Cada Um Faz Sentido)',
+        'Slide 5 — Escolha Consciente',
+        'Slide 6 — CTA: Segue o Perfil'
+    ];
+
+    const LEGENDAS = [
+        'Essa bifurcação aparece na hora de contratar. A maioria escolhe no automático. Mas existe uma diferença que vale entender antes de assinar.',
+        'A confusão começa porque as pessoas acham que acomodação muda tudo. Muda só uma coisa. E é preciso saber qual é.',
+        'Acomodação é uma das escolhas que mais gera confusão na hora de contratar. E a explicação cabe em duas linhas.',
+        'Salva esse slide antes de renovar ou contratar um plano. Pode economizar dinheiro ou evitar uma surpresa numa internação.',
+        'A escolha automática sempre vai custar caro de alguma forma. Às vezes no bolso, às vezes na qualidade da internação.',
+        'Segue o perfil para mais conteúdo sobre plano de saúde empresarial sem enrolação.\n\nBora, pra cima! 🚀💪\n\n#planodesaude #cnpj #corretordeseguros #gustavojcluz #planodesaudecnpj #saudefamiliar #planoempresarial'
+    ];
+
+    const LIGHT_SLIDES = [2, 3]; // 0-based: slides 3 e 4
+
+    function createSlideElement(index) {
+        const slide = document.createElement('div');
+        slide.className = 'slide';
+        if (LIGHT_SLIDES.includes(index)) slide.classList.add('bg-light');
+        const arrowHTML = (index < 5) ? '<div class="arrow"><div class="arrow-line"></div><div class="arrow-head"></div></div>' : '';
+        slide.innerHTML = SLIDES_HTML[index] + arrowHTML;
+        return slide;
+    }
+
+    function buildPreviews() {
+        const grid = document.getElementById('slidesGrid');
+        grid.innerHTML = '';
+        SLIDES_HTML.forEach((_, i) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'slide-wrapper';
+            const label = document.createElement('div');
+            label.className = 'slide-label';
+            label.textContent = LABELS[i];
+            const scaler = document.createElement('div');
+            scaler.className = 'slide-scaler';
+            const slide = createSlideElement(i);
+            scaler.appendChild(slide);
+            const footer = document.createElement('div');
+            footer.className = 'slide-footer';
+            const btnDl = document.createElement('button');
+            btnDl.className = 'btn-download';
+            btnDl.textContent = `📥 Baixar Slide ${i + 1}`;
+            btnDl.onclick = () => downloadSinglePNG(i, btnDl);
+            footer.appendChild(btnDl);
+            const legendaBox = document.createElement('div');
+            legendaBox.className = 'legenda-box';
+            legendaBox.innerHTML = `
+                <textarea class="legenda-textarea" id="leg_slide_${i}">${LEGENDAS[i]}</textarea>
+                <button class="btn-copy-legenda" id="btn_leg_${i}" onclick="copySlideLeg(${i})">📋 Copiar legenda (Slide ${i + 1})</button>
+            `;
+            wrapper.appendChild(label);
+            wrapper.appendChild(scaler);
+            wrapper.appendChild(footer);
+            wrapper.appendChild(legendaBox);
+            grid.appendChild(wrapper);
+            requestAnimationFrame(() => {
+                slide.style.transform = `scale(${scaler.offsetWidth / 1080})`;
+                slide.style.transformOrigin = 'top left';
+            });
+        });
+    }
+
+    function copySlideLeg(index) {
+        const text = document.getElementById(`leg_slide_${index}`).value;
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById(`btn_leg_${index}`);
+            btn.textContent = '✅ Copiado!';
+            btn.style.background = '#059669'; btn.style.color = '#fff';
+            setTimeout(() => { btn.textContent = `📋 Copiar legenda (Slide ${index + 1})`; btn.style.background = '#222'; btn.style.color = '#bbb'; }, 2000);
+        });
+    }
+
+    function setStatus(msg) { document.getElementById('status').textContent = msg; }
+
+    async function renderSlide(index) {
+        const area = document.getElementById('renderArea');
+        const slide = createSlideElement(index);
+        area.appendChild(slide);
+        area.style.zIndex = '9999'; area.style.opacity = '1';
+        slide.style.transform = 'none';
+        await new Promise(r => setTimeout(r, 500));
+        const bgColor = LIGHT_SLIDES.includes(index) ? '#F0EBE3' : '#0B1D3A';
+        const canvas = await html2canvas(slide, { width: 1080, height: 1350, scale: 1, useCORS: true, backgroundColor: bgColor, logging: false });
+        area.removeChild(slide); area.style.zIndex = '-1';
+        return canvas;
+    }
+
+    async function downloadSinglePNG(index, btn) {
+        const orig = btn.textContent;
+        btn.disabled = true; btn.textContent = '⏳ Gerando...';
+        try {
+            const canvas = await renderSlide(index);
+            const link = document.createElement('a');
+            link.download = `Enfermaria_Slide_${index + 1}.png`;
+            link.href = canvas.toDataURL('image/png'); link.click();
+            btn.textContent = '✅ Baixado!';
+            setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
+        } catch (e) { btn.textContent = '❌ Erro'; setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000); }
+    }
+
+    async function downloadAllPNGs() {
+        setStatus('Gerando todos os PNGs — aguarde...');
+        try {
+            for (let i = 0; i < SLIDES_HTML.length; i++) {
+                setStatus(`Baixando slide ${i + 1} de ${SLIDES_HTML.length}...`);
+                const canvas = await renderSlide(i);
+                const link = document.createElement('a');
+                link.download = `Enfermaria_Slide_${i + 1}.png`;
+                link.href = canvas.toDataURL('image/png'); link.click();
+                await new Promise(r => setTimeout(r, 900));
+            }
+            setStatus('✅ Todas as imagens baixadas com sucesso!');
+        } catch (e) { setStatus('❌ Erro: ' + e.message); console.error(e); }
+    }
+
+    async function downloadPDF() {
+        setStatus('Gerando PDF — aguarde...');
+        try {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [108, 135] });
+            for (let i = 0; i < SLIDES_HTML.length; i++) {
+                setStatus(`Renderizando slide ${i + 1} de ${SLIDES_HTML.length}...`);
+                const canvas = await renderSlide(i);
+                const imgData = canvas.toDataURL('image/png');
+                if (i > 0) pdf.addPage([108, 135]);
+                pdf.addImage(imgData, 'PNG', 0, 0, 108, 135);
+            }
+            pdf.save('Enfermaria_Carrossel_GustavoLima.pdf');
+            setStatus('✅ PDF baixado com sucesso!');
+        } catch (e) { setStatus('❌ Erro: ' + e.message); console.error(e); }
+    }
+
+    document.fonts.ready.then(() => setTimeout(buildPreviews, 300));
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.slide-scaler').forEach(scaler => {
+            const slide = scaler.querySelector('.slide');
+            if (slide) slide.style.transform = `scale(${scaler.offsetWidth / 1080})`;
+        });
+    });
+    </script>
+</body>
+</html>

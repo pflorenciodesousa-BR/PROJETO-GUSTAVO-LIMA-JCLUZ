@@ -1,0 +1,7 @@
+interface:
+  display_name: "MetaDados Seguros"
+  short_description: "Auditoria editorial para saúde e seguros"
+  default_prompt: "Use $metadados-seguros para auditar este conteúdo sobre plano de saúde."
+
+policy:
+  allow_implicit_invocation: true

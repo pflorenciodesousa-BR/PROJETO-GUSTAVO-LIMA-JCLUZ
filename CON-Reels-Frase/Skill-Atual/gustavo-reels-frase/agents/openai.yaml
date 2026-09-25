@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reels Frase Gustavo"
+  short_description: "Cria Reels Frase de meio de funil para Gustavo Lima"
+  default_prompt: "Crie um Reels Frase para Gustavo Lima a partir deste tema."
