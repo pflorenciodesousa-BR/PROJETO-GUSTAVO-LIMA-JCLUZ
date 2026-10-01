@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Do Lixo à Luz | Carrossel</title>
+  <style>
+    @font-face { font-family: Montserrat; src: url('assets/Montserrat-Variable.ttf') format('truetype'); font-weight: 100 900; font-display: swap; }
+    :root { --ink:#11151b; --charcoal:#131820; --deep:#090d13; --cream:#f5f3ed; --paper:#fffefa; --gold:#e3b748; --gold-light:#f5d983; --muted:#68717b; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#282c32; color:var(--ink); font-family:Montserrat,Arial,sans-serif; }
+    .appbar { position:sticky; top:0; z-index:50; display:flex; justify-content:space-between; align-items:center; gap:18px; min-height:64px; padding:10px 22px; background:#11151b; color:#fff; box-shadow:0 8px 28px #0005; }
+    .appbar strong { font-size:17px; font-weight:800; }
+    .appbar .sub { color:#aeb5bd; font-size:12px; margin-top:3px; }
+    .actions { display:flex; flex-wrap:wrap; gap:9px; }
+    button { font:700 13px Montserrat,Arial,sans-serif; border:1px solid #65707b; color:#fff; background:#222b35; border-radius:6px; padding:10px 14px; cursor:pointer; }
+    button:hover,button:focus-visible { background:#3a4755; outline:2px solid var(--gold); outline-offset:2px; }
+    .viewer { display:grid; gap:32px; justify-content:center; padding:32px 18px 54px; }
+    .slide-shell { width:432px; height:540px; overflow:hidden; background:#fff; box-shadow:0 20px 48px #0005; }
+    .slide { position:relative; width:1080px; height:1350px; overflow:hidden; transform:scale(.4); transform-origin:top left; background:var(--paper); }
+    .slide h1,.slide h2,.slide p { margin:0; }
+    .slide h1,.slide h2 { letter-spacing:0; line-height:1.06; font-weight:900; }
+    .slide p { letter-spacing:0; line-height:1.3; }
+    .slide .num { position:absolute; bottom:54px; right:78px; font-size:23px; font-weight:800; opacity:.55; z-index:5; }
+    .slide .eyebrow { font-size:23px; line-height:1.25; text-transform:uppercase; font-weight:800; letter-spacing:2px; }
+    .slide .body { font-size:35px; line-height:1.38; font-weight:500; }
+    .slide .body strong { font-weight:800; }
+    .slide .lead { font-size:40px; line-height:1.28; font-weight:700; }
+    .slide h2 { font-size:64px; }
+    .gold { color:var(--gold); }
+    .accent-line { width:104px; height:10px; background:var(--gold); border-radius:999px; }
+    .dark { background:var(--charcoal); color:#fff; }
+    .light { background:var(--cream); }
+    .paper { background:var(--paper); }
+    .noise::after { content:""; position:absolute; inset:0; z-index:0; opacity:.09; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.36'/%3E%3C/svg%3E"); }
+    .content { position:relative; z-index:2; }
+    .sketch { position:absolute; z-index:1; pointer-events:none; fill:none; stroke:currentColor; stroke-width:7; stroke-linecap:round; stroke-linejoin:round; opacity:.15; }
+    .rounded-photo { display:block; width:100%; object-fit:cover; border-radius:52px; box-shadow:0 22px 38px #1118; }
+    .cover { color:#fff; background:#0d1118; }
+    .cover > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; }
+    .cover::after { content:""; position:absolute; inset:0; background:linear-gradient(to top, #070b13 0%,#070b13ed 11%,#070b13b8 27%,#070b1344 43%,transparent 59%); }
+    .cover .cover-copy { position:absolute; z-index:2; left:76px; right:76px; bottom:104px; }
+    .cover h1 { font-size:91px; line-height:.97; text-shadow:0 5px 18px #0009; }
+    .cover .kicker { font-size:32px; font-weight:800; margin-bottom:18px; color:var(--gold-light); }
+    .cover .deck { margin-top:28px; font-size:37px; line-height:1.2; font-weight:600; max-width:850px; }
+    .cover .swipe { position:absolute; z-index:2; bottom:43px; right:77px; font-size:27px; font-weight:800; color:var(--gold-light); }
+    .cover .num { color:#fff; right:auto; left:77px; }
+    .hook { background:#f5f2e9; }
+    .hook .content { height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:120px 94px 130px; }
+    .hook .eyebrow { color:#876317; margin-bottom:42px; }
+    .hook h2 { font-size:78px; line-height:1.1; max-width:900px; }
+    .hook .follow { max-width:840px; margin-top:57px; font-size:40px; line-height:1.28; font-weight:600; }
+    .hook .accent-line { margin-top:62px; }
+    .hook .sketch { width:390px; top:60px; right:-110px; color:#b78f2c; opacity:.17; }
+    .attitude .content { height:100%; padding:105px 82px 95px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+    .attitude .eyebrow { color:#9b7523; margin-bottom:30px; }
+    .attitude h2 { max-width:890px; }
+    .attitude .body { max-width:900px; margin-top:45px; }
+    .attitude .highlight { font-size:38px; line-height:1.25; max-width:845px; padding:28px 40px; margin-top:46px; border-radius:30px; background:#fff; border:2px solid #d5c9aa; box-shadow:0 18px 36px #1d24301c; font-weight:800; }
+    .attitude .sketch { bottom:58px; right:-25px; width:380px; color:#a27b22; opacity:.16; }
+    .mentor .content { height:100%; padding:78px 78px 83px; display:flex; flex-direction:column; align-items:center; text-align:center; }
+    .mentor .eyebrow { color:var(--gold-light); margin-bottom:21px; }
+    .mentor h2 { max-width:930px; font-size:62px; }
+    .mentor .body { max-width:915px; margin-top:31px; font-size:34px; }
+    .mentor .rounded-photo { height:385px; margin-top:auto; object-position:center 43%; }
+    .mentor .num { color:#fff; }
+    .environment .content { height:100%; padding:78px 78px 82px; display:flex; flex-direction:column; align-items:center; text-align:center; }
+    .environment .rounded-photo { height:430px; object-position:center 46%; margin-bottom:50px; }
+    .environment .eyebrow { color:#98701f; margin-bottom:18px; }
+    .environment h2 { max-width:930px; font-size:59px; }
+    .environment .body { max-width:914px; margin-top:29px; font-size:34px; }
+    .posture .content { height:100%; padding:100px 82px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+    .posture .eyebrow { color:var(--gold-light); margin-bottom:30px; }
+    .posture h2 { max-width:890px; }
+    .posture .statement { margin-top:50px; padding:24px 44px; background:var(--gold); color:#191a1b; font-size:46px; font-weight:900; line-height:1.2; border-radius:25px; box-shadow:0 20px 38px #0006; }
+    .posture .body { max-width:900px; margin-top:47px; }
+    .posture .sketch { width:440px; bottom:-85px; left:-95px; color:#d9ad45; opacity:.18; }
+    .purpose .content { height:100%; padding:105px 82px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+    .purpose .eyebrow { color:#a27920; margin-bottom:32px; }
+    .purpose h2 { max-width:870px; }
+    .purpose .body { max-width:910px; margin-top:46px; }
+    .purpose .rootline { width:730px; height:160px; margin-top:42px; color:#a57b25; opacity:.38; }
+    .save { background:var(--gold); color:#14191f; }
+    .save .content { height:100%; padding:92px 82px 80px; }
+    .save .eyebrow { color:#3e351e; margin-bottom:26px; }
+    .save h2 { font-size:63px; max-width:870px; }
+    .save .rows { display:grid; gap:14px; margin-top:47px; }
+    .save .row { min-height:135px; display:flex; align-items:center; gap:28px; padding:17px 31px; background:#fff9e8; border:3px solid #161b20; border-radius:26px; box-shadow:0 9px 0 #13181e; }
+    .save .row b { flex:0 0 61px; font-size:36px; font-weight:900; }
+    .save .row span { font-size:31px; line-height:1.18; font-weight:750; }
+    .save .outro { font-size:28px; font-weight:800; margin-top:40px; }
+    .final { background:#11171d; color:#fff; }
+    .final::before { content:""; position:absolute; inset:0; border-top:22px solid var(--gold); pointer-events:none; }
+    .final .content { height:100%; padding:120px 92px 102px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+    .final .eyebrow { color:var(--gold-light); margin-bottom:36px; }
+    .final h2 { font-size:74px; max-width:875px; }
+    .final .support { max-width:880px; margin-top:50px; font-size:38px; line-height:1.34; font-weight:550; }
+    .final .cta { max-width:890px; margin-top:50px; padding:27px 35px; border-radius:27px; background:var(--gold); color:#15191d; font-size:35px; line-height:1.27; font-weight:850; box-shadow:0 20px 45px #0009; }
+    .final .signoff { margin-top:58px; font-size:34px; font-weight:850; color:var(--gold-light); }
+    .final .num { color:#fff; }
+    body.exporting { background:#fff; }
+    body.exporting .appbar { display:none; }
+    body.exporting .viewer { display:block; padding:0; }
+    body.exporting .slide-shell { width:1080px; height:1350px; box-shadow:none; margin:0; }
+    body.exporting .slide { transform:none; }
+    @media (max-width:500px) { .appbar { align-items:flex-start; flex-direction:column; } .viewer { padding:14px 0 35px; gap:16px; } .slide-shell { margin:auto; } }
+  </style>
+</head>
+<body>
+  <header class="appbar">
+    <div><strong>Do Lixo à Luz</strong><div class="sub">9 telas · 1080 × 1350</div></div>
+    <div class="actions">
+      <button id="download-png" title="Baixar as nove telas em PNG">PNG (ZIP)</button>
+      <button id="download-pdf" title="Baixar versão em PDF">PDF</button>
+    </div>
+  </header>
+  <main class="viewer">
+    <div class="slide-shell"><section class="slide cover" id="slide-01" aria-label="Capa">
+      <img src="assets/capa-asa-dourada.png" alt="Asa dourada brilhante emergindo do lixo escuro">
+      <div class="cover-copy"><p class="kicker">CINCO LIÇÕES PARA QUEM LIDERA PESSOAS</p><h1>DO LIXO<br>À <span class="gold">LUZ.</span></h1><p class="deck">O começo não decide o fim.</p></div>
+      <span class="num">01 / 09</span><span class="swipe">DESLIZE →</span>
+    </section></div>
+    <div class="slide-shell"><section class="slide hook noise" id="slide-02" aria-label="Segundo gancho">
+      <svg class="sketch" viewBox="0 0 390 390" aria-hidden="true"><path d="M42 220c31-97 135-154 234-107M276 113l-37-54M276 113l-66 17M84 277c82 80 173 70 246 9"/><circle cx="175" cy="188" r="60"/><path d="M142 188h66m-33-33v66"/></svg>
+      <div class="content"><p class="eyebrow">A SEGUNDA PERGUNTA</p><h2>E SE O TALENTO QUE FALTA JÁ ESTIVER <span class="gold">AÍ?</span></h2><p class="follow">Talvez alguém só precise que uma porta seja aberta.</p><div class="accent-line"></div></div><span class="num">02 / 09</span>
+    </section></div>
+    <div class="slide-shell"><section class="slide attitude light noise" id="slide-03" aria-label="Lição um, atitude">
+      <svg class="sketch" viewBox="0 0 380 360" aria-hidden="true"><path d="M30 305h85v-69h83v-65h78V99h73M33 310l303-255M296 55h40v43"/><path d="M33 320c71 13 132 13 203 0"/></svg>
+      <div class="content"><p class="eyebrow">01 / ATITUDE</p><h2>O TROPEÇO NÃO ESCREVE O PRÓXIMO CAPÍTULO.</h2><p class="body">Cenários difíceis impõem limites reais. Ignorá-los não ajuda; agir dentro do que é possível, sim. Em vez de transformar cada obstáculo em sentença, pergunte qual é o próximo passo que depende de você. Nos negócios, essa mudança tira a equipe da paralisia e põe energia na solução.</p><p class="highlight">Começar mal não obriga ninguém a terminar mal.</p></div><span class="num">03 / 09</span>
+    </section></div>
+    <div class="slide-shell"><section class="slide mentor dark noise" id="slide-04" aria-label="Lição dois, liderança">
+      <div class="content"><p class="eyebrow">02 / LIDERANÇA</p><h2>UMA OPORTUNIDADE MUDA MAIS QUE UM DISCURSO.</h2><p class="body">Liderar não é só cobrar resultado de quem já sabe fazer. É perceber potencial, ensinar o caminho e abrir espaço para a pessoa testar, errar e melhorar. Um líder que oferece referência aumenta a confiança da equipe sem baixar a régua. Quando alguém cresce, a empresa ganha uma capacidade que antes não aparecia no relatório.</p><img class="rounded-photo" src="assets/lideranca-mentoria.png" alt="Profissional experiente orientando uma colega mais jovem"></div><span class="num">04 / 09</span>
+    </section></div>
+    <div class="slide-shell"><section class="slide environment paper noise" id="slide-05" aria-label="Lição três, ambiente">
+      <div class="content"><img class="rounded-photo" src="assets/mesa-profissional.png" alt="Equipe diversa trocando ideias em uma mesa de trabalho"><p class="eyebrow">03 / AMBIENTE</p><h2>A MESA EM QUE VOCÊ SENTA MUDA SUA VISÃO.</h2><p class="body">O ambiente não resolve tudo, mas influencia o que parece possível. Conversas com gente que estuda, compartilha repertório e procura soluções ampliam a forma de decidir. Vale olhar também para a equipe: existe espaço para perguntar, aprender e discordar com respeito? Uma mesa boa não pensa igual; ela ajuda todos a pensar melhor.</p></div><span class="num">05 / 09</span>
+    </section></div>
+    <div class="slide-shell"><section class="slide posture dark noise" id="slide-06" aria-label="Lição quatro, postura">
+      <svg class="sketch" viewBox="0 0 440 440" aria-hidden="true"><path d="M100 360V70h195v290M145 355V115h102v240M262 250l97 61-97 61M280 312h-78"/><path d="M55 384c74-24 147-24 221 0"/></svg>
+      <div class="content"><p class="eyebrow">04 / POSTURA</p><h2>CRESCER PEDE RESPONSABILIDADE, NÃO POSE.</h2><p class="statement">DECISÕES PEQUENAS. TODO DIA.</p><p class="body">Assumir uma postura nova não significa fingir segurança o tempo todo. Significa aceitar decisões difíceis, cumprir o combinado e pedir ajuda antes que o problema vire crise. A disciplina aparece nas escolhas pequenas, sobretudo quando ninguém está olhando. Profissionais e empresas ganham consistência quando deixam de esperar o cenário ideal para fazer o trabalho que já pode ser feito.</p></div><span class="num">06 / 09</span>
+    </section></div>
+    <div class="slide-shell"><section class="slide purpose light noise" id="slide-07" aria-label="Lição cinco, propósito">
+      <div class="content"><p class="eyebrow">05 / PROPÓSITO</p><h2>RESULTADO É FRUTO.<br><span class="gold">PESSOAS SÃO RAIZ.</span></h2><p class="body">Dinheiro sustenta o negócio, mas não explica sozinho por que uma equipe se dedica a construir algo junto. Um propósito claro orienta decisões, forma pessoas e dá sentido ao esforço diário. Se a empresa cuida apenas do número final, perde a base que produz esse número. Investir em gente é parte da estratégia, não um enfeite do discurso.</p><svg class="rootline" viewBox="0 0 730 160" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" aria-hidden="true"><path d="M365 0v50m0 0c-65-7-96 7-137 33m137-33c65-7 96 7 137 33M228 83c-55-9-94 5-148 49m148-49c-17 20-38 37-49 60m323-60c55-9 94 5 148 49M502 83c17 20 38 37 49 60M365 50c-3 30-4 59-9 90"/></svg></div><span class="num">07 / 09</span>
+    </section></div>
+    <div class="slide-shell"><section class="slide save" id="slide-08" aria-label="Resumo salvável">
+      <div class="content"><p class="eyebrow">PARA SALVAR E USAR</p><h2>5 PERGUNTAS PARA A PRÓXIMA REUNIÃO.</h2><div class="rows">
+        <div class="row"><b>01</b><span>Qual obstáculo podemos enfrentar agora?</span></div>
+        <div class="row"><b>02</b><span>Quem precisa de oportunidade, não só de cobrança?</span></div>
+        <div class="row"><b>03</b><span>Nossa mesa amplia ou estreita a visão?</span></div>
+        <div class="row"><b>04</b><span>Que responsabilidade estamos adiando?</span></div>
+        <div class="row"><b>05</b><span>Que pessoas queremos formar enquanto buscamos resultado?</span></div>
+      </div><p class="outro">Salve e volte a estas perguntas quando a rotina apertar.</p></div><span class="num">08 / 09</span>
+    </section></div>
+    <div class="slide-shell"><section class="slide final" id="slide-09" aria-label="Compartilhamento e indicação do livro">
+      <div class="content"><p class="eyebrow">A CONVERSA CONTINUA</p><h2>ALGUÉM DA SUA EQUIPE PRECISA LER ISTO.</h2><p class="support">Compartilhe estas cinco perguntas com essa pessoa.</p><p class="cta">E para conhecer a história que inspirou este carrossel, leia <em>Do Lixo à Luz</em>, de Claudia Lima.</p><p class="signoff">Bora, pra cima! 🚀💪</p></div><span class="num">09 / 09</span>
+    </section></div>
+  </main>
+  <script src="assets/html2canvas.min.js"></script>
+  <script src="assets/jspdf.umd.min.js"></script>
+  <script src="assets/jszip.min.js"></script>
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    function resizePreview() {
+      const width = Math.min(432, window.innerWidth - 24);
+      document.querySelectorAll('.slide-shell').forEach(shell => {
+        shell.style.width = `${width}px`;
+        shell.style.height = `${width * 1.25}px`;
+      });
+      slides.forEach(slide => { slide.style.transform = `scale(${width / 1080})`; });
+    }
+    window.addEventListener('resize', resizePreview);
+    resizePreview();
+    async function captureSlides() {
+      document.body.classList.add('exporting');
+      slides.forEach(slide => { slide.style.transform = 'none'; });
+      document.querySelectorAll('.slide-shell').forEach(shell => { shell.style.width = '1080px'; shell.style.height = '1350px'; });
+      await document.fonts.ready;
+      const canvases = [];
+      try {
+        for (const slide of slides) canvases.push(await html2canvas(slide, { scale: 1, useCORS: false, backgroundColor: null, logging: false }));
+      } finally { document.body.classList.remove('exporting'); resizePreview(); }
+      return canvases;
+    }
+    function downloadBlob(blob, name) {
+      const url = URL.createObjectURL(blob), a = document.createElement('a');
+      a.href = url; a.download = name; a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+    async function run(button, action) {
+      button.disabled = true; const label = button.textContent; button.textContent = 'Preparando...';
+      try { await action(); } catch (error) { alert('Não foi possível exportar: ' + error.message); }
+      button.textContent = label; button.disabled = false;
+    }
+    document.getElementById('download-png').addEventListener('click', e => run(e.currentTarget, async () => {
+      const zip = new JSZip(), canvases = await captureSlides();
+      canvases.forEach((canvas, i) => zip.file(`tela-${String(i+1).padStart(2,'0')}.png`, canvas.toDataURL('image/png').split(',')[1], { base64:true }));
+      downloadBlob(await zip.generateAsync({ type:'blob' }), 'do_lixo_a_luz_telas.zip');
+    }));
+    document.getElementById('download-pdf').addEventListener('click', e => run(e.currentTarget, async () => {
+      const canvases = await captureSlides();
+      const pdf = new jspdf.jsPDF({ orientation:'portrait', unit:'px', format:[1080,1350], hotfixes:['px_scaling'], compress:true });
+      canvases.forEach((canvas, i) => { if (i) pdf.addPage([1080,1350]); pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 1080, 1350); });
+      pdf.save('do_lixo_a_luz.pdf');
+    }));
+  </script>
+</body>
+</html>
