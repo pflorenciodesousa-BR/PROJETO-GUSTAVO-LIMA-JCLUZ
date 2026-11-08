@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sextou: a sexta que movimenta o salão | Gustavo Lima</title>
+<style>
+@font-face{font-family:Montserrat;src:url('__FONT_DATA__') format('truetype');font-weight:100 900;font-display:swap}
+:root{--navy:#0b1d3a;--sand:#f0ebe3;--gold:#eab308;--paper:#fffcf5}
+*{box-sizing:border-box}body{margin:0;background:#e8ebef;color:var(--navy);font-family:Montserrat,Arial,sans-serif}button,textarea{font-family:inherit}
+.toolbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 24px;background:#fff;border-bottom:1px solid #d5dbe4}
+.toolbar h1{margin:0;font-size:17px;font-weight:900}.toolbar p{margin:4px 0 0;font-size:12px;color:#657286}.actions{display:flex;flex-wrap:wrap;gap:9px}
+.btn{padding:12px 18px;border:1px solid var(--navy);border-radius:12px;background:var(--navy);color:#fff;font-size:12px;font-weight:800;cursor:pointer}.btn.alt{background:#fff;color:var(--navy)}.btn:disabled{opacity:.5;cursor:wait}
+.status{max-width:1420px;min-height:22px;margin:15px auto 0;padding:0 24px;color:#53627a;font-size:12px;font-weight:700}
+.slides-grid{max-width:1420px;margin:auto;padding:15px 24px 42px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}.slide-wrapper{min-width:0}
+.slide-label{display:flex;justify-content:space-between;margin-bottom:9px;color:#58677d;font-size:11px;font-weight:800;text-transform:uppercase}.slide-scaler{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;border-radius:20px;background:#d1d7e0}.slide-footer{display:flex;justify-content:center;margin-top:9px}.slide-footer .btn{padding:8px 12px;font-size:11px}
+.single-caption{max-width:850px;margin:0 auto 50px;padding:0 24px}.legenda-box{padding:22px;border:1px solid #d7dce3;border-radius:20px;background:#fff}.legenda-box h2{margin:0 0 12px;font-size:17px}.legenda-textarea{width:100%;min-height:360px;padding:14px;border:1px solid #c9d0d9;border-radius:10px;color:var(--navy);background:#fcfcfd;font-size:15px;line-height:1.55;resize:vertical}.btn-copy-legenda{margin-top:10px;padding:11px 15px;border:0;border-radius:9px;background:var(--navy);color:white;font-size:12px;font-weight:800;cursor:pointer}
+#renderArea{position:fixed;left:-12000px;top:0;width:1080px;height:1350px;pointer-events:none}
+.slide{position:absolute;top:0;left:0;width:1080px;height:1350px;overflow:hidden;transform-origin:top left;display:flex;flex-direction:column;justify-content:center;padding:110px 95px;color:white;background:linear-gradient(145deg,#152e50 0%,#0b1d3a 60%,#07162d 100%);font-family:Montserrat,Arial,sans-serif}
+.slide::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.09) .7px,transparent .9px);background-size:5px 5px;opacity:.35;z-index:0}
+.slide.bg-light{color:var(--navy);background:var(--sand)}.slide.bg-light::before{background-image:radial-gradient(rgba(11,29,58,.10) .7px,transparent .9px)}.slide.bg-gold{color:var(--navy);background:var(--gold)}.slide.bg-gold::before{display:none}.slide>*{position:relative;z-index:1}
+h2,p{margin:0}.t-large{font-size:66px;font-weight:900;line-height:1.12;letter-spacing:-1.3px}.t-bold{font-size:44px;font-weight:800;line-height:1.25;letter-spacing:-.5px}.t-reg{font-size:36px;font-weight:500;line-height:1.4}.t-small{font-size:30px;font-weight:500;line-height:1.4}.sp{height:36px;flex:none}.sp-sm{height:18px;flex:none}.sp-xs{height:8px;flex:none}
+.frame{width:100%;text-align:center}.body-copy p+p{margin-top:24px}.gold{color:var(--gold)}.gold-rule{width:134px;height:6px;margin:34px auto;background:var(--gold);border-radius:5px}.hl-accent{display:inline-block;background:var(--gold);color:var(--navy);padding:3px 15px;border-radius:8px}.comp-col{border-radius:28px;border:2px solid rgba(11,29,58,.13);background:var(--paper);padding:36px}
+.img-box-horizontal{width:100%;overflow:hidden;border-radius:28px;border:2px solid rgba(255,255,255,.18);background-size:cover;background-position:center}.absolute-footer{position:absolute;left:70px;right:70px;bottom:83px;text-align:center;font-size:50px;font-weight:900;line-height:1.2}
+.slide-capa{padding:0 76px 95px;background:#0b1d3a;justify-content:flex-end}.slide-capa::before{display:none}
+.cover-art{position:absolute;inset:0;background:url('__COVER_DATA__') center 24%/cover no-repeat;z-index:0}
+.overlay-capa{position:absolute;inset:auto 0 0;height:57%;background:linear-gradient(to top,#061328 0%,rgba(6,19,40,.96) 38%,rgba(6,19,40,.74) 68%,transparent 100%);z-index:1}
+.content-capa{z-index:2}.cover-title{font-size:86px;font-weight:900;line-height:1.07;letter-spacing:-2.5px;text-transform:uppercase}.cover-title .gold{display:block;margin-top:12px}
+.slide-two .t-large{font-size:66px;line-height:1.14}.slide-two .context{margin-top:38px}.slide-two .invitation{margin-top:38px;padding:26px 30px;background:var(--navy);color:white;border-radius:24px;font-size:36px;line-height:1.3;font-weight:700}.slide-two .invitation strong{color:var(--gold);font-weight:900}
+.slide-three .t-large{font-size:57px;line-height:1.13}.slide-three .img-box-horizontal{height:400px;margin:30px 0;background-image:url('__PARTY_DATA__');background-position:center 65%}.slide-three .body-copy{font-size:35px;line-height:1.38}.slide-three .last{margin-top:24px;color:#f5d36e;font-weight:700}
+.slide-four .t-large{font-size:65px;text-transform:uppercase}.slide-four .body-copy{margin-top:34px}.slide-four .recognition{margin-top:32px;padding:30px 32px}.slide-four .closing{margin-top:30px;font-weight:700}
+.slide-five .opening{font-size:36px;line-height:1.35;font-weight:700}.slide-five .img-box-horizontal{height:315px;margin:25px 0;background-image:url('__TEAM_DATA__');background-position:center 50%}.slide-five .body-copy{font-size:34px;line-height:1.34}.slide-five .because{margin:21px 0;font-size:30px;font-weight:600;line-height:1.3}.slide-five .highlight{background:var(--gold);color:var(--navy);border-radius:25px;padding:27px 30px;font-size:42px;font-weight:900;line-height:1.17;letter-spacing:-.6px}
+.slide-six .t-large{font-size:63px;line-height:1.12;text-transform:uppercase}.slide-six .comp-col{margin-top:36px;border:0;background:#fff8e4;padding:38px 34px}.slide-six .body-copy{font-size:36px;line-height:1.42}.slide-six .closing{margin-top:32px;font-size:34px;line-height:1.4;font-weight:600}
+.slide-seven{padding-bottom:175px}.slide-seven .t-large{font-size:71px;line-height:1.12}.slide-seven .cta{margin-top:40px;background:var(--gold);color:var(--navy);padding:28px 34px;border-radius:24px;font-size:43px;font-weight:900;line-height:1.2}.slide-seven .context{margin-top:32px;font-size:36px;line-height:1.4}
+@media(max-width:640px){.toolbar{padding:11px 13px;align-items:flex-start}.toolbar h1{font-size:13px}.toolbar p{font-size:10px}.actions{justify-content:flex-end}.btn{padding:8px 10px;font-size:10px}.slides-grid{padding:15px 13px 34px;grid-template-columns:1fr}.status,.single-caption{padding-left:13px;padding-right:13px}}
+</style>
+<script>__HTML2CANVAS_JS__</script><script>__JSPDF_JS__</script><script>__JSZIP_JS__</script>
+</head>
+<body>
+<header class="toolbar"><div><h1>SEXTOU: A SEXTA QUE MOVIMENTA O SALÃO</h1><p>Gustavo Lima · 7 slides · 1080 × 1350</p></div><div class="actions"><button class="btn alt" onclick="downloadZIP()">Baixar PNGs</button><button class="btn" onclick="downloadPDF()">Baixar PDF</button></div></header>
+<div class="status" id="status">7 slides prontos.</div><main class="slides-grid" id="slidesGrid"></main><section class="single-caption" id="singleCaption"></section><div id="renderArea"></div>
+<template data-slide-template>
+<div class="cover-art"></div><div class="overlay-capa"></div><div class="content-capa"><h2 class="cover-title">É tudo pelo<br>dinheiro <span class="gold">ou tem<br>outra coisa?</span></h2></div>
+</template>
+<template data-slide-template>
+<div class="frame"><h2 class="t-large">O que faz um colega de trabalho virar alguém com quem você <span class="hl-accent">gosta de estar?</span></h2><p class="context t-reg">Dividir a rotina aproxima. Ter momentos pra conversar, rir e descobrir afinidades ajuda a criar esse vínculo.</p><p class="invitation">É por isso que eu quero te mostrar o nosso <strong>SEXTOU.</strong></p></div>
+</template>
+<template data-slide-template>
+<div class="frame"><h2 class="t-large">Você passa boa parte do seu dia ao lado dessas pessoas.</h2><div class="img-box-horizontal" role="img" aria-label="Pessoas comemorando juntas no salão, com braços levantados e celulares registrando o encontro"></div><div class="body-copy t-reg"><p>Num bom salão, tem espaço pra pedir ajuda numa negociação, aprender com quem está perto e dar uma risada entre um atendimento e outro.</p><p class="last">Com essa convivência, o colega de trabalho também pode virar alguém com quem você gosta de estar.</p></div></div>
+</template>
+<template data-slide-template>
+<div class="frame"><h2 class="t-large">Toda sexta tem um<br>encontro marcado.</h2><div class="gold-rule"></div><div class="body-copy t-reg"><p>Aqui na JCLUZ, o Sextou reúne o salão para premiar <strong>os melhores vendedores de cada equipe e o melhor supervisor.</strong> Também tem sorteio.</p><div class="comp-col recognition">A gente reconhece os resultados da semana e abre espaço pra equipe se divertir junto.</div><p class="closing">Eu quero que as pessoas tenham esses momentos pra compartilhar.</p></div></div>
+</template>
+<template data-slide-template>
+<div class="frame"><p class="opening">Trabalhar no mesmo salão é o começo. Se sentir parte de uma equipe vai sendo construído na convivência.</p><div class="img-box-horizontal" role="img" aria-label="Equipe reunida no salão, sorrindo e segurando a bandeira da JCLUZ"></div><p class="body-copy">Quando a gente se reúne pra se divertir, conhece um pouco mais de quem está ao lado. Descobre gostos em comum, dá risada junto e vai criando afinidade.</p><p class="because">É por isso que eu valorizo tanto o Sextou.</p><p class="highlight">Quero que as pessoas tenham motivos pra gostar de estar aqui, inclusive umas pelas outras.</p></div>
+</template>
+<template data-slide-template>
+<div class="frame"><h2 class="t-large">É assim que eu quero ver o nosso salão.</h2><div class="comp-col body-copy"><p>Com vontade de vender e conquistar resultados, claro.</p><p>E com pessoas que se sintam à vontade pra conversar, ajudar umas às outras e comemorar juntas.</p></div><p class="closing">O Sextou tem lugar nessa cultura porque cria um momento pra cuidar dessa convivência. Um ambiente amigável também precisa de tempo pra acontecer.</p></div>
+</template>
+<template data-slide-template>
+<div class="frame"><h2 class="t-large">Tem alguém que deixa sua semana de trabalho <span class="gold">mais leve?</span></h2><p class="cta">Marca essa pessoa aqui.</p><p class="context">Ela merece saber que faz diferença na sua rotina.</p></div><div class="absolute-footer">Bora, pra cima! 🚀💪</div>
+</template>
+<script>
+const SLIDES_HTML=Array.from(document.querySelectorAll('template[data-slide-template]'),t=>t.innerHTML);
+const LABELS=['Capa','Segundo gancho','Convivência','O nosso Sextou','União e afinidade','Cultura','Convite'];
+const LEGENDA_MODE='unica';
+const LEGENDA_UNICA=__CAPTION_JSON__;
+const LEGENDAS=[];
+const LIGHT_SLIDES=[1,3];
+const GOLD_SLIDES=[5];
+function createSlideElement(index){const slide=document.createElement('article');slide.className='slide slide-'+['capa','two','three','four','five','six','seven'][index];if(LIGHT_SLIDES.includes(index))slide.classList.add('bg-light');if(GOLD_SLIDES.includes(index))slide.classList.add('bg-gold');slide.innerHTML=SLIDES_HTML[index];return slide;}
+__ENGINE_JS__
+</script>
+</body></html>

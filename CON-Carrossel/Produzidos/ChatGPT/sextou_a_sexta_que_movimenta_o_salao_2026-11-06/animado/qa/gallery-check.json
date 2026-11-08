@@ -1,0 +1,52 @@
+{
+  "metadata": [
+    {
+      "duration": 8,
+      "width": 1080,
+      "height": 1350,
+      "error": null
+    },
+    {
+      "duration": 17,
+      "width": 1080,
+      "height": 1350,
+      "error": null
+    },
+    {
+      "duration": 21,
+      "width": 1080,
+      "height": 1350,
+      "error": null
+    },
+    {
+      "duration": 22,
+      "width": 1080,
+      "height": 1350,
+      "error": null
+    },
+    {
+      "duration": 27,
+      "width": 1080,
+      "height": 1350,
+      "error": null
+    },
+    {
+      "duration": 23,
+      "width": 1080,
+      "height": 1350,
+      "error": null
+    },
+    {
+      "duration": 12,
+      "width": 1080,
+      "height": 1350,
+      "error": null
+    }
+  ],
+  "errors": [],
+  "firstPaused": true,
+  "mobile": {
+    "width": 390,
+    "scrollWidth": 390
+  }
+}

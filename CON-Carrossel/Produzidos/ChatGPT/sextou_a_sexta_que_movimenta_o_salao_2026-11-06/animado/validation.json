@@ -1,0 +1,114 @@
+[
+  {
+    "slide": 1,
+    "file": "sextou_slide_01.mp4",
+    "duration": 8,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "fps": 30,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": false,
+    "faststart": true,
+    "size_bytes": 1791318,
+    "decoded_without_errors": true
+  },
+  {
+    "slide": 2,
+    "file": "sextou_slide_02.mp4",
+    "duration": 17,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "fps": 30,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": false,
+    "faststart": true,
+    "size_bytes": 974447,
+    "decoded_without_errors": true
+  },
+  {
+    "slide": 3,
+    "file": "sextou_slide_03.mp4",
+    "duration": 21,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "fps": 30,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": false,
+    "faststart": true,
+    "size_bytes": 1828860,
+    "decoded_without_errors": true
+  },
+  {
+    "slide": 4,
+    "file": "sextou_slide_04.mp4",
+    "duration": 22,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "fps": 30,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": false,
+    "faststart": true,
+    "size_bytes": 1219439,
+    "decoded_without_errors": true
+  },
+  {
+    "slide": 5,
+    "file": "sextou_slide_05.mp4",
+    "duration": 27,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "fps": 30,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": false,
+    "faststart": true,
+    "size_bytes": 3151708,
+    "decoded_without_errors": true
+  },
+  {
+    "slide": 6,
+    "file": "sextou_slide_06.mp4",
+    "duration": 23,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "fps": 30,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": false,
+    "faststart": true,
+    "size_bytes": 773201,
+    "decoded_without_errors": true
+  },
+  {
+    "slide": 7,
+    "file": "sextou_slide_07.mp4",
+    "duration": 12,
+    "dimensions": [
+      1080,
+      1350
+    ],
+    "fps": 30,
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "audio": false,
+    "faststart": true,
+    "size_bytes": 696216,
+    "decoded_without_errors": true
+  }
+]
