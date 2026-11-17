@@ -1,0 +1,11 @@
+@font-face{font-family:Montserrat;src:url('__FONT_DATA__') format('truetype');font-weight:100 900;font-display:swap}
+:root{--navy:#0b1d3a;--sand:#f0ebe3;--gold:#eab308;--paper:#fffcf5}
+*{box-sizing:border-box}body{margin:0;background:#e8ebef;color:var(--navy);font-family:Montserrat,Arial,sans-serif}button,textarea{font-family:inherit}
+.toolbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 24px;background:#fff;border-bottom:1px solid #d5dbe4}
+.toolbar h1{margin:0;font-size:17px;font-weight:900}.toolbar p{margin:4px 0 0;font-size:12px;color:#657286}.actions{display:flex;flex-wrap:wrap;gap:9px}
+.btn{padding:12px 18px;border:1px solid var(--navy);border-radius:12px;background:var(--navy);color:#fff;font-size:12px;font-weight:800;cursor:pointer}.btn.alt{background:#fff;color:var(--navy)}.btn:disabled{opacity:.5;cursor:wait}
+.status{max-width:1420px;min-height:22px;margin:15px auto 0;padding:0 24px;color:#53627a;font-size:12px;font-weight:700}
+.slides-grid{max-width:1420px;margin:auto;padding:15px 24px 42px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}.slide-wrapper{min-width:0}
+.slide-label{display:flex;justify-content:space-between;margin-bottom:9px;color:#58677d;font-size:11px;font-weight:800;text-transform:uppercase}.slide-scaler{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;border-radius:20px;background:#d1d7e0}.slide-footer{display:flex;justify-content:center;margin-top:9px}.slide-footer .btn{padding:8px 12px;font-size:11px}
+.single-caption{max-width:850px;margin:0 auto 50px;padding:0 24px}.legenda-box{padding:22px;border:1px solid #d7dce3;border-radius:20px;background:#fff}.legenda-box h2{margin:0 0 12px;font-size:17px}.legenda-textarea{width:100%;min-height:360px;padding:14px;border:1px solid #c9d0d9;border-radius:10px;color:var(--navy);background:#fcfcfd;font-size:15px;line-height:1.55;resize:vertical}.btn-copy-legenda{margin-top:10px;padding:11px 15px;border:0;border-radius:9px;background:var(--navy);color:white;font-size:12px;font-weight:800;cursor:pointer}
+#renderArea{position:fixed;left:-12000px;top:0;width:1080px;height:1350px;pointer-events:none}

@@ -1,0 +1,62 @@
+{
+  "title": "Benefícios mais procurados",
+  "beneficios": [
+    {
+      "rank": 7,
+      "name": "Seguro viagem<br>internacional",
+      "hook": "Proteção para os imprevistos lá fora.",
+      "body": "Pode cobrir despesas médicas e outros imprevistos durante uma viagem ao exterior, conforme a apólice. Para o visto Schengen, o seguro médico de viagem deve ter cobertura mínima de €30 mil para urgências, hospitalização e repatriação.",
+      "check": "É um benefício útil, mas fica em 7º porque muita gente prefere contratar o seguro viagem à parte.",
+      "icon": "travel"
+    },
+    {
+      "rank": 6,
+      "name": "Coleta<br>domiciliar",
+      "hook": "A coleta do exame vai até você.",
+      "body": "Em vez de sair cedo e se deslocar até o laboratório, você recebe o profissional em casa para as coletas disponíveis no serviço. É a comodidade de fazer essa parte do exame no seu próprio ambiente.",
+      "check": "Fica em 6º por uma razão simples: fazer a coleta em casa pode deixar esse momento muito mais confortável.",
+      "icon": "home"
+    },
+    {
+      "rank": 5,
+      "name": "Seguro<br>de vida",
+      "hook": "Uma proteção financeira junto do cuidado com a saúde.",
+      "body": "O seguro de vida pode prever indenização em situações como morte ou invalidez, conforme as coberturas contratadas. Quando vem associado ao plano, acrescenta uma proteção financeira para você ou sua família nas situações previstas na apólice.",
+      "check": "É importante, mas fica em 5º porque também há quem prefira contratar essa proteção separadamente.",
+      "icon": "shield"
+    },
+    {
+      "rank": 4,
+      "name": "Wellhub",
+      "hook": "Um benefício que acompanha a sua rotina.",
+      "body": "O Wellhub reúne academias, estúdios e aplicativos de bem-estar. As opções de atividade física e os recursos de saúde mental, nutrição e sono variam conforme a assinatura. Ele leva o cuidado para momentos que vão além da consulta médica.",
+      "check": "É um dos queridinhos por reunir tantas possibilidades no dia a dia. O acesso depende de elegibilidade e a assinatura é paga à parte.",
+      "icon": "fitness"
+    },
+    {
+      "rank": 3,
+      "name": "Plano<br>odontológico",
+      "hook": "Pode parecer um extra. Até entrar na rotina.",
+      "body": "O plano odontológico dá acesso a consultas e procedimentos para cuidar dos dentes e da boca, conforme a cobertura contratada. É um benefício que acompanha tanto o cuidado preventivo quanto os tratamentos previstos no plano.",
+      "check": "Pra mim, ele é subestimado: a pessoa nem sempre espera tanto, mas acaba usando com frequência. Por isso, entra no nosso top 3.",
+      "icon": "tooth"
+    },
+    {
+      "rank": 2,
+      "name": "Abrangência<br>nacional",
+      "hook": "O atendimento acompanha você pelo Brasil.",
+      "body": "A abrangência nacional permite usar a rede do plano em diferentes estados, dentro da cobertura contratada. Para quem viaja, trabalha em outras cidades ou passa temporadas longe de casa, isso pode fazer bastante diferença.",
+      "check": "Só não fica em 1º porque nem todo mundo precisa. Mas quem precisa costuma não abrir mão.",
+      "icon": "map"
+    },
+    {
+      "rank": 1,
+      "name": "Reembolso",
+      "hook": "Seu médico de confiança pode estar fora da rede.",
+      "body": "Quando o plano prevê reembolso por livre escolha, você pode receber de volta parte ou até todo o valor de um atendimento particular, conforme as regras e os limites do contrato. É uma possibilidade de continuar com um profissional que não atende pelo plano.",
+      "check": "Esse é o queridinho das perguntas aqui na JCLUZ. A liberdade de escolha coloca o reembolso no topo da nossa lista.",
+      "icon": "receipt"
+    }
+  ],
+  "caption": "Se fosse você colocando o voto naquela urna, qual benefício estaria no papel?\n\nO odontológico aparece em 3º, mas pode ser o seu primeiro. A abrangência nacional fica em 2º, mas talvez pese menos para quem passa a maior parte da rotina na mesma cidade.\n\nEssa lista reúne os sete benefícios mais procurados nos atendimentos da JCLUZ, na ordem apresentada no vídeo. Ela reflete a percepção dessas conversas, e não uma pesquisa estatística de mercado.\n\nDisponibilidade, coberturas, custos e limites variam por produto e contrato. O acesso ao Wellhub depende de elegibilidade e a assinatura é paga à parte. A menção a Schengen se refere à exigência de seguro médico na solicitação do visto.\n\nAgora quero saber a sua ordem: qual desses benefícios ganha o primeiro lugar? Comenta aqui!\n\nBora, pra cima! 🚀💪"
+}

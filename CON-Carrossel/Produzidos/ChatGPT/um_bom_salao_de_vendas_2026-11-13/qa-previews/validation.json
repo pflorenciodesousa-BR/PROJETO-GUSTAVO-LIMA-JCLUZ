@@ -1,0 +1,45 @@
+{
+  "checks": [
+    {
+      "slide": 1,
+      "text": "VOCÊ ACHAVA QUE\nTINHA UMA EQUIPE.\nATÉ PRECISAR\nDELA.",
+      "problems": []
+    },
+    {
+      "slide": 2,
+      "text": "Você faz parte de uma equipe ou só divide a sala com outras pessoas?\n\nVou te mostrar como um bom salão de vendas funciona.\n\nA ideia é você reconhecer, nas situações do dia a dia, o que diferencia um ambiente que ajuda você a crescer de um que te deixa sozinho.",
+      "problems": []
+    },
+    {
+      "slide": 3,
+      "text": "Imagina essa cena.\n\nVocê está falando com um cliente. A conversa vai bem, até ele fazer uma pergunta que você não sabe responder.\n\nVocê pede um instante e olha pro lado. Tem alguém ali que já passou por aquilo.\n\nVocê chama, explica a dúvida e espera uma orientação.\n\nO que acontece depois diz muito sobre esse salão.",
+      "problems": []
+    },
+    {
+      "slide": 4,
+      "text": "Você pergunta, mas a ajuda nunca chega.\nA informação fica com quem já sabe. Quem acabou de entrar precisa descobrir tudo sozinho. Quando aparece um erro, vem a cobrança, mas ninguém explica como fazer melhor.\n\nDepois de passar por isso algumas vezes, você começa a evitar perguntas.\n\nTem gente perto. Só que você aprende a se virar sem contar com ninguém.",
+      "problems": []
+    },
+    {
+      "slide": 5,
+      "text": "Alguém te orienta,\nmostra onde conferir a informação ou combina de te ajudar assim que terminar o atendimento.\n\nVocê volta ao cliente com mais segurança e aprende como resolver aquela situação da próxima vez.\n\nQuem está começando encontra apoio. Quem já tem experiência compartilha o que sabe.\n\nE perguntar faz parte do trabalho.",
+      "problems": []
+    },
+    {
+      "slide": 6,
+      "text": "Quer reconhecer um bom salão? Repara nisso:\n✓\nQuando alguém tem uma dúvida, encontra orientação.\n✓\nQuando alguém aprende algo útil, compartilha.\n✓\nQuando uma venda sai, tem gente que comemora junto.\n✓\nDepois da comemoração, o cliente continua sendo acompanhado.\n\nEsses hábitos vão dando ao salão uma cultura e um jeito próprio de trabalhar.\n\nSalva pra observar no seu dia a dia.",
+      "problems": []
+    },
+    {
+      "slide": 7,
+      "text": "É bom trabalhar sabendo que você tem com quem contar.\n\nPra mim, um bom salão tem vontade de vender e pessoas que participam do crescimento umas das outras.\n\nNa sua rotina, você sente que faz parte de uma equipe ou que precisa se virar sozinho?\n\nMe conta nos comentários.\n\nBora, pra cima! 🚀💪",
+      "problems": []
+    }
+  ],
+  "errors": [],
+  "mobile": {
+    "viewport": 390,
+    "scrollWidth": 390,
+    "slides": 7
+  }
+}
